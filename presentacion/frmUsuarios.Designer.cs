@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelOpciones = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtid = new Guna.UI2.WinForms.Guna2TextBox();
@@ -496,7 +497,6 @@
             // 
             this.dgusuarios.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MesloLGL NF", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgusuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -522,7 +522,7 @@
             this.dgusuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -542,6 +542,8 @@
             this.dgusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgusuarios.RowHeadersVisible = false;
             this.dgusuarios.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgusuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgusuarios.RowTemplate.Height = 24;
             this.dgusuarios.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgusuarios.Size = new System.Drawing.Size(943, 669);
@@ -614,7 +616,7 @@
             this.correo.HeaderText = "correo";
             this.correo.MinimumWidth = 6;
             this.correo.Name = "correo";
-            this.correo.Width = 170;
+            this.correo.Width = 240;
             // 
             // clave
             // 
