@@ -72,7 +72,8 @@ create table categorias(
 go
 alter table categorias drop column estado;
 alter table categorias add estado bit not null default 1;
-
+select idcategoria, nombrecategoria, fecharegistro from categorias
+go
 insert into categorias (nombrecategoria) values
 	('categoria de prueba')
 select * from categorias
@@ -85,6 +86,7 @@ create table tallas(
 	estado bit not null default 1
 )
 go
+select idtalla, nombretalla, tipo_prenda from tallas;
 
 insert into tallas (nombretalla, tipo_prenda) values 
 	('s', 'algodon'),
@@ -112,6 +114,11 @@ go
 insert into productos(codigo, nombre, descripcion, idcategoria, stock, preciocompra, precioventa, colores, idtalla, fotos) values
 ('11322131', 'prueba', 'hola mundo', '1', '12', '15', '16', 'Amarillo', 1, null)
 select * from productos
+go
+
+select idproducto, fotos, codigo, nombre, p.descripcion,c.idcategoria, c.nombrecategoria, t.idtalla, t.nombretalla, t.tipo_prenda, stock, precioventa from productos p
+inner join categorias c on c.idcategoria = p.idcategoria
+inner join tallas t on t.idtalla = p.idtalla
 go
 
 create table compras(

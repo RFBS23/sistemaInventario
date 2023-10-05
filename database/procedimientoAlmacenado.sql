@@ -202,99 +202,89 @@ go
 -- fin rpocedimiento tallas
 
 /* ---------- PROCEDIMIENTOS PARA PRODUCTO -----------------*/
-
-create PROC sp_RegistrarProducto(
-@Codigo varchar(20),
-@Nombre varchar(30),
-@Descripcion varchar(30),
-@IdCategoria int,
-@Estado bit,
-@Resultado int output,
-@Mensaje varchar(500) output
+create procedure spu_registrar_productos(
+	@codigo varchar(50),
+	@nombre varchar(50),
+	@descripcion varchar(50),
+	@idcategoria int,
+	@idtalla int,
+	@stock int,
+	@colores varchar(40),
+	@precioventa decimal(10,2),
+	@resultado int output,
+	@mensaje varchar(100) output
 )as
 begin
-	SET @Resultado = 0
-	IF NOT EXISTS (SELECT * FROM producto WHERE Codigo = @Codigo)
+	set @resultado = 0
+	if not exists (select * from productos where codigo = @codigo)
 	begin
-		insert into producto(Codigo,Nombre,Descripcion,IdCategoria,Estado) values (@Codigo,@Nombre,@Descripcion,@IdCategoria,@Estado)
-		set @Resultado = SCOPE_IDENTITY()
+		insert into productos(codigo, nombre, descripcion, idcategoria, idtalla, stock, colores, precioventa) values
+		(@codigo, @nombre, @descripcion, @idcategoria, @idtalla, @stock, @colores, @precioventa)
+		set @resultado = SCOPE_IDENTITY()
 	end
-	ELSE
-	 SET @Mensaje = 'Ya existe un producto con el mismo codigo' 
-	
+	else
+		set @mensaje = 'El codigo no puede repetirse' 
 end
-
-GO
-
-create procedure sp_ModificarProducto(
-@IdProducto int,
-@Codigo varchar(20),
-@Nombre varchar(30),
-@Descripcion varchar(30),
-@IdCategoria int,
-@Estado bit,
-@Resultado bit output,
-@Mensaje varchar(500) output
-)
-as
-begin
-	SET @Resultado = 1
-	IF NOT EXISTS (SELECT * FROM PRODUCTO WHERE codigo = @Codigo and IdProducto != @IdProducto)
-		
-		update PRODUCTO set
-		codigo = @Codigo,
-		Nombre = @Nombre,
-		Descripcion = @Descripcion,
-		IdCategoria = @IdCategoria,
-		Estado = @Estado
-		where IdProducto = @IdProducto
-	ELSE
-	begin
-		SET @Resultado = 0
-		SET @Mensaje = 'Ya existe un producto con el mismo codigo' 
-	end
-end
-
 go
 
-
-create PROC SP_EliminarProducto(
-@IdProducto int,
-@Respuesta bit output,
-@Mensaje varchar(500) output
+create procedure spu_editar_productos(
+	@idproducto int,
+	@codigo varchar(50),
+	@nombre varchar(50),
+	@descripcion varchar(50),
+	@idcategoria int,
+	@idtalla int,
+	@stock int,
+	@colores varchar(40),
+	@precioventa decimal(10,2),
+	@resultado int output,
+	@mensaje varchar(100) output
 )
 as
 begin
-	set @Respuesta = 0
-	set @Mensaje = ''
+	set @resultado = 1
+	if not exists (select * from productos where codigo = @Codigo and idproducto != @idproducto)
+		update productos set
+		codigo = @codigo,
+		nombre = @nombre,
+		descripcion = @descripcion,
+		idcategoria = @idcategoria,
+		idtalla = @idtalla,
+		stock = @stock,
+		colores = @colores,
+		precioventa = @precioventa
+		where idproducto = @idproducto
+	else
+	begin
+		set @resultado = 0
+		set @mensaje = 'Ya existe un producto con el mismo codigo' 
+	end
+end
+go
+
+create procedure spu_eliminar_productos(
+	@idproducto int,
+	@respuesta bit output,
+	@mensaje varchar(100) output
+)
+as
+begin
+	set @respuesta = 0
+	set @mensaje = ''
 	declare @pasoreglas bit = 1
-
-	IF EXISTS (SELECT * FROM DETALLE_COMPRA dc 
-	INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
-	WHERE p.IdProducto = @IdProducto
-	)
+	if exists (select * from detalle_venta dv
+	inner join productos p ON p.idproducto = dv.idproductos
+	WHERE p.idproducto = @idproducto)
 	BEGIN
 		set @pasoreglas = 0
-		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una COMPRA\n' 
+		set @respuesta = 0
+		set @mensaje = @mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n' 
 	END
-
-	IF EXISTS (SELECT * FROM DETALLE_VENTA dv
-	INNER JOIN PRODUCTO p ON p.IdProducto = dv.IdProducto
-	WHERE p.IdProducto = @IdProducto
-	)
-	BEGIN
-		set @pasoreglas = 0
-		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n' 
-	END
-
 	if(@pasoreglas = 1)
 	begin
-		delete from PRODUCTO where IdProducto = @IdProducto
-		set @Respuesta = 1 
+		delete from productos where idproducto = @idproducto
+		set @respuesta = 1 
 	end
-
 end
 go
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.header = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -39,7 +40,6 @@
             this.menumantenedor = new FontAwesome.Sharp.IconMenuItem();
             this.submenuCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuProductos = new System.Windows.Forms.ToolStripMenuItem();
-            this.submenuNegocio = new System.Windows.Forms.ToolStripMenuItem();
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.submenuRVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuDetVentas = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +55,7 @@
             this.guna2ResizeBox1 = new Guna.UI2.WinForms.Guna2ResizeBox();
             this.footer = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.header.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.menu.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // header
             // 
+            this.header.BorderRadius = 10;
             this.header.Controls.Add(this.guna2ControlBox2);
             this.header.Controls.Add(this.guna2ControlBox1);
             this.header.Controls.Add(this.lblusuario);
@@ -180,8 +182,7 @@
             this.menumantenedor.AutoSize = false;
             this.menumantenedor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.submenuCategoria,
-            this.submenuProductos,
-            this.submenuNegocio});
+            this.submenuProductos});
             this.menumantenedor.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menumantenedor.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
             this.menumantenedor.IconColor = System.Drawing.Color.Black;
@@ -195,22 +196,16 @@
             // submenuCategoria
             // 
             this.submenuCategoria.Name = "submenuCategoria";
-            this.submenuCategoria.Size = new System.Drawing.Size(287, 34);
+            this.submenuCategoria.Size = new System.Drawing.Size(199, 34);
             this.submenuCategoria.Text = "Categoria";
             this.submenuCategoria.Click += new System.EventHandler(this.submenuCategoria_Click);
             // 
             // submenuProductos
             // 
             this.submenuProductos.Name = "submenuProductos";
-            this.submenuProductos.Size = new System.Drawing.Size(287, 34);
+            this.submenuProductos.Size = new System.Drawing.Size(199, 34);
             this.submenuProductos.Text = "Productos";
             this.submenuProductos.Click += new System.EventHandler(this.submenuProductos_Click);
-            // 
-            // submenuNegocio
-            // 
-            this.submenuNegocio.Name = "submenuNegocio";
-            this.submenuNegocio.Size = new System.Drawing.Size(287, 34);
-            this.submenuNegocio.Text = "Datos del Negocio";
             // 
             // menuventas
             // 
@@ -343,6 +338,7 @@
             // 
             // panelEscritorio
             // 
+            this.panelEscritorio.BackColor = System.Drawing.Color.Transparent;
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(333, 49);
             this.panelEscritorio.MinimumSize = new System.Drawing.Size(946, 748);
@@ -393,6 +389,14 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -402,6 +406,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.header);
             this.Controls.Add(this.footer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
@@ -429,7 +434,6 @@
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
         private System.Windows.Forms.ToolStripMenuItem submenuCategoria;
         private System.Windows.Forms.ToolStripMenuItem submenuProductos;
-        private System.Windows.Forms.ToolStripMenuItem submenuNegocio;
         private FontAwesome.Sharp.IconMenuItem menuventas;
         private System.Windows.Forms.ToolStripMenuItem submenuRVentas;
         private System.Windows.Forms.ToolStripMenuItem submenuDetVentas;
@@ -444,5 +448,6 @@
         private Guna.UI2.WinForms.Guna2ResizeBox guna2ResizeBox1;
         private Guna.UI2.WinForms.Guna2Panel footer;
         private FontAwesome.Sharp.IconButton btnSalir;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

@@ -119,6 +119,9 @@
     <Compile Include="frmRegistroCompras.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRegistroCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRegistroCompras.Designer.cs">
       <DependentUpon>frmRegistroCompras.cs</DependentUpon>
     </Compile>
@@ -184,9 +187,6 @@
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistroCompras.resx">
-      <DependentUpon>frmRegistroCompras.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmRegitroVentas.resx">
       <DependentUpon>frmRegitroVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +211,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

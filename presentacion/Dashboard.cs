@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace presentacion
@@ -18,17 +19,11 @@ namespace presentacion
     {
         private static Usuarios usuarioActual;
         private static IconMenuItem MenuActivo = null;
+
         private static Form FormularioActivo = null;
         public Dashboard(Usuarios objusuario = null)
         {
-            /**
-            if (objusuario == null) usuarioActual = new Usuarios()
-            {
-                nombreusuario = ""
-            }**/
-
             usuarioActual = objusuario;
-
             InitializeComponent();
         }
 
@@ -64,7 +59,7 @@ namespace presentacion
             {
                 MenuActivo.BackColor = Color.White;
             }
-            menu.BackColor = Color.FromArgb(87,151, 255);
+            menu.BackColor = Color.FromArgb(207, 226, 255);
             MenuActivo = menu;
 
             if (FormularioActivo != null)
@@ -108,7 +103,7 @@ namespace presentacion
 
         private void submenuRCompras_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmRegistroCompras());
+            //AbrirFormulario(menucompras, new frmRegistroCompras());
         }
 
         private void submenuDetCompra_Click(object sender, EventArgs e)

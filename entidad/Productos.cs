@@ -13,10 +13,11 @@ namespace entidad
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public Categorias oCategorias { get; set; }
-        public int stock { get; set; }
-        public decimal preciocompra { get; set; }
-        public decimal precioventa { get; set; }
         public Tallas oTallas { get; set; }
+        public int stock { get; set; }
+        public string colores { get; set; }
+        //public decimal preciocompra { get; set; }
+        public decimal precioventa { get; set; }
         public bool estado { get; set; }
         public string fecharegistro { get; set; }
     }

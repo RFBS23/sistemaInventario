@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.imagenlogin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.btnlogin = new Guna.UI2.WinForms.Guna2Button();
@@ -39,6 +39,7 @@
             this.txtnombreusuario = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cerrarlogin = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imagenlogin)).BeginInit();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
@@ -79,13 +80,14 @@
             // 
             this.btnlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnlogin.BorderRadius = 15;
+            this.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnlogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnlogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnlogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnlogin.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Location = new System.Drawing.Point(142, 498);
+            this.btnlogin.Location = new System.Drawing.Point(154, 475);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(284, 60);
             this.btnlogin.TabIndex = 12;
@@ -96,7 +98,7 @@
             // 
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 327);
+            this.label3.Location = new System.Drawing.Point(137, 307);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(317, 38);
             this.label3.TabIndex = 11;
@@ -107,9 +109,9 @@
             // 
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 184);
+            this.label2.Location = new System.Drawing.Point(136, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(373, 45);
+            this.label2.Size = new System.Drawing.Size(373, 27);
             this.label2.TabIndex = 10;
             this.label2.Text = "Nombre de Usuario";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,13 +120,13 @@
             // 
             this.txtclave.BackColor = System.Drawing.SystemColors.Window;
             this.txtclave.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtclave.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtclave.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(255)))), ((int)(((byte)(82)))));
             this.txtclave.BorderRadius = 10;
             this.txtclave.BorderSize = 1;
             this.txtclave.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtclave.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtclave.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtclave.Location = new System.Drawing.Point(142, 369);
+            this.txtclave.Location = new System.Drawing.Point(143, 353);
             this.txtclave.Margin = new System.Windows.Forms.Padding(4);
             this.txtclave.Multiline = false;
             this.txtclave.Name = "txtclave";
@@ -132,7 +134,7 @@
             this.txtclave.PasswordChar = true;
             this.txtclave.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtclave.PlaceholderText = "contraseña";
-            this.txtclave.Size = new System.Drawing.Size(283, 52);
+            this.txtclave.Size = new System.Drawing.Size(283, 41);
             this.txtclave.TabIndex = 9;
             this.txtclave.Texts = "";
             this.txtclave.UnderlinedStyle = false;
@@ -141,13 +143,13 @@
             // 
             this.txtnombreusuario.BackColor = System.Drawing.SystemColors.Window;
             this.txtnombreusuario.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtnombreusuario.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtnombreusuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(255)))), ((int)(((byte)(82)))));
             this.txtnombreusuario.BorderRadius = 10;
             this.txtnombreusuario.BorderSize = 1;
             this.txtnombreusuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnombreusuario.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombreusuario.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombreusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtnombreusuario.Location = new System.Drawing.Point(142, 233);
+            this.txtnombreusuario.Location = new System.Drawing.Point(143, 227);
             this.txtnombreusuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombreusuario.Multiline = false;
             this.txtnombreusuario.Name = "txtnombreusuario";
@@ -155,7 +157,7 @@
             this.txtnombreusuario.PasswordChar = false;
             this.txtnombreusuario.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtnombreusuario.PlaceholderText = "nombre usuario";
-            this.txtnombreusuario.Size = new System.Drawing.Size(283, 52);
+            this.txtnombreusuario.Size = new System.Drawing.Size(283, 46);
             this.txtnombreusuario.TabIndex = 8;
             this.txtnombreusuario.Texts = "";
             this.txtnombreusuario.UnderlinedStyle = false;
@@ -186,6 +188,13 @@
             this.cerrarlogin.Size = new System.Drawing.Size(48, 34);
             this.cerrarlogin.TabIndex = 6;
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,7 +213,6 @@
         }
 
         #endregion
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Guna.UI2.WinForms.Guna2PictureBox imagenlogin;
         private Guna.UI2.WinForms.Guna2Panel panelLogin;
         private Guna.UI2.WinForms.Guna2ControlBox cerrarlogin;
@@ -214,5 +222,6 @@
         private System.Windows.Forms.Label label2;
         private RJCodeAdvance.RJControls.RJTextBox txtclave;
         private Guna.UI2.WinForms.Guna2Button btnlogin;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

@@ -38,7 +38,7 @@ namespace presentacion
             List<Categorias> lista = new N_Categorias().Listar();
             foreach (Categorias item in lista)
             {
-                dgcategorias.Rows.Add(new object[] { "", item.idcategoria, item.nombrecategoria });
+                dgcategorias.Rows.Add(new object[] { "", item.idcategoria, item.nombrecategoria, item.fecharegistro });
             }
             /*fin mostrar categorias*/
         }

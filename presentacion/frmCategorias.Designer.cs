@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,6 +54,8 @@
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrecategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecharegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -87,9 +90,9 @@
             this.btnlimpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(164)))), ((int)(((byte)(225)))));
             this.btnlimpiar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnlimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiar.Location = new System.Drawing.Point(186, 312);
+            this.btnlimpiar.Location = new System.Drawing.Point(200, 268);
             this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(186, 45);
+            this.btnlimpiar.Size = new System.Drawing.Size(195, 45);
             this.btnlimpiar.TabIndex = 23;
             this.btnlimpiar.Text = "Lim. Form";
             this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
@@ -105,9 +108,9 @@
             this.btneliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.btneliminar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(30, 312);
+            this.btneliminar.Location = new System.Drawing.Point(12, 268);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(150, 45);
+            this.btneliminar.Size = new System.Drawing.Size(182, 45);
             this.btneliminar.TabIndex = 22;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
@@ -123,9 +126,9 @@
             this.btnguardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(178)))), ((int)(((byte)(56)))));
             this.btnguardar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Location = new System.Drawing.Point(30, 262);
+            this.btnguardar.Location = new System.Drawing.Point(12, 193);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(342, 45);
+            this.btnguardar.Size = new System.Drawing.Size(383, 52);
             this.btnguardar.TabIndex = 21;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
@@ -142,13 +145,13 @@
             this.txtid.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtid.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtid.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtid.Location = new System.Drawing.Point(287, 88);
+            this.txtid.Location = new System.Drawing.Point(342, 49);
             this.txtid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtid.Name = "txtid";
             this.txtid.PasswordChar = '\0';
             this.txtid.PlaceholderText = "";
             this.txtid.SelectedText = "";
-            this.txtid.Size = new System.Drawing.Size(30, 29);
+            this.txtid.Size = new System.Drawing.Size(38, 29);
             this.txtid.TabIndex = 20;
             this.txtid.Visible = false;
             // 
@@ -164,7 +167,7 @@
             this.txtindice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtindice.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtindice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtindice.Location = new System.Drawing.Point(238, 88);
+            this.txtindice.Location = new System.Drawing.Point(293, 49);
             this.txtindice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtindice.Name = "txtindice";
             this.txtindice.PasswordChar = '\0';
@@ -179,7 +182,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 145);
+            this.label2.Location = new System.Drawing.Point(13, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 31);
             this.label2.TabIndex = 3;
@@ -187,7 +190,6 @@
             // 
             // txtnombrecatecoria
             // 
-            this.txtnombrecatecoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtnombrecatecoria.BorderRadius = 10;
             this.txtnombrecatecoria.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtnombrecatecoria.DefaultText = "";
@@ -198,7 +200,7 @@
             this.txtnombrecatecoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnombrecatecoria.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtnombrecatecoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombrecatecoria.Location = new System.Drawing.Point(12, 180);
+            this.txtnombrecatecoria.Location = new System.Drawing.Point(12, 121);
             this.txtnombrecatecoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtnombrecatecoria.Name = "txtnombrecatecoria";
             this.txtnombrecatecoria.PasswordChar = '\0';
@@ -228,7 +230,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(418, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(940, 99);
+            this.guna2Panel2.Size = new System.Drawing.Size(940, 91);
             this.guna2Panel2.TabIndex = 1;
             // 
             // btnbuscar
@@ -252,7 +254,7 @@
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtbusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbusqueda.BorderRadius = 10;
             this.txtbusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbusqueda.DefaultText = "";
@@ -263,18 +265,18 @@
             this.txtbusqueda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbusqueda.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             this.txtbusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbusqueda.Location = new System.Drawing.Point(647, 30);
+            this.txtbusqueda.Location = new System.Drawing.Point(647, 35);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.PasswordChar = '\0';
             this.txtbusqueda.PlaceholderText = "";
             this.txtbusqueda.SelectedText = "";
-            this.txtbusqueda.Size = new System.Drawing.Size(222, 51);
+            this.txtbusqueda.Size = new System.Drawing.Size(222, 42);
             this.txtbusqueda.TabIndex = 13;
             // 
             // listbuscar
             // 
-            this.listbuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.listbuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listbuscar.BackColor = System.Drawing.Color.Transparent;
             this.listbuscar.BorderRadius = 10;
             this.listbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -292,11 +294,11 @@
             // 
             // guna2HtmlLabel3
             // 
-            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2HtmlLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(245, 48);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(247, 43);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(155, 28);
             this.guna2HtmlLabel3.TabIndex = 10;
@@ -309,7 +311,7 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("MesloLGL NF", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(8, 4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(337, 38);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(424, 37);
             this.guna2HtmlLabel2.TabIndex = 9;
             this.guna2HtmlLabel2.Text = "Listado de Categorias: ";
             // 
@@ -317,9 +319,9 @@
             // 
             this.guna2Panel3.Controls.Add(this.dgcategorias);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(418, 99);
+            this.guna2Panel3.Location = new System.Drawing.Point(418, 91);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(940, 654);
+            this.guna2Panel3.Size = new System.Drawing.Size(940, 662);
             this.guna2Panel3.TabIndex = 2;
             // 
             // dgcategorias
@@ -327,7 +329,9 @@
             this.dgcategorias.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             this.dgcategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgcategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgcategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgcategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgcategorias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -343,7 +347,8 @@
             this.dgcategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
             this.id,
-            this.nombrecategoria});
+            this.nombrecategoria,
+            this.fecharegistro});
             this.dgcategorias.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
@@ -370,7 +375,7 @@
             this.dgcategorias.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgcategorias.RowTemplate.Height = 24;
             this.dgcategorias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgcategorias.Size = new System.Drawing.Size(940, 654);
+            this.dgcategorias.Size = new System.Drawing.Size(940, 662);
             this.dgcategorias.TabIndex = 6;
             this.dgcategorias.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.dgcategorias.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -409,11 +414,11 @@
             // 
             // id
             // 
-            this.id.HeaderText = "idusuario";
+            this.id.HeaderText = "idcategoria";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.Visible = false;
-            this.id.Width = 129;
+            this.id.Width = 149;
             // 
             // nombrecategoria
             // 
@@ -424,6 +429,21 @@
             this.nombrecategoria.Name = "nombrecategoria";
             this.nombrecategoria.Width = 250;
             // 
+            // fecharegistro
+            // 
+            this.fecharegistro.HeaderText = "Fecha Registro";
+            this.fecharegistro.MinimumWidth = 6;
+            this.fecharegistro.Name = "fecharegistro";
+            this.fecharegistro.Width = 179;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // frmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,6 +452,7 @@
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCategorias";
             this.Text = "frmCategorias";
             this.Load += new System.EventHandler(this.frmCategorias_Load);
@@ -463,8 +484,10 @@
         private Guna.UI2.WinForms.Guna2ComboBox listbuscar;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrecategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecharegistro;
     }
 }

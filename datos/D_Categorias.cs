@@ -20,7 +20,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select idcategoria, nombrecategoria from categorias");
+                    query.AppendLine("select idcategoria, nombrecategoria, fecharegistro from categorias");
                     
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -33,7 +33,8 @@ namespace datos
                             lista.Add(new Categorias()
                             {
                                 idcategoria = Convert.ToInt32(dr["idcategoria"]),
-                                nombrecategoria = dr["nombrecategoria"].ToString()
+                                nombrecategoria = dr["nombrecategoria"].ToString(),
+                                fecharegistro = dr["fecharegistro"].ToString()
                             });
                         }
                     }
