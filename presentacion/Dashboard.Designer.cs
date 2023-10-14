@@ -196,14 +196,14 @@
             // submenuCategoria
             // 
             this.submenuCategoria.Name = "submenuCategoria";
-            this.submenuCategoria.Size = new System.Drawing.Size(199, 34);
+            this.submenuCategoria.Size = new System.Drawing.Size(224, 34);
             this.submenuCategoria.Text = "Categoria";
             this.submenuCategoria.Click += new System.EventHandler(this.submenuCategoria_Click);
             // 
             // submenuProductos
             // 
             this.submenuProductos.Name = "submenuProductos";
-            this.submenuProductos.Size = new System.Drawing.Size(199, 34);
+            this.submenuProductos.Size = new System.Drawing.Size(224, 34);
             this.submenuProductos.Text = "Productos";
             this.submenuProductos.Click += new System.EventHandler(this.submenuProductos_Click);
             // 
@@ -221,20 +221,20 @@
             this.menuventas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuventas.Name = "menuventas";
             this.menuventas.Size = new System.Drawing.Size(240, 70);
-            this.menuventas.Text = "Ventas";
+            this.menuventas.Text = "Prod Salidas";
             // 
             // submenuRVentas
             // 
             this.submenuRVentas.Name = "submenuRVentas";
-            this.submenuRVentas.Size = new System.Drawing.Size(298, 34);
-            this.submenuRVentas.Text = "Registrar Ventas";
+            this.submenuRVentas.Size = new System.Drawing.Size(331, 34);
+            this.submenuRVentas.Text = "Registrar Salida Prod";
             this.submenuRVentas.Click += new System.EventHandler(this.submenuRVentas_Click);
             // 
             // submenuDetVentas
             // 
             this.submenuDetVentas.Name = "submenuDetVentas";
-            this.submenuDetVentas.Size = new System.Drawing.Size(298, 34);
-            this.submenuDetVentas.Text = "Detalles de Ventas";
+            this.submenuDetVentas.Size = new System.Drawing.Size(331, 34);
+            this.submenuDetVentas.Text = "Detalles de Salidas";
             this.submenuDetVentas.Click += new System.EventHandler(this.submenuDetVentas_Click);
             // 
             // menucompras
@@ -251,20 +251,20 @@
             this.menucompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menucompras.Name = "menucompras";
             this.menucompras.Size = new System.Drawing.Size(240, 70);
-            this.menucompras.Text = "Compras";
+            this.menucompras.Text = "Entradas Prod";
             // 
             // submenuRCompras
             // 
             this.submenuRCompras.Name = "submenuRCompras";
-            this.submenuRCompras.Size = new System.Drawing.Size(298, 34);
-            this.submenuRCompras.Text = "Registrar Compra";
+            this.submenuRCompras.Size = new System.Drawing.Size(342, 34);
+            this.submenuRCompras.Text = "Registrar entrada Prod";
             this.submenuRCompras.Click += new System.EventHandler(this.submenuRCompras_Click);
             // 
             // submenuDetCompra
             // 
             this.submenuDetCompra.Name = "submenuDetCompra";
-            this.submenuDetCompra.Size = new System.Drawing.Size(298, 34);
-            this.submenuDetCompra.Text = "Detalle de Compras";
+            this.submenuDetCompra.Size = new System.Drawing.Size(342, 34);
+            this.submenuDetCompra.Text = "Detalle de Entrada";
             this.submenuDetCompra.Click += new System.EventHandler(this.submenuDetCompra_Click);
             // 
             // menuclientes
@@ -341,7 +341,6 @@
             this.panelEscritorio.BackColor = System.Drawing.Color.Transparent;
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(333, 49);
-            this.panelEscritorio.MinimumSize = new System.Drawing.Size(946, 748);
             this.panelEscritorio.Name = "panelEscritorio";
             this.panelEscritorio.Size = new System.Drawing.Size(1376, 800);
             this.panelEscritorio.TabIndex = 7;
@@ -429,6 +428,10 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ResizeBox guna2ResizeBox1;
+        private Guna.UI2.WinForms.Guna2Panel footer;
+        private FontAwesome.Sharp.IconButton btnSalir;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.MenuStrip menu;
         private FontAwesome.Sharp.IconMenuItem menuusuarios;
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
@@ -445,9 +448,5 @@
         private FontAwesome.Sharp.IconMenuItem menureportes;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private FontAwesome.Sharp.IconMenuItem menunegocio;
-        private Guna.UI2.WinForms.Guna2ResizeBox guna2ResizeBox1;
-        private Guna.UI2.WinForms.Guna2Panel footer;
-        private FontAwesome.Sharp.IconButton btnSalir;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

@@ -1,0 +1,2 @@
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Release\datos.csproj.AssemblyReference.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Release\datos.csproj.CoreCompileInputs.cache

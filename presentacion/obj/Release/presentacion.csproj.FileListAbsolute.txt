@@ -1,0 +1,17 @@
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.csproj.AssemblyReference.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.Dashboard.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmCategorias.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmClientes.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmDetallesCompras.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmDetallesVentas.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmNegocio.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmProductos.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmProveedores.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmRegitroVentas.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmReporteCompras.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmReporteVentas.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmUsuarios.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.login.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.Properties.Resources.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.csproj.GenerateResource.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.csproj.CoreCompileInputs.cache

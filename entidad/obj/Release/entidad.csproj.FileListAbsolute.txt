@@ -1,0 +1,6 @@
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\bin\Release\entidad.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\bin\Release\entidad.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Release\entidad.csproj.AssemblyReference.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Release\entidad.csproj.CoreCompileInputs.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Release\entidad.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Release\entidad.pdb

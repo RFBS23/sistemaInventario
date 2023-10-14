@@ -18,6 +18,7 @@ namespace presentacion
         public login()
         {
             InitializeComponent();
+            txtnombreusuario.Select();
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
@@ -35,22 +36,27 @@ namespace presentacion
             }
         }
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void panelLogin_MouseDown(object sender, MouseEventArgs e)
+        private void txtclave_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Usuarios ousuario = new N_Usuarios().Listar().Where(u => u.nombreusuario == txtnombreusuario.Texts && u.clave == txtclave.Texts).FirstOrDefault();
+                if (ousuario != null)
+                {
+                    Dashboard form = new Dashboard(ousuario);
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Error al Iniciar Sesion", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
-        private void imagenlogin_MouseDown(object sender, MouseEventArgs e)
+        private void login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            Application.Exit();
         }
-
     }
 }

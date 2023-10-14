@@ -31,7 +31,7 @@ create table proveedores(
 	correo varchar(50),
 	telefono varchar(50),
 	estado bit,
-	fecharegistro datetime default getdate()
+	fecharegistro date default getdate()
 )
 go
 
@@ -43,7 +43,7 @@ create table clientes(
 	correo varchar(50),
 	telefono char(9),
 	estado bit,
-	fecharegistro datetime default getdate()
+	fecharegistro date default getdate()
 )
 go
 select * from clientes
@@ -56,22 +56,23 @@ create table usuarios(
 	correo varchar(50),
 	clave varchar(50),
 	idrol int references rol(idrol),
+	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
-alter table usuarios add estado bit not null default 1;
 go
+insert into usuarios (documento, nombreusuario, correo, clave, idrol) values
+	('12345678', 'pepe', 'pepe@hotmail.pe', '12345', 1),
+	('12345688', 'pedro', 'pedro@gmail.com', '12345', 2)
 select * from usuarios
 go
 
 create table categorias(
 	idcategoria int primary key identity,
 	nombrecategoria varchar(100),
-	estado bit,
+	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
 go
-alter table categorias drop column estado;
-alter table categorias add estado bit not null default 1;
 select idcategoria, nombrecategoria, fecharegistro from categorias
 go
 insert into categorias (nombrecategoria) values
@@ -79,31 +80,19 @@ insert into categorias (nombrecategoria) values
 select * from categorias
 go
 
-create table tallas(
-	idtalla int primary key identity,
-	tipo_prenda VARCHAR(50) not null,
-	nombretalla varchar(20) not null,
-	estado bit not null default 1
-)
-go
-select idtalla, nombretalla, tipo_prenda from tallas;
-
-insert into tallas (nombretalla, tipo_prenda) values 
-	('s', 'algodon'),
-	('L', 'pe'),
-	('M', 'so');
-select * from tallas
-go
-
 create table productos(
 	idproducto int primary key identity,
-	fotos varbinary(max) NULL,
 	codigo varchar(50),
 	nombre varchar(50),
 	descripcion varchar(50),
 	idcategoria int references categorias(idcategoria),
-	idtalla int references tallas (idtalla),
-	stock int not null default 0,
+	tallaxs int not null default 0,
+	tallas int not null default 0,
+	tallam int not null default 0,
+	tallal int not null default 0,
+	tallaxl int not null default 0,
+	tallaxxl int not null default 0,
+	total int default 0,
 	colores varchar(40),
 	preciocompra decimal(10,2) default 0,
 	precioventa decimal(10,2) default 0,
@@ -111,16 +100,18 @@ create table productos(
 	fecharegistro datetime default getdate()
 )
 go
-insert into productos(codigo, nombre, descripcion, idcategoria, stock, preciocompra, precioventa, colores, idtalla, fotos) values
-('11322131', 'prueba', 'hola mundo', '1', '12', '15', '16', 'Amarillo', 1, null)
+-- alter table productos alter column stock varchar(100) not null default 0;
+insert into productos(codigo, nombre, descripcion, idcategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa) values
+('113221466', 'prueba3', 'hola mundgg', 1, '10', '12', '50', '40', '70', '40', 'amarillo', '150'),
+('113221896', 'prueba2', 'hola mundo', 1, '10', '1', '5', '0', '7', '30', 'azul', '69');
 select * from productos
 go
 
-select idproducto, fotos, codigo, nombre, p.descripcion,c.idcategoria, c.nombrecategoria, t.idtalla, t.nombretalla, t.tipo_prenda, stock, precioventa from productos p
+select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa from productos p
 inner join categorias c on c.idcategoria = p.idcategoria
-inner join tallas t on t.idtalla = p.idtalla
 go
 
+/**/
 create table compras(
 	idcompra int primary key identity,
 	idusuario int references usuarios(idusuario),
@@ -145,6 +136,7 @@ create table detalle_compra(
 	fecharegistro datetime default getdate()
 )
 go
+
 
 create table ventas(
 	idventa int primary key identity,

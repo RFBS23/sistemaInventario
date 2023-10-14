@@ -498,15 +498,17 @@
             // dgusuarios
             // 
             this.dgusuarios.AllowUserToAddRows = false;
+            this.dgusuarios.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.dgusuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(223)))), ((int)(((byte)(93)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgusuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -522,7 +524,7 @@
             this.idrol,
             this.rol});
             this.dgusuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
@@ -534,7 +536,8 @@
             this.dgusuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
             this.dgusuarios.Location = new System.Drawing.Point(418, 93);
             this.dgusuarios.Name = "dgusuarios";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgusuarios.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -544,6 +547,7 @@
             this.dgusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgusuarios.RowHeadersVisible = false;
             this.dgusuarios.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgusuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgusuarios.RowTemplate.Height = 24;
@@ -564,7 +568,7 @@
             this.dgusuarios.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgusuarios.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgusuarios.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgusuarios.ThemeStyle.ReadOnly = false;
+            this.dgusuarios.ThemeStyle.ReadOnly = true;
             this.dgusuarios.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             this.dgusuarios.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgusuarios.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -582,6 +586,7 @@
             this.btnseleccionar.HeaderText = "Seleccionar";
             this.btnseleccionar.MinimumWidth = 6;
             this.btnseleccionar.Name = "btnseleccionar";
+            this.btnseleccionar.ReadOnly = true;
             this.btnseleccionar.Text = "";
             this.btnseleccionar.Width = 150;
             // 
@@ -590,6 +595,7 @@
             this.id.HeaderText = "idusuario";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Visible = false;
             this.id.Width = 129;
             // 
@@ -600,6 +606,7 @@
             this.documento.HeaderText = "DNI / CDE";
             this.documento.MinimumWidth = 6;
             this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
             this.documento.Width = 150;
             // 
             // nombreusuario
@@ -609,6 +616,7 @@
             this.nombreusuario.HeaderText = "nombreusuario";
             this.nombreusuario.MinimumWidth = 6;
             this.nombreusuario.Name = "nombreusuario";
+            this.nombreusuario.ReadOnly = true;
             this.nombreusuario.Width = 170;
             // 
             // correo
@@ -618,6 +626,7 @@
             this.correo.HeaderText = "correo";
             this.correo.MinimumWidth = 6;
             this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
             this.correo.Width = 240;
             // 
             // clave
@@ -627,6 +636,7 @@
             this.clave.HeaderText = "clave";
             this.clave.MinimumWidth = 6;
             this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
             this.clave.Width = 130;
             // 
             // idrol
@@ -634,6 +644,7 @@
             this.idrol.HeaderText = "idrol";
             this.idrol.MinimumWidth = 6;
             this.idrol.Name = "idrol";
+            this.idrol.ReadOnly = true;
             this.idrol.Visible = false;
             this.idrol.Width = 89;
             // 
@@ -644,6 +655,7 @@
             this.rol.HeaderText = "Nivel_Acceso";
             this.rol.MinimumWidth = 6;
             this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
             this.rol.Width = 170;
             // 
             // guna2BorderlessForm1

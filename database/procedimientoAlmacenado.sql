@@ -67,9 +67,11 @@ go
 
 declare @respuesta int
 declare @mensaje varchar(100)
-exec spu_editar_usuario 4,'12349958', 'josue', 'josue@gmail.com', '12345', 1, @respuesta output, @mensaje output
+exec spu_editar_usuario 1,'12349958', 'josue', 'josue@gmail.com', '12345', 1, @respuesta output, @mensaje output
 select @respuesta
 select @mensaje
+go
+select * from usuarios
 go
 
 create proc spu_eliminar_usuario(
@@ -169,46 +171,18 @@ begin
 end
 go
 
---  procedimineto para tallas
-create PROCEDURE ListarTallasComoCampos
-AS
-BEGIN
-    DECLARE @DynamicPivotQuery AS NVARCHAR(MAX)
-    DECLARE @ColumnNames AS NVARCHAR(MAX)
-
-    -- Obtener una lista de todas las tallas únicas
-    SET @ColumnNames = STUFF((
-            SELECT DISTINCT ', [' + nombretalla + ']'
-            FROM tallas
-            FOR XML PATH('')), 1, 2, '')
-
-    -- Construir la consulta dinámica para pivotar las tallas como campos
-    SET @DynamicPivotQuery = 
-        N'SELECT tipo_prenda, ' + @ColumnNames + '
-          FROM (
-            SELECT tipo_prenda, nombretalla
-            FROM tallas
-          ) AS SourceTable
-          PIVOT (
-            COUNT(nombretalla)
-            FOR nombretalla IN (' + @ColumnNames + ')
-          ) AS PivotTable'
-
-    -- Ejecutar la consulta dinámica
-    EXEC sp_executesql @DynamicPivotQuery
-END;
-EXEC ListarTallasComoCampos;
-go
--- fin rpocedimiento tallas
-
-/* ---------- PROCEDIMIENTOS PARA PRODUCTO -----------------*/
+/*procedimineto de productos*/
 create procedure spu_registrar_productos(
 	@codigo varchar(50),
 	@nombre varchar(50),
 	@descripcion varchar(50),
 	@idcategoria int,
-	@idtalla int,
-	@stock int,
+	@tallaxs int,
+	@tallas int,
+	@tallam int,
+	@tallal int,
+	@tallaxl int,	
+	@tallaxxl int,
 	@colores varchar(40),
 	@precioventa decimal(10,2),
 	@resultado int output,
@@ -216,14 +190,14 @@ create procedure spu_registrar_productos(
 )as
 begin
 	set @resultado = 0
+
 	if not exists (select * from productos where codigo = @codigo)
 	begin
-		insert into productos(codigo, nombre, descripcion, idcategoria, idtalla, stock, colores, precioventa) values
-		(@codigo, @nombre, @descripcion, @idcategoria, @idtalla, @stock, @colores, @precioventa)
+		insert into productos(codigo, nombre, descripcion, idcategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa) values
+		(@codigo, @nombre, @descripcion, @idcategoria, @tallaxs, @tallas, @tallam, @tallal, @tallaxl, @tallaxxl, @colores, @precioventa)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	else
-		set @mensaje = 'El codigo no puede repetirse' 
+	set @mensaje = 'El codigo no puede repetirse' 
 end
 go
 
@@ -233,8 +207,12 @@ create procedure spu_editar_productos(
 	@nombre varchar(50),
 	@descripcion varchar(50),
 	@idcategoria int,
-	@idtalla int,
-	@stock int,
+	@tallaxs int,
+	@tallas int,
+	@tallam int,
+	@tallal int,
+	@tallaxl int,	
+	@tallaxxl int,
 	@colores varchar(40),
 	@precioventa decimal(10,2),
 	@resultado int output,
@@ -249,8 +227,12 @@ begin
 		nombre = @nombre,
 		descripcion = @descripcion,
 		idcategoria = @idcategoria,
-		idtalla = @idtalla,
-		stock = @stock,
+		tallaxs =@tallaxs,
+		tallas = @tallas,
+		tallam = @tallam,
+		tallal = @tallal,
+		tallaxl = @tallaxl,	
+		tallaxxl = @tallaxxl,
 		colores = @colores,
 		precioventa = @precioventa
 		where idproducto = @idproducto
@@ -288,8 +270,8 @@ begin
 end
 go
 
-/* ---------- PROCEDIMIENTOS PARA CLIENTE -----------------*/
 
+/* ---------- PROCEDIMIENTOS PARA CLIENTE -----------------*/
 create PROC sp_RegistrarCliente(
 @Documento varchar(50),
 @NombreCompleto varchar(50),

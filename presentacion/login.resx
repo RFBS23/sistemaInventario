@@ -121,7 +121,7 @@
   <data name="imagenlogin.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAv0AAAJCCAIAAADcOO/jAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAYQpJREFUeF7t3Yd701bj9vH3L/pBB11PS9l7r4RN2HuFvffeGwqEDWUWwih7Q4Gw
+        DAAACwwBP0AiyAAAYQpJREFUeF7t3Yd701bj9vH3L/pBB11PS9l7r4RN2HuFvffeGwqEDWUWwih7Q4Gw
         R6FAIUAIIXs6iWP7PdSnrjlJHA/Jlqzv57qv53oSa1gije7Iks7/cwEAAFgDvQcAAFgFvQcAAFgFvQcA
         AFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcA
         AFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcA
@@ -541,7 +541,7 @@
   <data name="imagenlogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABAkAAALICAIAAACSAT79AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAcLxJREFUeF7t3YebE2Xf//3nH/rdLL0jvfciIKCCAjZERcCOIIKgiIL0LiAoXYSV
+        DAAACwwBP0AiyAAAcLxJREFUeF7t3YebE2Xf//3nH/rdLL0jvfciIKCCAjZERcCOIIKgiIL0LiAoXYSV
         3qWDgEiRlc6ybEs2yWaz2STPhJxywRdYsptk5pyZ9+v4HPdx3bhkzkw2M98PKfP/xQAAAAAgFqMbAAAA
         AIijGwAAAACIoxsAAAAAiKMbAAAAAIijGwAAAACIoxsAAAAAiKMbAAAAAIijGwAAAACIoxsAAAAAiKMb
         AAAAAIijGwAAAACIoxsAAAAAiKMbAAAAAIijGwAAAACIoxsAAAAAiKMbAAAAAIijGwAAAACIoxsAAAAA
@@ -1025,7 +1025,4 @@
         AEAc3QAAAABALBaL/f/rbmuuVq8YrAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 17</value>
-  </metadata>
 </root>

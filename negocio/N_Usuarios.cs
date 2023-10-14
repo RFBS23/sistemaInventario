@@ -44,6 +44,7 @@ namespace negocio
         public bool Editar (Usuarios obj, out string Mensaje)
         {
             Mensaje = string.Empty;
+            
             if (obj.documento == "")
             {
                 Mensaje += "Es necesario el documento de identificacion del usuario\n";

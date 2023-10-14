@@ -6,10 +6,13 @@ insert into rol (nombrerol) values
 select * from rol
 go
 
-insert into usuarios (documento, nombreusuario, correo, clave, idrol, estado) values
-	('12345678', 'pepe', 'pepe@hotmail.pe', '12345', '1', '1'),
-	('12345688', 'pedro', 'pedro@gmail.com', '12345', '2', '1')
+insert into usuarios (documento, nombreusuario, correo, clave, idrol) values
+	('12345678', 'pepe', 'pepe@hotmail.pe', '12345', 1),
+	('12345688', 'pedro', 'pedro@gmail.com', '12345', 2)
 select * from usuarios
+go
+
+select * from categorias
 go
 
 insert into permisos (idrol,nombremenu) values
@@ -45,7 +48,6 @@ go
 
 select * from negocios
 go
-
 
 select u.idusuario, u.documento, u.nombreusuario, u.correo, u.clave, u.estado, r.idrol, r.nombrerol from usuarios u
 inner join rol r on r.idrol = u.idrol
