@@ -38,7 +38,7 @@ namespace presentacion
             List<Categorias> lista = new N_Categorias().Listar();
             foreach (Categorias item in lista)
             {
-                dgcategorias.Rows.Add(new object[] { "", item.idcategoria, item.nombrecategoria, item.fecharegistro });
+                dgcategorias.Rows.Add(new object[] { "", item.idcategoria, item.nombrecategoria });
             }
             /*fin mostrar categorias*/
         }
@@ -166,6 +166,21 @@ namespace presentacion
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgcategorias.Rows[indice].Cells["id"].Value.ToString();
                     txtnombrecatecoria.Text = dgcategorias.Rows[indice].Cells["nombrecategoria"].Value.ToString();
+                }
+            }
+        }
+
+        private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
+            if (dgcategorias.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgcategorias.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
                 }
             }
         }

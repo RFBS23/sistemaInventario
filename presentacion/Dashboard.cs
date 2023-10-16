@@ -79,56 +79,19 @@ namespace presentacion
         private void menuusuarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
+            submenu.Hide();
         }
 
         private void submenuCategoria_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menumantenedor, new frmCategorias());
+            submenu.Hide();
         }
 
         private void submenuProductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menumantenedor, new frmProductos());
-        }
-
-        private void submenuRVentas_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuventas, new frmRegitroVentas());
-        }
-
-        private void submenuDetVentas_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuventas, new frmDetallesVentas());
-        }
-
-        private void submenuRCompras_Click(object sender, EventArgs e)
-        {
-            //AbrirFormulario(menucompras, new frmRegistroCompras());
-        }
-
-        private void submenuDetCompra_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menucompras, new frmDetallesCompras());
-        }
-
-        private void menuclientes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmClientes());
-        }
-
-        private void menuproveedores_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmProveedores());
-        }
-
-        private void menureportes_Click(object sender, EventArgs e)
-        {
-            // AbrirFormulario((IconMenuItem)sender, );
-        }
-
-        private void menunegocio_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmNegocio());
+            submenu.Hide();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -136,6 +99,33 @@ namespace presentacion
             Form login = new login();
             login.Show();
             this.Hide();
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void lblusuario_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            submenu.Show();
+        }
+
+        private void lblusuario_Click(object sender, EventArgs e)
+        {
+            //
         }
 
     }

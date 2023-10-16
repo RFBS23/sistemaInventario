@@ -24,7 +24,7 @@ insert into permisos (idrol,nombremenu) values
 	(1,'menuproveedores'),
 	(1,'menureportes'),
 	(1,'menuacercade'),
-	(1, 'menunegocio')
+	(1,'menunegocio')
 go
 
 insert into permisos (idrol, nombremenu) values

@@ -169,14 +169,11 @@
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.cs">
-      <DependentUpon>frmClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDetallesCompras.cs">
+    <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDetallesCompras.Designer.cs">
-      <DependentUpon>frmDetallesCompras.cs</DependentUpon>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDetallesVentas.cs">
       <SubType>Form</SubType>
@@ -187,8 +184,14 @@
     <Compile Include="frmNegocio.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNegocio.Designer.cs">
       <DependentUpon>frmNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
@@ -214,23 +217,14 @@
     <Compile Include="frmRegistroCompras.Designer.cs">
       <DependentUpon>frmRegistroCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegitroVentas.cs">
+    <Compile Include="frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegitroVentas.Designer.cs">
-      <DependentUpon>frmRegitroVentas.cs</DependentUpon>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteCompras.cs">
+    <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReporteCompras.Designer.cs">
-      <DependentUpon>frmReporteCompras.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmReporteVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReporteVentas.Designer.cs">
-      <DependentUpon>frmReporteVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -240,6 +234,12 @@
     </Compile>
     <Compile Include="frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -264,9 +264,6 @@
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDetallesCompras.resx">
-      <DependentUpon>frmDetallesCompras.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDetallesVentas.resx">
       <DependentUpon>frmDetallesVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,14 +276,8 @@
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegitroVentas.resx">
-      <DependentUpon>frmRegitroVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteCompras.resx">
-      <DependentUpon>frmReporteCompras.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteVentas.resx">
-      <DependentUpon>frmReporteVentas.cs</DependentUpon>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

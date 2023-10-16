@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panelLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -40,6 +41,7 @@
             this.cerrarlogin = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.imagenlogin = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelLogin.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenlogin)).BeginInit();
@@ -57,10 +59,10 @@
             this.panelLogin.Controls.Add(this.label1);
             this.panelLogin.Controls.Add(this.cerrarlogin);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelLogin.Location = new System.Drawing.Point(369, 0);
+            this.panelLogin.Location = new System.Drawing.Point(387, 0);
             this.panelLogin.MinimumSize = new System.Drawing.Size(493, 475);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(502, 475);
+            this.panelLogin.Size = new System.Drawing.Size(502, 522);
             this.panelLogin.TabIndex = 1;
             // 
             // guna2ControlBox1
@@ -90,7 +92,7 @@
             this.btnlogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnlogin.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Location = new System.Drawing.Point(72, 377);
+            this.btnlogin.Location = new System.Drawing.Point(72, 401);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(309, 60);
             this.btnlogin.TabIndex = 12;
@@ -207,7 +209,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(369, 475);
+            this.guna2Panel1.Size = new System.Drawing.Size(369, 522);
             this.guna2Panel1.TabIndex = 2;
             // 
             // imagenlogin
@@ -221,19 +223,27 @@
             this.imagenlogin.ImageRotate = 0F;
             this.imagenlogin.Location = new System.Drawing.Point(3, -3);
             this.imagenlogin.Name = "imagenlogin";
-            this.imagenlogin.Size = new System.Drawing.Size(360, 475);
+            this.imagenlogin.Size = new System.Drawing.Size(378, 522);
             this.imagenlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagenlogin.TabIndex = 1;
             this.imagenlogin.TabStop = false;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 475);
+            this.ClientSize = new System.Drawing.Size(889, 522);
             this.ControlBox = false;
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panelLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(889, 522);
             this.MinimizeBox = false;
@@ -261,5 +271,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox imagenlogin;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

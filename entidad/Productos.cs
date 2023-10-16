@@ -23,7 +23,6 @@ namespace entidad
         public string colores { get; set; }
         public decimal preciocompra { get; set; }
         public decimal precioventa { get; set; }
-        public bool estado { get; set; }
-        public string fecharegistro { get; set; }
+        //public byte[] imagen { get; set; }
     }
 }

@@ -48,6 +48,7 @@ namespace presentacion
                 listbuscarC.ValueMember = "Valor";
                 listbuscarC.SelectedIndex = 0;
             }
+
             /*lista de productos en la tabla*/
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
@@ -60,13 +61,17 @@ namespace presentacion
         {
             if (e.RowIndex < 0)
                 return;
+
             if (e.ColumnIndex == 0)
             {
+
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
                 var w = Properties.Resources.check1.Width;
                 var h = Properties.Resources.check1.Height;
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
                 e.Graphics.DrawImage(Properties.Resources.check1, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
@@ -94,12 +99,13 @@ namespace presentacion
                             break;
                         }
                     }
-                    txtstockxs.Text = dgproductos.Rows[indice].Cells["xs"].Value.ToString();
-                    txtstockS.Text = dgproductos.Rows[indice].Cells["s"].Value.ToString();
-                    txtstockM.Text = dgproductos.Rows[indice].Cells["m"].Value.ToString();
-                    txtstockL.Text = dgproductos.Rows[indice].Cells["l"].Value.ToString();
-                    txtstockXL.Text = dgproductos.Rows[indice].Cells["xl"].Value.ToString();
-                    txtstockXXL.Text = dgproductos.Rows[indice].Cells["xxl"].Value.ToString();
+
+                    txtstockxs.Text = dgproductos.Rows[indice].Cells["tallaxs"].Value.ToString();
+                    txtstockS.Text = dgproductos.Rows[indice].Cells["tallas"].Value.ToString();
+                    txtstockM.Text = dgproductos.Rows[indice].Cells["tallam"].Value.ToString();
+                    txtstockL.Text = dgproductos.Rows[indice].Cells["tallal"].Value.ToString();
+                    txtstockXL.Text = dgproductos.Rows[indice].Cells["tallaxl"].Value.ToString();
+                    txtstockXXL.Text = dgproductos.Rows[indice].Cells["tallaxxl"].Value.ToString();
                     txtcolores.Text = dgproductos.Rows[indice].Cells["colores"].Value.ToString();
                     txtprecioventa.Text = dgproductos.Rows[indice].Cells["precioventa"].Value.ToString();
                 }
@@ -155,6 +161,26 @@ namespace presentacion
         {
             txtindice.Text = "-1";
             txtid.Text = "0";
+            //txtcodigo.Text = "";
+            //txtnombre.Text = "";
+            //txtdescripcion.Text = "";
+            //listacategoria.SelectedIndex = 0;
+            txtstockxs.Text = "0";
+            txtstockS.Text = "0";
+            txtstockM.Text = "0";
+            txtstockL.Text = "0";
+            txtstockXL.Text = "0";
+            txtstockXXL.Text = "0";
+            txtcolores.Text = "";
+            txtprecioventa.Text = "0";
+
+            txtcodigo.Select();
+        }
+
+        private void LimpiarTodo()
+        {
+            txtindice.Text = "-1";
+            txtid.Text = "0";
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
@@ -190,7 +216,7 @@ namespace presentacion
                 tallaxl = Convert.ToInt32(txtstockXL.Text),
                 tallaxxl = Convert.ToInt32(txtstockXXL.Text),
                 colores = txtcolores.Text,
-                precioventa = Convert.ToDecimal(txtprecioventa.Text)
+                precioventa = Convert.ToDecimal(txtprecioventa.Text),
             };
             if (objproductos.idproducto == 0)
             {
@@ -200,6 +226,7 @@ namespace presentacion
                 {
                     dgproductos.Rows.Add(new object[] {"", txtid.Text, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
                         ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
+                        ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
                         txtstockxs.Text,
                         txtstockS.Text,
                         txtstockM.Text,
@@ -226,27 +253,26 @@ namespace presentacion
                     row.Cells["nombre"].Value = txtnombre.Text;
                     row.Cells["descripcion"].Value = txtdescripcion.Text;
                     row.Cells["idcategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString();
-                    row.Cells["xs"].Value = txtstockxs.Text;
-                    row.Cells["s"].Value = txtstockS.Text;
-                    row.Cells["m"].Value = txtstockM.Text;
-                    row.Cells["l"].Value = txtstockL.Text;
-                    row.Cells["xl"].Value = txtstockXL.Text;
-                    row.Cells["xxl"].Value = txtstockXXL.Text;
+                    row.Cells["tallaxs"].Value = txtstockxs.Text;
+                    row.Cells["tallas"].Value = txtstockS.Text;
+                    row.Cells["tallam"].Value = txtstockM.Text;
+                    row.Cells["tallal"].Value = txtstockL.Text;
+                    row.Cells["tallaxl"].Value = txtstockXL.Text;
+                    row.Cells["tallaxxl"].Value = txtstockXXL.Text;
                     row.Cells["colores"].Value = txtcolores.Text;
                     row.Cells["precioventa"].Value = txtprecioventa.Text;
 
-                    Limpiar();
+                    LimpiarTodo();
                 } else
                 {
                     MessageBox.Show(mensaje);
                 }
             }
-
         }
 
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            LimpiarTodo();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -270,7 +296,7 @@ namespace presentacion
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-                Limpiar();
+                LimpiarTodo();
             }
         }
 
@@ -330,7 +356,7 @@ namespace presentacion
                     try
                     {
                         XLWorkbook wb = new XLWorkbook();
-                        var hoja = wb.Worksheets.Add(dt, "Informe");
+                        var hoja = wb.Worksheets.Add(dt, "Informe de productos en stock");
                         hoja.ColumnsUsed().AdjustToContents();
                         wb.SaveAs(savefile.FileName);
                         MessageBox.Show("REPORTE GENERADO EXITOSAMENTE", "VALENT FRANCE", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -341,11 +367,6 @@ namespace presentacion
                     }
                 }
             }
-        }
-
-        private void btnpdf_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("POR EL MOMENTO NO ESTA DISPONIBLE LA DESCARGA EN PDF", "Error de Descarga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
     }

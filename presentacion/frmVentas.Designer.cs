@@ -1,6 +1,6 @@
 ﻿namespace presentacion
 {
-    partial class frmRegitroVentas
+    partial class frmVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // frmRegitroVentas
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1358, 753);
-            this.Name = "frmRegitroVentas";
-            this.Text = "frmRegitroVentas";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "frmVentas";
         }
 
         #endregion

@@ -247,5 +247,19 @@ namespace presentacion
             }
         }
 
+        private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
+            if (dgusuarios.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgusuarios.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
     }
 }

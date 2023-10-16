@@ -453,6 +453,7 @@
             this.txtbusqueda.SelectedText = "";
             this.txtbusqueda.Size = new System.Drawing.Size(222, 51);
             this.txtbusqueda.TabIndex = 8;
+            this.txtbusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbusqueda_KeyPress);
             // 
             // listbuscar
             // 
@@ -662,6 +663,7 @@
             // 
             this.guna2BorderlessForm1.BorderRadius = 20;
             this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.DarkGray;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.HasFormShadow = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;

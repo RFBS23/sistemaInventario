@@ -191,13 +191,13 @@ create procedure spu_registrar_productos(
 begin
 	set @resultado = 0
 
-	if not exists (select * from productos where codigo = @codigo)
+	-- if not exists (select * from productos where codigo = @codigo)
 	begin
 		insert into productos(codigo, nombre, descripcion, idcategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa) values
 		(@codigo, @nombre, @descripcion, @idcategoria, @tallaxs, @tallas, @tallam, @tallal, @tallaxl, @tallaxxl, @colores, @precioventa)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	set @mensaje = 'El codigo no puede repetirse' 
+	-- set @mensaje = 'El codigo no puede repetirse' 
 end
 go
 
@@ -221,7 +221,7 @@ create procedure spu_editar_productos(
 as
 begin
 	set @resultado = 1
-	if not exists (select * from productos where codigo = @Codigo and idproducto != @idproducto)
+	-- if not exists (select * from productos where codigo = @Codigo and idproducto != @idproducto)
 		update productos set
 		codigo = @codigo,
 		nombre = @nombre,
@@ -236,11 +236,13 @@ begin
 		colores = @colores,
 		precioventa = @precioventa
 		where idproducto = @idproducto
-	else
+	-- else
+	/*
 	begin
 		set @resultado = 0
 		set @mensaje = 'Ya existe un producto con el mismo codigo' 
 	end
+	*/
 end
 go
 

@@ -100,7 +100,7 @@ create table productos(
 	fecharegistro datetime default getdate()
 )
 go
--- alter table productos alter column stock varchar(100) not null default 0;
+-- alter table productos add imagen image;
 insert into productos(codigo, nombre, descripcion, idcategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa) values
 ('113221466', 'prueba3', 'hola mundgg', 1, '10', '12', '50', '40', '70', '40', 'amarillo', '150'),
 ('113221896', 'prueba2', 'hola mundo', 1, '10', '1', '5', '0', '7', '30', 'azul', '69');
@@ -111,7 +111,6 @@ select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria
 inner join categorias c on c.idcategoria = p.idcategoria
 go
 
-/**/
 create table compras(
 	idcompra int primary key identity,
 	idusuario int references usuarios(idusuario),
