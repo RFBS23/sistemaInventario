@@ -178,6 +178,9 @@
     <Compile Include="frmDetallesVentas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDetallesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDetallesVentas.Designer.cs">
       <DependentUpon>frmDetallesVentas.cs</DependentUpon>
     </Compile>
@@ -258,6 +261,9 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

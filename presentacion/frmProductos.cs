@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace presentacion
@@ -369,5 +370,134 @@ namespace presentacion
             }
         }
 
+        private void dgproductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallaxs")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.GetType() != typeof(System.DBNull))
+                    {
+                        //Stock menor a 20
+                        if (Convert.ToInt32(e.Value) >= 20)
+                        {
+                            e.CellStyle.BackColor = Color.FromArgb(129,250,123) ;
+                            e.CellStyle.ForeColor = Color.Black;
+                        }
+                        //Stock menor a 10
+                        if (Convert.ToInt32(e.Value) <= 19)
+                        {
+                            e.CellStyle.BackColor = Color.Salmon;
+                            e.CellStyle.ForeColor = Color.Red;
+                        }
+                    }
+                }
+            }
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallas")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.GetType() != typeof(System.DBNull))
+                    {
+                        //Stock menor a 20
+                        if (Convert.ToInt32(e.Value) >= 20)
+                        {
+                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                            e.CellStyle.ForeColor = Color.Black;
+                        }
+                        //Stock menor a 10
+                        if (Convert.ToInt32(e.Value) <= 19)
+                        {
+                            e.CellStyle.BackColor = Color.Salmon;
+                            e.CellStyle.ForeColor = Color.Red;
+                        }
+                    }
+                }
+            }
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallam")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.GetType() != typeof(System.DBNull))
+                    {
+                        //Stock menor a 20
+                        if (Convert.ToInt32(e.Value) >= 20)
+                        {
+                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                            e.CellStyle.ForeColor = Color.Black;
+                        }
+                        //Stock menor a 10
+                        if (Convert.ToInt32(e.Value) <= 19)
+                        {
+                            e.CellStyle.BackColor = Color.Salmon;
+                            e.CellStyle.ForeColor = Color.Red;
+                        }
+                    }
+                }
+            }
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallal")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.GetType() != typeof(System.DBNull))
+                    {
+                        //Stock menor a 20
+                        if (Convert.ToInt32(e.Value) >= 20)
+                        {
+                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                            e.CellStyle.ForeColor = Color.Black;
+                        }
+                        //Stock menor a 10
+                        if (Convert.ToInt32(e.Value) <= 19)
+                        {
+                            e.CellStyle.BackColor = Color.Salmon;
+                            e.CellStyle.ForeColor = Color.Red;
+                        }
+                    }
+                }
+            }
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallaxl")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.GetType() != typeof(System.DBNull))
+                    {
+                        //Stock menor a 20
+                        if (Convert.ToInt32(e.Value) >= 20)
+                        {
+                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                            e.CellStyle.ForeColor = Color.Black;
+                        }
+                        //Stock menor a 10
+                        if (Convert.ToInt32(e.Value) <= 19)
+                        {
+                            e.CellStyle.BackColor = Color.Salmon;
+                            e.CellStyle.ForeColor = Color.Red;
+                        }
+                    }
+                }
+            }
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallaxxl")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.GetType() != typeof(System.DBNull))
+                    {
+                        //Stock menor a 20
+                        if (Convert.ToInt32(e.Value) >= 20)
+                        {
+                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                            e.CellStyle.ForeColor = Color.Black;
+                        }
+                        //Stock menor a 10
+                        if (Convert.ToInt32(e.Value) <= 19)
+                        {
+                            e.CellStyle.BackColor = Color.Salmon;
+                            e.CellStyle.ForeColor = Color.Red;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

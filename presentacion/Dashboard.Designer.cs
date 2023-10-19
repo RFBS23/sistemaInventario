@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.header = new Guna.UI2.WinForms.Guna2Panel();
             this.imguser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -89,7 +88,6 @@
             // imguser
             // 
             this.imguser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.imguser.Image = ((System.Drawing.Image)(resources.GetObject("imguser.Image")));
             this.imguser.ImageRotate = 0F;
             this.imguser.Location = new System.Drawing.Point(1287, 11);
             this.imguser.Name = "imguser";
@@ -256,14 +254,16 @@
             // submenuRVentas
             // 
             this.submenuRVentas.Name = "submenuRVentas";
-            this.submenuRVentas.Size = new System.Drawing.Size(331, 34);
-            this.submenuRVentas.Text = "Registrar Salida Prod";
+            this.submenuRVentas.Size = new System.Drawing.Size(298, 34);
+            this.submenuRVentas.Text = "Ventas";
+            this.submenuRVentas.Click += new System.EventHandler(this.submenuRVentas_Click);
             // 
             // submenuDetVentas
             // 
             this.submenuDetVentas.Name = "submenuDetVentas";
-            this.submenuDetVentas.Size = new System.Drawing.Size(331, 34);
-            this.submenuDetVentas.Text = "Detalles de Salidas";
+            this.submenuDetVentas.Size = new System.Drawing.Size(298, 34);
+            this.submenuDetVentas.Text = "Detalles de Ventas";
+            this.submenuDetVentas.Click += new System.EventHandler(this.submenuDetVentas_Click);
             // 
             // menucompras
             // 
@@ -305,6 +305,7 @@
             this.menuclientes.Name = "menuclientes";
             this.menuclientes.Size = new System.Drawing.Size(240, 70);
             this.menuclientes.Text = "Clientes";
+            this.menuclientes.Click += new System.EventHandler(this.menuclientes_Click);
             // 
             // menuproveedores
             // 

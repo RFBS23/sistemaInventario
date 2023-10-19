@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panelLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnlogin = new Guna.UI2.WinForms.Guna2Button();
@@ -39,12 +38,8 @@
             this.txtnombreusuario = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cerrarlogin = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.imagenlogin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelLogin.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imagenlogin)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogin
@@ -58,11 +53,11 @@
             this.panelLogin.Controls.Add(this.txtnombreusuario);
             this.panelLogin.Controls.Add(this.label1);
             this.panelLogin.Controls.Add(this.cerrarlogin);
-            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelLogin.Location = new System.Drawing.Point(387, 0);
+            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLogin.Location = new System.Drawing.Point(0, 0);
             this.panelLogin.MinimumSize = new System.Drawing.Size(493, 475);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(502, 522);
+            this.panelLogin.Size = new System.Drawing.Size(889, 522);
             this.panelLogin.TabIndex = 1;
             // 
             // guna2ControlBox1
@@ -75,7 +70,7 @@
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(227)))), ((int)(((byte)(54)))));
             this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(388, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(775, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.PressedColor = System.Drawing.Color.White;
             this.guna2ControlBox1.Size = new System.Drawing.Size(48, 34);
@@ -90,11 +85,11 @@
             this.btnlogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnlogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnlogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnlogin.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.Font = new System.Drawing.Font("MesloLGL NF", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Location = new System.Drawing.Point(72, 401);
+            this.btnlogin.Location = new System.Drawing.Point(218, 401);
             this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(309, 60);
+            this.btnlogin.Size = new System.Drawing.Size(459, 60);
             this.btnlogin.TabIndex = 12;
             this.btnlogin.Text = "Iniciar Sesion";
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
@@ -105,9 +100,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 257);
+            this.label3.Location = new System.Drawing.Point(231, 261);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(318, 38);
+            this.label3.Size = new System.Drawing.Size(441, 38);
             this.label3.TabIndex = 11;
             this.label3.Text = "Contraseña";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,9 +113,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 141);
+            this.label2.Location = new System.Drawing.Point(230, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(374, 27);
+            this.label2.Size = new System.Drawing.Size(497, 27);
             this.label2.TabIndex = 10;
             this.label2.Text = "Nombre de Usuario";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,9 +130,9 @@
             this.txtclave.BorderRadius = 10;
             this.txtclave.BorderSize = 1;
             this.txtclave.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtclave.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtclave.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtclave.Location = new System.Drawing.Point(72, 303);
+            this.txtclave.Location = new System.Drawing.Point(234, 307);
             this.txtclave.Margin = new System.Windows.Forms.Padding(4);
             this.txtclave.Multiline = false;
             this.txtclave.Name = "txtclave";
@@ -145,7 +140,7 @@
             this.txtclave.PasswordChar = true;
             this.txtclave.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtclave.PlaceholderText = "contraseña";
-            this.txtclave.Size = new System.Drawing.Size(310, 41);
+            this.txtclave.Size = new System.Drawing.Size(433, 41);
             this.txtclave.TabIndex = 9;
             this.txtclave.Texts = "";
             this.txtclave.UnderlinedStyle = false;
@@ -161,9 +156,9 @@
             this.txtnombreusuario.BorderRadius = 10;
             this.txtnombreusuario.BorderSize = 1;
             this.txtnombreusuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnombreusuario.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombreusuario.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombreusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtnombreusuario.Location = new System.Drawing.Point(72, 177);
+            this.txtnombreusuario.Location = new System.Drawing.Point(234, 181);
             this.txtnombreusuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombreusuario.Multiline = false;
             this.txtnombreusuario.Name = "txtnombreusuario";
@@ -171,7 +166,7 @@
             this.txtnombreusuario.PasswordChar = false;
             this.txtnombreusuario.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtnombreusuario.PlaceholderText = "nombre usuario";
-            this.txtnombreusuario.Size = new System.Drawing.Size(310, 46);
+            this.txtnombreusuario.Size = new System.Drawing.Size(433, 46);
             this.txtnombreusuario.TabIndex = 8;
             this.txtnombreusuario.Texts = "";
             this.txtnombreusuario.UnderlinedStyle = false;
@@ -182,11 +177,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("MesloLGL NF", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 70);
+            this.label1.Location = new System.Drawing.Point(3, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 64);
+            this.label1.Size = new System.Drawing.Size(886, 64);
             this.label1.TabIndex = 7;
             this.label1.Text = "Iniciar Sesion";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cerrarlogin
             // 
@@ -197,36 +193,11 @@
             this.cerrarlogin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cerrarlogin.HoverState.IconColor = System.Drawing.Color.White;
             this.cerrarlogin.IconColor = System.Drawing.Color.White;
-            this.cerrarlogin.Location = new System.Drawing.Point(442, 12);
+            this.cerrarlogin.Location = new System.Drawing.Point(829, 12);
             this.cerrarlogin.Name = "cerrarlogin";
             this.cerrarlogin.PressedColor = System.Drawing.Color.White;
             this.cerrarlogin.Size = new System.Drawing.Size(48, 34);
             this.cerrarlogin.TabIndex = 6;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.imagenlogin);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(369, 522);
-            this.guna2Panel1.TabIndex = 2;
-            // 
-            // imagenlogin
-            // 
-            this.imagenlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.imagenlogin.BorderRadius = 10;
-            this.imagenlogin.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenlogin.ErrorImage")));
-            this.imagenlogin.Image = ((System.Drawing.Image)(resources.GetObject("imagenlogin.Image")));
-            this.imagenlogin.ImageRotate = 0F;
-            this.imagenlogin.Location = new System.Drawing.Point(3, -3);
-            this.imagenlogin.Name = "imagenlogin";
-            this.imagenlogin.Size = new System.Drawing.Size(378, 522);
-            this.imagenlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imagenlogin.TabIndex = 1;
-            this.imagenlogin.TabStop = false;
             // 
             // guna2BorderlessForm1
             // 
@@ -241,20 +212,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 522);
             this.ControlBox = false;
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(889, 522);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(889, 522);
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.login_FormClosing);
             this.panelLogin.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imagenlogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,8 +235,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ControlBox cerrarlogin;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox imagenlogin;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

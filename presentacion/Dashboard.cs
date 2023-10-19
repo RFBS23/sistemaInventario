@@ -23,8 +23,8 @@ namespace presentacion
         private static Form FormularioActivo = null;
         public Dashboard(Usuarios objusuario = null)
         {
-            usuarioActual = objusuario;
             InitializeComponent();
+            usuarioActual = objusuario;            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -128,5 +128,21 @@ namespace presentacion
             //
         }
 
+        private void submenuRVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmVentas());
+            submenu.Hide();
+        }
+
+        private void submenuDetVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmDetallesVentas());
+            submenu.Hide();
+        }
+
+        private void menuclientes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

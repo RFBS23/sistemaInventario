@@ -46,7 +46,10 @@ create table clientes(
 	fecharegistro date default getdate()
 )
 go
-select * from clientes
+insert into clientes (documento, nombres, apellidos, correo, telefono) values
+('12345678', 'tio nacho', 'soyuz', 'tionacho@soyuz.com', '987654321')
+go
+select idcliente, documento, nombres, apellidos, correo, telefono from clientes
 go
 
 create table usuarios(

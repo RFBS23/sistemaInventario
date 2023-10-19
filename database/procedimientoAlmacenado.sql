@@ -274,65 +274,64 @@ go
 
 
 /* ---------- PROCEDIMIENTOS PARA CLIENTE -----------------*/
-create PROC sp_RegistrarCliente(
-@Documento varchar(50),
-@NombreCompleto varchar(50),
-@Correo varchar(50),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado int output,
-@Mensaje varchar(500) output
-)as
+create procedure spu_registrar_cliente(
+	@documento varchar(50),
+	@nombres varchar(50),
+	@apellidos varchar(50),
+	@correo varchar(50),
+	@telefono varchar(20),
+	@estado bit,
+	@resultado int output,
+	@mensaje varchar(500) output
+)
+as
 begin
-	SET @Resultado = 0
-	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Documento = @Documento)
+	SET @resultado = 0
+	DECLARE @idpersona INT 
+	IF NOT EXISTS (SELECT * FROM clientes WHERE documento = @documento)
 	begin
-		insert into CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) values (
-		@Documento,@NombreCompleto,@Correo,@Telefono,@Estado)
-
-		set @Resultado = SCOPE_IDENTITY()
+		insert into clientes(documento,nombres, apellidos, correo, telefono) values
+		(@documento, @nombres, @apellidos, @correo, @telefono)
+		set @resultado = SCOPE_IDENTITY()
 	end
 	else
-		set @Mensaje = 'El numero de documento ya existe'
+		set @mensaje = 'El numero de documento ya existe'
 end
-
 go
 
-create PROC sp_ModificarCliente(
-@IdCliente int,
-@Documento varchar(50),
-@NombreCompleto varchar(50),
-@Correo varchar(50),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado bit output,
-@Mensaje varchar(500) output
-)as
+create procedure spu_editar_clientes(
+	@idcliente int,
+	@documento varchar(50),
+	@nombres varchar(50),
+	@apellidos varchar(50),
+	@correo varchar(50),
+	@telefono varchar(20),
+	@resultado bit output,
+	@mensaje varchar(500) output
+)
+as
 begin
-	SET @Resultado = 1
-	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Documento = @Documento and IdCliente != @IdCliente)
+	set @resultado = 1
+	declare @idpersona int 
+	if not exists (select * from clientes where documento = @documento and idcliente != @idcliente)
 	begin
-		update CLIENTE set
-		Documento = @Documento,
-		NombreCompleto = @NombreCompleto,
-		Correo = @Correo,
-		Telefono = @Telefono,
-		Estado = @Estado
-		where IdCliente = @IdCliente
+		update clientes set
+		documento = @Documento,
+		nombres = @nombres,
+		apellidos = @apellidos,
+		correo = @correo,
+		telefono = @telefono
+		where idcliente = @idcliente
 	end
 	else
 	begin
-		SET @Resultado = 0
-		set @Mensaje = 'El numero de documento ya existe'
+		SET @resultado = 0
+		set @mensaje = 'El numero de documento ya existe'
 	end
 end
-
-GO
+go
 
 /* ---------- PROCEDIMIENTOS PARA PROVEEDOR -----------------*/
-
 create PROC sp_RegistrarProveedor(
 @Documento varchar(50),
 @RazonSocial varchar(50),
