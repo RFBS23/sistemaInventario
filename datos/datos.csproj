@@ -50,6 +50,7 @@
     <Compile Include="D_Permisos.cs" />
     <Compile Include="D_Productos.cs" />
     <Compile Include="D_Rol.cs" />
+    <Compile Include="D_Tallasropa.cs" />
     <Compile Include="D_Usuarios.cs" />
     <Compile Include="D_Usuarios.cs" />
     <Compile Include="D_Usuarios.cs" />

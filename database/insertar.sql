@@ -12,27 +12,26 @@ insert into usuarios (documento, nombreusuario, correo, clave, idrol) values
 select * from usuarios
 go
 
-select * from categorias
-go
-
 insert into permisos (idrol,nombremenu) values
-	(1,'menuusuarios'),
-	(1,'menumantenedor'),
-	(1,'menuventas'),
-	(1,'menucompras'),
-	(1,'menuclientes'),
-	(1,'menuproveedores'),
-	(1,'menureportes'),
-	(1,'menuacercade'),
-	(1,'menunegocio')
+	(1, 'menuusuarios'),
+	(1, 'menucategoria'),
+	(1, 'menuproductos'),
+	(1, 'menuventas'),
+	(1, 'menuingreso'),
+	(1, 'menuclientes'),
+	(1, 'menuproveedores'),
+	(1, 'menureportes'),
+	(1, 'menuacercade'),
+	(1, 'menunegocio')
 go
 
 insert into permisos (idrol, nombremenu) values
-	(2,'menuventas'),
-	(2,'menucompras'),
-	(2,'menuclientes'),
-	(2,'menuproveedores'),
-	(2,'menuacercade')
+	(2, 'menuproductos'),
+	(2, 'menuventas'),
+	(2, 'menuingreso'),
+	(2, 'menuclientes'),
+	(2, 'menuproveedores'),
+	(2, 'menuacercade')
 go
 select * from permisos
 go

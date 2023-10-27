@@ -61,7 +61,7 @@ begin
 		set @respuesta = 1
 	end
 	else
-		set @mensaje = 'No se puede repetir el documento para más de un usuario'
+		set @mensaje = 'No se puede repetir el documento para mas de un usuario'
 end
 go
 
@@ -158,7 +158,7 @@ as
 begin
 	set @resultado = 1
 	if not exists (select *  from categorias c 
-		inner join productos p on p.idcategoria = c.idcategoria 
+		inner join productosropa p on p.idcategoria = c.idcategoria 
 		where c.idcategoria = @idcategoria)
 	begin
 		delete top(1) from categorias where idcategoria = @idcategoria
@@ -171,49 +171,108 @@ begin
 end
 go
 
-/*procedimineto de productos*/
-create procedure spu_registrar_productos(
-	@codigo varchar(50),
-	@nombre varchar(50),
-	@descripcion varchar(50),
-	@idcategoria int,
-	@tallaxs int,
-	@tallas int,
-	@tallam int,
-	@tallal int,
-	@tallaxl int,	
-	@tallaxxl int,
-	@colores varchar(40),
-	@precioventa decimal(10,2),
+/*procediminetos de tallas*/
+create procedure spu_registrar_tallasropa(
+	@nombretalla varchar(50),
 	@resultado int output,
 	@mensaje varchar(100) output
 )as
 begin
 	set @resultado = 0
-
-	-- if not exists (select * from productos where codigo = @codigo)
+	if not exists (select * from tallasropa where nombretalla = @nombretalla)
 	begin
-		insert into productos(codigo, nombre, descripcion, idcategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa) values
-		(@codigo, @nombre, @descripcion, @idcategoria, @tallaxs, @tallas, @tallam, @tallal, @tallaxl, @tallaxxl, @colores, @precioventa)
+		insert into tallasropa(nombretalla) values (@nombretalla)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	-- set @mensaje = 'El codigo no puede repetirse' 
+	else
+		set @mensaje = 'La talla ya se encuentra registrado'
 end
 go
 
-create procedure spu_editar_productos(
-	@idproducto int,
+create procedure spu_editar_tallasropa(
+	@idtallaropa int,
+	@nombretalla varchar(50),
+	@resultado bit output,
+	@mensaje varchar(100) output
+)
+as
+begin
+	set @resultado = 1
+	if not exists (select * from tallasropa where nombretalla = @nombretalla and idtallaropa != @idtallaropa)
+		update tallasropa set
+		nombretalla = @nombretalla
+		where idtallaropa = @idtallaropa
+	else
+	begin
+		set @resultado = 0
+		set @mensaje = 'No se puede repetir la talla'
+	end
+end
+go
+
+create procedure spu_eliminar_tallasropa(
+	@idtallaropa int,
+	@resultado bit output,
+	@mensaje varchar(100) output
+)
+as
+begin
+	set @resultado = 1
+	if not exists (select *  from tallasropa tr 
+		inner join productosropa pr on pr.idtallaropa = tr.idtallaropa 
+		where tr.idtallaropa = @idtallaropa)
+	begin
+		delete top(1) from tallasropa where idtallaropa = @idtallaropa
+	end
+	else
+		begin
+			set @resultado = 0
+			set @mensaje = 'La Talla esta relacionada con uno de los productos'
+		end
+end
+go
+/*fin tallas*/
+
+/*procedimineto de productos*/
+create procedure spu_registrar_productoropa(
+	-- @imagenes image,
 	@codigo varchar(50),
 	@nombre varchar(50),
 	@descripcion varchar(50),
 	@idcategoria int,
-	@tallaxs int,
-	@tallas int,
-	@tallam int,
-	@tallal int,
-	@tallaxl int,	
-	@tallaxxl int,
+	@idtallaropa int,
+	@stock int,
 	@colores varchar(40),
+	@numcaja varchar(50),
+	@precioventa decimal(10,2),
+	@resultado int output,
+	@mensaje varchar(100) output
+)
+as
+begin
+	set @resultado = 0
+
+	if not exists (select * from productosropa where codigo = @codigo)
+	begin
+		insert into productosropa(/*imagenes,*/ codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
+		(/*@imagenes,*/ @codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa)
+		set @resultado = SCOPE_IDENTITY()
+	end
+	set @mensaje = 'El codigo ya se encuentra registrado en otra prenda' 
+end
+go
+
+create procedure spu_editar_productoropa(
+	@idproducto int,
+	-- @imagenes image,
+	@codigo varchar(50),
+	@nombre varchar(50),
+	@descripcion varchar(50),
+	@idcategoria int,
+	@idtallaropa int,
+	@stock int,
+	@colores varchar(40),
+	@numcaja varchar(50),
 	@precioventa decimal(10,2),
 	@resultado int output,
 	@mensaje varchar(100) output
@@ -221,32 +280,28 @@ create procedure spu_editar_productos(
 as
 begin
 	set @resultado = 1
-	-- if not exists (select * from productos where codigo = @Codigo and idproducto != @idproducto)
-		update productos set
+	if not exists (select * from productosropa where codigo = @Codigo and idproducto != @idproducto)
+		update productosropa set
+		-- imagenes = @imagenes,
 		codigo = @codigo,
 		nombre = @nombre,
 		descripcion = @descripcion,
 		idcategoria = @idcategoria,
-		tallaxs =@tallaxs,
-		tallas = @tallas,
-		tallam = @tallam,
-		tallal = @tallal,
-		tallaxl = @tallaxl,	
-		tallaxxl = @tallaxxl,
+		idtallaropa = @idtallaropa,
+		stock = @stock,
 		colores = @colores,
+		numcaja = @numcaja,
 		precioventa = @precioventa
 		where idproducto = @idproducto
-	-- else
-	/*
+	else
 	begin
 		set @resultado = 0
 		set @mensaje = 'Ya existe un producto con el mismo codigo' 
 	end
-	*/
 end
 go
 
-create procedure spu_eliminar_productos(
+create procedure spu_eliminar_productoropa(
 	@idproducto int,
 	@respuesta bit output,
 	@mensaje varchar(100) output
@@ -257,7 +312,7 @@ begin
 	set @mensaje = ''
 	declare @pasoreglas bit = 1
 	if exists (select * from detalle_venta dv
-	inner join productos p ON p.idproducto = dv.idproductos
+	inner join productosropa p ON p.idproducto = dv.idproductos
 	WHERE p.idproducto = @idproducto)
 	BEGIN
 		set @pasoreglas = 0
@@ -266,7 +321,7 @@ begin
 	END
 	if(@pasoreglas = 1)
 	begin
-		delete from productos where idproducto = @idproducto
+		delete from productosropa where idproducto = @idproducto
 		set @respuesta = 1 
 	end
 end

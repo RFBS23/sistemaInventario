@@ -157,9 +157,6 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,9 +258,6 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +328,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icono.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

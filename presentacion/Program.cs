@@ -16,6 +16,7 @@ namespace presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             // splash
             frmSplash splash = new frmSplash();
             Application.Run(splash);

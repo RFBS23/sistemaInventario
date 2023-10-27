@@ -33,9 +33,17 @@ namespace negocio
             {
                 Mensaje += "• Ingrese una descripcion \n";
             }
+            if (obj.stock <= 0)
+            {
+                Mensaje += "• El precio del producto debe ser mayor o igual a 0 \n";
+            }
             if (obj.colores == "")
             {
                 Mensaje += "• Ingrese el color del producto \n";
+            }
+            if (obj.numcaja == "")
+            {
+                Mensaje += "• El numero de caja y/o bolsa esta vacio \n";
             }
             if (obj.precioventa <= 0)
             {
@@ -53,25 +61,33 @@ namespace negocio
         public bool Editar(Productos obj, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (obj.codigo == "")
+            if(obj.codigo == "")
             {
                 Mensaje += "Es necesario que ingrese el codigo del producto \n";
             }
             if (obj.nombre == "")
             {
-                Mensaje += "Ingrese el nombre del producto \n";
+                Mensaje += "• Ingrese el nombre del producto \n";
             }
             if (obj.descripcion == "")
             {
-                Mensaje += "Ingrese una descripcion \n";
+                Mensaje += "• Ingrese una descripcion \n";
+            }
+            if (obj.stock == 0)
+            {
+                Mensaje += "• El precio del producto debe ser mayor o igual a 0 \n";
             }
             if (obj.colores == "")
             {
-                Mensaje += "Ingrese el color del producto \n";
+                Mensaje += "• Ingrese el color del producto \n";
+            }
+            if (obj.numcaja == "")
+            {
+                Mensaje += "• El numero de caja y/o bolsa esta vacio \n";
             }
             if (obj.precioventa <= 0)
             {
-                Mensaje += "El precio del producto debe ser mayor o igual a 0 \n";
+                Mensaje += "• El precio del producto debe ser mayor o igual a 0 \n";
             }
             if (Mensaje != string.Empty)
             {

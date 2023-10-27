@@ -83,35 +83,54 @@ insert into categorias (nombrecategoria) values
 select * from categorias
 go
 
-create table productos(
+create table tallasropa (
+	idtallaropa int primary key identity,
+	nombretalla varchar(50)
+)
+go
+
+insert into tallasropa (nombretalla) VALUES ('S'), ('M'), ('L'), ('XL'), ('XXL')
+go
+SELECT * FROM tallasropa
+go
+select idtallaropa, nombretaleeela from tallasropa
+go
+
+create table tallaszapatos (
+	idtallazapato int primary key identity,
+	tallazapato varchar(50)
+)
+go
+
+
+create table productosropa(
 	idproducto int primary key identity,
-	codigo varchar(50),
-	nombre varchar(50),
-	descripcion varchar(50),
-	idcategoria int references categorias(idcategoria),
-	tallaxs int not null default 0,
-	tallas int not null default 0,
-	tallam int not null default 0,
-	tallal int not null default 0,
-	tallaxl int not null default 0,
-	tallaxxl int not null default 0,
-	total int default 0,
-	colores varchar(40),
+	imagenes image null,
+	codigo varchar(50) not null,
+	nombre varchar(50) not null,
+	descripcion varchar(50) not null,
+	idcategoria int references categorias(idcategoria) not null,
+	idtallaropa int REFERENCES tallasropa(idtallaropa) not null,
+	stock int default 0 not null,
+	colores varchar(40) not null,
+	numcaja varchar(50) not null,
 	preciocompra decimal(10,2) default 0,
-	precioventa decimal(10,2) default 0,
+	precioventa decimal(10,2) default 0 not null,
 	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
 go
--- alter table productos add imagen image;
-insert into productos(codigo, nombre, descripcion, idcategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa) values
-('113221466', 'prueba3', 'hola mundgg', 1, '10', '12', '50', '40', '70', '40', 'amarillo', '150'),
-('113221896', 'prueba2', 'hola mundo', 1, '10', '1', '5', '0', '7', '30', 'azul', '69');
-select * from productos
+-- alter table productos add imagenes image;
+-- alter table productos add numcaja varchar(50);
+insert into productosropa (codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
+('113221466', 'prueba1', 'hola mundgg', 1, 1, '40', 'amarillo', 'caja 12', '150'),
+('113221896', 'prueba2', 'hola mundo', 1, 2, '30', 'azul', 'bolsa 15', '69');
+select * from productosropa
 go
 
-select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tallaxs, tallas, tallam, tallal, tallaxl, tallaxxl, colores, precioventa from productos p
+select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa from productosropa p
 inner join categorias c on c.idcategoria = p.idcategoria
+inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
 go
 
 create table compras(
@@ -130,7 +149,7 @@ go
 create table detalle_compra(
 	iddetallecompra int primary key identity,
 	idcompra int references compras(idcompra),
-	idproducto int references productos(idproducto),
+	idproducto int references productosropa(idproducto),
 	preciocompra decimal(10,2) default 0,
 	precioventa decimal(10,2) default 0,
 	cantidad int,
@@ -138,7 +157,6 @@ create table detalle_compra(
 	fecharegistro datetime default getdate()
 )
 go
-
 
 create table ventas(
 	idventa int primary key identity,
@@ -157,7 +175,7 @@ go
 create table detalle_venta(
 	iddetalleventa int primary key identity,
 	idventa int references ventas(idventa),
-	idproductos int references productos(idproducto),
+	idproductos int references productosropa(idproducto),
 	precioventa decimal(10,2),
 	cantidad int,
 	subtotal decimal(10,2),

@@ -24,7 +24,7 @@ namespace presentacion
         public Dashboard(Usuarios objusuario = null)
         {
             InitializeComponent();
-            usuarioActual = objusuario;            
+            usuarioActual = objusuario;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -82,17 +82,18 @@ namespace presentacion
             submenu.Hide();
         }
 
-        private void submenuCategoria_Click(object sender, EventArgs e)
+        private void menucategoria_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menumantenedor, new frmCategorias());
+            AbrirFormulario((IconMenuItem)sender, new frmCategorias());
             submenu.Hide();
         }
 
-        private void submenuProductos_Click(object sender, EventArgs e)
+        private void menuproductos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menumantenedor, new frmProductos());
+            AbrirFormulario((IconMenuItem)sender, new frmProductos());
             submenu.Hide();
         }
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -118,16 +119,6 @@ namespace presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            submenu.Show();
-        }
-
-        private void lblusuario_Click(object sender, EventArgs e)
-        {
-            //
-        }
-
         private void submenuRVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuventas, new frmVentas());
@@ -143,6 +134,11 @@ namespace presentacion
         private void menuclientes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            submenu.Show();
         }
     }
 }

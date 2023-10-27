@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +80,14 @@ namespace presentacion
                         ((opcionesComboBox)listarol.SelectedItem).Texto.ToString(),
                     });
                     Limpiar();
+
+                    //notificacion
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Text = "Valent France";
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "Valent France";
+                    notifyIcon1.BalloonTipText = "Valent France: Se ha registrado correctamente el usuario";
+                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -98,6 +107,14 @@ namespace presentacion
                     row.Cells["idrol"].Value = ((opcionesComboBox)listarol.SelectedItem).Valor.ToString();
                     row.Cells["rol"].Value = ((opcionesComboBox)listarol.SelectedItem).Texto.ToString();
                     Limpiar();
+
+                    //notificacion
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Text = "Valent France";
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "Valent France";
+                    notifyIcon1.BalloonTipText = "Valent France: Se ha modificado correctamente el usuario";
+                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -223,6 +240,14 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgusuarios.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+
+                        //notificacion
+                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                        notifyIcon1.Text = "Valent France";
+                        notifyIcon1.Visible = true;
+                        notifyIcon1.BalloonTipTitle = "Valent France";
+                        notifyIcon1.BalloonTipText = "Valent France: Se ha eliminado correctamente el usuario";
+                        notifyIcon1.ShowBalloonTip(1000);
                     } else
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

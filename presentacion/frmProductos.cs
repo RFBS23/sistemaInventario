@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Math;
 using entidad;
 using Guna.UI2.WinForms;
 using negocio;
@@ -27,7 +28,7 @@ namespace presentacion
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            /*obtenemos listado*/
+            /*categroias*/
             List<Categorias> listaCat = new N_Categorias().Listar();
             foreach (Categorias item in listaCat)
             {
@@ -36,8 +37,18 @@ namespace presentacion
             listacategoria.DisplayMember = "Texto";
             listacategoria.ValueMember = "Valor";
             listacategoria.SelectedIndex = 0;
-            /*fin listas*/
 
+            // tallas ropa
+            List<Tallasropa> listaTalla = new N_Tallasropa().Listar();
+            foreach (Tallasropa item in listaTalla)
+            {
+                listatallas.Items.Add(new opcionesComboBox() { Valor = item.idtallaropa, Texto = item.nombretalla });
+            }
+            listatallas.DisplayMember = "Texto";
+            listatallas.ValueMember = "Valor";
+            listatallas.SelectedIndex = 0;
+
+            // btnbuscar
             foreach (DataGridViewColumn columna in dgproductos.Columns)
             {
                 if (columna.Visible == true)
@@ -54,7 +65,7 @@ namespace presentacion
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.tallaxs, item.tallas, item.tallam, item.tallal, item.tallaxl, item.tallaxxl, item.colores,  item.precioventa});
+                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa});
             }
         }
 
@@ -100,30 +111,24 @@ namespace presentacion
                             break;
                         }
                     }
-
-                    txtstockxs.Text = dgproductos.Rows[indice].Cells["tallaxs"].Value.ToString();
-                    txtstockS.Text = dgproductos.Rows[indice].Cells["tallas"].Value.ToString();
-                    txtstockM.Text = dgproductos.Rows[indice].Cells["tallam"].Value.ToString();
-                    txtstockL.Text = dgproductos.Rows[indice].Cells["tallal"].Value.ToString();
-                    txtstockXL.Text = dgproductos.Rows[indice].Cells["tallaxl"].Value.ToString();
-                    txtstockXXL.Text = dgproductos.Rows[indice].Cells["tallaxxl"].Value.ToString();
+                    foreach (opcionesComboBox ocb in listatallas.Items)
+                    {
+                        if (Convert.ToInt32(ocb.Valor) == Convert.ToInt32(dgproductos.Rows[indice].Cells["idtallaropa"].Value))
+                        {
+                            int indice_combo = listatallas.Items.IndexOf(ocb);
+                            listatallas.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
                     txtcolores.Text = dgproductos.Rows[indice].Cells["colores"].Value.ToString();
+                    txtstock.Text = dgproductos.Rows[indice].Cells["stock"].Value.ToString();
+                    txtnumcaja.Text = dgproductos.Rows[indice].Cells["numcaja"].Value.ToString();
                     txtprecioventa.Text = dgproductos.Rows[indice].Cells["precioventa"].Value.ToString();
                 }
             }
         }
 
         private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
@@ -162,61 +167,35 @@ namespace presentacion
         {
             txtindice.Text = "-1";
             txtid.Text = "0";
-            //txtcodigo.Text = "";
-            //txtnombre.Text = "";
-            //txtdescripcion.Text = "";
-            //listacategoria.SelectedIndex = 0;
-            txtstockxs.Text = "0";
-            txtstockS.Text = "0";
-            txtstockM.Text = "0";
-            txtstockL.Text = "0";
-            txtstockXL.Text = "0";
-            txtstockXXL.Text = "0";
-            txtcolores.Text = "";
-            txtprecioventa.Text = "0";
-
-            txtcodigo.Select();
-        }
-
-        private void LimpiarTodo()
-        {
-            txtindice.Text = "-1";
-            txtid.Text = "0";
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
             listacategoria.SelectedIndex = 0;
-            txtstockxs.Text = "0";
-            txtstockS.Text = "0";
-            txtstockM.Text = "0";
-            txtstockL.Text = "0";
-            txtstockXL.Text = "0";
-            txtstockXXL.Text = "0";
+            listatallas.SelectedIndex = 0;
             txtcolores.Text = "";
+            txtstock.Text = "0";
+            txtnumcaja.Text = "";
             txtprecioventa.Text = "0";
 
             txtcodigo.Select();
         }
 
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
-
+            
             Productos objproductos = new Productos()
             {
-                
                 idproducto = Convert.ToInt32(txtid.Text),
                 codigo = txtcodigo.Text,
                 nombre = txtnombre.Text,
                 descripcion = txtdescripcion.Text,
                 oCategorias = new Categorias() { idcategoria = Convert.ToInt32(((opcionesComboBox)listacategoria.SelectedItem).Valor) },
-                tallaxs = Convert.ToInt32(txtstockxs.Text),
-                tallas = Convert.ToInt32(txtstockS.Text),
-                tallam = Convert.ToInt32(txtstockM.Text),
-                tallal = Convert.ToInt32(txtstockL.Text),
-                tallaxl = Convert.ToInt32(txtstockXL.Text),
-                tallaxxl = Convert.ToInt32(txtstockXXL.Text),
+                oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(((opcionesComboBox)listatallas.SelectedItem).Valor)},
                 colores = txtcolores.Text,
+                stock = Convert.ToInt32(txtstock.Text),
+                numcaja = txtnumcaja.Text,
                 precioventa = Convert.ToDecimal(txtprecioventa.Text),
             };
             if (objproductos.idproducto == 0)
@@ -228,16 +207,21 @@ namespace presentacion
                     dgproductos.Rows.Add(new object[] {"", txtid.Text, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
                         ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
                         ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
-                        txtstockxs.Text,
-                        txtstockS.Text,
-                        txtstockM.Text,
-                        txtstockL.Text,
-                        txtstockXL.Text,
-                        txtstockXXL.Text,
+                        ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString(),
+                        ((opcionesComboBox)listatallas.SelectedItem).Texto.ToString(),
                         txtcolores.Text,
+                        txtstock.Text,
+                        txtnumcaja.Text,
                         txtprecioventa.Text,
-                    });
+
+                    });                    
                     Limpiar();
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Text = "Valent France";
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "Valent France";
+                    notifyIcon1.BalloonTipText = "Nuevo Producto Agregado";
+                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -254,16 +238,19 @@ namespace presentacion
                     row.Cells["nombre"].Value = txtnombre.Text;
                     row.Cells["descripcion"].Value = txtdescripcion.Text;
                     row.Cells["idcategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString();
-                    row.Cells["tallaxs"].Value = txtstockxs.Text;
-                    row.Cells["tallas"].Value = txtstockS.Text;
-                    row.Cells["tallam"].Value = txtstockM.Text;
-                    row.Cells["tallal"].Value = txtstockL.Text;
-                    row.Cells["tallaxl"].Value = txtstockXL.Text;
-                    row.Cells["tallaxxl"].Value = txtstockXXL.Text;
+                    row.Cells["idtallaropa"].Value = txtstock.Text;
+                    row.Cells["stock"].Value = txtstock.Text;
                     row.Cells["colores"].Value = txtcolores.Text;
+                    row.Cells["numcaja"].Value = txtnumcaja.Text;
                     row.Cells["precioventa"].Value = txtprecioventa.Text;
 
-                    LimpiarTodo();
+                    Limpiar();
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Text = "Valent France";
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "Valent France";
+                    notifyIcon1.BalloonTipText = "El Producto: " + txtnombre.Text + "Fue Editado Correctamente";
+                    notifyIcon1.ShowBalloonTip(1000);
                 } else
                 {
                     MessageBox.Show(mensaje);
@@ -273,7 +260,7 @@ namespace presentacion
 
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarTodo();
+            Limpiar();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -291,16 +278,22 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgproductos.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                        notifyIcon1.Text = "Valent France";
+                        notifyIcon1.Visible = true;
+                        notifyIcon1.BalloonTipTitle = "Valent France";
+                        notifyIcon1.BalloonTipText = "El Producto: " + txtnombre.Text + "Fue Eliminado Correctamente";
+                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-                LimpiarTodo();
+                Limpiar();
+                
             }
         }
-
         private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
             String columnaFiltro = ((opcionesComboBox)listbuscarC.SelectedItem).Valor.ToString();
@@ -339,14 +332,11 @@ namespace presentacion
                             row.Cells[3].Value.ToString(),
                             row.Cells[4].Value.ToString(),
                             row.Cells[6].Value.ToString(),
-                            row.Cells[7].Value.ToString(),
                             row.Cells[8].Value.ToString(),
                             row.Cells[9].Value.ToString(),
                             row.Cells[10].Value.ToString(),
                             row.Cells[11].Value.ToString(),
                             row.Cells[12].Value.ToString(),
-                            row.Cells[13].Value.ToString(),
-                            row.Cells[14].Value.ToString(),
                         });
                 }
                 SaveFileDialog savefile = new SaveFileDialog();
@@ -361,10 +351,25 @@ namespace presentacion
                         hoja.ColumnsUsed().AdjustToContents();
                         wb.SaveAs(savefile.FileName);
                         MessageBox.Show("REPORTE GENERADO EXITOSAMENTE", "VALENT FRANCE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        //notificacion
+                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                        notifyIcon1.Text = "Valent France";
+                        notifyIcon1.Visible = true;
+                        notifyIcon1.BalloonTipTitle = "Valent France";
+                        notifyIcon1.BalloonTipText = "Valent France: Se ha generado un nuevo reporte";
+                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     catch
                     {
                         MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //notificacion
+                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                        notifyIcon1.Text = "Valent France";
+                        notifyIcon1.Visible = true;
+                        notifyIcon1.BalloonTipTitle = "Valent France";
+                        notifyIcon1.BalloonTipText = "Valent France: No se ha podido generar un reporte";
+                        notifyIcon1.ShowBalloonTip(1000);
                     }
                 }
             }
@@ -372,7 +377,7 @@ namespace presentacion
 
         private void dgproductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallaxs")
+            if (this.dgproductos.Columns[e.ColumnIndex].Name == "stock")
             {
                 if (e.Value != null)
                 {
@@ -384,7 +389,7 @@ namespace presentacion
                             e.CellStyle.BackColor = Color.FromArgb(129,250,123) ;
                             e.CellStyle.ForeColor = Color.Black;
                         }
-                        //Stock menor a 10
+                        //Stock menor a 19
                         if (Convert.ToInt32(e.Value) <= 19)
                         {
                             e.CellStyle.BackColor = Color.Salmon;
@@ -393,110 +398,26 @@ namespace presentacion
                     }
                 }
             }
-            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallas")
+        }
+
+        private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                if (e.Value != null)
-                {
-                    if (e.Value.GetType() != typeof(System.DBNull))
-                    {
-                        //Stock menor a 20
-                        if (Convert.ToInt32(e.Value) >= 20)
-                        {
-                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
-                            e.CellStyle.ForeColor = Color.Black;
-                        }
-                        //Stock menor a 10
-                        if (Convert.ToInt32(e.Value) <= 19)
-                        {
-                            e.CellStyle.BackColor = Color.Salmon;
-                            e.CellStyle.ForeColor = Color.Red;
-                        }
-                    }
-                }
+                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
             }
-            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallam")
+        }
+
+        private void btnsubirimg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog foto = new OpenFileDialog();
+            foto.FileName = "Files|*.jpg;*.jpeg;*.png";
+            DialogResult result = foto.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                if (e.Value != null)
-                {
-                    if (e.Value.GetType() != typeof(System.DBNull))
-                    {
-                        //Stock menor a 20
-                        if (Convert.ToInt32(e.Value) >= 20)
-                        {
-                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
-                            e.CellStyle.ForeColor = Color.Black;
-                        }
-                        //Stock menor a 10
-                        if (Convert.ToInt32(e.Value) <= 19)
-                        {
-                            e.CellStyle.BackColor = Color.Salmon;
-                            e.CellStyle.ForeColor = Color.Red;
-                        }
-                    }
-                }
-            }
-            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallal")
-            {
-                if (e.Value != null)
-                {
-                    if (e.Value.GetType() != typeof(System.DBNull))
-                    {
-                        //Stock menor a 20
-                        if (Convert.ToInt32(e.Value) >= 20)
-                        {
-                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
-                            e.CellStyle.ForeColor = Color.Black;
-                        }
-                        //Stock menor a 10
-                        if (Convert.ToInt32(e.Value) <= 19)
-                        {
-                            e.CellStyle.BackColor = Color.Salmon;
-                            e.CellStyle.ForeColor = Color.Red;
-                        }
-                    }
-                }
-            }
-            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallaxl")
-            {
-                if (e.Value != null)
-                {
-                    if (e.Value.GetType() != typeof(System.DBNull))
-                    {
-                        //Stock menor a 20
-                        if (Convert.ToInt32(e.Value) >= 20)
-                        {
-                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
-                            e.CellStyle.ForeColor = Color.Black;
-                        }
-                        //Stock menor a 10
-                        if (Convert.ToInt32(e.Value) <= 19)
-                        {
-                            e.CellStyle.BackColor = Color.Salmon;
-                            e.CellStyle.ForeColor = Color.Red;
-                        }
-                    }
-                }
-            }
-            if (this.dgproductos.Columns[e.ColumnIndex].Name == "tallaxxl")
-            {
-                if (e.Value != null)
-                {
-                    if (e.Value.GetType() != typeof(System.DBNull))
-                    {
-                        //Stock menor a 20
-                        if (Convert.ToInt32(e.Value) >= 20)
-                        {
-                            e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
-                            e.CellStyle.ForeColor = Color.Black;
-                        }
-                        //Stock menor a 10
-                        if (Convert.ToInt32(e.Value) <= 19)
-                        {
-                            e.CellStyle.BackColor = Color.Salmon;
-                            e.CellStyle.ForeColor = Color.Red;
-                        }
-                    }
-                }
+                imagenes.Image = Image.FromFile(foto.FileName);
             }
         }
     }

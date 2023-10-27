@@ -53,6 +53,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="Tallasropa.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Ventas.cs" />
   </ItemGroup>
