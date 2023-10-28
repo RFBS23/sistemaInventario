@@ -235,45 +235,48 @@ go
 
 /*procedimineto de productos*/
 create procedure spu_registrar_productoropa(
-	-- @imagenes image,
+	--@imagenes varbinary(max),
 	@codigo varchar(50),
 	@nombre varchar(50),
 	@descripcion varchar(50),
+	@ubiprod varchar(30),
 	@idcategoria int,
 	@idtallaropa int,
 	@stock int,
 	@colores varchar(40),
 	@numcaja varchar(50),
 	@precioventa decimal(10,2),
+	@devolucion varchar(30),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
 as
 begin
 	set @resultado = 0
-
 	if not exists (select * from productosropa where codigo = @codigo)
 	begin
-		insert into productosropa(/*imagenes,*/ codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
-		(/*@imagenes,*/ @codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa)
+		insert into productosropa(/**imagenes,*/ codigo, nombre, descripcion, ubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, devolucion) values
+		(/*@imagenes,*/ @codigo, @nombre, @descripcion, @ubiprod, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @devolucion)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	set @mensaje = 'El codigo ya se encuentra registrado en otra prenda' 
+	set @mensaje = 'El codigo ya se encuentra registrado en otra prenda'
 end
 go
 
 create procedure spu_editar_productoropa(
 	@idproducto int,
-	-- @imagenes image,
+	-- @imagenes varbinary(max),
 	@codigo varchar(50),
 	@nombre varchar(50),
 	@descripcion varchar(50),
+	@ubiprod varchar(30),
 	@idcategoria int,
 	@idtallaropa int,
 	@stock int,
 	@colores varchar(40),
 	@numcaja varchar(50),
 	@precioventa decimal(10,2),
+	@devolucion varchar(30),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
@@ -286,17 +289,19 @@ begin
 		codigo = @codigo,
 		nombre = @nombre,
 		descripcion = @descripcion,
+		ubiprod = @ubiprod,
 		idcategoria = @idcategoria,
 		idtallaropa = @idtallaropa,
 		stock = @stock,
 		colores = @colores,
 		numcaja = @numcaja,
-		precioventa = @precioventa
+		precioventa = @precioventa,
+		devolucion = @devolucion
 		where idproducto = @idproducto
 	else
 	begin
 		set @resultado = 0
-		set @mensaje = 'Ya existe un producto con el mismo codigo' 
+		set @mensaje = 'Ya existe un producto con el mismo codigo'
 	end
 end
 go
@@ -317,12 +322,12 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @respuesta = 0
-		set @mensaje = @mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n' 
+		set @mensaje = @mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n'
 	END
 	if(@pasoreglas = 1)
 	begin
 		delete from productosropa where idproducto = @idproducto
-		set @respuesta = 1 
+		set @respuesta = 1
 	end
 end
 go
@@ -409,7 +414,6 @@ begin
 	else
 		set @Mensaje = 'El numero de documento ya existe'
 end
-
 GO
 
 create PROC sp_ModificarProveedor(
@@ -441,8 +445,6 @@ begin
 		set @Mensaje = 'El numero de documento ya existe'
 	end
 end
-
-
 go
 
 create procedure sp_EliminarProveedor(
@@ -466,9 +468,7 @@ begin
 		SET @Resultado = 0
 		set @Mensaje = 'El proveedor se encuentara relacionado a una compra'
 	end
-
 end
-
 go
 
 /* PROCESOS PARA REGISTRAR UNA COMPRA */
@@ -480,8 +480,6 @@ CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
 	[Cantidad] int NULL,
 	[MontoTotal] decimal(18,2) NULL
 )
-
-
 GO
 
 
@@ -497,9 +495,7 @@ CREATE PROCEDURE sp_RegistrarCompra(
 )
 as
 begin
-	
 	begin try
-
 		declare @idcompra int = 0
 		set @Resultado = 1
 		set @Mensaje = ''
@@ -514,7 +510,6 @@ begin
 		insert into DETALLE_COMPRA(IdCompra,IdProducto,PrecioCompra,PrecioVenta,Cantidad,MontoTotal)
 		select @idcompra,IdProducto,PrecioCompra,PrecioVenta,Cantidad,MontoTotal from @DetalleCompra
 
-
 		update p set p.Stock = p.Stock + dc.Cantidad, 
 		p.PrecioCompra = dc.PrecioCompra,
 		p.PrecioVenta = dc.PrecioVenta
@@ -522,8 +517,6 @@ begin
 		inner join @DetalleCompra dc on dc.IdProducto= p.IdProducto
 
 		commit transaction registro
-
-
 	end try
 	begin catch
 		set @Resultado = 0
@@ -532,8 +525,6 @@ begin
 	end catch
 
 end
-
-
 GO
 
 /* PROCESOS PARA REGISTRAR UNA VENTA */
@@ -544,8 +535,6 @@ CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 	[Cantidad] int NULL,
 	[SubTotal] decimal(18,2) NULL
 )
-
-
 GO
 
 select * from usuario

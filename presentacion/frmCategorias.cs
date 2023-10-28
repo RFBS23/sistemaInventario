@@ -120,6 +120,13 @@ namespace presentacion
                 else
                 {
                     MessageBox.Show(mensaje);
+                    //notificacion
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Text = "Valent France";
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "Valent France";
+                    notifyIcon1.BalloonTipText = "No se puedo agregar la categoria";
+                    notifyIcon1.ShowBalloonTip(1000);
                 }
             }
             else
@@ -142,48 +149,18 @@ namespace presentacion
                 else
                 {
                     MessageBox.Show(mensaje);
+                    //notificacion
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Text = "Valent France";
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "Valent France";
+                    notifyIcon1.BalloonTipText = "No se puedo editar categoria seleccionada";
+                    notifyIcon1.ShowBalloonTip(1000);
                 }
             }
         }
 
-        private void btneliminarc_Click(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(txtid.Text) != 0)
-            {
-                if (MessageBox.Show("¿ESTA SEGURO DE ELIMINAR A ESTA CATEGORIA?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string mensaje = string.Empty;
-                    Categorias objcategoria = new Categorias()
-                    {
-                        idcategoria = Convert.ToInt32(txtid.Text)
-                    };
-                    bool respuesta = new N_Categorias().Eliminar(objcategoria, out mensaje);
-                    if (respuesta)
-                    {
-                        dgcategorias.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "La Categoria fue Eliminada Correctamente";
-                        notifyIcon1.ShowBalloonTip(1000);
-                    }
-                    else
-                    {
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "No se puedo eliminar la categoria seleccionada";
-                        notifyIcon1.ShowBalloonTip(1000);
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-                Limpiarc();
-            }
-        }
+
 
         private void btnlimpiarc_Click(object sender, EventArgs e)
         {
@@ -453,5 +430,39 @@ namespace presentacion
 
             }
         }
+
+        private void btneliminarc_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtid.Text) != 0)
+            {
+                if (MessageBox.Show("¿ESTA SEGURO DE ELIMINAR A ESTA CATEGORIA?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Categorias objcategoria = new Categorias()
+                    {
+                        idcategoria = Convert.ToInt32(txtid.Text)
+                    };
+                    bool respuesta = new N_Categorias().Eliminar(objcategoria, out mensaje);
+                    if (respuesta)
+                    {
+                        dgcategorias.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+
+                        //notificacion
+                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                        notifyIcon1.Text = "Valent France";
+                        notifyIcon1.Visible = true;
+                        notifyIcon1.BalloonTipTitle = "Valent France";
+                        notifyIcon1.BalloonTipText = "Se Eliminao Correctamente la categoria";
+                        notifyIcon1.ShowBalloonTip(1000);
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                Limpiarc();
+            }
+        }
+
     }
 }

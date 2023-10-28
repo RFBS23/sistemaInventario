@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace datos
 {
@@ -20,7 +21,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa from productosropa p");
+                    query.AppendLine("select idproducto, codigo, nombre, descripcion, ubiprod, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion from productosropa p");
                     query.AppendLine("inner join categorias c on c.idcategoria = p.idcategoria");
                     query.AppendLine("inner join tallasropa tr on tr.idtallaropa = p.idtallaropa");
 
@@ -38,12 +39,14 @@ namespace datos
                                 codigo = dr["codigo"].ToString(),
                                 nombre = dr["nombre"].ToString(),
                                 descripcion = dr["descripcion"].ToString(),
+                                ubiprod = dr["ubiprod"].ToString(),
                                 oCategorias = new Categorias() { idcategoria = Convert.ToInt32(dr["idcategoria"]), nombrecategoria = dr["nombrecategoria"].ToString() },
                                 oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(dr["idtallaropa"]), nombretalla = dr["nombretalla"].ToString() },
                                 stock = Convert.ToInt32(dr["stock"]),
                                 colores = dr["colores"].ToString(),
                                 numcaja = dr["numcaja"].ToString(),
-                                precioventa = Convert.ToDecimal(dr["precioventa"].ToString())
+                                precioventa = Convert.ToDecimal(dr["precioventa"].ToString()),
+                                devolucion = dr["devolucion"].ToString()
                             });
                         }
                     }
@@ -65,16 +68,17 @@ namespace datos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("spu_registrar_productoropa", oconexion);
-                    //cmd.Parameters.AddWithValue("imagenes", obj.imagen);
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
+                    cmd.Parameters.AddWithValue("ubiprod", obj.ubiprod);
                     cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
                     cmd.Parameters.AddWithValue("idtallaropa", obj.oTallasropa.idtallaropa);
                     cmd.Parameters.AddWithValue("stock", obj.stock);
                     cmd.Parameters.AddWithValue("colores", obj.colores);
                     cmd.Parameters.AddWithValue("numcaja", obj.numcaja);
                     cmd.Parameters.AddWithValue("precioventa", obj.precioventa);
+                    cmd.Parameters.AddWithValue("devolucion", obj.devolucion);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -103,16 +107,17 @@ namespace datos
                 {
                     SqlCommand cmd = new SqlCommand("spu_editar_productoropa", oconexion);
                     cmd.Parameters.AddWithValue("idproducto", obj.idproducto);
-                    //cmd.Parameters.AddWithValue("imagenes", obj.imagen);
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
+                    cmd.Parameters.AddWithValue("ubiprod", obj.ubiprod);
                     cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
                     cmd.Parameters.AddWithValue("idtallaropa", obj.oTallasropa.idtallaropa);
                     cmd.Parameters.AddWithValue("stock", obj.stock);
                     cmd.Parameters.AddWithValue("colores", obj.colores);
                     cmd.Parameters.AddWithValue("numcaja", obj.numcaja);
                     cmd.Parameters.AddWithValue("precioventa", obj.precioventa);
+                    cmd.Parameters.AddWithValue("devolucion", obj.devolucion);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;

@@ -88,12 +88,12 @@ create table tallasropa (
 	nombretalla varchar(50)
 )
 go
-
+-- alter table tallasropa DROP COLUMN fechacreacion
 insert into tallasropa (nombretalla) VALUES ('S'), ('M'), ('L'), ('XL'), ('XXL')
 go
 SELECT * FROM tallasropa
 go
-select idtallaropa, nombretaleeela from tallasropa
+select idtallaropa, nombretalla from tallasropa
 go
 
 create table tallaszapatos (
@@ -102,13 +102,13 @@ create table tallaszapatos (
 )
 go
 
-
 create table productosropa(
 	idproducto int primary key identity,
-	imagenes image null,
+	imagenes varbinary(max) NULL,
 	codigo varchar(50) not null,
 	nombre varchar(50) not null,
 	descripcion varchar(50) not null,
+	ubiprod varchar(30) not null,
 	idcategoria int references categorias(idcategoria) not null,
 	idtallaropa int REFERENCES tallasropa(idtallaropa) not null,
 	stock int default 0 not null,
@@ -116,19 +116,24 @@ create table productosropa(
 	numcaja varchar(50) not null,
 	preciocompra decimal(10,2) default 0,
 	precioventa decimal(10,2) default 0 not null,
+	devolucion varchar(30) null,
 	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
 go
--- alter table productos add imagenes image;
--- alter table productos add numcaja varchar(50);
-insert into productosropa (codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
-('113221466', 'prueba1', 'hola mundgg', 1, 1, '40', 'amarillo', 'caja 12', '150'),
-('113221896', 'prueba2', 'hola mundo', 1, 2, '30', 'azul', 'bolsa 15', '69');
+
+-- alter table productosropa add imagenes varbinary(max) NULL;
+-- alter table productosropa add ubicacionprod varchar(30) not null;
+-- alter table productosropa drop COLUMN idubiprod;
+-- alter table productosropa add imagenes image;
+-- alter table productosropa add numcaja varchar(50);
+insert into productosropa (codigo, nombre, descripcion, idubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
+('113221466', 'prueba1', 'hola mundgg', 2, 15, 13, '40', 'amarillo', 'caja 12', '150'),
+('113221896', 'prueba2', 'hola mundo', 3, 19, 14, '30', 'azul', 'bolsa 15', '69');
 select * from productosropa
 go
 
-select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa from productosropa p
+select idproducto, codigo, nombre, descripcion, ubiprod, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion from productosropa p
 inner join categorias c on c.idcategoria = p.idcategoria
 inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
 go

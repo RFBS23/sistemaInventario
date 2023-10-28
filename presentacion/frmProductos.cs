@@ -21,6 +21,9 @@ namespace presentacion
 {
     public partial class frmProductos : Form
     {
+
+        byte[] imagenByte;
+
         public frmProductos()
         {
             InitializeComponent();
@@ -65,7 +68,7 @@ namespace presentacion
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa});
+                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.ubiprod, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa, item.devolucion });
             }
         }
 
@@ -101,7 +104,8 @@ namespace presentacion
                     txtcodigo.Text = dgproductos.Rows[indice].Cells["codigo"].Value.ToString();
                     txtnombre.Text = dgproductos.Rows[indice].Cells["nombre"].Value.ToString();
                     txtdescripcion.Text = dgproductos.Rows[indice].Cells["descripcion"].Value.ToString();
-                    
+                    txtubicacion.Text = dgproductos.Rows[indice].Cells["ubiprod"].Value.ToString();
+
                     foreach (opcionesComboBox ocb in listacategoria.Items)
                     {
                         if (Convert.ToInt32(ocb.Valor) == Convert.ToInt32(dgproductos.Rows[indice].Cells["idcategoria"].Value))
@@ -111,11 +115,11 @@ namespace presentacion
                             break;
                         }
                     }
-                    foreach (opcionesComboBox ocb in listatallas.Items)
+                    foreach (opcionesComboBox otb in listatallas.Items)
                     {
-                        if (Convert.ToInt32(ocb.Valor) == Convert.ToInt32(dgproductos.Rows[indice].Cells["idtallaropa"].Value))
+                        if (Convert.ToInt32(otb.Valor) == Convert.ToInt32(dgproductos.Rows[indice].Cells["idtallaropa"].Value))
                         {
-                            int indice_combo = listatallas.Items.IndexOf(ocb);
+                            int indice_combo = listatallas.Items.IndexOf(otb);
                             listatallas.SelectedIndex = indice_combo;
                             break;
                         }
@@ -124,6 +128,7 @@ namespace presentacion
                     txtstock.Text = dgproductos.Rows[indice].Cells["stock"].Value.ToString();
                     txtnumcaja.Text = dgproductos.Rows[indice].Cells["numcaja"].Value.ToString();
                     txtprecioventa.Text = dgproductos.Rows[indice].Cells["precioventa"].Value.ToString();
+                    txtdevolucion.Text = dgproductos.Rows[indice].Cells["devolucion"].Value.ToString();
                 }
             }
         }
@@ -167,15 +172,18 @@ namespace presentacion
         {
             txtindice.Text = "-1";
             txtid.Text = "0";
+            imagenes.Image = null;
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
+            txtubicacion.SelectedIndex = 0;
             listacategoria.SelectedIndex = 0;
             listatallas.SelectedIndex = 0;
             txtcolores.Text = "";
             txtstock.Text = "0";
             txtnumcaja.Text = "";
             txtprecioventa.Text = "0";
+            txtdevolucion.SelectedIndex = 0;
 
             txtcodigo.Select();
         }
@@ -191,12 +199,14 @@ namespace presentacion
                 codigo = txtcodigo.Text,
                 nombre = txtnombre.Text,
                 descripcion = txtdescripcion.Text,
+                ubiprod = txtubicacion.Text,
                 oCategorias = new Categorias() { idcategoria = Convert.ToInt32(((opcionesComboBox)listacategoria.SelectedItem).Valor) },
-                oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(((opcionesComboBox)listatallas.SelectedItem).Valor)},
+                oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(((opcionesComboBox)listatallas.SelectedItem).Valor) },
                 colores = txtcolores.Text,
                 stock = Convert.ToInt32(txtstock.Text),
                 numcaja = txtnumcaja.Text,
                 precioventa = Convert.ToDecimal(txtprecioventa.Text),
+                devolucion = txtdevolucion.Text,
             };
             if (objproductos.idproducto == 0)
             {
@@ -204,7 +214,7 @@ namespace presentacion
 
                 if (idproductogenerado != 0)
                 {
-                    dgproductos.Rows.Add(new object[] {"", txtid.Text, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
+                    dgproductos.Rows.Add(new object[] {"", txtid.Text, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text, txtubicacion.Text,
                         ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
                         ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
                         ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString(),
@@ -213,8 +223,8 @@ namespace presentacion
                         txtstock.Text,
                         txtnumcaja.Text,
                         txtprecioventa.Text,
-
-                    });                    
+                        txtdevolucion.Text
+                    });
                     Limpiar();
                     notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
                     notifyIcon1.Text = "Valent France";
@@ -227,7 +237,8 @@ namespace presentacion
                 {
                     MessageBox.Show(mensaje);
                 }
-            } else
+            }
+            else
             {
                 bool resultado = new N_Productos().Editar(objproductos, out mensaje);
                 if (resultado)
@@ -237,12 +248,16 @@ namespace presentacion
                     row.Cells["codigo"].Value = txtcodigo.Text;
                     row.Cells["nombre"].Value = txtnombre.Text;
                     row.Cells["descripcion"].Value = txtdescripcion.Text;
-                    row.Cells["idcategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString();
-                    row.Cells["idtallaropa"].Value = txtstock.Text;
+                    row.Cells["ubiprod"].Value = txtubicacion.Text;
+                    row.Cells["idcategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(); 
+                    row.Cells["nombrecategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString();
+                    row.Cells["idtallaropa"].Value = ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString();
+                    row.Cells["nombretalla"].Value = ((opcionesComboBox)listatallas.SelectedItem).Texto.ToString();
                     row.Cells["stock"].Value = txtstock.Text;
                     row.Cells["colores"].Value = txtcolores.Text;
                     row.Cells["numcaja"].Value = txtnumcaja.Text;
                     row.Cells["precioventa"].Value = txtprecioventa.Text;
+                    row.Cells["devolucion"].Value = txtdevolucion.Text;
 
                     Limpiar();
                     notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
@@ -251,7 +266,8 @@ namespace presentacion
                     notifyIcon1.BalloonTipTitle = "Valent France";
                     notifyIcon1.BalloonTipText = "El Producto: " + txtnombre.Text + "Fue Editado Correctamente";
                     notifyIcon1.ShowBalloonTip(1000);
-                } else
+                }
+                else
                 {
                     MessageBox.Show(mensaje);
                 }
@@ -267,7 +283,7 @@ namespace presentacion
         {
             if (Convert.ToInt32(txtid.Text) != 0)
             {
-                if (MessageBox.Show("¿ESTA SEGURO DE ELIMINAR A ESTE USUARIO?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿ESTA SEGURO DE ELIMINAR A ESTE PRODUCTO?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string mensaje = string.Empty;
                     Productos objproductos = new Productos()
@@ -291,9 +307,9 @@ namespace presentacion
                     }
                 }
                 Limpiar();
-                
             }
         }
+
         private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
             String columnaFiltro = ((opcionesComboBox)listbuscarC.SelectedItem).Valor.ToString();
@@ -331,12 +347,13 @@ namespace presentacion
                             row.Cells[2].Value.ToString(),
                             row.Cells[3].Value.ToString(),
                             row.Cells[4].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
                             row.Cells[6].Value.ToString(),
                             row.Cells[8].Value.ToString(),
                             row.Cells[9].Value.ToString(),
                             row.Cells[10].Value.ToString(),
                             row.Cells[11].Value.ToString(),
-                            row.Cells[12].Value.ToString(),
+                            row.Cells[12].Value.ToString()
                         });
                 }
                 SaveFileDialog savefile = new SaveFileDialog();
@@ -362,7 +379,6 @@ namespace presentacion
                     }
                     catch
                     {
-                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         //notificacion
                         notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
                         notifyIcon1.Text = "Valent France";
@@ -370,6 +386,8 @@ namespace presentacion
                         notifyIcon1.BalloonTipTitle = "Valent France";
                         notifyIcon1.BalloonTipText = "Valent France: No se ha podido generar un reporte";
                         notifyIcon1.ShowBalloonTip(1000);
+
+                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                        
                     }
                 }
             }
@@ -413,12 +431,17 @@ namespace presentacion
         private void btnsubirimg_Click(object sender, EventArgs e)
         {
             OpenFileDialog foto = new OpenFileDialog();
+            foto.Title = "Seleccionar imagen";
             foto.FileName = "Files|*.jpg;*.jpeg;*.png";
             DialogResult result = foto.ShowDialog();
             if (result == DialogResult.OK)
             {
                 imagenes.Image = Image.FromFile(foto.FileName);
+                MemoryStream memoria = new MemoryStream();
+                imagenes.Image.Save(memoria, System.Drawing.Imaging.ImageFormat.Png);
+                imagenByte = memoria.ToArray();
             }
         }
+
     }
 }

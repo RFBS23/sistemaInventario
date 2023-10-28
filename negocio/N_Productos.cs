@@ -33,6 +33,10 @@ namespace negocio
             {
                 Mensaje += "• Ingrese una descripcion \n";
             }
+            if (obj.ubiprod == "")
+            {
+                Mensaje += "• Ingrese La ubicacion del producto \n";
+            }
             if (obj.stock <= 0)
             {
                 Mensaje += "• El precio del producto debe ser mayor o igual a 0 \n";
@@ -72,6 +76,10 @@ namespace negocio
             if (obj.descripcion == "")
             {
                 Mensaje += "• Ingrese una descripcion \n";
+            }
+            if (obj.ubiprod == "")
+            {
+                Mensaje += "• Ingrese La ubicacion del producto \n";
             }
             if (obj.stock == 0)
             {
