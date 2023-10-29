@@ -133,7 +133,8 @@ namespace presentacion
 
         private void menuclientes_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario(menuclientes, new frmClientes());
+            submenu.Hide();
         }
 
         private void logo_Click(object sender, EventArgs e)

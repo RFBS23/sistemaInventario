@@ -48,5 +48,96 @@ namespace datos
             }
             return lista;
         }
+
+        public int Registrar(Clientes obj, out string Mensaje)
+        {
+            int idclientegenerado = 0;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("spu_registrar_cliente", oconexion);
+                    cmd.Parameters.AddWithValue("documento", obj.documento);
+                    cmd.Parameters.AddWithValue("nombres", obj.nombres);
+                    cmd.Parameters.AddWithValue("apellidos", obj.apellidos);
+                    cmd.Parameters.AddWithValue("correo", obj.correo);
+                    cmd.Parameters.AddWithValue("telefono", obj.telefono);
+                    cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    idclientegenerado = Convert.ToInt32(cmd.Parameters["resultado"].Value);
+                    Mensaje = cmd.Parameters["mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                idclientegenerado = 0;
+                Mensaje = ex.Message;
+            }
+            return idclientegenerado;
+        }
+
+        public bool Editar(Clientes obj, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("spu_editar_clientes", oconexion);
+                    cmd.Parameters.AddWithValue("idcliente", obj.idcliente);
+                    cmd.Parameters.AddWithValue("documento", obj.documento);
+                    cmd.Parameters.AddWithValue("nombres", obj.nombres);
+                    cmd.Parameters.AddWithValue("apellidos", obj.apellidos);
+                    cmd.Parameters.AddWithValue("correo", obj.correo);
+                    cmd.Parameters.AddWithValue("telefono", obj.telefono);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    respuesta = Convert.ToBoolean(cmd.Parameters["resultado"].Value);
+                    Mensaje = cmd.Parameters["mensaje"].Value.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+            }
+            return respuesta;
+        }
+
+        public bool Eliminar(Clientes obj, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("delete from clientes where idcliente = @idcliente", oconexion);
+                    cmd.Parameters.AddWithValue("@idcliente", obj.idcliente);
+                    cmd.CommandType = CommandType.Text;
+                    oconexion.Open();
+                    respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+            }
+            return respuesta;
+        }
+
     }
 }

@@ -340,15 +340,14 @@ create procedure spu_registrar_cliente(
 	@apellidos varchar(50),
 	@correo varchar(50),
 	@telefono varchar(20),
-	@estado bit,
 	@resultado int output,
 	@mensaje varchar(500) output
 )
 as
 begin
-	SET @resultado = 0
-	DECLARE @idpersona INT 
-	IF NOT EXISTS (SELECT * FROM clientes WHERE documento = @documento)
+	set @resultado = 0
+	declare @idpersona INT 
+	if not exists (select * from clientes where documento = @documento)
 	begin
 		insert into clientes(documento,nombres, apellidos, correo, telefono) values
 		(@documento, @nombres, @apellidos, @correo, @telefono)
