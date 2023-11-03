@@ -141,5 +141,11 @@ namespace presentacion
         {
             submenu.Show();
         }
+
+        private void menuproveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuproveedores, new frmProveedores());
+            submenu.Hide();
+        }
     }
 }

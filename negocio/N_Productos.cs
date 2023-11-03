@@ -51,7 +51,15 @@ namespace negocio
             }
             if (obj.precioventa <= 0)
             {
-                Mensaje += "• El precio del producto debe ser mayor o igual a 0 \n";
+                Mensaje += "• El precio del producto debe ser mayor a 0 \n";
+            }
+            if (obj.devolucion == "")
+            {
+                Mensaje += "• Seleccione el motivo de la devolucion \n";
+            }
+            if (obj.devoluciontalla == "")
+            {
+                Mensaje += "• Seleccione la talla que esta devolviendo \n";
             }
             if (Mensaje != string.Empty)
             {
@@ -95,7 +103,15 @@ namespace negocio
             }
             if (obj.precioventa <= 0)
             {
-                Mensaje += "• El precio del producto debe ser mayor o igual a 0 \n";
+                Mensaje += "• El precio del producto debe ser mayor a 0 \n";
+            }
+            if (obj.devolucion == "")
+            {
+                Mensaje += "• Seleccione el motivo de la devolucion \n";
+            }
+            if (obj.devoluciontalla == "")
+            {
+                Mensaje += "• Seleccione la talla que esta devolviendo \n";
             }
             if (Mensaje != string.Empty)
             {

@@ -23,6 +23,18 @@ namespace presentacion
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
+            /*obtenemos lista de categorias*/
+            List<Categorias> listacat= new N_Categorias().Listar();
+            foreach (Categorias item in listacat)
+            {
+                listarcategoria.Items.Add(new opcionesComboBox() { Valor = item.idcategoria, Texto = item.nombrecategoria });
+            }
+            listarcategoria.DisplayMember = "Texto";
+            listarcategoria.ValueMember = "Valor";
+            listarcategoria.SelectedIndex = 0;
+            /*fin lista de categorias*/
+
+            /*buscamos las categorias*/
             foreach (DataGridViewColumn columna in dgcategorias.Columns)
             {
                 if (columna.Visible == true)
@@ -32,6 +44,17 @@ namespace presentacion
                 listbuscar.DisplayMember = "Texto";
                 listbuscar.ValueMember = "Valor";
                 listbuscar.SelectedIndex = 0;
+            }
+
+            foreach (DataGridViewColumn columna in dgtallaprendas.Columns)
+            {
+                if (columna.Visible == true)
+                {
+                    txtbusca.Items.Add(new opcionesComboBox() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+                txtbusca.DisplayMember = "Texto";
+                txtbusca.ValueMember = "Valor";
+                txtbusca.SelectedIndex = 0;
             }
 
             /*obtenemos mostramos las categorias y los tipos de tallas*/
@@ -44,9 +67,8 @@ namespace presentacion
             List<Tallasropa> listaropa = new N_Tallasropa().Listar();
             foreach (Tallasropa item in listaropa)
             {
-                dgtallaprendas.Rows.Add(new object[] { "", item.idtallaropa, item.nombretalla });
+                dgtallaprendas.Rows.Add(new object[] { "", item.idtallaropa, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.nombretalla  });
             }
-
             /*fin mostrar categorias y los tipos de tallas*/
         }
 
@@ -160,8 +182,7 @@ namespace presentacion
             }
         }
 
-
-
+        /*tallas*/
         private void btnlimpiarc_Click(object sender, EventArgs e)
         {
             Limpiarc();
@@ -182,7 +203,8 @@ namespace presentacion
             Tallasropa objropa = new Tallasropa()
             {
                 idtallaropa = Convert.ToInt32(txtid.Text),
-                nombretalla = txtnombreropa.Text
+                nombretalla = txtnombreropa.Text,
+                oCategorias = new Categorias() { idcategoria = Convert.ToInt32(((opcionesComboBox)listarcategoria.SelectedItem).Valor) },
             };
             if (objropa.idtallaropa == 0)
             {
@@ -190,7 +212,10 @@ namespace presentacion
 
                 if (idtallaropagenerado != 0)
                 {
-                    dgtallaprendas.Rows.Add(new object[] { "", txtid.Text, txtnombreropa.Text });
+                    dgtallaprendas.Rows.Add(new object[] { "", txtid.Text,
+                        ((opcionesComboBox)listarcategoria.SelectedItem).Valor.ToString(),
+                        ((opcionesComboBox)listarcategoria.SelectedItem).Texto.ToString(),
+                        txtnombreropa.Text });
                     Limpiartr();
                     //notificacion
                     notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
@@ -268,8 +293,6 @@ namespace presentacion
             }
         }
 
-        
-
         private void dgtallaprendas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -299,6 +322,16 @@ namespace presentacion
                 {
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgtallaprendas.Rows[indice].Cells["idtallaropa"].Value.ToString();
+                    foreach (opcionesComboBox ocb in listarcategoria.Items)
+                    {
+                        if (Convert.ToInt32(ocb.Valor) == Convert.ToInt32(dgtallaprendas.Rows[indice].Cells["idcategoria"].Value))
+                        {
+                            int indice_combo = listarcategoria.Items.IndexOf(ocb);
+                            listarcategoria.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+
                     txtnombreropa.Text = dgtallaprendas.Rows[indice].Cells["nombretalla"].Value.ToString();
                 }
             }
@@ -366,71 +399,6 @@ namespace presentacion
             }
         }
 
-        private void txtnombreropa_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                string mensaje = string.Empty;
-
-                Tallasropa objropa = new Tallasropa()
-                {
-                    idtallaropa = Convert.ToInt32(txtid.Text),
-                    nombretalla = txtnombreropa.Text
-                };
-                if (objropa.idtallaropa == 0)
-                {
-                    int idtallaropagenerado = new N_Tallasropa().Registrar(objropa, out mensaje);
-
-                    if (idtallaropagenerado != 0)
-                    {
-                        dgtallaprendas.Rows.Add(new object[] { "", txtid.Text, txtnombreropa.Text });
-                        Limpiartr();
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "Nueva Talla Agregada";
-                        notifyIcon1.ShowBalloonTip(1000);
-                    }
-                    else
-                    {
-                        MessageBox.Show(mensaje);
-                    }
-                }
-                else
-                {
-                    bool resultado = new N_Tallasropa().Editar(objropa, out mensaje);
-                    if (resultado)
-                    {
-                        DataGridViewRow row = dgtallaprendas.Rows[Convert.ToInt32(txtindice.Text)];
-                        row.Cells["idtallaropa"].Value = txtid.Text;
-                        row.Cells["nombretalla"].Value = txtnombreropa.Text;
-                        Limpiartr();
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "La talla fue Editada Correctamente";
-                        notifyIcon1.ShowBalloonTip(1000);
-                    }
-                    else
-                    {
-                        MessageBox.Show(mensaje);
-                    }
-                }
-            }
-        }
-
-        private void txtnombrezapatos_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-
-            }
-        }
-
         private void btneliminarc_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -461,6 +429,36 @@ namespace presentacion
                     }
                 }
                 Limpiarc();
+            }
+        }
+
+        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
+            if (dgcategorias.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgcategorias.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void txtbuscartalla_TextChanged(object sender, EventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)txtbusca.SelectedItem).Valor.ToString();
+            if (dgtallaprendas.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgtallaprendas.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbuscartalla.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
             }
         }
 

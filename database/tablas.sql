@@ -10,7 +10,9 @@ create table rol(
 	fecharegistro datetime default getdate()
 )
 go
-insert into rol (nombrerol) values ('administrador')
+insert into rol (nombrerol) values 
+	('administrador'),
+	('empleados')
 select * from rol
 go
 
@@ -33,6 +35,9 @@ create table proveedores(
 	estado bit,
 	fecharegistro date default getdate()
 )
+go
+insert into proveedores (documento, razonsocial, correo, telefono) values ('123456789', '1234567898787', 'prueba@hotmailempresa.pe', '987654321')
+select idproveedor, documento, razonsocial, correo, telefono from proveedores
 go
 
 create table clientes(
@@ -85,22 +90,22 @@ go
 
 create table tallasropa (
 	idtallaropa int primary key identity,
-	nombretalla varchar(50)
+	nombretalla varchar(50),
+	idcategoria int references categorias(idcategoria) not null
 )
 go
 -- alter table tallasropa DROP COLUMN fechacreacion
-insert into tallasropa (nombretalla) VALUES ('S'), ('M'), ('L'), ('XL'), ('XXL')
+alter table tallasropa add idcategoria int references categorias(idcategoria) not null;
+insert into tallasropa (idcategoria, nombretalla) VALUES 
+	(1, 'S');
 go
 SELECT * FROM tallasropa
 go
-select idtallaropa, nombretalla from tallasropa
+select idtallaropa, c.idcategoria, c.nombrecategoria, nombretalla from tallasropa tr
+inner join categorias c on c.idcategoria = tr.idcategoria
 go
 
-create table tallaszapatos (
-	idtallazapato int primary key identity,
-	tallazapato varchar(50)
-)
-go
+select idtallaropa, nombretalla from tallasropa where idcategoria = @idcategoria
 
 create table productosropa(
 	idproducto int primary key identity,
@@ -117,23 +122,25 @@ create table productosropa(
 	preciocompra decimal(10,2) default 0,
 	precioventa decimal(10,2) default 0 not null,
 	devolucion varchar(30) null,
+	devoluciontalla varchar(10) null,
 	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
 go
-
 -- alter table productosropa add imagenes varbinary(max) NULL;
+--alter table productosropa add devoluciontalla varchar(10) null;
 -- alter table productosropa add ubicacionprod varchar(30) not null;
 -- alter table productosropa drop COLUMN idubiprod;
 -- alter table productosropa add imagenes image;
 -- alter table productosropa add numcaja varchar(50);
-insert into productosropa (codigo, nombre, descripcion, idubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
-('113221466', 'prueba1', 'hola mundgg', 2, 15, 13, '40', 'amarillo', 'caja 12', '150'),
-('113221896', 'prueba2', 'hola mundo', 3, 19, 14, '30', 'azul', 'bolsa 15', '69');
+
+insert into productosropa (codigo, nombre, descripcion, ubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
+('113221466', 'prueba1', 'hola mundgg', 'caja', 1, 1, '40', 'amarillo', 'caja 12', '150'),
+('113221896', 'prueba2', 'hola mundo', 'caja', 1, 1, '30', 'azul', 'bolsa 15', '69');
 select * from productosropa
 go
 
-select idproducto, codigo, nombre, descripcion, ubiprod, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion from productosropa p
+select idproducto, codigo, nombre, descripcion, ubiprod, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p
 inner join categorias c on c.idcategoria = p.idcategoria
 inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
 go

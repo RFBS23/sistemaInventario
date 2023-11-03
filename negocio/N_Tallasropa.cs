@@ -14,7 +14,7 @@ namespace negocio
 
         public List<Tallasropa> Listar()
         {
-            return objd_tallaropa.Listar();
+            return objd_tallaropa.ListarTallas();
         }
 
         public int Registrar(Tallasropa obj, out string Mensaje)
@@ -55,5 +55,6 @@ namespace negocio
         {
             return objd_tallaropa.Eliminar(obj, out Mensaje);
         }
+
     }
 }

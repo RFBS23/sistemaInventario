@@ -51,6 +51,7 @@
     <Compile Include="N_Productos.cs" />
     <Compile Include="N_Productos.cs" />
     <Compile Include="N_Productos.cs" />
+    <Compile Include="N_Proveedores.cs" />
     <Compile Include="N_Rol.cs" />
     <Compile Include="N_Tallasropa.cs" />
     <Compile Include="N_Usuarios.cs" />

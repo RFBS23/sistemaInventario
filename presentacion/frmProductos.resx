@@ -727,10 +727,10 @@
         rkJggg==
 </value>
   </data>
-  <data name="imagenes.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtimagen.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAv0AAAJCCAIAAADcOO/jAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAYQpJREFUeF7t3Yd701bj9vH3L/pBB11PS9l7r4RN2HuFvffeGwqEDWUWwih7Q4Gw
+        DAAACwwBP0AiyAAAYQpJREFUeF7t3Yd701bj9vH3L/pBB11PS9l7r4RN2HuFvffeGwqEDWUWwih7Q4Gw
         R6FAIUAIIXs6iWP7PdSnrjlJHA/Jlqzv57qv53oSa1gije7Iks7/cwEAAFgDvQcAAFgFvQcAAFgFvQcA
         AFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcA
         AFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcAAFgFvQcA
@@ -1147,10 +1147,10 @@
         6D0AAMAq6D0AAMAaXK7/Dx7oiBILtnReAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="imagenes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtimagen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA/oAAAMFCAIAAABLQBo6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAts1JREFUeF7s3QV8VOt+7/8eac9pe9v+e2/bW7lt721729ue9mCb7UiEBHdIQnAI
+        DAAACwwBP0AiyAAAts1JREFUeF7s3QV8VOt+7/8eac9pe9v+e2/bW7lt721729ue9mCb7UiEBHdIQnAI
         wd3d3R02ECxYsOAEdwnxhLgnxGWITGyG/wPrt3Oynwijz5L5vl+/137tNZFZazJkfWZlZs3vfQAAAAAA
         AI1C7gMAAAAAaBZyHwAAAABAs5D7AAAAAACahdwHAAAAANAs5D4AAAAAgGYh9wEAAAAANAu5DwAAAACg
         Wch9AAAAAADNQu4DAAAAAGgWch8AAAAAQLOQ+wAAAAAAmoXcBwAAAADQLOQ+AAAAAIBmIfcBAAAAADQL
@@ -1933,10 +1933,10 @@
         yZL7AACQqB9//D+NURx+7bCOlwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="imagenes.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtimagen.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA/oAAAMFCAIAAABLQBo6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAts1JREFUeF7s3QV8VOt+7/8eac9pe9v+e2/bW7lt721729ue9mCb7UiEBHdIQnAI
+        DAAACwwBP0AiyAAAts1JREFUeF7s3QV8VOt+7/8eac9pe9v+e2/bW7lt721729ue9mCb7UiEBHdIQnAI
         wd3d3R02ECxYsOAEdwnxhLgnxGWITGyG/wPrt3Oynwijz5L5vl+/137tNZFZazJkfWZlZs3vfQAAAAAA
         AI1C7gMAAAAAaBZyHwAAAABAs5D7AAAAAACahdwHAAAAANAs5D4AAAAAgGYh9wEAAAAANAu5DwAAAACg
         Wch9AAAAAADNQu4DAAAAAGgWch8AAAAAQLOQ+wAAAAAAmoXcBwAAAADQLOQ+AAAAAIBmIfcBAAAAADQL
@@ -2762,6 +2762,12 @@
     <value>True</value>
   </metadata>
   <metadata name="devolucion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="devoluciontalla.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="detalledevolucion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

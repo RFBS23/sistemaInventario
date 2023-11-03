@@ -10,5 +10,6 @@ namespace entidad
     {
         public int idtallaropa {  get; set; }
         public string nombretalla { get; set; }
+        public Categorias oCategorias { get; set; }
     }
 }

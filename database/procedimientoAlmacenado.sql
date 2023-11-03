@@ -75,9 +75,9 @@ select * from usuarios
 go
 
 create proc spu_eliminar_usuario(
-@idusuario int,
-@respuesta bit output,
-@mensaje varchar(500) output
+	@idusuario int,
+	@respuesta bit output,
+	@mensaje varchar(500) output
 )
 as
 begin
@@ -174,6 +174,7 @@ go
 /*procediminetos de tallas*/
 create procedure spu_registrar_tallasropa(
 	@nombretalla varchar(50),
+	@idcategoria int,
 	@resultado int output,
 	@mensaje varchar(100) output
 )as
@@ -181,7 +182,7 @@ begin
 	set @resultado = 0
 	if not exists (select * from tallasropa where nombretalla = @nombretalla)
 	begin
-		insert into tallasropa(nombretalla) values (@nombretalla)
+		insert into tallasropa(idcategoria, nombretalla) values (@idcategoria, @nombretalla)
 		set @resultado = SCOPE_IDENTITY()
 	end
 	else
@@ -191,6 +192,7 @@ go
 
 create procedure spu_editar_tallasropa(
 	@idtallaropa int,
+	@idcategoria int,
 	@nombretalla varchar(50),
 	@resultado bit output,
 	@mensaje varchar(100) output
@@ -200,6 +202,7 @@ begin
 	set @resultado = 1
 	if not exists (select * from tallasropa where nombretalla = @nombretalla and idtallaropa != @idtallaropa)
 		update tallasropa set
+		idcategoria = @idcategoria,
 		nombretalla = @nombretalla
 		where idtallaropa = @idtallaropa
 	else
@@ -219,7 +222,7 @@ as
 begin
 	set @resultado = 1
 	if not exists (select *  from tallasropa tr 
-		inner join productosropa pr on pr.idtallaropa = tr.idtallaropa 
+		inner join productosropa pr on pr.idtallaropa = tr.idtallaropa
 		where tr.idtallaropa = @idtallaropa)
 	begin
 		delete top(1) from tallasropa where idtallaropa = @idtallaropa
@@ -227,7 +230,7 @@ begin
 	else
 		begin
 			set @resultado = 0
-			set @mensaje = 'La Talla esta relacionada con uno de los productos'
+			set @mensaje = 'La Talla esta relacionada con uno de los productos y categorias'
 		end
 end
 go
@@ -235,7 +238,7 @@ go
 
 /*procedimineto de productos*/
 create procedure spu_registrar_productoropa(
-	--@imagenes varbinary(max),
+	-- @imagenes varchar(555),
 	@codigo varchar(50),
 	@nombre varchar(50),
 	@descripcion varchar(50),
@@ -247,25 +250,26 @@ create procedure spu_registrar_productoropa(
 	@numcaja varchar(50),
 	@precioventa decimal(10,2),
 	@devolucion varchar(30),
+	@devoluciontalla varchar(10),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
 as
 begin
 	set @resultado = 0
-	if not exists (select * from productosropa where codigo = @codigo)
+	-- if not exists (select * from productosropa where codigo = @codigo)
 	begin
-		insert into productosropa(/**imagenes,*/ codigo, nombre, descripcion, ubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, devolucion) values
-		(/*@imagenes,*/ @codigo, @nombre, @descripcion, @ubiprod, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @devolucion)
+		insert into productosropa(/*imagenes,*/ codigo, nombre, descripcion, ubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, devolucion, devoluciontalla) values
+		(/*@imagenes,*/ @codigo, @nombre, @descripcion, @ubiprod, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @devolucion, @devoluciontalla)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	set @mensaje = 'El codigo ya se encuentra registrado en otra prenda'
+	-- set @mensaje = 'El codigo ya se encuentra registrado en otra prenda'
 end
 go
 
 create procedure spu_editar_productoropa(
 	@idproducto int,
-	-- @imagenes varbinary(max),
+	-- @imagenes varchar(555),
 	@codigo varchar(50),
 	@nombre varchar(50),
 	@descripcion varchar(50),
@@ -277,15 +281,16 @@ create procedure spu_editar_productoropa(
 	@numcaja varchar(50),
 	@precioventa decimal(10,2),
 	@devolucion varchar(30),
+	@devoluciontalla varchar(10),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
 as
 begin
 	set @resultado = 1
-	if not exists (select * from productosropa where codigo = @Codigo and idproducto != @idproducto)
+	-- if not exists (select * from productosropa where codigo = @Codigo and idproducto != @idproducto)
 		update productosropa set
-		-- imagenes = @imagenes,
+		/*imagenes = @imagenes,*/
 		codigo = @codigo,
 		nombre = @nombre,
 		descripcion = @descripcion,
@@ -296,13 +301,15 @@ begin
 		colores = @colores,
 		numcaja = @numcaja,
 		precioventa = @precioventa,
-		devolucion = @devolucion
+		devolucion = @devolucion,
+		devoluciontalla = @devoluciontalla
 		where idproducto = @idproducto
-	else
+	-- else
+	/*
 	begin
 		set @resultado = 0
 		set @mensaje = 'Ya existe un producto con el mismo codigo'
-	end
+	end*/
 end
 go
 
@@ -391,87 +398,85 @@ end
 go
 
 /* ---------- PROCEDIMIENTOS PARA PROVEEDOR -----------------*/
-create PROC sp_RegistrarProveedor(
-@Documento varchar(50),
-@RazonSocial varchar(50),
-@Correo varchar(50),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado int output,
-@Mensaje varchar(500) output
-)as
-begin
-	SET @Resultado = 0
-	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM PROVEEDOR WHERE Documento = @Documento)
-	begin
-		insert into PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado) values (
-		@Documento,@RazonSocial,@Correo,@Telefono,@Estado)
-
-		set @Resultado = SCOPE_IDENTITY()
-	end
-	else
-		set @Mensaje = 'El numero de documento ya existe'
-end
-GO
-
-create PROC sp_ModificarProveedor(
-@IdProveedor int,
-@Documento varchar(50),
-@RazonSocial varchar(50),
-@Correo varchar(50),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado bit output,
-@Mensaje varchar(500) output
-)as
-begin
-	SET @Resultado = 1
-	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM PROVEEDOR WHERE Documento = @Documento and IdProveedor != @IdProveedor)
-	begin
-		update PROVEEDOR set
-		Documento = @Documento,
-		RazonSocial = @RazonSocial,
-		Correo = @Correo,
-		Telefono = @Telefono,
-		Estado = @Estado
-		where IdProveedor = @IdProveedor
-	end
-	else
-	begin
-		SET @Resultado = 0
-		set @Mensaje = 'El numero de documento ya existe'
-	end
-end
-go
-
-create procedure sp_EliminarProveedor(
-@IdProveedor int,
-@Resultado bit output,
-@Mensaje varchar(500) output
+create procedure spu_registrar_proveedores(
+	@documento varchar(50),
+	@razonsocial varchar(50),
+	@correo varchar(50),
+	@telefono varchar(50),
+	@resultado int output,
+	@mensaje varchar(500) output
 )
 as
 begin
-	SET @Resultado = 1
-	IF NOT EXISTS (
-	 select *  from PROVEEDOR p
-	 inner join COMPRA c on p.IdProveedor = c.IdProveedor
-	 where p.IdProveedor = @IdProveedor
-	)
+	set @resultado = 0
+	declare @idpersona int 
+	if not exists (select * from proveedores where documento = @documento)
 	begin
-	 delete top(1) from PROVEEDOR where IdProveedor = @IdProveedor
+		insert into proveedores(documento, razonsocial, correo, telefono) values (@documento, @razonsocial, @correo, @telefono)
+		set @resultado = SCOPE_IDENTITY()
 	end
-	ELSE
+	else
+		set @mensaje = 'El numero de documento ya existe'
+end
+go
+
+create procedure spu_editar_proveedores(
+	@idproveedor int,
+	@documento varchar(50),
+	@razonsocial varchar(50),
+	@correo varchar(50),
+	@telefono varchar(50),
+	@resultado int output,
+	@mensaje varchar(500) output
+)
+as
+begin
+	SET @resultado = 1
+	DECLARE @idpersona INT 
+	IF NOT EXISTS (select * from proveedores where documento = @documento and idproveedor != @idproveedor)
 	begin
-		SET @Resultado = 0
-		set @Mensaje = 'El proveedor se encuentara relacionado a una compra'
+		update proveedores set
+		documento = @documento,
+		razonsocial = @razonsocial,
+		correo = @correo,
+		telefono = @telefono
+		where idproveedor = @idproveedor
+	end
+	else
+	begin
+		SET @resultado = 0
+		set @mensaje = 'El numero de documento ya existe'
 	end
 end
 go
 
-/* PROCESOS PARA REGISTRAR UNA COMPRA */
+create procedure spu_eliminar_proveedores(
+	@idproveedor int,
+	@resultado bit output,
+	@mensaje varchar(500) output
+)
+as
+begin
+	SET @resultado = 1
+	IF NOT EXISTS (
+	 select *  from proveedores p
+	 inner join compras c on p.idproveedor = c.idproveedor
+	 where p.idproveedor = @idproveedor
+	)
+	begin
+	 delete top(1) from proveedores where idproveedor = @idproveedor
+	end
+	ELSE
+	begin
+		SET @resultado = 0
+		set @mensaje = 'El proveedor se encuentara relacionado a una compra'
+	end
+end
+go
 
+-- falta
+
+/* PROCESOS PARA REGISTRAR UNA COMPRA */
 CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
 	[IdProducto] int NULL,
 	[PrecioCompra] decimal(18,2) NULL,
@@ -480,7 +485,6 @@ CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
 	[MontoTotal] decimal(18,2) NULL
 )
 GO
-
 
 CREATE PROCEDURE sp_RegistrarCompra(
 @IdUsuario int,
@@ -527,7 +531,6 @@ end
 GO
 
 /* PROCESOS PARA REGISTRAR UNA VENTA */
-
 CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 	[IdProducto] int NULL,
 	[PrecioVenta] decimal(18,2) NULL,
@@ -535,7 +538,6 @@ CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 	[SubTotal] decimal(18,2) NULL
 )
 GO
-
 select * from usuario
 go
 
@@ -554,79 +556,68 @@ create procedure usp_RegistrarVenta(
 )
 as
 begin
-	
 	begin try
-
 		declare @idventa int = 0
 		set @Resultado = 1
 		set @Mensaje = ''
-
 		begin  transaction registro
-
 		insert into VENTA(IdUsuario,TipoDocumento,NumeroDocumento,DocumentoCliente,NombreCliente,MontoPago,MontoCambio,MontoTotal)
 		values(@IdUsuario,@TipoDocumento,@NumeroDocumento,@DocumentoCliente,@NombreCliente,@MontoPago,@MontoCambio,@MontoTotal)
-
 		set @idventa = SCOPE_IDENTITY()
-
 		insert into DETALLE_VENTA(IdVenta,IdProducto,PrecioVenta,Cantidad,SubTotal)
 		select @idventa,IdProducto,PrecioVenta,Cantidad,SubTotal from @DetalleVenta
-
 		commit transaction registro
-
 	end try
 	begin catch
 		set @Resultado = 0
 		set @Mensaje = ERROR_MESSAGE()
 		rollback transaction registro
 	end catch
-
 end
-
 go
 
 
 create PROC sp_ReporteCompras(
- @fechainicio varchar(10),
- @fechafin varchar(10),
- @idproveedor int
- )
-  as
- begin
-
-  SET DATEFORMAT dmy;
-   select 
- convert(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,
- u.NombreCompleto[UsuarioRegistro],
- pr.Documento[DocumentoProveedor],pr.RazonSocial,
- p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dc.PrecioCompra,dc.PrecioVenta,dc.Cantidad,dc.MontoTotal[SubTotal]
- from COMPRA c
- inner join USUARIO u on u.IdUsuario = c.IdUsuario
- inner join PROVEEDOR pr on pr.IdProveedor = c.IdProveedor
- inner join DETALLE_COMPRA dc on dc.IdCompra = c.IdCompra
- inner join PRODUCTO p on p.IdProducto = dc.IdProducto
- inner join CATEGORIA ca on ca.IdCategoria = p.IdCategoria
- where CONVERT(date,c.FechaRegistro) between @fechainicio and @fechafin
- and pr.IdProveedor = iif(@idproveedor=0,pr.IdProveedor,@idproveedor)
- end
-
- go
-
- CREATE PROC sp_ReporteVentas(
- @fechainicio varchar(10),
- @fechafin varchar(10)
- )
- as
- begin
- SET DATEFORMAT dmy;  
- select 
- convert(char(10),v.FechaRegistro,103)[FechaRegistro],v.TipoDocumento,v.NumeroDocumento,v.MontoTotal,
- u.NombreCompleto[UsuarioRegistro],
- v.DocumentoCliente,v.NombreCliente,
- p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dv.PrecioVenta,dv.Cantidad,dv.SubTotal
- from VENTA v
- inner join USUARIO u on u.IdUsuario = v.IdUsuario
- inner join DETALLE_VENTA dv on dv.IdVenta = v.IdVenta
- inner join PRODUCTO p on p.IdProducto = dv.IdProducto
- inner join CATEGORIA ca on ca.IdCategoria = p.IdCategoria
- where CONVERT(date,v.FechaRegistro) between @fechainicio and @fechafin
+	@fechainicio varchar(10),
+	@fechafin varchar(10),
+	@idproveedor int
+)
+as
+begin
+SET DATEFORMAT dmy;
+select
+	convert(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,
+	u.NombreCompleto[UsuarioRegistro],
+	pr.Documento[DocumentoProveedor],pr.RazonSocial,
+	p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dc.PrecioCompra,dc.PrecioVenta,dc.Cantidad,dc.MontoTotal[SubTotal]
+	from COMPRA c
+	inner join USUARIO u on u.IdUsuario = c.IdUsuario
+	inner join PROVEEDOR pr on pr.IdProveedor = c.IdProveedor
+	inner join DETALLE_COMPRA dc on dc.IdCompra = c.IdCompra
+	inner join PRODUCTO p on p.IdProducto = dc.IdProducto
+	inner join CATEGORIA ca on ca.IdCategoria = p.IdCategoria
+	where CONVERT(date,c.FechaRegistro) between @fechainicio and @fechafin
+	and pr.IdProveedor = iif(@idproveedor=0,pr.IdProveedor,@idproveedor)
 end
+go
+
+CREATE PROC sp_ReporteVentas(
+	@fechainicio varchar(10),
+	@fechafin varchar(10)
+)
+as
+begin
+	SET DATEFORMAT dmy;  
+	select 
+	convert(char(10),v.FechaRegistro,103)[FechaRegistro],v.TipoDocumento,v.NumeroDocumento,v.MontoTotal,
+	u.NombreCompleto[UsuarioRegistro],
+	v.DocumentoCliente,v.NombreCliente,
+	p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dv.PrecioVenta,dv.Cantidad,dv.SubTotal
+	from VENTA v
+	inner join USUARIO u on u.IdUsuario = v.IdUsuario
+	inner join DETALLE_VENTA dv on dv.IdVenta = v.IdVenta
+	inner join PRODUCTO p on p.IdProducto = dv.IdProducto
+	inner join CATEGORIA ca on ca.IdCategoria = p.IdCategoria
+	where CONVERT(date,v.FechaRegistro) between @fechainicio and @fechafin
+end
+go

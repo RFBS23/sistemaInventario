@@ -32,7 +32,7 @@ namespace presentacion
                 form.Show();
                 this.Hide();
                 //notificaciones
-                notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
                 notifyIcon1.Text = "Valent France";
                 notifyIcon1.Visible = true;
                 notifyIcon1.BalloonTipTitle = "Valent France";
@@ -42,7 +42,7 @@ namespace presentacion
             else
             {
                 //notificaciones
-                notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
                 notifyIcon1.Text = "Valent France";
                 notifyIcon1.Visible = true;
                 notifyIcon1.BalloonTipTitle = "Valent France";
@@ -64,7 +64,7 @@ namespace presentacion
                     form.Show();
                     this.Hide();
                     //notificaciones
-                    notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
                     notifyIcon1.Text = "Valent France";
                     notifyIcon1.Visible = true;
                     notifyIcon1.BalloonTipTitle = "Valent France";
@@ -74,7 +74,7 @@ namespace presentacion
                 else
                 {
                     //notificaciones
-                    notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
+                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
                     notifyIcon1.Text = "Valent France";
                     notifyIcon1.Visible = true;
                     notifyIcon1.BalloonTipTitle = "Valent France";

@@ -43,14 +43,14 @@
             this.menuusuarios = new FontAwesome.Sharp.IconMenuItem();
             this.menucategoria = new FontAwesome.Sharp.IconMenuItem();
             this.menuproductos = new FontAwesome.Sharp.IconMenuItem();
+            this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
+            this.menuproveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.submenuRVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuDetVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuingreso = new FontAwesome.Sharp.IconMenuItem();
             this.submenuRCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuDetCompra = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
-            this.menuproveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
             this.menunegocio = new FontAwesome.Sharp.IconMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
@@ -212,9 +212,9 @@
             this.menucategoria,
             this.menuproductos,
             this.menuclientes,
+            this.menuproveedores,
             this.menuventas,
             this.menuingreso,
-            this.menuproveedores,
             this.menureportes,
             this.menunegocio,
             this.menuacercade});
@@ -266,6 +266,34 @@
             this.menuproductos.Size = new System.Drawing.Size(240, 70);
             this.menuproductos.Text = "Productos";
             this.menuproductos.Click += new System.EventHandler(this.menuproductos_Click);
+            // 
+            // menuclientes
+            // 
+            this.menuclientes.AutoSize = false;
+            this.menuclientes.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuclientes.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            this.menuclientes.IconColor = System.Drawing.Color.Black;
+            this.menuclientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuclientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuclientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuclientes.Name = "menuclientes";
+            this.menuclientes.Size = new System.Drawing.Size(240, 70);
+            this.menuclientes.Text = "Clientes";
+            this.menuclientes.Click += new System.EventHandler(this.menuclientes_Click);
+            // 
+            // menuproveedores
+            // 
+            this.menuproveedores.AutoSize = false;
+            this.menuproveedores.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuproveedores.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.menuproveedores.IconColor = System.Drawing.Color.Black;
+            this.menuproveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuproveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuproveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuproveedores.Name = "menuproveedores";
+            this.menuproveedores.Size = new System.Drawing.Size(240, 70);
+            this.menuproveedores.Text = "Proveedores";
+            this.menuproveedores.Click += new System.EventHandler(this.menuproveedores_Click);
             // 
             // menuventas
             // 
@@ -324,33 +352,6 @@
             this.submenuDetCompra.Name = "submenuDetCompra";
             this.submenuDetCompra.Size = new System.Drawing.Size(342, 34);
             this.submenuDetCompra.Text = "Detalle de Entrada";
-            // 
-            // menuclientes
-            // 
-            this.menuclientes.AutoSize = false;
-            this.menuclientes.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuclientes.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            this.menuclientes.IconColor = System.Drawing.Color.Black;
-            this.menuclientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuclientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuclientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuclientes.Name = "menuclientes";
-            this.menuclientes.Size = new System.Drawing.Size(240, 70);
-            this.menuclientes.Text = "Clientes";
-            this.menuclientes.Click += new System.EventHandler(this.menuclientes_Click);
-            // 
-            // menuproveedores
-            // 
-            this.menuproveedores.AutoSize = false;
-            this.menuproveedores.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuproveedores.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.menuproveedores.IconColor = System.Drawing.Color.Black;
-            this.menuproveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuproveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuproveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuproveedores.Name = "menuproveedores";
-            this.menuproveedores.Size = new System.Drawing.Size(240, 70);
-            this.menuproveedores.Text = "Proveedores";
             // 
             // menureportes
             // 
@@ -495,6 +496,7 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.footer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";

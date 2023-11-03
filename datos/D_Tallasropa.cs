@@ -11,7 +11,7 @@ namespace datos
 {
     public class D_Tallasropa
     {
-        public List<Tallasropa> Listar()
+        public List<Tallasropa> ListarTallas()
         {
             List<Tallasropa> lista = new List<Tallasropa>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
@@ -19,7 +19,8 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select idtallaropa, nombretalla from tallasropa");
+                    query.AppendLine("select idtallaropa, c.idcategoria, c.nombrecategoria, nombretalla from tallasropa tr");
+                    query.AppendLine("inner join categorias c on c.idcategoria = tr.idcategoria");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -30,7 +31,8 @@ namespace datos
                             lista.Add(new Tallasropa()
                             {
                                 idtallaropa = Convert.ToInt32(dr["idtallaropa"]),
-                                nombretalla = dr["nombretalla"].ToString()
+                                nombretalla = dr["nombretalla"].ToString(),
+                                oCategorias = new Categorias() { idcategoria = Convert.ToInt32(dr["idcategoria"]), nombrecategoria = dr["nombrecategoria"].ToString() }
                             });
                         }
                     }
@@ -54,6 +56,7 @@ namespace datos
                 {
                     SqlCommand cmd = new SqlCommand("spu_registrar_tallasropa", oconexion);
                     cmd.Parameters.AddWithValue("nombretalla", obj.nombretalla);
+                    cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
                     cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -83,6 +86,7 @@ namespace datos
                     SqlCommand cmd = new SqlCommand("spu_editar_tallasropa", oconexion);
                     cmd.Parameters.AddWithValue("idtallaropa", obj.idtallaropa);
                     cmd.Parameters.AddWithValue("nombretalla", obj.nombretalla);
+                    cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
