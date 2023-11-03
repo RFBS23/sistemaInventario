@@ -113,14 +113,6 @@ namespace presentacion
                 {
                     dgclientes.Rows.Add(new object[] {"", txtid.Text, txtdocumento.Text, txtnombre.Text, txtapellidos.Text, txtcorreo.Text, txttelefono.Text });
                     Limpiar();
-
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "Valent France: Se ha registrado correctamente al cliente";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -140,14 +132,6 @@ namespace presentacion
                     row.Cells["correo"].Value = txtcorreo.Text;
                     row.Cells["telefono"].Value = txttelefono.Text;
                     Limpiar();
-
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "Valent France: Se ha modificado correctamente al cliente";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -196,13 +180,6 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgclientes.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "Valent France: Se ha eliminado un cliente";
-                        notifyIcon1.ShowBalloonTip(1000);
                         Limpiar();
                     }
                     else

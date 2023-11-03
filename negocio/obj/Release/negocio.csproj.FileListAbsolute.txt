@@ -1,2 +1,11 @@
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\obj\Release\negocio.csproj.AssemblyReference.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\obj\Release\negocio.csproj.CoreCompileInputs.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\bin\Release\negocio.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\bin\Release\negocio.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\bin\Release\datos.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\bin\Release\entidad.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\bin\Release\datos.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\bin\Release\entidad.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\obj\Release\negocio.csproj.CopyComplete
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\obj\Release\negocio.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\negocio\obj\Release\negocio.pdb

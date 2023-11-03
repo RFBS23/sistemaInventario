@@ -114,6 +114,7 @@ namespace presentacion
             listatallas.DataSource = dt;
         }
         */
+        
         private void listacategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*
@@ -273,12 +274,6 @@ namespace presentacion
                         txtdevoluciontalla.Text
                     });
                     Limpiar();
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "Nuevo Producto Agregado";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -308,12 +303,6 @@ namespace presentacion
                     row.Cells["devoluciontalla"].Value = txtdevoluciontalla.Text;
 
                     Limpiar();
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "El Producto: " + txtnombre.Text + "Fue Editado Correctamente";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -342,12 +331,6 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgproductos.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "El Producto: " + txtnombre.Text + " Fue Eliminado Correctamente";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {
@@ -417,25 +400,9 @@ namespace presentacion
                         hoja.ColumnsUsed().AdjustToContents();
                         wb.SaveAs(savefile.FileName);
                         MessageBox.Show("REPORTE GENERADO EXITOSAMENTE", "VALENT FRANCE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "Valent France: Se ha generado un nuevo reporte";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     catch
                     {
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "Valent France: No se ha podido generar un reporte";
-                        notifyIcon1.ShowBalloonTip(1000);
-
                         MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                        
                     }
                 }

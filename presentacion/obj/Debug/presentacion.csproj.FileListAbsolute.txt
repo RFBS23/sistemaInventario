@@ -1,6 +1,6 @@
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\sistema inventario.exe.config
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\sistema inventario.exe
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\sistema inventario.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\sistemainventariodemo.exe.config
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\sistemainventariodemo.exe
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\sistemainventariodemo.pdb
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\ClosedXML.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\DocumentFormat.OpenXml.dll
@@ -41,7 +41,7 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\datos.pdb
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.AssemblyReference.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.SuggestedBindingRedirects.cache
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\sistema inventario.exe.config
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\sistemainventariodemo.exe.config
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Dashboard.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmCategorias.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmClientes.resources
@@ -57,5 +57,5 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.GenerateResource.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.CoreCompileInputs.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.CopyComplete
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\sistema inventario.exe
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\sistema inventario.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\sistemainventariodemo.exe
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\sistemainventariodemo.pdb

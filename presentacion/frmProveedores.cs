@@ -140,13 +140,6 @@ namespace presentacion
                     dgproveedores.Rows.Add(new object[] {"", txtid.Text, txtdocumento.Text, txtrazonsocial.Text, txtcorreo.Text, txttelefono.Text });
 
                     Limpiar();
-
-                    notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "Nuevo Proveedor Agregado";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -166,13 +159,6 @@ namespace presentacion
                     row.Cells["telefono"].Value = txttelefono.Text;
 
                     Limpiar();
-
-                    notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "El Proveedor fue editado correctamente";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -250,12 +236,6 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgproveedores.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "El Proveedor: " + txtdocumento.Text + " Fue Eliminado Correctamente";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {

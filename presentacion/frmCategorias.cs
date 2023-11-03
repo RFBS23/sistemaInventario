@@ -131,24 +131,10 @@ namespace presentacion
                 {
                     dgcategorias.Rows.Add(new object[] { "", txtid.Text, txtnombrecatecoria.Text });
                     Limpiarc();
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "Nueva Categoria Agregada";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "No se puedo agregar la categoria";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
             }
             else
@@ -160,24 +146,10 @@ namespace presentacion
                     row.Cells["id"].Value = txtid.Text;
                     row.Cells["nombrecategoria"].Value = txtnombrecatecoria.Text;
                     Limpiarc();
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "La categoria fue Editada Correctamente";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "No se puedo editar categoria seleccionada";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
             }
         }
@@ -217,13 +189,6 @@ namespace presentacion
                         ((opcionesComboBox)listarcategoria.SelectedItem).Texto.ToString(),
                         txtnombreropa.Text });
                     Limpiartr();
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "Nueva Talla Agregada";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -239,13 +204,6 @@ namespace presentacion
                     row.Cells["idtallaropa"].Value = txtid.Text;
                     row.Cells["nombretalla"].Value = txtnombreropa.Text;
                     Limpiartr();
-                    //notificacion
-                    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                    notifyIcon1.Text = "Valent France";
-                    notifyIcon1.Visible = true;
-                    notifyIcon1.BalloonTipTitle = "Valent France";
-                    notifyIcon1.BalloonTipText = "La talla fue Editada Correctamente";
-                    notifyIcon1.ShowBalloonTip(1000);
                 }
                 else
                 {
@@ -269,23 +227,9 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgtallaprendas.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "La Talla fue Eliminada Correctamente";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "No se puedo eliminar la talla seleccionada";
-                        notifyIcon1.ShowBalloonTip(1000);
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
@@ -361,13 +305,6 @@ namespace presentacion
                     {
                         dgcategorias.Rows.Add(new object[] { "", txtid.Text, txtnombrecatecoria.Text });
                         Limpiarc();
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "Nueva Categoria Agregada";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {
@@ -383,13 +320,6 @@ namespace presentacion
                         row.Cells["id"].Value = txtid.Text;
                         row.Cells["nombrecategoria"].Value = txtnombrecatecoria.Text;
                         Limpiarc();
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "La categoria fue Editada Correctamente";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {
@@ -414,14 +344,6 @@ namespace presentacion
                     if (respuesta)
                     {
                         dgcategorias.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-
-                        //notificacion
-                        notifyIcon1.Icon = new Icon(Path.GetFullPath(@"../../Resources/icono.ico"));
-                        notifyIcon1.Text = "Valent France";
-                        notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Valent France";
-                        notifyIcon1.BalloonTipText = "Se Eliminao Correctamente la categoria";
-                        notifyIcon1.ShowBalloonTip(1000);
                     }
                     else
                     {
