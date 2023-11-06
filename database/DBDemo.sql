@@ -330,13 +330,13 @@ create procedure spu_registrar_tallasropa(
 )as
 begin
 	set @resultado = 0
-	if not exists (select * from tallasropa where nombretalla = @nombretalla)
+	-- if not exists (select * from tallasropa where nombretalla = @nombretalla)
 	begin
 		insert into tallasropa(idcategoria, nombretalla) values (@idcategoria, @nombretalla)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	else
-		set @mensaje = 'La talla ya se encuentra registrado'
+	-- else
+		-- set @mensaje = 'La talla ya se encuentra registrado'
 end
 go
 
@@ -350,16 +350,17 @@ create procedure spu_editar_tallasropa(
 as
 begin
 	set @resultado = 1
-	if not exists (select * from tallasropa where nombretalla = @nombretalla and idtallaropa != @idtallaropa)
+	-- if not exists (select * from tallasropa where nombretalla = @nombretalla and idtallaropa != @idtallaropa)
 		update tallasropa set
 		idcategoria = @idcategoria,
 		nombretalla = @nombretalla
 		where idtallaropa = @idtallaropa
-	else
+	-- else
+	/*
 	begin
 		set @resultado = 0
 		set @mensaje = 'No se puede repetir la talla'
-	end
+	end*/
 end
 go
 

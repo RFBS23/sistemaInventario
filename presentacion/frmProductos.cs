@@ -1,11 +1,11 @@
-﻿using ClosedXML.Excel;
+﻿using System;
+using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Math;
 using entidad;
 using Guna.UI2.WinForms;
 using negocio;
 using presentacion.Utilidades;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,9 +23,7 @@ namespace presentacion
 {
     public partial class frmProductos : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
-
-        byte[] imagenByte;
+        //SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
 
         public frmProductos()
         {
@@ -189,16 +187,6 @@ namespace presentacion
                 }
             }
         }
-                
-        private void txtprecioventa_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
@@ -261,7 +249,7 @@ namespace presentacion
 
                 if (idproductogenerado != 0)
                 {
-                    dgproductos.Rows.Add(new object[] {"", txtid.Text, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text, txtubicacion.Text,
+                    dgproductos.Rows.Add(new object[] {"", idproductogenerado, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text, txtubicacion.Text,
                         ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
                         ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
                         ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString(),
@@ -457,19 +445,15 @@ namespace presentacion
             }
         }
 
-        private void btnsubirimg_Click(object sender, EventArgs e)
+        private void txtprecioventa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            OpenFileDialog foto = new OpenFileDialog();
-            foto.Title = "Seleccionar imagen";
-            foto.FileName = "Files|*.jpg;*.jpeg;*.png";
-            DialogResult result = foto.ShowDialog();
-            if (result == DialogResult.OK)
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                txtimagen.Image = Image.FromFile(foto.FileName);
-                MemoryStream memoria = new MemoryStream();
-                txtimagen.Image.Save(memoria, System.Drawing.Imaging.ImageFormat.Png);
-                imagenByte = memoria.ToArray();
+                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
             }
         }
+
     }
 }

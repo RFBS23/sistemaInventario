@@ -75,7 +75,7 @@ namespace presentacion
 
                 if (idusuariogenerado != 0)
                 {
-                    dgusuarios.Rows.Add(new object[] {"", txtid.Text, txtdocumento.Text, txtnombreusuario.Text, txtcorreo.Text, txtclave.Text,
+                    dgusuarios.Rows.Add(new object[] {"", idusuariogenerado, txtdocumento.Text, txtnombreusuario.Text, txtcorreo.Text, txtclave.Text,
                         ((opcionesComboBox)listarol.SelectedItem).Valor.ToString(),
                         ((opcionesComboBox)listarol.SelectedItem).Texto.ToString(),
                     });
@@ -260,6 +260,23 @@ namespace presentacion
                     else
                         row.Visible = false;
                 }
+            }
+        }
+
+        private void txtcorreo_Validating(object sender, CancelEventArgs e)
+        {
+            string email = txtcorreo.Text.Trim();
+
+            // Utiliza una expresión regular para validar el formato del correo electrónico.
+            // Aquí se utiliza una expresión regular simple para demostrar el concepto, pero podrías utilizar una expresión más robusta según tus necesidades.
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+            bool isValid = System.Text.RegularExpressions.Regex.IsMatch(email, emailPattern);
+
+            if (!isValid)
+            {
+                MessageBox.Show("Correo electrónico no válido. Introduce un correo electrónico válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtcorreo.Focus();
+                e.Cancel = true; // Evita que el foco se mueva fuera del TextBox si la validación falla.
             }
         }
     }

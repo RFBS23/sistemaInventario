@@ -19,8 +19,8 @@ namespace presentacion
     {
         private static Usuarios usuarioActual;
         private static IconMenuItem MenuActivo = null;
-
         private static Form FormularioActivo = null;
+
         public Dashboard(Usuarios objusuario = null)
         {
             InitializeComponent();
@@ -73,27 +73,58 @@ namespace presentacion
             formulario.BackColor = Color.White;
             panelEscritorio.Controls.Add(formulario);
             formulario.Show();
+
+            //
         }
         /* fin mostramos formulario*/
 
         private void menuusuarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
-            submenu.Hide();
+            //submenu.Hide();
         }
 
-        private void menucategoria_Click(object sender, EventArgs e)
+        private void submenucategoria_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmCategorias());
-            submenu.Hide();
+            AbrirFormulario(menucategoria, new frmCategorias());
+            //submenu.Hide();
+        }
+
+        private void submenutallas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucategoria, new frmTallas());
+            //submenu.Hide();
         }
 
         private void menuproductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmProductos());
-            submenu.Hide();
+            //submenu.Hide();
         }
 
+        private void menuclientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmClientes());
+           // submenu.Hide();
+        }
+
+        private void menuproveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmProveedores());
+            //submenu.Hide();
+        }
+
+        private void submenuRVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmVentas());
+            //submenu.Hide();
+        }
+
+        private void submenuDetVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmDetallesVentas());
+            //submenu.Hide();
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -104,7 +135,7 @@ namespace presentacion
 
         private void horafecha_Tick(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            //lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
@@ -119,33 +150,10 @@ namespace presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void submenuRVentas_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuventas, new frmVentas());
-            submenu.Hide();
-        }
-
-        private void submenuDetVentas_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuventas, new frmDetallesVentas());
-            submenu.Hide();
-        }
-
-        private void menuclientes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuclientes, new frmClientes());
-            submenu.Hide();
-        }
-
         private void logo_Click(object sender, EventArgs e)
         {
-            submenu.Show();
+            //submenu.Show();
         }
 
-        private void menuproveedores_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuproveedores, new frmProveedores());
-            submenu.Hide();
-        }
     }
 }

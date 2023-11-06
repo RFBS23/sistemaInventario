@@ -180,13 +180,13 @@ create procedure spu_registrar_tallasropa(
 )as
 begin
 	set @resultado = 0
-	if not exists (select * from tallasropa where nombretalla = @nombretalla)
+	-- if not exists (select * from tallasropa where nombretalla = @nombretalla)
 	begin
 		insert into tallasropa(idcategoria, nombretalla) values (@idcategoria, @nombretalla)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	else
-		set @mensaje = 'La talla ya se encuentra registrado'
+	-- else
+		-- set @mensaje = 'La talla ya se encuentra registrado'
 end
 go
 
@@ -200,16 +200,17 @@ create procedure spu_editar_tallasropa(
 as
 begin
 	set @resultado = 1
-	if not exists (select * from tallasropa where nombretalla = @nombretalla and idtallaropa != @idtallaropa)
+	-- if not exists (select * from tallasropa where nombretalla = @nombretalla and idtallaropa != @idtallaropa)
 		update tallasropa set
 		idcategoria = @idcategoria,
 		nombretalla = @nombretalla
 		where idtallaropa = @idtallaropa
-	else
+	-- else
+	/*
 	begin
 		set @resultado = 0
 		set @mensaje = 'No se puede repetir la talla'
-	end
+	end*/
 end
 go
 
@@ -457,18 +458,18 @@ create procedure spu_eliminar_proveedores(
 )
 as
 begin
-	SET @resultado = 1
-	IF NOT EXISTS (
-	 select *  from proveedores p
-	 inner join compras c on p.idproveedor = c.idproveedor
-	 where p.idproveedor = @idproveedor
+	set @resultado = 1
+	if not exists (
+		select *  from proveedores p
+		inner join compras c on p.idproveedor = c.idproveedor
+		where p.idproveedor = @idproveedor
 	)
 	begin
-	 delete top(1) from proveedores where idproveedor = @idproveedor
+	 	delete top(1) from proveedores where idproveedor = @idproveedor
 	end
-	ELSE
+	else
 	begin
-		SET @resultado = 0
+		set @resultado = 0
 		set @mensaje = 'El proveedor se encuentara relacionado a una compra'
 	end
 end
@@ -528,7 +529,7 @@ begin
 	end catch
 
 end
-GO
+go
 
 /* PROCESOS PARA REGISTRAR UNA VENTA */
 CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
@@ -537,8 +538,8 @@ CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 	[Cantidad] int NULL,
 	[SubTotal] decimal(18,2) NULL
 )
-GO
-select * from usuario
+go
+select * from usuarios
 go
 
 create procedure usp_RegistrarVenta(

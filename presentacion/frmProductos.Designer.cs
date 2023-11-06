@@ -54,13 +54,11 @@
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.grupodevolucion = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtdevolucion = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtdevoluciontalla = new Guna.UI2.WinForms.Guna2ComboBox();
             this.listaubi = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtubicacion = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnsubirimg = new Guna.UI2.WinForms.Guna2Button();
-            this.txtimagen = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtnumcaja = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtstock = new Guna.UI2.WinForms.Guna2TextBox();
@@ -88,6 +86,7 @@
             this.listacategoria = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgproductos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,13 +104,10 @@
             this.devolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devoluciontalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalledevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.guna2Panel2.SuspendLayout();
             this.grupoboxdescargar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtimagen)).BeginInit();
+            this.grupodevolucion.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgproductos)).BeginInit();
             this.SuspendLayout();
@@ -291,11 +287,9 @@
             this.guna2Panel1.AutoScroll = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(238)))), ((int)(((byte)(121)))));
             this.guna2Panel1.BorderRadius = 20;
-            this.guna2Panel1.Controls.Add(this.guna2GroupBox1);
+            this.guna2Panel1.Controls.Add(this.grupodevolucion);
             this.guna2Panel1.Controls.Add(this.listaubi);
             this.guna2Panel1.Controls.Add(this.txtubicacion);
-            this.guna2Panel1.Controls.Add(this.btnsubirimg);
-            this.guna2Panel1.Controls.Add(this.txtimagen);
             this.guna2Panel1.Controls.Add(this.txtnumcaja);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel12);
             this.guna2Panel1.Controls.Add(this.txtstock);
@@ -328,23 +322,23 @@
             this.guna2Panel1.Size = new System.Drawing.Size(482, 753);
             this.guna2Panel1.TabIndex = 7;
             // 
-            // guna2GroupBox1
+            // grupodevolucion
             // 
-            this.guna2GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grupodevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2GroupBox1.BorderRadius = 20;
-            this.guna2GroupBox1.Controls.Add(this.txtdevolucion);
-            this.guna2GroupBox1.Controls.Add(this.txtdevoluciontalla);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(216)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("MesloLGL NF", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(33, 1418);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(385, 185);
-            this.guna2GroupBox1.TabIndex = 43;
-            this.guna2GroupBox1.Text = "motivo de devolucion";
+            this.grupodevolucion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.grupodevolucion.BorderRadius = 20;
+            this.grupodevolucion.Controls.Add(this.txtdevolucion);
+            this.grupodevolucion.Controls.Add(this.txtdevoluciontalla);
+            this.grupodevolucion.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.grupodevolucion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(216)))));
+            this.grupodevolucion.Font = new System.Drawing.Font("MesloLGL NF", 9F, System.Drawing.FontStyle.Bold);
+            this.grupodevolucion.ForeColor = System.Drawing.Color.Black;
+            this.grupodevolucion.Location = new System.Drawing.Point(44, 1132);
+            this.grupodevolucion.Name = "grupodevolucion";
+            this.grupodevolucion.Size = new System.Drawing.Size(385, 185);
+            this.grupodevolucion.TabIndex = 43;
+            this.grupodevolucion.Text = "motivo de devolucion";
             // 
             // txtdevolucion
             // 
@@ -433,7 +427,7 @@
             this.listaubi.AutoSize = false;
             this.listaubi.BackColor = System.Drawing.Color.Transparent;
             this.listaubi.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaubi.Location = new System.Drawing.Point(10, 707);
+            this.listaubi.Location = new System.Drawing.Point(21, 421);
             this.listaubi.Name = "listaubi";
             this.listaubi.Size = new System.Drawing.Size(388, 34);
             this.listaubi.TabIndex = 39;
@@ -462,44 +456,12 @@
             "Seleccione",
             "Almacen",
             "Tienda"});
-            this.txtubicacion.Location = new System.Drawing.Point(31, 747);
+            this.txtubicacion.Location = new System.Drawing.Point(42, 461);
             this.txtubicacion.Name = "txtubicacion";
             this.txtubicacion.Size = new System.Drawing.Size(385, 36);
             this.txtubicacion.StartIndex = 0;
             this.txtubicacion.TabIndex = 38;
             this.txtubicacion.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            // 
-            // btnsubirimg
-            // 
-            this.btnsubirimg.BorderRadius = 15;
-            this.btnsubirimg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnsubirimg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnsubirimg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnsubirimg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnsubirimg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnsubirimg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnsubirimg.ForeColor = System.Drawing.Color.White;
-            this.btnsubirimg.Location = new System.Drawing.Point(60, 314);
-            this.btnsubirimg.Name = "btnsubirimg";
-            this.btnsubirimg.Size = new System.Drawing.Size(330, 45);
-            this.btnsubirimg.TabIndex = 37;
-            this.btnsubirimg.Text = "Subir imagen";
-            this.btnsubirimg.Click += new System.EventHandler(this.btnsubirimg_Click);
-            // 
-            // txtimagen
-            // 
-            this.txtimagen.BorderRadius = 20;
-            this.txtimagen.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtimagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("txtimagen.ErrorImage")));
-            this.txtimagen.Image = ((System.Drawing.Image)(resources.GetObject("txtimagen.Image")));
-            this.txtimagen.ImageRotate = 0F;
-            this.txtimagen.InitialImage = ((System.Drawing.Image)(resources.GetObject("txtimagen.InitialImage")));
-            this.txtimagen.Location = new System.Drawing.Point(60, 81);
-            this.txtimagen.Name = "txtimagen";
-            this.txtimagen.Size = new System.Drawing.Size(330, 226);
-            this.txtimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.txtimagen.TabIndex = 36;
-            this.txtimagen.TabStop = false;
             // 
             // txtnumcaja
             // 
@@ -515,7 +477,7 @@
             this.txtnumcaja.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnumcaja.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtnumcaja.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnumcaja.Location = new System.Drawing.Point(33, 1242);
+            this.txtnumcaja.Location = new System.Drawing.Point(44, 956);
             this.txtnumcaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtnumcaja.Name = "txtnumcaja";
             this.txtnumcaja.PasswordChar = '\0';
@@ -529,7 +491,7 @@
             this.guna2HtmlLabel12.AutoSize = false;
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(12, 1198);
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(23, 912);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(309, 37);
             this.guna2HtmlLabel12.TabIndex = 34;
@@ -549,7 +511,7 @@
             this.txtstock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtstock.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtstock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtstock.Location = new System.Drawing.Point(33, 1140);
+            this.txtstock.Location = new System.Drawing.Point(44, 854);
             this.txtstock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtstock.Name = "txtstock";
             this.txtstock.PasswordChar = '\0';
@@ -564,7 +526,7 @@
             this.guna2HtmlLabel7.AutoSize = false;
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(12, 1096);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(23, 810);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(309, 37);
             this.guna2HtmlLabel7.TabIndex = 32;
@@ -585,7 +547,7 @@
             this.listatallas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.listatallas.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listatallas.ItemHeight = 30;
-            this.listatallas.Location = new System.Drawing.Point(33, 922);
+            this.listatallas.Location = new System.Drawing.Point(44, 636);
             this.listatallas.Name = "listatallas";
             this.listatallas.Size = new System.Drawing.Size(385, 36);
             this.listatallas.TabIndex = 31;
@@ -596,7 +558,7 @@
             this.guna2HtmlLabel6.AutoSize = false;
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(12, 882);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(23, 596);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(309, 34);
             this.guna2HtmlLabel6.TabIndex = 30;
@@ -657,7 +619,7 @@
             this.btnlimpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(164)))), ((int)(((byte)(225)))));
             this.btnlimpiar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnlimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiar.Location = new System.Drawing.Point(221, 1705);
+            this.btnlimpiar.Location = new System.Drawing.Point(232, 1419);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(195, 45);
             this.btnlimpiar.TabIndex = 26;
@@ -686,7 +648,7 @@
             this.btneliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.btneliminar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(33, 1705);
+            this.btneliminar.Location = new System.Drawing.Point(44, 1419);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(182, 45);
             this.btneliminar.TabIndex = 25;
@@ -704,7 +666,7 @@
             this.btnguardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(178)))), ((int)(((byte)(56)))));
             this.btnguardar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Location = new System.Drawing.Point(33, 1630);
+            this.btnguardar.Location = new System.Drawing.Point(44, 1344);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(383, 52);
             this.btnguardar.TabIndex = 24;
@@ -725,7 +687,9 @@
             this.txtprecioventa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtprecioventa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtprecioventa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtprecioventa.Location = new System.Drawing.Point(33, 1349);
+            this.txtprecioventa.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtprecioventa.IconLeft")));
+            this.txtprecioventa.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.txtprecioventa.Location = new System.Drawing.Point(44, 1063);
             this.txtprecioventa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtprecioventa.Name = "txtprecioventa";
             this.txtprecioventa.PasswordChar = '\0';
@@ -733,13 +697,14 @@
             this.txtprecioventa.SelectedText = "";
             this.txtprecioventa.Size = new System.Drawing.Size(385, 48);
             this.txtprecioventa.TabIndex = 17;
+            this.txtprecioventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecioventa_KeyPress);
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.AutoSize = false;
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(12, 1766);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(23, 1474);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(309, 37);
             this.guna2HtmlLabel10.TabIndex = 16;
@@ -750,7 +715,7 @@
             this.guna2HtmlLabel9.AutoSize = false;
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(12, 1305);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(23, 1019);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(309, 37);
             this.guna2HtmlLabel9.TabIndex = 14;
@@ -761,7 +726,7 @@
             this.guna2HtmlLabel8.AutoSize = false;
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(12, 981);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(23, 695);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(388, 34);
             this.guna2HtmlLabel8.TabIndex = 13;
@@ -772,7 +737,7 @@
             this.guna2HtmlLabel5.AutoSize = false;
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 796);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(23, 510);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(388, 34);
             this.guna2HtmlLabel5.TabIndex = 10;
@@ -783,7 +748,7 @@
             this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 587);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(23, 301);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(309, 34);
             this.guna2HtmlLabel4.TabIndex = 9;
@@ -794,7 +759,7 @@
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 374);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(23, 88);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(309, 34);
             this.guna2HtmlLabel3.TabIndex = 8;
@@ -805,7 +770,7 @@
             this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 479);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(23, 193);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(388, 34);
             this.guna2HtmlLabel2.TabIndex = 7;
@@ -825,7 +790,7 @@
             this.txtcolores.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcolores.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtcolores.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcolores.Location = new System.Drawing.Point(33, 1022);
+            this.txtcolores.Location = new System.Drawing.Point(44, 736);
             this.txtcolores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcolores.Name = "txtcolores";
             this.txtcolores.PasswordChar = '\0';
@@ -848,7 +813,7 @@
             this.txtcodigo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcodigo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtcodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcodigo.Location = new System.Drawing.Point(33, 415);
+            this.txtcodigo.Location = new System.Drawing.Point(44, 129);
             this.txtcodigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.PasswordChar = '\0';
@@ -871,7 +836,7 @@
             this.txtdescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtdescripcion.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtdescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdescripcion.Location = new System.Drawing.Point(33, 628);
+            this.txtdescripcion.Location = new System.Drawing.Point(44, 342);
             this.txtdescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.PasswordChar = '\0';
@@ -894,7 +859,7 @@
             this.txtnombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnombre.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtnombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombre.Location = new System.Drawing.Point(33, 519);
+            this.txtnombre.Location = new System.Drawing.Point(44, 233);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.PasswordChar = '\0';
@@ -918,7 +883,7 @@
             this.listacategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.listacategoria.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listacategoria.ItemHeight = 30;
-            this.listacategoria.Location = new System.Drawing.Point(33, 836);
+            this.listacategoria.Location = new System.Drawing.Point(44, 550);
             this.listacategoria.Name = "listacategoria";
             this.listacategoria.Size = new System.Drawing.Size(385, 36);
             this.listacategoria.TabIndex = 1;
@@ -1027,6 +992,14 @@
             this.dgproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgproductos_CellContentClick);
             this.dgproductos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgproductos_CellFormatting);
             this.dgproductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgproductos_CellPainting);
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 30;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // btnseleccionar
             // 
@@ -1220,21 +1193,6 @@
             this.detalledevolucion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.detalledevolucion.Width = 249;
             // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 30;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.HasFormShadow = false;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Tag = "";
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1251,8 +1209,7 @@
             this.guna2Panel2.ResumeLayout(false);
             this.grupoboxdescargar.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtimagen)).EndInit();
+            this.grupodevolucion.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgproductos)).EndInit();
             this.ResumeLayout(false);
@@ -1297,14 +1254,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtnumcaja;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private Guna.UI2.WinForms.Guna2PictureBox txtimagen;
-        private Guna.UI2.WinForms.Guna2Button btnsubirimg;
         private Guna.UI2.WinForms.Guna2ComboBox txtdevolucion;
         private Guna.UI2.WinForms.Guna2HtmlLabel listaubi;
         private Guna.UI2.WinForms.Guna2ComboBox txtubicacion;
         private Guna.UI2.WinForms.Guna2ComboBox txtdevoluciontalla;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox grupodevolucion;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;

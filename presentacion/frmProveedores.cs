@@ -137,7 +137,7 @@ namespace presentacion
 
                 if (idprovedorgenerado != 0)
                 {
-                    dgproveedores.Rows.Add(new object[] {"", txtid.Text, txtdocumento.Text, txtrazonsocial.Text, txtcorreo.Text, txttelefono.Text });
+                    dgproveedores.Rows.Add(new object[] {"", idprovedorgenerado, txtdocumento.Text, txtrazonsocial.Text, txtcorreo.Text, txttelefono.Text });
 
                     Limpiar();
                 }

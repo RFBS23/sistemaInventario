@@ -16,13 +16,13 @@ insert into permisos (idrol,nombremenu) values
 	(1, 'menuusuarios'),
 	(1, 'menucategoria'),
 	(1, 'menuproductos'),
-	(1, 'menuventas'),
-	(1, 'menuingreso'),
 	(1, 'menuclientes'),
 	(1, 'menuproveedores'),
+	(1, 'menuventas'),
+	(1, 'menuingresotienda'),
 	(1, 'menureportes'),
-	(1, 'menuacercade'),
-	(1, 'menunegocio')
+	(1, 'menunegocio'),
+	(1, 'menuacercade')
 go
 
 insert into permisos (idrol, nombremenu) values

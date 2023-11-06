@@ -5,3 +5,4 @@ RJCodeAdvance.RJControls
 PowerToys
 iTextSharp (pdf)
 itextsharp.xmlworker (pdf)
+instalador: advanced installer for visual studio 2022
