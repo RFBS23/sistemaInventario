@@ -81,49 +81,49 @@ namespace presentacion
         private void menuusuarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void submenucategoria_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menucategoria, new frmCategorias());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void submenutallas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menucategoria, new frmTallas());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void menuproductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmProductos());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void menuclientes_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmClientes());
-           // submenu.Hide();
+           submenu.Hide();
         }
 
         private void menuproveedores_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmProveedores());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void submenuRVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuventas, new frmVentas());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void submenuDetVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuventas, new frmDetallesVentas());
-            //submenu.Hide();
+            submenu.Hide();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -135,7 +135,7 @@ namespace presentacion
 
         private void horafecha_Tick(object sender, EventArgs e)
         {
-            //lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
@@ -152,8 +152,13 @@ namespace presentacion
 
         private void logo_Click(object sender, EventArgs e)
         {
-            //submenu.Show();
+            submenu.Show();
         }
 
+        private void submenutienda_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuingresotienda, new frmTienda());
+            submenu.Hide();
+        }
     }
 }

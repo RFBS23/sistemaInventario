@@ -290,6 +290,12 @@
     <Compile Include="frmTallas.Designer.cs">
       <DependentUpon>frmTallas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTienda.Designer.cs">
+      <DependentUpon>frmTienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTallas.resx">
       <DependentUpon>frmTallas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTienda.resx">
+      <DependentUpon>frmTienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

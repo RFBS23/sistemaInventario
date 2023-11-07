@@ -33,12 +33,22 @@ namespace presentacion
             listacategorias.ValueMember = "Valor";
             listacategorias.SelectedIndex = 0;
 
+            foreach (DataGridViewColumn columna in dgtallaprendas.Columns)
+            {
+                if (columna.Visible == true)
+                {
+                    listbuscar.Items.Add(new opcionesComboBox() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+                listbuscar.DisplayMember = "Texto";
+                listbuscar.ValueMember = "Valor";
+                listbuscar.SelectedIndex = 0;
+            }
+
             List<Tallasropa> listaropa = new N_Tallasropa().Listar();
             foreach (Tallasropa item in listaropa)
             {
                 dgtallaprendas.Rows.Add(new object[] { "", item.idtallaropa, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.nombretalla });
             }
-
         }
 
         private void dgtallaprendas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -164,6 +174,36 @@ namespace presentacion
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
+            if (dgtallaprendas.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgtallaprendas.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void txtbusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
+            if (dgtallaprendas.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgtallaprendas.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
         }
     }
 }

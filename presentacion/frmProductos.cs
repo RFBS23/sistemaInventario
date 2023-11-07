@@ -23,7 +23,7 @@ namespace presentacion
 {
     public partial class frmProductos : Form
     {
-        //SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
 
         public frmProductos()
         {
@@ -32,7 +32,7 @@ namespace presentacion
         
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            /*categorias*/
+            /*categorias
             List<Categorias> listaCat = new N_Categorias().Listar();
             foreach (Categorias item in listaCat)
             {
@@ -50,7 +50,7 @@ namespace presentacion
             }
             listatallas.DisplayMember = "Texto";
             listatallas.ValueMember = "Valor";
-            listatallas.SelectedIndex = 0;
+            listatallas.SelectedIndex = 0;*/
             
             // btnbuscar
             foreach (DataGridViewColumn columna in dgproductos.Columns)
@@ -72,10 +72,10 @@ namespace presentacion
                 dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.ubiprod, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa, item.devolucion, item.devoluciontalla });
             }
 
-            //ListarCategorias();
+            ListarCategorias(); //prueba de anidados
         }
 
-        /*
+        /*pruebas anidados*/
         private void ListarCategorias()
         {
             con.Open();
@@ -111,18 +111,18 @@ namespace presentacion
             listatallas.DisplayMember = "nombretalla";
             listatallas.DataSource = dt;
         }
-        */
+        
         
         private void listacategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
+            
             if(listacategoria.SelectedIndex.ToString() != null)
             {
                 string idcategoria = listacategoria.SelectedValue.ToString();
                 listarTalla(idcategoria);
-            }*/
+            }
         }
-
+        /*fin pruebas de anidados*/
         
 
         private void dgproductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -226,7 +226,7 @@ namespace presentacion
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
-            
+
             Productos objproductos = new Productos()
             {
                 idproducto = Convert.ToInt32(txtid.Text),
@@ -289,7 +289,6 @@ namespace presentacion
                     row.Cells["precioventa"].Value = txtprecioventa.Text;
                     row.Cells["devolucion"].Value = txtdevolucion.Text;
                     row.Cells["devoluciontalla"].Value = txtdevoluciontalla.Text;
-
                     Limpiar();
                 }
                 else

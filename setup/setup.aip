@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="18.8.1" version="18.8.1" Modules="enterprise" RootPath="." Language="en" Id="{140CCB74-ED7A-438C-A262-43092AD9226F}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="Application_WorkingDir" Value="APPDIR\presentacion"/>
+    <ROW Name="MigrationUninstallCode" Value="{A89B5A86-3F76-4118-84C3-6287DB5E6EDD}"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_COLOR_DISABLED_TEXT" Value="3026478" MultiBuildValue="DefaultBuild:15461355" MsiKey="AI_COLOR_DISABLED_TEXT"/>
@@ -21,7 +25,7 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Irony.dll" Value="..\packages\Irony.1.2.0\lib\netstandard2.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.Common.dll" Value="..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.DataVisualization.dll" Value="..\presentacion\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.DataVisualization.dll" Value="..\..\..\..\..\..\..\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\ENTERPRISE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\SSAS"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.ProcessingObjectModel.DLL" Value="..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.WebForms.DLL" Value="..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.WinForms.dll" Value="..\..\..\..\..\..\..\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\ENTERPRISE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\SSAS"/>
@@ -39,7 +43,6 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_XLParser.dll" Value="..\packages\XLParser.1.7.2\lib\net462"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.dll" Value="..\datos\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.dll_1" Value="..\datos\bin\Debug"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.dll_2" Value="..\negocio\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.pdb" Value="..\datos\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_entidad.dll" Value="..\entidad\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_entidad.dll_1" Value="..\entidad\bin\Debug"/>
@@ -81,7 +84,6 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_XLParser.dll" Value="XLParser.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.dll" Value="datos.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.dll_1" Value="datos.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.dll_2" Value="datos.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.pdb" Value="datos.pdb"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_entidad.dll" Value="entidad.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_entidad.dll_1" Value="entidad.dll"/>
@@ -106,10 +108,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/RFBS23/sistemaInventario/issues/1"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://rfbs23.github.io/portafolio/"/>
     <ROW Property="Manufacturer" Value="FabriDev"/>
-    <ROW Property="ProductCode" Value="1033:{354F7B6B-05B3-4CEB-8116-AB624D8206E6} 3082:{354F7B6B-05B3-4CEB-8116-AB624D8206E6} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{0DFEE1AA-EE35-486F-B2AF-57350E996C28} 3082:{0DFEE1AA-EE35-486F-B2AF-57350E996C28} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Inventario - Valent France"/>
-    <ROW Property="ProductVersion" Value="1.1.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.2.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{A89B5A86-3F76-4118-84C3-6287DB5E6EDD}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -123,6 +125,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="Assets" Directory_Parent="TARGETDIR" DefaultDir="Assets" IsPseudoRoot="1"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
@@ -141,6 +144,7 @@
     <ROW Component="datos_SymbolsOutput" ComponentId="{C2D4045D-FBE7-493A-817A-2D2D76FFC8DD}" Directory_="datos_Dir" Attributes="0" KeyPath="datos.pdb"/>
     <ROW Component="entidad_PrimaryOutput" ComponentId="{744852E8-33E8-44B8-ADC2-019AFB4BE4EE}" Directory_="entidad_Dir" Attributes="0" KeyPath="entidad.dll_1"/>
     <ROW Component="entidad_SymbolsOutput" ComponentId="{3C89F4A0-62FC-49F0-B425-DA86C4BAF4FD}" Directory_="entidad_Dir" Attributes="0" KeyPath="entidad.pdb"/>
+    <ROW Component="icono.scale100.png" ComponentId="{4022C6D9-5170-43C3-8594-FBBD1056F86F}" Directory_="Assets" Attributes="0" KeyPath="icono.scale100.png" Type="0"/>
     <ROW Component="negocio_PrimaryOutput" ComponentId="{FCB92AC5-B7F6-4E6F-BF61-C897F2721539}" Directory_="negocio_Dir" Attributes="0" KeyPath="negocio.dll"/>
     <ROW Component="negocio_References" ComponentId="{1EDDE986-4539-4A99-918A-C58E469C510E}" Directory_="negocio_Dir" Attributes="0" KeyPath="entidad.dll_2"/>
     <ROW Component="negocio_SymbolsOutput" ComponentId="{2090ECA4-5976-4928-89DC-2517A0230759}" Directory_="negocio_Dir" Attributes="0" KeyPath="negocio.pdb"/>
@@ -150,6 +154,7 @@
     <ROW Component="updater.exe" ComponentId="{47DC9129-F44B-4995-B693-A46F6E516E13}" Directory_="APPDIR" Attributes="0" KeyPath="updater.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="AiAppXAssets" Title="AiAppXAssets" Description="Description" Display="3" Level="0" Directory_="APPDIR" Attributes="0" Options="271" Builds="Build_MSIX_APPX"/>
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
@@ -193,10 +198,134 @@
     <ROW File="System.Threading.Tasks.Extensions.dll" Component_="presentacion_References" FileName="SYSTEM~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll&gt;" SelfReg="false"/>
     <ROW File="System.ValueTuple.dll" Component_="presentacion_References" FileName="SYSTE~10.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll&gt;" SelfReg="false"/>
     <ROW File="XLParser.dll" Component_="presentacion_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_XLParser.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_XLParser.dll&gt;" SelfReg="false"/>
-    <ROW File="datos.dll_2" Component_="presentacion_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_datos.dll_2&gt;" SelfReg="false"/>
     <ROW File="Microsoft.ReportViewer.DataVisualization.dll" Component_="presentacion_References" FileName="MICROS~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.ReportViewer.DataVisualization.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.ReportViewer.DataVisualization.dll&gt;" SelfReg="false"/>
     <ROW File="InventarioValentFrance.pdb" Component_="presentacion_SymbolsOutput" FileName="INVENT~2.PDB|[|AI_PROPPATH_FILENAME_PERBUILD_InventarioValentFrance.pdb]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_InventarioValentFrance.pdb&gt;" SelfReg="false"/>
     <ROW File="updater.exe" Component_="updater.exe" FileName="updater.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="&lt;AI_STUBS&gt;updater.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="icono.scale100.png" Component_="icono.scale100.png" FileName="ICONOS~1.PNG|icono.scale-100.png" Attributes="0" SourcePath="Generated Assets\icono.scale-100.png" SelfReg="false"/>
+    <ROW File="icono.scale125.png" Component_="icono.scale100.png" FileName="ICONOS~2.PNG|icono.scale-125.png" Attributes="0" SourcePath="Generated Assets\icono.scale-125.png" SelfReg="false"/>
+    <ROW File="icono.scale150.png" Component_="icono.scale100.png" FileName="ICONOS~3.PNG|icono.scale-150.png" Attributes="0" SourcePath="Generated Assets\icono.scale-150.png" SelfReg="false"/>
+    <ROW File="icono.scale200.png" Component_="icono.scale100.png" FileName="ICONOS~4.PNG|icono.scale-200.png" Attributes="0" SourcePath="Generated Assets\icono.scale-200.png" SelfReg="false"/>
+    <ROW File="icono.scale400.png" Component_="icono.scale100.png" FileName="ICONOS~5.PNG|icono.scale-400.png" Attributes="0" SourcePath="Generated Assets\icono.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale100.png" Component_="icono.scale100.png" FileName="INVENT~1.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale120.png" Component_="icono.scale100.png" FileName="INVENT~2.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale125.png" Component_="icono.scale100.png" FileName="INVENT~3.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale140.png" Component_="icono.scale100.png" FileName="INVENT~4.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale150.png" Component_="icono.scale100.png" FileName="INVENT~5.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale160.png" Component_="icono.scale100.png" FileName="INVENT~6.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale180.png" Component_="icono.scale100.png" FileName="INVENT~7.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale200.png" Component_="icono.scale100.png" FileName="INVENT~8.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale220.png" Component_="icono.scale100.png" FileName="INVENT~9.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale225.png" Component_="icono.scale100.png" FileName="INVEN~10.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale240.png" Component_="icono.scale100.png" FileName="INVEN~11.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale250.png" Component_="icono.scale100.png" FileName="INVEN~12.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale300.png" Component_="icono.scale100.png" FileName="INVEN~13.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale400.png" Component_="icono.scale100.png" FileName="INVEN~14.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare71x71Logo.scale500.png" Component_="icono.scale100.png" FileName="INVEN~15.PNG|InventarioValentFrance.exeSquare71x71Logo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare71x71Logo.scale-500.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale100.png" Component_="icono.scale100.png" FileName="INVEN~16.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale120.png" Component_="icono.scale100.png" FileName="INVEN~17.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale125.png" Component_="icono.scale100.png" FileName="INVEN~18.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale140.png" Component_="icono.scale100.png" FileName="INVEN~19.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale150.png" Component_="icono.scale100.png" FileName="INVEN~20.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale160.png" Component_="icono.scale100.png" FileName="INVEN~21.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale180.png" Component_="icono.scale100.png" FileName="INVEN~22.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale200.png" Component_="icono.scale100.png" FileName="INVEN~23.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale220.png" Component_="icono.scale100.png" FileName="INVEN~24.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale225.png" Component_="icono.scale100.png" FileName="INVEN~25.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale240.png" Component_="icono.scale100.png" FileName="INVEN~26.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale250.png" Component_="icono.scale100.png" FileName="INVEN~27.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale300.png" Component_="icono.scale100.png" FileName="INVEN~28.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale400.png" Component_="icono.scale100.png" FileName="INVEN~29.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare150x150Logo.scale500.png" Component_="icono.scale100.png" FileName="INVEN~30.PNG|InventarioValentFrance.exeSquare150x150Logo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare150x150Logo.scale-500.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale100.png" Component_="icono.scale100.png" FileName="INVEN~31.PNG|InventarioValentFrance.exeWide310x150Logo.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale120.png" Component_="icono.scale100.png" FileName="INVEN~32.PNG|InventarioValentFrance.exeWide310x150Logo.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale125.png" Component_="icono.scale100.png" FileName="INVEN~33.PNG|InventarioValentFrance.exeWide310x150Logo.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale140.png" Component_="icono.scale100.png" FileName="INVEN~34.PNG|InventarioValentFrance.exeWide310x150Logo.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale150.png" Component_="icono.scale100.png" FileName="INVEN~35.PNG|InventarioValentFrance.exeWide310x150Logo.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale160.png" Component_="icono.scale100.png" FileName="INVEN~36.PNG|InventarioValentFrance.exeWide310x150Logo.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale180.png" Component_="icono.scale100.png" FileName="INVEN~37.PNG|InventarioValentFrance.exeWide310x150Logo.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale200.png" Component_="icono.scale100.png" FileName="INVEN~38.PNG|InventarioValentFrance.exeWide310x150Logo.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale220.png" Component_="icono.scale100.png" FileName="INVEN~39.PNG|InventarioValentFrance.exeWide310x150Logo.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale225.png" Component_="icono.scale100.png" FileName="INVEN~40.PNG|InventarioValentFrance.exeWide310x150Logo.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale240.png" Component_="icono.scale100.png" FileName="INVEN~41.PNG|InventarioValentFrance.exeWide310x150Logo.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale250.png" Component_="icono.scale100.png" FileName="INVEN~42.PNG|InventarioValentFrance.exeWide310x150Logo.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale300.png" Component_="icono.scale100.png" FileName="INVEN~43.PNG|InventarioValentFrance.exeWide310x150Logo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale400.png" Component_="icono.scale100.png" FileName="INVEN~44.PNG|InventarioValentFrance.exeWide310x150Logo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeWide310x150Logo.scale500.png" Component_="icono.scale100.png" FileName="INVEN~45.PNG|InventarioValentFrance.exeWide310x150Logo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeWide310x150Logo.scale-500.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale100.png" Component_="icono.scale100.png" FileName="INVEN~46.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale120.png" Component_="icono.scale100.png" FileName="INVEN~47.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale125.png" Component_="icono.scale100.png" FileName="INVEN~48.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale140.png" Component_="icono.scale100.png" FileName="INVEN~49.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale150.png" Component_="icono.scale100.png" FileName="INVEN~50.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale160.png" Component_="icono.scale100.png" FileName="INVEN~51.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale180.png" Component_="icono.scale100.png" FileName="INVEN~52.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale200.png" Component_="icono.scale100.png" FileName="INVEN~53.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale220.png" Component_="icono.scale100.png" FileName="INVEN~54.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale225.png" Component_="icono.scale100.png" FileName="INVEN~55.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale240.png" Component_="icono.scale100.png" FileName="INVEN~56.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale250.png" Component_="icono.scale100.png" FileName="INVEN~57.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale300.png" Component_="icono.scale100.png" FileName="INVEN~58.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale400.png" Component_="icono.scale100.png" FileName="INVEN~59.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare310x310Logo.scale500.png" Component_="icono.scale100.png" FileName="INVEN~60.PNG|InventarioValentFrance.exeSquare310x310Logo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare310x310Logo.scale-500.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale100.png" Component_="icono.scale100.png" FileName="INVEN~61.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize16.png" Component_="icono.scale100.png" FileName="INVEN~62.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-16.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-16.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize16_altformunplate" Component_="icono.scale100.png" FileName="INVEN~63.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-16_altform-unplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-16_altform-unplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize16_altformlightun" Component_="icono.scale100.png" FileName="INVEN~64.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-16_altform-lightunplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-16_altform-lightunplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale120.png" Component_="icono.scale100.png" FileName="INVEN~65.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale125.png" Component_="icono.scale100.png" FileName="INVEN~66.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize24.png" Component_="icono.scale100.png" FileName="INVEN~67.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-24.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-24.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize24_altformunplate" Component_="icono.scale100.png" FileName="INVEN~68.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-24_altform-unplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-24_altform-unplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize24_altformlightun" Component_="icono.scale100.png" FileName="INVEN~69.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-24_altform-lightunplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-24_altform-lightunplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale140.png" Component_="icono.scale100.png" FileName="INVEN~70.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale150.png" Component_="icono.scale100.png" FileName="INVEN~71.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize32.png" Component_="icono.scale100.png" FileName="INVEN~72.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-32.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-32.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize32_altformunplate" Component_="icono.scale100.png" FileName="INVEN~73.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-32_altform-unplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-32_altform-unplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize32_altformlightun" Component_="icono.scale100.png" FileName="INVEN~74.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-32_altform-lightunplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-32_altform-lightunplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale160.png" Component_="icono.scale100.png" FileName="INVEN~75.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale180.png" Component_="icono.scale100.png" FileName="INVEN~76.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale200.png" Component_="icono.scale100.png" FileName="INVEN~77.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize48.png" Component_="icono.scale100.png" FileName="INVEN~78.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-48.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-48.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize48_altformunplate" Component_="icono.scale100.png" FileName="INVEN~79.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-48_altform-unplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-48_altform-unplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize48_altformlightun" Component_="icono.scale100.png" FileName="INVEN~80.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-48_altform-lightunplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-48_altform-lightunplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale220.png" Component_="icono.scale100.png" FileName="INVEN~81.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale225.png" Component_="icono.scale100.png" FileName="INVEN~82.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale240.png" Component_="icono.scale100.png" FileName="INVEN~83.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale250.png" Component_="icono.scale100.png" FileName="INVEN~84.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale300.png" Component_="icono.scale100.png" FileName="INVEN~85.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale400.png" Component_="icono.scale100.png" FileName="INVEN~86.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize256.png" Component_="icono.scale100.png" FileName="INVEN~87.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-256.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-256.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize256_altformunplat" Component_="icono.scale100.png" FileName="INVEN~88.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-256_altform-unplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-256_altform-unplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.targetsize256_altformlightu" Component_="icono.scale100.png" FileName="INVEN~89.PNG|InventarioValentFrance.exeSquare44x44Logo.targetsize-256_altform-lightunplated.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.targetsize-256_altform-lightunplated.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSquare44x44Logo.scale500.png" Component_="icono.scale100.png" FileName="INVEN~90.PNG|InventarioValentFrance.exeSquare44x44Logo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSquare44x44Logo.scale-500.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale100.png" Component_="icono.scale100.png" FileName="INVEN~91.PNG|InventarioValentFrance.exeSplashScreen.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale120.png" Component_="icono.scale100.png" FileName="INVEN~92.PNG|InventarioValentFrance.exeSplashScreen.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale125.png" Component_="icono.scale100.png" FileName="INVEN~93.PNG|InventarioValentFrance.exeSplashScreen.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale140.png" Component_="icono.scale100.png" FileName="INVEN~94.PNG|InventarioValentFrance.exeSplashScreen.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale150.png" Component_="icono.scale100.png" FileName="INVEN~95.PNG|InventarioValentFrance.exeSplashScreen.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale160.png" Component_="icono.scale100.png" FileName="INVEN~96.PNG|InventarioValentFrance.exeSplashScreen.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale180.png" Component_="icono.scale100.png" FileName="INVEN~97.PNG|InventarioValentFrance.exeSplashScreen.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale200.png" Component_="icono.scale100.png" FileName="INVEN~98.PNG|InventarioValentFrance.exeSplashScreen.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale220.png" Component_="icono.scale100.png" FileName="INVEN~99.PNG|InventarioValentFrance.exeSplashScreen.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale225.png" Component_="icono.scale100.png" FileName="INVE~100.PNG|InventarioValentFrance.exeSplashScreen.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale240.png" Component_="icono.scale100.png" FileName="INVE~101.PNG|InventarioValentFrance.exeSplashScreen.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale250.png" Component_="icono.scale100.png" FileName="INVE~102.PNG|InventarioValentFrance.exeSplashScreen.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale300.png" Component_="icono.scale100.png" FileName="INVE~103.PNG|InventarioValentFrance.exeSplashScreen.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale400.png" Component_="icono.scale100.png" FileName="INVE~104.PNG|InventarioValentFrance.exeSplashScreen.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeSplashScreen.scale500.png" Component_="icono.scale100.png" FileName="INVE~105.PNG|InventarioValentFrance.exeSplashScreen.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeSplashScreen.scale-500.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale100.png" Component_="icono.scale100.png" FileName="INVE~106.PNG|InventarioValentFrance.exeBadgeLogo.scale-100.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-100.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale120.png" Component_="icono.scale100.png" FileName="INVE~107.PNG|InventarioValentFrance.exeBadgeLogo.scale-120.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-120.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale125.png" Component_="icono.scale100.png" FileName="INVE~108.PNG|InventarioValentFrance.exeBadgeLogo.scale-125.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-125.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale140.png" Component_="icono.scale100.png" FileName="INVE~109.PNG|InventarioValentFrance.exeBadgeLogo.scale-140.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-140.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale150.png" Component_="icono.scale100.png" FileName="INVE~110.PNG|InventarioValentFrance.exeBadgeLogo.scale-150.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-150.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale160.png" Component_="icono.scale100.png" FileName="INVE~111.PNG|InventarioValentFrance.exeBadgeLogo.scale-160.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-160.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale180.png" Component_="icono.scale100.png" FileName="INVE~112.PNG|InventarioValentFrance.exeBadgeLogo.scale-180.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-180.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale200.png" Component_="icono.scale100.png" FileName="INVE~113.PNG|InventarioValentFrance.exeBadgeLogo.scale-200.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-200.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale220.png" Component_="icono.scale100.png" FileName="INVE~114.PNG|InventarioValentFrance.exeBadgeLogo.scale-220.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-220.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale225.png" Component_="icono.scale100.png" FileName="INVE~115.PNG|InventarioValentFrance.exeBadgeLogo.scale-225.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-225.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale240.png" Component_="icono.scale100.png" FileName="INVE~116.PNG|InventarioValentFrance.exeBadgeLogo.scale-240.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-240.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale250.png" Component_="icono.scale100.png" FileName="INVE~117.PNG|InventarioValentFrance.exeBadgeLogo.scale-250.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-250.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale300.png" Component_="icono.scale100.png" FileName="INVE~118.PNG|InventarioValentFrance.exeBadgeLogo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-300.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale400.png" Component_="icono.scale100.png" FileName="INVE~119.PNG|InventarioValentFrance.exeBadgeLogo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-400.png" SelfReg="false"/>
+    <ROW File="InventarioValentFrance.exeBadgeLogo.scale500.png" Component_="icono.scale100.png" FileName="INVE~120.PNG|InventarioValentFrance.exeBadgeLogo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-500.png" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Type="2" Content="0"/>
@@ -227,7 +356,6 @@
     <ROW Name="AI_APPPATH_PERBUILD_XLParser.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_XLParser.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_XLParser.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_datos.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_datos.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll_1]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_datos.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll_2]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_datos.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.pdb]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_entidad.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_entidad.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_entidad.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_entidad.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_entidad.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_entidad.dll_1]" Type="2" Content="0"/>
@@ -242,10 +370,15 @@
     <ROW Name="AI_APPPATH_PERBUILD_sistemainventariodemo.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_sistemainventariodemo.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_sistemainventariodemo.exe]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_sistemainventariodemo.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_sistemainventariodemo.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_sistemainventariodemo.exe.config]" Type="2" Content="0"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppXCfgComponent">
+    <ROW ID="Configuration" Order="1" ManifestFile="AppxManifest.xml" TargetOs="4" AutoUpdatesFrequency="0" AutoUpdatesOptions="0" ManifestBundleFile="AppxBundleManifest.xml"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="Build_MSIX_APPX" BuildName="Build_MSIX_APPX" BuildOrder="2" BuildType="7" PackageFolder="Build_MSIX_APPXSetupFiles" Languages="en" UwpTargetDesktop="TargetDeviceFamily"/>
+    <ROW BuildKey="Build_MSIX_APPXSubBuild" BuildName="x64" BuildOrder="3" BuildType="8" ParentBuild="Build_MSIX_APPX"/>
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en;es" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\presentacion\icono.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="Inventario - Valent France"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
@@ -265,6 +398,73 @@
     <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
     <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRemoveDlg.aip"/>
     <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRepairDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlAttributeComponent">
+    <ROW XmlAttribute="BackgroundColor" XmlElement="VisualElements" Name="BackgroundColor" Flags="0" Order="0" Value="transparent"/>
+    <ROW XmlAttribute="BadgeLogo" XmlElement="LockScreen" Name="BadgeLogo" Flags="0" Order="0" FileId="InventarioValentFrance.exeBadgeLogo.scale100.png"/>
+    <ROW XmlAttribute="Category" XmlElement="Extension" Name="Category" Flags="0" Order="0" Value="windows.desktopAppMigration"/>
+    <ROW XmlAttribute="Description" XmlElement="VisualElements" Name="Description" Flags="0" Order="0" Value="Inventario - Valent France.exe"/>
+    <ROW XmlAttribute="DisplayName" XmlElement="VisualElements" Name="DisplayName" Flags="0" Order="0" Value="Inventario - Valent France.exe"/>
+    <ROW XmlAttribute="EntryPoint" XmlElement="Application" Name="EntryPoint" Flags="0" Order="0" Value="Windows.FullTrustApplication"/>
+    <ROW XmlAttribute="EntryPoint_1" XmlElement="Extension" Name="EntryPoint" Flags="0" Order="0" Value="Windows.FullTrustApplication"/>
+    <ROW XmlAttribute="Executable" XmlElement="Application" Name="Executable" Flags="0" Order="0" FileId="sistemainventariodemo.exe"/>
+    <ROW XmlAttribute="Executable_1" XmlElement="Extension" Name="Executable" Flags="0" Order="0" FileId="sistemainventariodemo.exe"/>
+    <ROW XmlAttribute="Id" XmlElement="Application" Name="Id" Flags="0" Order="0" Value="InventarioValentFrance.exe"/>
+    <ROW XmlAttribute="Image" XmlElement="SplashScreen" Name="Image" Flags="0" Order="0" FileId="InventarioValentFrance.exeSplashScreen.scale100.png"/>
+    <ROW XmlAttribute="Language" XmlElement="Resource" Name="Language" Flags="0" Order="0" Value="en-US"/>
+    <ROW XmlAttribute="MaxVersionTested" XmlElement="TargetDeviceFamily" Name="MaxVersionTested" Flags="0" Order="0" Value="10.0.22000.0"/>
+    <ROW XmlAttribute="MinVersion" XmlElement="TargetDeviceFamily" Name="MinVersion" Flags="0" Order="0" Value="10.0.17763.0"/>
+    <ROW XmlAttribute="Name" XmlElement="Identity" Name="Name" Flags="0" Order="0" Value="FabriDev.Inventario-ValentFrance"/>
+    <ROW XmlAttribute="Name_1" XmlElement="TargetDeviceFamily" Name="Name" Flags="0" Order="0" Value="Windows.Desktop"/>
+    <ROW XmlAttribute="Name_2" XmlElement="Capability" Name="Name" Flags="0" Order="0" Value="runFullTrust"/>
+    <ROW XmlAttribute="Notification" XmlElement="LockScreen" Name="Notification" Flags="0" Order="0" Value="badge"/>
+    <ROW XmlAttribute="Preference" XmlElement="Rotation" Name="Preference" Flags="0" Order="0" Value="portrait"/>
+    <ROW XmlAttribute="Preference_1" XmlElement="Rotation_1" Name="Preference" Flags="0" Order="0" Value="landscape"/>
+    <ROW XmlAttribute="ProcessorArchitecture" XmlElement="Identity" Name="ProcessorArchitecture" Flags="0" Order="0" Value="x64"/>
+    <ROW XmlAttribute="Publisher" XmlElement="Identity" Name="Publisher" Flags="0" Order="0" Value="CN=FabriDev"/>
+    <ROW XmlAttribute="ShortcutPath" XmlElement="DesktopApp" Name="ShortcutPath" Flags="0" Order="0" Value="%USERPROFILE%\Desktop\Inventario - Valent France.exe.lnk"/>
+    <ROW XmlAttribute="ShortcutPath_1" XmlElement="DesktopApp_1" Name="ShortcutPath" Flags="0" Order="0" Value="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Inventario - Valent France\sistemainventariodemo.lnk"/>
+    <ROW XmlAttribute="ShortcutPath_2" XmlElement="DesktopApp_2" Name="ShortcutPath" Flags="0" Order="0" Value="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Inventario - Valent France\sistemainventariodemo.lnk"/>
+    <ROW XmlAttribute="Square150x150Logo" XmlElement="VisualElements" Name="Square150x150Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare150x150Logo.scale100.png"/>
+    <ROW XmlAttribute="Square310x310Logo" XmlElement="DefaultTile" Name="Square310x310Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare310x310Logo.scale100.png"/>
+    <ROW XmlAttribute="Square44x44Logo" XmlElement="VisualElements" Name="Square44x44Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare44x44Logo.scale100.png"/>
+    <ROW XmlAttribute="Square71x71Logo" XmlElement="DefaultTile" Name="Square71x71Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare71x71Logo.scale100.png"/>
+    <ROW XmlAttribute="Version" XmlElement="Identity" Name="Version" Flags="0" Order="0" Value="1.2.0.0"/>
+    <ROW XmlAttribute="Wide310x150Logo" XmlElement="DefaultTile" Name="Wide310x150Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeWide310x150Logo.scale100.png"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlElementComponent">
+    <ROW XmlElement="Application" ParentElement="Applications" Name="Application" Order="0" Flags="0" Type="4"/>
+    <ROW XmlElement="Applications" ParentElement="Package" Name="Applications" Order="4" Flags="0" Type="3"/>
+    <ROW XmlElement="Bundle" Name="Bundle" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Capabilities" ParentElement="Package" Name="Capabilities" Order="5" Flags="0" Type="0"/>
+    <ROW XmlElement="Capability" ParentElement="Capabilities" Name="Capability" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="DefaultTile" ParentElement="VisualElements" Name="DefaultTile" Order="1" Flags="0" Type="0"/>
+    <ROW XmlElement="Dependencies" ParentElement="Package" Name="Dependencies" Order="1" Flags="0" Type="0"/>
+    <ROW XmlElement="DesktopApp" ParentElement="DesktopAppMigration" Name="DesktopApp" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="DesktopAppMigration" ParentElement="Extension" Name="DesktopAppMigration" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="DesktopApp_1" ParentElement="DesktopAppMigration" Name="DesktopApp" Order="1" Flags="0" Type="0"/>
+    <ROW XmlElement="DesktopApp_2" ParentElement="DesktopAppMigration" Name="DesktopApp" Order="2" Flags="0" Type="0"/>
+    <ROW XmlElement="DisplayName" ParentElement="Properties" Name="DisplayName" Order="1" Flags="0" Text="Inventario - Valent France" Type="0"/>
+    <ROW XmlElement="Extension" ParentElement="Extensions" Name="Extension" Order="0" Flags="0" Type="55"/>
+    <ROW XmlElement="Extensions" ParentElement="Application" Name="Extensions" Order="1" Flags="0" Type="0"/>
+    <ROW XmlElement="Identity" ParentElement="Package" Name="Identity" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="InitialRotationPreference" ParentElement="VisualElements" Name="InitialRotationPreference" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="LockScreen" ParentElement="VisualElements" Name="LockScreen" Order="3" Flags="0" Type="0"/>
+    <ROW XmlElement="Logo" ParentElement="Properties" Name="Logo" Order="2" Flags="0" FileId="icono.scale100.png" Type="0"/>
+    <ROW XmlElement="Package" Name="Package" Order="0" Flags="0" Type="6"/>
+    <ROW XmlElement="Properties" ParentElement="Package" Name="Properties" Order="3" Flags="0" Type="0"/>
+    <ROW XmlElement="PublisherDisplayName" ParentElement="Properties" Name="PublisherDisplayName" Order="0" Flags="0" Text="FabriDev" Type="0"/>
+    <ROW XmlElement="Resource" ParentElement="Resources" Name="Resource" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Resources" ParentElement="Package" Name="Resources" Order="2" Flags="0" Type="0"/>
+    <ROW XmlElement="Rotation" ParentElement="InitialRotationPreference" Name="Rotation" Order="0" Flags="0" Type="0"/>
+    <ROW XmlElement="Rotation_1" ParentElement="InitialRotationPreference" Name="Rotation" Order="1" Flags="0" Type="0"/>
+    <ROW XmlElement="SplashScreen" ParentElement="VisualElements" Name="SplashScreen" Order="2" Flags="0" Type="0"/>
+    <ROW XmlElement="TargetDeviceFamily" ParentElement="Dependencies" Name="TargetDeviceFamily" Order="0" Flags="0" Type="28"/>
+    <ROW XmlElement="VisualElements" ParentElement="Application" Name="VisualElements" Order="0" Flags="0" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlFileComponent">
+    <ROW XmlFile="AppxBundleManifest.xml" FileName="AppxBundleManifest.xml" RootElement="Bundle" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+    <ROW XmlFile="AppxManifest.xml" FileName="AppxManifest.xml" RootElement="Package" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
     <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
@@ -568,7 +768,7 @@
     <ROW Action="AI_ScheduleTasks2" Type="11265" Source="aischeduler2.dll" Target="ScheduleTasks" WithoutSeq="true"/>
     <ROW Action="AI_UPDATER_UNINSTALL" Type="82" Source="updater.exe" Target="/clean silent"/>
     <ROW Action="AI_UninstallTasks2" Type="1" Source="aischeduler2.dll" Target="UninstallTasks"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="Build_MSIX_APPX:"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
@@ -593,6 +793,7 @@
     <ROW Feature_="MainFeature" Component_="presentacion_SymbolsOutput"/>
     <ROW Feature_="MainFeature" Component_="updater.exe"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="AiAppXAssets" Component_="icono.scale100.png"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="sistemainventariodemo.exe" SourcePath="..\presentacion\icono.ico" Index="0"/>
@@ -715,7 +916,6 @@
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="System.Threading.Tasks.Extensions.dll"/>
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="System.ValueTuple.dll"/>
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="XLParser.dll"/>
-    <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="datos.dll_2"/>
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="Microsoft.ReportViewer.DataVisualization.dll"/>
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="SymbolsOutput" OutputFile="InventarioValentFrance.pdb"/>
   </COMPONENT>
