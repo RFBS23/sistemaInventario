@@ -173,7 +173,7 @@
             this.NombreEmpresa.Name = "NombreEmpresa";
             this.NombreEmpresa.Size = new System.Drawing.Size(432, 59);
             this.NombreEmpresa.TabIndex = 0;
-            this.NombreEmpresa.Text = "   Inventario - VALENT FRANCE";
+            this.NombreEmpresa.Text = "Inventario - VALENT FRANCE";
             this.NombreEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NombreEmpresa.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
@@ -259,15 +259,17 @@
             // 
             // submenucategoria
             // 
+            this.submenucategoria.Image = ((System.Drawing.Image)(resources.GetObject("submenucategoria.Image")));
             this.submenucategoria.Name = "submenucategoria";
-            this.submenucategoria.Size = new System.Drawing.Size(210, 34);
+            this.submenucategoria.Size = new System.Drawing.Size(224, 34);
             this.submenucategoria.Text = "CATEGORIAS";
             this.submenucategoria.Click += new System.EventHandler(this.submenucategoria_Click);
             // 
             // submenutallas
             // 
+            this.submenutallas.Image = ((System.Drawing.Image)(resources.GetObject("submenutallas.Image")));
             this.submenutallas.Name = "submenutallas";
-            this.submenutallas.Size = new System.Drawing.Size(210, 34);
+            this.submenutallas.Size = new System.Drawing.Size(224, 34);
             this.submenutallas.Text = "TALLAS";
             this.submenutallas.Click += new System.EventHandler(this.submenutallas_Click);
             // 
@@ -303,15 +305,21 @@
             // 
             // submenutienda
             // 
+            this.submenutienda.AutoSize = false;
+            this.submenutienda.Image = ((System.Drawing.Image)(resources.GetObject("submenutienda.Image")));
             this.submenutienda.Name = "submenutienda";
-            this.submenutienda.Size = new System.Drawing.Size(309, 34);
+            this.submenutienda.Size = new System.Drawing.Size(309, 40);
+            this.submenutienda.Tag = "Registrar Productos";
             this.submenutienda.Text = "Registrar Productos";
             this.submenutienda.Click += new System.EventHandler(this.submenutienda_Click);
             // 
             // subdettienda
             // 
+            this.subdettienda.AutoSize = false;
+            this.subdettienda.Image = ((System.Drawing.Image)(resources.GetObject("subdettienda.Image")));
             this.subdettienda.Name = "subdettienda";
-            this.subdettienda.Size = new System.Drawing.Size(309, 34);
+            this.subdettienda.Size = new System.Drawing.Size(309, 40);
+            this.subdettienda.Tag = "Detalle de Entrada";
             this.subdettienda.Text = "Detalle de Entrada";
             // 
             // menuclientes
@@ -360,6 +368,7 @@
             // 
             // submenuRVentas
             // 
+            this.submenuRVentas.Image = ((System.Drawing.Image)(resources.GetObject("submenuRVentas.Image")));
             this.submenuRVentas.Name = "submenuRVentas";
             this.submenuRVentas.Size = new System.Drawing.Size(298, 34);
             this.submenuRVentas.Text = "Ventas";
@@ -367,6 +376,7 @@
             // 
             // submenuDetVentas
             // 
+            this.submenuDetVentas.Image = ((System.Drawing.Image)(resources.GetObject("submenuDetVentas.Image")));
             this.submenuDetVentas.Name = "submenuDetVentas";
             this.submenuDetVentas.Size = new System.Drawing.Size(298, 34);
             this.submenuDetVentas.Text = "Detalles de Ventas";

@@ -15,7 +15,6 @@ namespace entidad
         public string ubiprod { get; set; }
         public Categorias oCategorias { get; set; }
         public Tallasropa oTallasropa { get; set; }
-        public int tallas { get; set; }
         public int stock { get; set; }
         public string colores { get; set; }
         public decimal preciocompra { get; set; }

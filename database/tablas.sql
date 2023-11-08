@@ -158,11 +158,20 @@ go
 
 create table productosropatienda(
 	idproductotienda int primary key identity,
-	idproductos int references productosropa(idproducto) not null,
-	stock int default 0 not null,
+	idproducto int references productosropa(idproducto) not null,
+	cantidad int default 0 not null,
 	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
+go
+insert into productosropatienda (idproducto, cantidad) values (1, '10')
+select idproductotienda, pa.idproducto, pa.codigo, pa.nombre, pa.descripcion, pa.idcategoria, c.nombrecategoria, pa.idtallaropa, tr.nombretalla, pa.stock, pa.colores, pa.numcaja, pa.precioventa from productosropatienda pt
+inner join productosropa pa on pa.idproducto = pt.idproductotienda
+inner join categorias c on c.idcategoria = pa.idcategoria
+inner join tallasropa tr on tr.idtallaropa = pa.idtallaropa
+select * from productosropa
+go
+select * from productosropatienda
 go
 
 create table compras(

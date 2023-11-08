@@ -1,0 +1,9 @@
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\bin\Debug\datos.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\bin\Debug\datos.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\bin\Debug\entidad.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\bin\Debug\entidad.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Debug\datos.csproj.AssemblyReference.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Debug\datos.csproj.CoreCompileInputs.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Debug\datos.csproj.CopyComplete
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Debug\datos.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\datos\obj\Debug\datos.pdb

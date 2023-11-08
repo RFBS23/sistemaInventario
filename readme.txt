@@ -1,11 +1,13 @@
 ClosedXML
 FontAwesome.Sharp
 Guna.UI2.WinForms
+Guna.Charts.WinForms
 RJCodeAdvance.RJControls
 PowerToys
 iTextSharp (pdf)
 itextsharp.xmlworker (pdf)
 instalador: advanced installer for visual studio 2022
+
 
 correo utilizado: doyoga3486@eazenity.com
 

@@ -21,6 +21,7 @@ namespace presentacion
             frmSplash splash = new frmSplash();
             Application.Run(splash);
             //fin splash
+            
             login inicio = new login();
             Application.Run(inicio);
         }

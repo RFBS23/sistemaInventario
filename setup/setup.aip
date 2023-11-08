@@ -20,12 +20,13 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_DocumentFormat.OpenXml.dll" Value="..\packages\DocumentFormat.OpenXml.2.20.0\lib\net46"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_ExcelNumberFormat.dll" Value="..\packages\ExcelNumberFormat.1.1.0\lib\net20"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_FontAwesome.Sharp.dll" Value="..\packages\FontAwesome.Sharp.6.3.0\lib\net472"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Guna.Charts.WinForms.dll" Value="..\packages\Guna.Charts.WinForms.1.0.9\lib\net472"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Guna.UI2.dll" Value="..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_InventarioValentFrance.pdb" Value="..\presentacion\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Irony.dll" Value="..\packages\Irony.1.2.0\lib\netstandard2.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Bcl.AsyncInterfaces.dll" Value="..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.Common.dll" Value="..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.DataVisualization.dll" Value="..\..\..\..\..\..\..\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\ENTERPRISE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\SSAS"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.DataVisualization.dll" Value="..\presentacion\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.ProcessingObjectModel.DLL" Value="..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.WebForms.DLL" Value="..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.ReportViewer.WinForms.dll" Value="..\..\..\..\..\..\..\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\ENTERPRISE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\SSAS"/>
@@ -43,6 +44,7 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_XLParser.dll" Value="..\packages\XLParser.1.7.2\lib\net462"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.dll" Value="..\datos\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.dll_1" Value="..\datos\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.dll_2" Value="..\negocio\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_datos.pdb" Value="..\datos\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_entidad.dll" Value="..\entidad\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_entidad.dll_1" Value="..\entidad\bin\Debug"/>
@@ -61,6 +63,7 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DocumentFormat.OpenXml.dll" Value="DocumentFormat.OpenXml.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_ExcelNumberFormat.dll" Value="ExcelNumberFormat.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_FontAwesome.Sharp.dll" Value="FontAwesome.Sharp.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Guna.Charts.WinForms.dll" Value="Guna.Charts.WinForms.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Guna.UI2.dll" Value="Guna.UI2.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_InventarioValentFrance.pdb" Value="Inventario - Valent France.pdb"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Irony.dll" Value="Irony.dll"/>
@@ -84,6 +87,7 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_XLParser.dll" Value="XLParser.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.dll" Value="datos.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.dll_1" Value="datos.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.dll_2" Value="datos.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_datos.pdb" Value="datos.pdb"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_entidad.dll" Value="entidad.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_entidad.dll_1" Value="entidad.dll"/>
@@ -108,10 +112,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/RFBS23/sistemaInventario/issues/1"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://rfbs23.github.io/portafolio/"/>
     <ROW Property="Manufacturer" Value="FabriDev"/>
-    <ROW Property="ProductCode" Value="1033:{0DFEE1AA-EE35-486F-B2AF-57350E996C28} 3082:{0DFEE1AA-EE35-486F-B2AF-57350E996C28} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{DD6D7A18-E53C-4BD3-81D8-EB78CB7A3DDA} 3082:{DD6D7A18-E53C-4BD3-81D8-EB78CB7A3DDA} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Inventario - Valent France"/>
-    <ROW Property="ProductVersion" Value="1.2.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.2.1" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{A89B5A86-3F76-4118-84C3-6287DB5E6EDD}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -149,7 +153,7 @@
     <ROW Component="negocio_References" ComponentId="{1EDDE986-4539-4A99-918A-C58E469C510E}" Directory_="negocio_Dir" Attributes="0" KeyPath="entidad.dll_2"/>
     <ROW Component="negocio_SymbolsOutput" ComponentId="{2090ECA4-5976-4928-89DC-2517A0230759}" Directory_="negocio_Dir" Attributes="0" KeyPath="negocio.pdb"/>
     <ROW Component="presentacion_PrimaryOutput" ComponentId="{23B1FC17-AE01-47B6-AF1C-90E12932E427}" Directory_="presentacion_Dir" Attributes="0" KeyPath="sistemainventariodemo.exe"/>
-    <ROW Component="presentacion_References" ComponentId="{58B43D41-171C-4CF4-B7B3-5C7188BD56B2}" Directory_="presentacion_Dir" Attributes="0" KeyPath="Microsoft.ReportViewer.DataVisualization.dll"/>
+    <ROW Component="presentacion_References" ComponentId="{58B43D41-171C-4CF4-B7B3-5C7188BD56B2}" Directory_="presentacion_Dir" Attributes="0" KeyPath="Guna.Charts.WinForms.dll"/>
     <ROW Component="presentacion_SymbolsOutput" ComponentId="{6CEA0CF5-B502-4CAE-95F3-4C0DED977588}" Directory_="presentacion_Dir" Attributes="0" KeyPath="InventarioValentFrance.pdb"/>
     <ROW Component="updater.exe" ComponentId="{47DC9129-F44B-4995-B693-A46F6E516E13}" Directory_="APPDIR" Attributes="0" KeyPath="updater.exe"/>
   </COMPONENT>
@@ -326,6 +330,8 @@
     <ROW File="InventarioValentFrance.exeBadgeLogo.scale300.png" Component_="icono.scale100.png" FileName="INVE~118.PNG|InventarioValentFrance.exeBadgeLogo.scale-300.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-300.png" SelfReg="false"/>
     <ROW File="InventarioValentFrance.exeBadgeLogo.scale400.png" Component_="icono.scale100.png" FileName="INVE~119.PNG|InventarioValentFrance.exeBadgeLogo.scale-400.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-400.png" SelfReg="false"/>
     <ROW File="InventarioValentFrance.exeBadgeLogo.scale500.png" Component_="icono.scale100.png" FileName="INVE~120.PNG|InventarioValentFrance.exeBadgeLogo.scale-500.png" Attributes="0" SourcePath="Generated Assets\InventarioValentFrance.exeBadgeLogo.scale-500.png" SelfReg="false"/>
+    <ROW File="datos.dll_2" Component_="presentacion_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll_2]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_datos.dll_2&gt;" SelfReg="false"/>
+    <ROW File="Guna.Charts.WinForms.dll" Component_="presentacion_References" FileName="GUNACH~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Guna.Charts.WinForms.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Guna.Charts.WinForms.dll&gt;" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Type="2" Content="0"/>
@@ -333,6 +339,7 @@
     <ROW Name="AI_APPPATH_PERBUILD_DocumentFormat.OpenXml.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_DocumentFormat.OpenXml.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_DocumentFormat.OpenXml.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_ExcelNumberFormat.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_ExcelNumberFormat.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_ExcelNumberFormat.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_FontAwesome.Sharp.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_FontAwesome.Sharp.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_FontAwesome.Sharp.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Guna.Charts.WinForms.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Guna.Charts.WinForms.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Guna.Charts.WinForms.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_Guna.UI2.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Guna.UI2.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Guna.UI2.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_InventarioValentFrance.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_InventarioValentFrance.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_InventarioValentFrance.pdb]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_Irony.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Irony.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Irony.dll]" Type="2" Content="0"/>
@@ -356,6 +363,7 @@
     <ROW Name="AI_APPPATH_PERBUILD_XLParser.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_XLParser.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_XLParser.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_datos.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_datos.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll_1]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_datos.dll_2" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.dll_2]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.dll_2]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_datos.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_datos.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_datos.pdb]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_entidad.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_entidad.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_entidad.dll]" Type="2" Content="0"/>
     <ROW Name="AI_APPPATH_PERBUILD_entidad.dll_1" Path="[|AI_PROPPATH_DIR_PERBUILD_entidad.dll_1]\[|AI_PROPPATH_FILENAME_PERBUILD_entidad.dll_1]" Type="2" Content="0"/>
@@ -429,7 +437,7 @@
     <ROW XmlAttribute="Square310x310Logo" XmlElement="DefaultTile" Name="Square310x310Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare310x310Logo.scale100.png"/>
     <ROW XmlAttribute="Square44x44Logo" XmlElement="VisualElements" Name="Square44x44Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare44x44Logo.scale100.png"/>
     <ROW XmlAttribute="Square71x71Logo" XmlElement="DefaultTile" Name="Square71x71Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeSquare71x71Logo.scale100.png"/>
-    <ROW XmlAttribute="Version" XmlElement="Identity" Name="Version" Flags="0" Order="0" Value="1.2.0.0"/>
+    <ROW XmlAttribute="Version" XmlElement="Identity" Name="Version" Flags="0" Order="0" Value="1.2.1.0"/>
     <ROW XmlAttribute="Wide310x150Logo" XmlElement="DefaultTile" Name="Wide310x150Logo" Flags="0" Order="0" FileId="InventarioValentFrance.exeWide310x150Logo.scale100.png"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlElementComponent">
@@ -871,7 +879,7 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.ScheduledTasksComponent">
-    <ROW TaskId="AI_updater" TaskName="updater" Run="[#updater.exe]" WorkDir="[APPDIR]" UserProp="[%UserDomain]\[LogonUser]" Flags="8192" Trigger="1|1|1|1|1440|5|0|0|40960" Settings="2" Condition="1" TaskVersion="2.0"/>
+    <ROW TaskId="AI_updater" TaskName="updater" Run="[#updater.exe]" WorkDir="[APPDIR]" UserProp="[%UserDomain]\[LogonUser]" Flags="8192" Trigger="1|1|1|1|1440|5|0|0|34816" Settings="2" Condition="1" TaskVersion="2.0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.UpdaterComponent">
     <ROW Updater="updater.exe" URL="URL" SearchFreq="CheckFrequency" DownloadsFolder="DownloadsFolder" ID="ID" TargetDir="AppDir" AppName="ApplicationName" AppVersion="ApplicationVersion" CompanyName="CompanyName" DefCommandLine="DefaultCommandLine" Flags="Flags" IconPath="..\presentacion\icono.ico" IconIndex="0" UnistallCASeq="AI_UPDATER_UNINSTALL" TaskId="AI_updater" Description="[|UpdaterName] [|ProductVersion]"/>
@@ -918,5 +926,7 @@
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="XLParser.dll"/>
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="Microsoft.ReportViewer.DataVisualization.dll"/>
     <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="SymbolsOutput" OutputFile="InventarioValentFrance.pdb"/>
+    <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="datos.dll_2"/>
+    <ROW ProjectId="{af19842f-5dd4-4761-9ef8-f4973099423e}" ProjectName="presentacion" OutputGroup="References" OutputFile="Guna.Charts.WinForms.dll"/>
   </COMPONENT>
 </DOCUMENT>

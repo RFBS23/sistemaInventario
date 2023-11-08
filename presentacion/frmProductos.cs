@@ -18,12 +18,13 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DocumentFormat.OpenXml.Office.Word;
 
 namespace presentacion
 {
     public partial class frmProductos : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
 
         public frmProductos()
         {
@@ -32,7 +33,7 @@ namespace presentacion
         
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            /*categorias
+            /*categorias*/
             List<Categorias> listaCat = new N_Categorias().Listar();
             foreach (Categorias item in listaCat)
             {
@@ -50,7 +51,7 @@ namespace presentacion
             }
             listatallas.DisplayMember = "Texto";
             listatallas.ValueMember = "Valor";
-            listatallas.SelectedIndex = 0;*/
+            listatallas.SelectedIndex = 0;
             
             // btnbuscar
             foreach (DataGridViewColumn columna in dgproductos.Columns)
@@ -72,10 +73,10 @@ namespace presentacion
                 dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.ubiprod, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa, item.devolucion, item.devoluciontalla });
             }
 
-            ListarCategorias(); //prueba de anidados
+            //ListarCategorias(); //prueba de anidados
         }
 
-        /*pruebas anidados*/
+        /*pruebas anidados 
         private void ListarCategorias()
         {
             con.Open();
@@ -86,7 +87,7 @@ namespace presentacion
             con.Close();
 
             DataRow fila = dt.NewRow();
-            fila["nombrecategoria"] = "Selecciona una categoria";
+            fila["nombrecategoria"] = "Elige una categoria";
             dt.Rows.InsertAt(fila, 0);
             listacategoria.ValueMember = "idcategoria";
             listacategoria.DisplayMember = "nombrecategoria";
@@ -104,24 +105,24 @@ namespace presentacion
             con.Close();
 
             DataRow dr = dt.NewRow();
-            dr["nombretalla"] = "Selecciona una talla";
+            dr["nombretalla"] = "Elige una Talla";
             dt.Rows.InsertAt(dr, 0);
 
             listatallas.ValueMember = "idtallaropa";
             listatallas.DisplayMember = "nombretalla";
             listatallas.DataSource = dt;
-        }
+        }*/
         
         
         private void listacategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            /*
             if(listacategoria.SelectedIndex.ToString() != null)
             {
                 string idcategoria = listacategoria.SelectedValue.ToString();
                 listarTalla(idcategoria);
-            }
-        }
+            }*/
+        } 
         /*fin pruebas de anidados*/
         
 
@@ -168,6 +169,7 @@ namespace presentacion
                             break;
                         }
                     }
+
                     foreach (opcionesComboBox otb in listatallas.Items)
                     {
                         if (Convert.ToInt32(otb.Valor) == Convert.ToInt32(dgproductos.Rows[indice].Cells["idtallaropa"].Value))
@@ -177,7 +179,6 @@ namespace presentacion
                             break;
                         }
                     }
-
                     txtcolores.Text = dgproductos.Rows[indice].Cells["colores"].Value.ToString();
                     txtstock.Text = dgproductos.Rows[indice].Cells["stock"].Value.ToString();
                     txtnumcaja.Text = dgproductos.Rows[indice].Cells["numcaja"].Value.ToString();
@@ -446,7 +447,7 @@ namespace presentacion
 
         private void txtprecioventa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar == 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
                 MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;

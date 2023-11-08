@@ -21,6 +21,9 @@ namespace presentacion
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
 
+        private int borderSize = 2;
+        private Size formSize;
+
         public Dashboard(Usuarios objusuario = null)
         {
             InitializeComponent();

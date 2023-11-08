@@ -49,6 +49,7 @@
     <Compile Include="D_Clientes.cs" />
     <Compile Include="D_Permisos.cs" />
     <Compile Include="D_Productos.cs" />
+    <Compile Include="D_Productotienda.cs" />
     <Compile Include="D_Proveedores.cs" />
     <Compile Include="D_Rol.cs" />
     <Compile Include="D_Tallasropa.cs" />
