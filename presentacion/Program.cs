@@ -14,6 +14,7 @@ namespace presentacion
         [STAThread]
         static void Main()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-PE"); // configuracion de moneda
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             

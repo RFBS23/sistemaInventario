@@ -178,6 +178,7 @@
             // 
             // btniniciarsesion
             // 
+            this.btniniciarsesion.Animated = true;
             this.btniniciarsesion.BorderRadius = 15;
             this.btniniciarsesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btniniciarsesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -234,11 +235,11 @@
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 31);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(74, 33);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(341, 77);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(399, 77);
             this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Demo - v 1.3.0";
+            this.guna2HtmlLabel1.Text = "Demo - v 1.4.7";
             // 
             // piclogin
             // 

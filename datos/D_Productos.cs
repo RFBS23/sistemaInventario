@@ -21,7 +21,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select idproducto, codigo, nombre, descripcion, ubiprod, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p");
+                    query.AppendLine("select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p");
                     query.AppendLine("inner join categorias c on c.idcategoria = p.idcategoria");
                     query.AppendLine("inner join tallasropa tr on tr.idtallaropa = p.idtallaropa");
 
@@ -39,7 +39,6 @@ namespace datos
                                 codigo = dr["codigo"].ToString(),
                                 nombre = dr["nombre"].ToString(),
                                 descripcion = dr["descripcion"].ToString(),
-                                ubiprod = dr["ubiprod"].ToString(),
                                 oCategorias = new Categorias() { idcategoria = Convert.ToInt32(dr["idcategoria"]), nombrecategoria = dr["nombrecategoria"].ToString() },
                                 oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(dr["idtallaropa"]), nombretalla = dr["nombretalla"].ToString() },
                                 colores = dr["colores"].ToString(),
@@ -72,7 +71,6 @@ namespace datos
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
-                    cmd.Parameters.AddWithValue("ubiprod", obj.ubiprod);
                     cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
                     cmd.Parameters.AddWithValue("idtallaropa", obj.oTallasropa.idtallaropa);
                     cmd.Parameters.AddWithValue("colores", obj.colores);
@@ -112,7 +110,6 @@ namespace datos
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
-                    cmd.Parameters.AddWithValue("ubiprod", obj.ubiprod);
                     cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
                     cmd.Parameters.AddWithValue("idtallaropa", obj.oTallasropa.idtallaropa);
                     cmd.Parameters.AddWithValue("colores", obj.colores);

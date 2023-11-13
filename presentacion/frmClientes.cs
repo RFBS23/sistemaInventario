@@ -148,6 +148,18 @@ namespace presentacion
                 e.Handled = true;
                 return;
             }
+            // nos aseguramos que el munero y la cantidad del texto sea menor o igual a 9.
+            if (!char.IsDigit(e.KeyChar) || txttelefono.Text.Length >= 9)
+            {
+                e.Handled = true; // Ignoramos el carácter.
+            }
+
+            // Aseguramos de que el primer carácter sea '9'.
+            if (txttelefono.Text.Length == 0 && e.KeyChar != '9')
+            {
+                e.Handled = true; // Ignoramos el carácter.
+                MessageBox.Show("El Telefono debe de empezar con 9", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
@@ -232,6 +244,23 @@ namespace presentacion
                     else
                         row.Visible = false;
                 }
+            }
+        }
+
+        private void txtcorreo_Validating(object sender, CancelEventArgs e)
+        {
+            string email = txtcorreo.Text.Trim();
+
+            // Utiliza una expresión regular para validar el formato del correo electrónico.
+            // Aquí se utiliza una expresión regular simple para demostrar el concepto, pero podrías utilizar una expresión más robusta según tus necesidades.
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+            bool isValid = System.Text.RegularExpressions.Regex.IsMatch(email, emailPattern);
+
+            if (!isValid)
+            {
+                MessageBox.Show("Correo electrónico no válido. Introduce un correo electrónico válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtcorreo.Focus();
+                e.Cancel = true; // Evita que el foco se mueva fuera del TextBox si la validación falla.
             }
         }
     }

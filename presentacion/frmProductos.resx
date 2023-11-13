@@ -730,7 +730,7 @@
   <data name="txtprecioventa.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARHSURBVFhH1Vfv
+        5wAAAOcB8BtYtQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARHSURBVFhH1Vfv
         b1NVGC5majT40WiMfvGbn/wPoLJEmWB7b7cCBQMDEyAD120szrVbVqNDDSSSjG0gJDoDojHqB4wxarKt
         99KtXdeNubIfzHU/ZBLbMNv7oywhvJ739Ny729ti29kYfZInPb29532ec+77vqfX8r+B7OcqJYFXUgL/
         W1Lg3EnR0UDGK0gc47XMb/ySNMi/wKaVD5Kf30MEACmJNZnPQC2l8RpjE5tWPgBYNpHVfYkC6UgHyIED
@@ -765,9 +765,6 @@
     <value>True</value>
   </metadata>
   <metadata name="descripcion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ubiprod.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="idcategoria.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

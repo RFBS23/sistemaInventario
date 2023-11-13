@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datos", "datos\datos.csproj", "{522CDF0C-3F0C-472F-9576-4BA34DDAAD1F}"
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "setup", "setup\setup.aiproj", "{2BA78EE5-EB82-4991-8174-E3A70966119A}"
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "setup", "setup\setup.aiproj", "{AAD79832-27B5-4DBF-A046-D8CD7EC81990}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,12 +44,12 @@ Global
 		{522CDF0C-3F0C-472F-9576-4BA34DDAAD1F}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{522CDF0C-3F0C-472F-9576-4BA34DDAAD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522CDF0C-3F0C-472F-9576-4BA34DDAAD1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BA78EE5-EB82-4991-8174-E3A70966119A}.Debug|Any CPU.ActiveCfg = DefaultBuild
-		{2BA78EE5-EB82-4991-8174-E3A70966119A}.Debug|Any CPU.Build.0 = DefaultBuild
-		{2BA78EE5-EB82-4991-8174-E3A70966119A}.DefaultBuild|Any CPU.ActiveCfg = DefaultBuild
-		{2BA78EE5-EB82-4991-8174-E3A70966119A}.DefaultBuild|Any CPU.Build.0 = DefaultBuild
-		{2BA78EE5-EB82-4991-8174-E3A70966119A}.Release|Any CPU.ActiveCfg = DefaultBuild
-		{2BA78EE5-EB82-4991-8174-E3A70966119A}.Release|Any CPU.Build.0 = DefaultBuild
+		{AAD79832-27B5-4DBF-A046-D8CD7EC81990}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{AAD79832-27B5-4DBF-A046-D8CD7EC81990}.Debug|Any CPU.Build.0 = DefaultBuild
+		{AAD79832-27B5-4DBF-A046-D8CD7EC81990}.DefaultBuild|Any CPU.ActiveCfg = DefaultBuild
+		{AAD79832-27B5-4DBF-A046-D8CD7EC81990}.DefaultBuild|Any CPU.Build.0 = DefaultBuild
+		{AAD79832-27B5-4DBF-A046-D8CD7EC81990}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{AAD79832-27B5-4DBF-A046-D8CD7EC81990}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

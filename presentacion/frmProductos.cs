@@ -26,11 +26,13 @@ namespace presentacion
     {
         //SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
 
+        public Productos _Productos { get; set; }
+
         public frmProductos()
         {
             InitializeComponent();
         }
-        
+
         private void frmProductos_Load(object sender, EventArgs e)
         {
             /*categorias*/
@@ -42,6 +44,7 @@ namespace presentacion
             listacategoria.DisplayMember = "Texto";
             listacategoria.ValueMember = "Valor";
             listacategoria.SelectedIndex = 0;
+            
 
             // tallas ropa
             List<Tallasropa> listaTalla = new N_Tallasropa().Listar();
@@ -52,6 +55,7 @@ namespace presentacion
             listatallas.DisplayMember = "Texto";
             listatallas.ValueMember = "Valor";
             listatallas.SelectedIndex = 0;
+            
             
             // btnbuscar
             foreach (DataGridViewColumn columna in dgproductos.Columns)
@@ -70,13 +74,13 @@ namespace presentacion
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.ubiprod, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa, item.devolucion, item.devoluciontalla });
+                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa, item.devolucion, item.devoluciontalla });
             }
 
             //ListarCategorias(); //prueba de anidados
         }
 
-        /*pruebas anidados 
+        /* pruebas anidados 
         private void ListarCategorias()
         {
             con.Open();
@@ -111,8 +115,8 @@ namespace presentacion
             listatallas.ValueMember = "idtallaropa";
             listatallas.DisplayMember = "nombretalla";
             listatallas.DataSource = dt;
-        }*/
-        
+        }
+        */
         
         private void listacategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -120,12 +124,12 @@ namespace presentacion
             if(listacategoria.SelectedIndex.ToString() != null)
             {
                 string idcategoria = listacategoria.SelectedValue.ToString();
-                listarTalla(idcategoria);
-            }*/
+                listatallas(idcategoria);
+            }
+            */
         } 
         /*fin pruebas de anidados*/
         
-
         private void dgproductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -133,7 +137,6 @@ namespace presentacion
 
             if (e.ColumnIndex == 0)
             {
-
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                 var w = Properties.Resources.check1.Width;
@@ -158,7 +161,6 @@ namespace presentacion
                     txtcodigo.Text = dgproductos.Rows[indice].Cells["codigo"].Value.ToString();
                     txtnombre.Text = dgproductos.Rows[indice].Cells["nombre"].Value.ToString();
                     txtdescripcion.Text = dgproductos.Rows[indice].Cells["descripcion"].Value.ToString();
-                    txtubicacion.Text = dgproductos.Rows[indice].Cells["ubiprod"].Value.ToString();
                     
                     foreach (opcionesComboBox ocb in listacategoria.Items)
                     {
@@ -179,6 +181,7 @@ namespace presentacion
                             break;
                         }
                     }
+
                     txtcolores.Text = dgproductos.Rows[indice].Cells["colores"].Value.ToString();
                     txtstock.Text = dgproductos.Rows[indice].Cells["stock"].Value.ToString();
                     txtnumcaja.Text = dgproductos.Rows[indice].Cells["numcaja"].Value.ToString();
@@ -211,7 +214,6 @@ namespace presentacion
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
-            txtubicacion.SelectedIndex = 0;
             listacategoria.SelectedIndex = 0;
             listatallas.SelectedIndex = 0;
             txtcolores.Text = "";
@@ -226,6 +228,7 @@ namespace presentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            decimal precioventa = 0;
             string mensaje = string.Empty;
 
             Productos objproductos = new Productos()
@@ -234,7 +237,6 @@ namespace presentacion
                 codigo = txtcodigo.Text,
                 nombre = txtnombre.Text,
                 descripcion = txtdescripcion.Text,
-                ubiprod = txtubicacion.Text,
                 oCategorias = new Categorias() { idcategoria = Convert.ToInt32(((opcionesComboBox)listacategoria.SelectedItem).Valor) },
                 oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(((opcionesComboBox)listatallas.SelectedItem).Valor) },
                 colores = txtcolores.Text,
@@ -250,7 +252,7 @@ namespace presentacion
 
                 if (idproductogenerado != 0)
                 {
-                    dgproductos.Rows.Add(new object[] {"", idproductogenerado, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text, txtubicacion.Text,
+                    dgproductos.Rows.Add(new object[] {"", idproductogenerado, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
                         ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
                         ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
                         ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString(),
@@ -258,7 +260,7 @@ namespace presentacion
                         txtcolores.Text,
                         txtstock.Text,
                         txtnumcaja.Text,
-                        txtprecioventa.Text,
+                        Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"),
                         txtdevolucion.Text,
                         txtdevoluciontalla.Text
                     });
@@ -279,7 +281,6 @@ namespace presentacion
                     row.Cells["codigo"].Value = txtcodigo.Text;
                     row.Cells["nombre"].Value = txtnombre.Text;
                     row.Cells["descripcion"].Value = txtdescripcion.Text;
-                    row.Cells["ubiprod"].Value = txtubicacion.Text;
                     row.Cells["idcategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(); 
                     row.Cells["nombrecategoria"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString();
                     row.Cells["idtallaropa"].Value = ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString();
@@ -287,7 +288,7 @@ namespace presentacion
                     row.Cells["colores"].Value = txtcolores.Text;
                     row.Cells["stock"].Value = txtstock.Text;
                     row.Cells["numcaja"].Value = txtnumcaja.Text;
-                    row.Cells["precioventa"].Value = txtprecioventa.Text;
+                    row.Cells["precioventa"].Value = Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"); ;
                     row.Cells["devolucion"].Value = txtdevolucion.Text;
                     row.Cells["devoluciontalla"].Value = txtdevoluciontalla.Text;
                     Limpiar();

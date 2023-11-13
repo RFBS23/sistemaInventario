@@ -47,7 +47,7 @@
             this.menuproductos = new FontAwesome.Sharp.IconMenuItem();
             this.menuingresotienda = new FontAwesome.Sharp.IconMenuItem();
             this.submenutienda = new System.Windows.Forms.ToolStripMenuItem();
-            this.subdettienda = new System.Windows.Forms.ToolStripMenuItem();
+            this.subprodtienda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
             this.menuproveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
@@ -55,9 +55,22 @@
             this.submenuDetVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
             this.menunegocio = new FontAwesome.Sharp.IconMenuItem();
+            this.menuconfiguracion = new FontAwesome.Sharp.IconMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
             this.panelEscritorio = new Guna.UI2.WinForms.Guna2Panel();
             this.submenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.cardprodalmacen = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtcantprod = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblhora = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.footer = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
@@ -70,6 +83,12 @@
             this.menu.SuspendLayout();
             this.panelEscritorio.SuspendLayout();
             this.submenu.SuspendLayout();
+            this.guna2ShadowPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.cardprodalmacen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.footer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,7 +216,7 @@
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(5, 878);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(5, 950);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(275, 25);
             this.guna2HtmlLabel1.TabIndex = 7;
@@ -219,11 +238,12 @@
             this.menuventas,
             this.menureportes,
             this.menunegocio,
+            this.menuconfiguracion,
             this.menuacercade});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menu.Size = new System.Drawing.Size(333, 903);
+            this.menu.Size = new System.Drawing.Size(333, 975);
             this.menu.TabIndex = 6;
             this.menu.Text = "menuStrip1";
             // 
@@ -261,7 +281,7 @@
             // 
             this.submenucategoria.Image = ((System.Drawing.Image)(resources.GetObject("submenucategoria.Image")));
             this.submenucategoria.Name = "submenucategoria";
-            this.submenucategoria.Size = new System.Drawing.Size(224, 34);
+            this.submenucategoria.Size = new System.Drawing.Size(210, 34);
             this.submenucategoria.Text = "CATEGORIAS";
             this.submenucategoria.Click += new System.EventHandler(this.submenucategoria_Click);
             // 
@@ -269,7 +289,7 @@
             // 
             this.submenutallas.Image = ((System.Drawing.Image)(resources.GetObject("submenutallas.Image")));
             this.submenutallas.Name = "submenutallas";
-            this.submenutallas.Size = new System.Drawing.Size(224, 34);
+            this.submenutallas.Size = new System.Drawing.Size(210, 34);
             this.submenutallas.Text = "TALLAS";
             this.submenutallas.Click += new System.EventHandler(this.submenutallas_Click);
             // 
@@ -278,7 +298,7 @@
             this.menuproductos.AutoSize = false;
             this.menuproductos.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuproductos.IconChar = FontAwesome.Sharp.IconChar.Shirt;
-            this.menuproductos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(189)))), ((int)(((byte)(226)))));
+            this.menuproductos.IconColor = System.Drawing.Color.Black;
             this.menuproductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuproductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuproductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -292,7 +312,7 @@
             this.menuingresotienda.AutoSize = false;
             this.menuingresotienda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.submenutienda,
-            this.subdettienda});
+            this.subprodtienda});
             this.menuingresotienda.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuingresotienda.IconChar = FontAwesome.Sharp.IconChar.Dolly;
             this.menuingresotienda.IconColor = System.Drawing.Color.Black;
@@ -313,14 +333,15 @@
             this.submenutienda.Text = "Registrar Productos";
             this.submenutienda.Click += new System.EventHandler(this.submenutienda_Click);
             // 
-            // subdettienda
+            // subprodtienda
             // 
-            this.subdettienda.AutoSize = false;
-            this.subdettienda.Image = ((System.Drawing.Image)(resources.GetObject("subdettienda.Image")));
-            this.subdettienda.Name = "subdettienda";
-            this.subdettienda.Size = new System.Drawing.Size(309, 40);
-            this.subdettienda.Tag = "Detalle de Entrada";
-            this.subdettienda.Text = "Detalle de Entrada";
+            this.subprodtienda.AutoSize = false;
+            this.subprodtienda.Image = ((System.Drawing.Image)(resources.GetObject("subprodtienda.Image")));
+            this.subprodtienda.Name = "subprodtienda";
+            this.subprodtienda.Size = new System.Drawing.Size(309, 40);
+            this.subprodtienda.Tag = "Ver Productos";
+            this.subprodtienda.Text = "Ver Productos";
+            this.subprodtienda.Click += new System.EventHandler(this.subprodtienda_Click);
             // 
             // menuclientes
             // 
@@ -408,6 +429,20 @@
             this.menunegocio.Size = new System.Drawing.Size(240, 70);
             this.menunegocio.Text = "Datos de Tienda";
             // 
+            // menuconfiguracion
+            // 
+            this.menuconfiguracion.AutoSize = false;
+            this.menuconfiguracion.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuconfiguracion.IconChar = FontAwesome.Sharp.IconChar.Gears;
+            this.menuconfiguracion.IconColor = System.Drawing.Color.Black;
+            this.menuconfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuconfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuconfiguracion.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuconfiguracion.Name = "menuconfiguracion";
+            this.menuconfiguracion.Size = new System.Drawing.Size(240, 70);
+            this.menuconfiguracion.Text = "Configuraciones";
+            this.menuconfiguracion.Click += new System.EventHandler(this.menuconfiguracion_Click);
+            // 
             // menuacercade
             // 
             this.menuacercade.AutoSize = false;
@@ -434,12 +469,163 @@
             // 
             // submenu
             // 
+            this.submenu.AutoScroll = true;
+            this.submenu.Controls.Add(this.guna2ShadowPanel2);
+            this.submenu.Controls.Add(this.guna2ShadowPanel1);
+            this.submenu.Controls.Add(this.cardprodalmacen);
             this.submenu.Controls.Add(this.lblhora);
             this.submenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.submenu.Location = new System.Drawing.Point(0, 0);
             this.submenu.Name = "submenu";
             this.submenu.Size = new System.Drawing.Size(1344, 757);
             this.submenu.TabIndex = 0;
+            // 
+            // guna2ShadowPanel2
+            // 
+            this.guna2ShadowPanel2.AutoSize = true;
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.label4);
+            this.guna2ShadowPanel2.Controls.Add(this.label5);
+            this.guna2ShadowPanel2.Controls.Add(this.guna2PictureBox3);
+            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(1257, 91);
+            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
+            this.guna2ShadowPanel2.Radius = 10;
+            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel2.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(519, 235);
+            this.guna2ShadowPanel2.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(216, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(185, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Cantidad de Ventas";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(287, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 29);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "0";
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(13, 35);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(172, 160);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 2;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.AutoSize = true;
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label2);
+            this.guna2ShadowPanel1.Controls.Add(this.label3);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2PictureBox2);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(641, 91);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 10;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(519, 235);
+            this.guna2ShadowPanel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(203, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Cantidad de Usuarios";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(287, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 29);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "0";
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(13, 35);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(172, 160);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 2;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // cardprodalmacen
+            // 
+            this.cardprodalmacen.AutoSize = true;
+            this.cardprodalmacen.BackColor = System.Drawing.Color.Transparent;
+            this.cardprodalmacen.Controls.Add(this.label1);
+            this.cardprodalmacen.Controls.Add(this.txtcantprod);
+            this.cardprodalmacen.Controls.Add(this.guna2PictureBox1);
+            this.cardprodalmacen.FillColor = System.Drawing.Color.AntiqueWhite;
+            this.cardprodalmacen.Location = new System.Drawing.Point(22, 91);
+            this.cardprodalmacen.Name = "cardprodalmacen";
+            this.cardprodalmacen.Radius = 10;
+            this.cardprodalmacen.ShadowColor = System.Drawing.Color.Black;
+            this.cardprodalmacen.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            this.cardprodalmacen.Size = new System.Drawing.Size(519, 235);
+            this.cardprodalmacen.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(203, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Cantidad de Productos";
+            // 
+            // txtcantprod
+            // 
+            this.txtcantprod.AutoSize = true;
+            this.txtcantprod.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcantprod.Location = new System.Drawing.Point(287, 88);
+            this.txtcantprod.Name = "txtcantprod";
+            this.txtcantprod.Size = new System.Drawing.Size(26, 29);
+            this.txtcantprod.TabIndex = 3;
+            this.txtcantprod.Text = "0";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(13, 35);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(172, 160);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 2;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // lblhora
             // 
@@ -524,6 +710,15 @@
             this.panelEscritorio.ResumeLayout(false);
             this.submenu.ResumeLayout(false);
             this.submenu.PerformLayout();
+            this.guna2ShadowPanel2.ResumeLayout(false);
+            this.guna2ShadowPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.cardprodalmacen.ResumeLayout(false);
+            this.cardprodalmacen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.footer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -548,11 +743,10 @@
         private System.Windows.Forms.ToolStripMenuItem submenuDetVentas;
         private FontAwesome.Sharp.IconMenuItem menuingresotienda;
         private System.Windows.Forms.ToolStripMenuItem submenutienda;
-        private System.Windows.Forms.ToolStripMenuItem subdettienda;
+        private System.Windows.Forms.ToolStripMenuItem subprodtienda;
         private FontAwesome.Sharp.IconMenuItem menuclientes;
         private FontAwesome.Sharp.IconMenuItem menuproveedores;
         private FontAwesome.Sharp.IconMenuItem menureportes;
-        private FontAwesome.Sharp.IconMenuItem menuacercade;
         private FontAwesome.Sharp.IconMenuItem menucategoria;
         private Guna.UI2.WinForms.Guna2CirclePictureBox imguser;
         private System.Windows.Forms.Timer horafecha;
@@ -563,5 +757,19 @@
         private System.Windows.Forms.ToolStripMenuItem submenutallas;
         private Guna.UI2.WinForms.Guna2Panel submenu;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblhora;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2ShadowPanel cardprodalmacen;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtcantprod;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private FontAwesome.Sharp.IconMenuItem menuconfiguracion;
+        private FontAwesome.Sharp.IconMenuItem menuacercade;
     }
 }

@@ -60,7 +60,6 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgusuarios = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +68,7 @@
             this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idrol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelOpciones.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgusuarios)).BeginInit();
@@ -139,6 +139,7 @@
             // 
             // btnlimpiar
             // 
+            this.btnlimpiar.Animated = true;
             this.btnlimpiar.BorderRadius = 10;
             this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -179,6 +180,7 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.Animated = true;
             this.btneliminar.BorderRadius = 10;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -335,6 +337,7 @@
             // 
             // btnguardar
             // 
+            this.btnguardar.Animated = true;
             this.btnguardar.BorderRadius = 10;
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -581,15 +584,6 @@
             this.dgusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgusuarios_CellContentClick);
             this.dgusuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgusuarios_CellPainting);
             // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 20;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.DarkGray;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.HasFormShadow = false;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
             // btnseleccionar
             // 
             this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -668,6 +662,15 @@
             this.rol.Name = "rol";
             this.rol.ReadOnly = true;
             this.rol.Width = 159;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.DarkGray;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // frmUsuarios
             // 

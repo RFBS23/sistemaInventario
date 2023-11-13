@@ -10,8 +10,9 @@ namespace entidad
     {
         public int idproductotienda {  get; set; }
         public Productos oProductos { get; set; }
+        public Usuarios oUsuarios { get; set; }
         public int cantidad { get; set; }
-        public bool estado { get; set; }
+        public List<Detallestienda> oDetallestienda { get; set; }
         public string fecharegistro { get; set; }
     }
 }

@@ -1,6 +1,0 @@
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\bin\Debug\entidad.dll
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\bin\Debug\entidad.pdb
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Debug\entidad.csproj.AssemblyReference.cache
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Debug\entidad.csproj.CoreCompileInputs.cache
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Debug\entidad.dll
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\entidad\obj\Debug\entidad.pdb

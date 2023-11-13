@@ -132,6 +132,7 @@
             // 
             // btnlimpiar
             // 
+            this.btnlimpiar.Animated = true;
             this.btnlimpiar.BorderRadius = 10;
             this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -150,6 +151,7 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.Animated = true;
             this.btneliminar.BorderRadius = 10;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -168,6 +170,7 @@
             // 
             // btnguardar
             // 
+            this.btnguardar.Animated = true;
             this.btnguardar.BorderRadius = 10;
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -226,6 +229,7 @@
             this.txtcorreo.SelectedText = "";
             this.txtcorreo.Size = new System.Drawing.Size(330, 57);
             this.txtcorreo.TabIndex = 44;
+            this.txtcorreo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcorreo_Validating);
             // 
             // txtapellidos
             // 

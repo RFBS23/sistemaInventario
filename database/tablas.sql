@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS sistemainventario;
 create database sistemainventario
 go
 
@@ -108,7 +109,6 @@ create table tallasropa (
 	estado bit not null default 1,
 )
 go
--- alter table tallasropa add idcategoria int references categorias(idcategoria) not null;
 insert into tallasropa (idcategoria, nombretalla) VALUES 
 	(1, 'S');
 go
@@ -117,7 +117,6 @@ go
 select idtallaropa, c.idcategoria, c.nombrecategoria, nombretalla from tallasropa tr
 inner join categorias c on c.idcategoria = tr.idcategoria
 go
--- select idtallaropa, nombretalla from tallasropa where idcategoria = @idcategoria
 
 create table productosropa(
 	idproducto int primary key identity,
@@ -125,13 +124,11 @@ create table productosropa(
 	codigo varchar(50) not null,
 	nombre varchar(50) not null,
 	descripcion varchar(50) not null,
-	ubiprod varchar(30) not null,
 	idcategoria int references categorias(idcategoria) not null,
 	idtallaropa int references tallasropa(idtallaropa) not null,
 	stock int default 0 not null,
 	colores varchar(40) not null,
 	numcaja varchar(50) not null,
-	-- preciocompra decimal(10,2) default 0,
 	precioventa decimal(10,2) default 0 not null,
 	devolucion varchar(30) null,
 	devoluciontalla varchar(10) null,
@@ -139,64 +136,43 @@ create table productosropa(
 	fecharegistro datetime default getdate()
 )
 go
--- alter table productosropa add imagenes varbinary(max) NULL;
--- alter table productosropa add devoluciontalla varchar(10) null;
--- alter table productosropa add ubicacionprod varchar(30) not null;
--- alter table productosropa drop COLUMN idubiprod;
--- alter table productosropa add numcaja varchar(50);
-
-insert into productosropa (codigo, nombre, descripcion, ubiprod, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
-('113221466', 'prueba1', 'hola mundgg', 'caja', 1, 1, '40', 'amarillo', 'caja 12', '150'),
-('113221896', 'prueba2', 'hola mundo', 'caja', 1, 1, '30', 'azul', 'bolsa 15', '69');
+insert into productosropa (codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
+('113221466', 'prueba1', 'hola mundgg', 1, 1, '40', 'amarillo', 'caja 12', '150'),
+('113221896', 'prueba2', 'hola mundo', 1, 1, '30', 'azul', 'bolsa 15', '69');
 select * from productosropa
 go
+delete from productosropa where idproducto = 11;
 
-select idproducto, codigo, nombre, descripcion, ubiprod, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p
+select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p
 inner join categorias c on c.idcategoria = p.idcategoria
 inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
 go
 
 create table productosropatienda(
 	idproductotienda int primary key identity,
-	idproducto int references productosropa(idproducto) not null,
-	cantidad int default 0 not null,
+	idusuario int references usuarios(idusuario),
 	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
 go
-insert into productosropatienda (idproducto, cantidad) values (1, '10')
-select idproductotienda, pa.idproducto, pa.codigo, pa.nombre, pa.descripcion, pa.idcategoria, c.nombrecategoria, pa.idtallaropa, tr.nombretalla, pa.stock, pa.colores, pa.numcaja, pa.precioventa from productosropatienda pt
-inner join productosropa pa on pa.idproducto = pt.idproductotienda
-inner join categorias c on c.idcategoria = pa.idcategoria
-inner join tallasropa tr on tr.idtallaropa = pa.idtallaropa
-select * from productosropa
-go
-select * from productosropatienda
-go
 
-create table compras(
-	idcompra int primary key identity,
-	idusuario int references usuarios(idusuario),
-	idproveedor int references proveedores(idproveedor),
-	tipodocumento varchar(50),
-	numerodocumento varchar(50),
-	montototal decimal(10,2),
-	fecharegistro datetime default getdate()
-)
-go
-select * from compras
-go
+select count(*) + 1 from productosropatienda
 
-create table detalle_compra(
-	iddetallecompra int primary key identity,
-	idcompra int references compras(idcompra),
+delete from productosropatienda where idproductotienda = 5;
+
+create table detalletienda(
+	iddetalletienda int primary key identity,
+	idproductotienda int references productosropatienda(idproductotienda),
 	idproducto int references productosropa(idproducto),
-	preciocompra decimal(10,2) default 0,
-	precioventa decimal(10,2) default 0,
-	cantidad int,
-	montototal decimal(10,2),
-	fecharegistro datetime default getdate()
+	cantidad int default 0 not null,
+	fecharegistro varchar(20)not null
 )
+go
+SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.devolucion, pr.devoluciontalla, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt
+JOIN productosropa pr ON dt.idproducto = pr.idproducto
+JOIN categorias cat ON pr.idcategoria = cat.idcategoria
+JOIN tallasropa tr ON pr.idtallaropa = tr.idtallaropa;
+select * from detalletienda
 go
 
 create table ventas(
@@ -216,7 +192,7 @@ go
 create table detalle_venta(
 	iddetalleventa int primary key identity,
 	idventa int references ventas(idventa),
-	idproductos int references productosropa(idproducto),
+	idproducto int references productosropa(idproducto),
 	precioventa decimal(10,2),
 	cantidad int,
 	subtotal decimal(10,2),

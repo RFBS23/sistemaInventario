@@ -160,7 +160,19 @@ namespace presentacion
 
         private void submenutienda_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuingresotienda, new frmTienda());
+            AbrirFormulario(menuingresotienda, new frmTienda(usuarioActual));
+            submenu.Hide();
+        }
+
+        private void subprodtienda_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuingresotienda, new frmProdtiendas());
+            submenu.Hide();
+        }
+
+        private void menuconfiguracion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmConfiguracion());
             submenu.Hide();
         }
     }

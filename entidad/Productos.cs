@@ -12,7 +12,6 @@ namespace entidad
         public string codigo { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        public string ubiprod { get; set; }
         public Categorias oCategorias { get; set; }
         public Tallasropa oTallasropa { get; set; }
         public int stock { get; set; }
