@@ -16,5 +16,10 @@ namespace presentacion
         {
             InitializeComponent();
         }
+
+        private void frmVentas_Load(object sender, EventArgs e)
+        {
+            txtfecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
+        }
     }
 }

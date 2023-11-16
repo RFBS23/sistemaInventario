@@ -168,6 +168,12 @@ create table detalletienda(
 	fecharegistro varchar(20)not null
 )
 go
+alter table detalletienda add descuento decimal(10, 2) default 0.00 not null
+
+UPDATE detalletienda
+SET descuento = 8.75
+WHERE iddetalletienda = 5;
+
 SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.devolucion, pr.devoluciontalla, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt
 JOIN productosropa pr ON dt.idproducto = pr.idproducto
 JOIN categorias cat ON pr.idcategoria = cat.idcategoria
@@ -200,6 +206,12 @@ create table detalle_venta(
 )
 go
 
+create table productos(
+	iddetalleproducto int primary key
+)
+go
+
+/*negocio de reportes*/
 create table negocios(
 	idnegocio int primary key identity,
 	nombre varchar(60),
@@ -208,4 +220,5 @@ create table negocios(
 	logo varbinary(max) NULL
 )
 go
-
+select * from negocios
+go

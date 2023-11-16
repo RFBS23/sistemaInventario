@@ -239,7 +239,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(399, 77);
             this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Demo - v 1.4.7";
+            this.guna2HtmlLabel1.Text = "Demo - v 1.6.4";
             // 
             // piclogin
             // 

@@ -38,17 +38,13 @@ namespace presentacion
         {
             if (e.RowIndex < 0)
                 return;
-
             if (e.ColumnIndex == 11)
             {
-
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
                 var w = Properties.Resources.boton_eliminar.Width;
                 var h = Properties.Resources.boton_eliminar.Height;
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
                 e.Graphics.DrawImage(Properties.Resources.boton_eliminar, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
@@ -79,7 +75,6 @@ namespace presentacion
             using (var modal = new mdProductos())
             {
                 var result = modal.ShowDialog();
-
                 if (result == DialogResult.OK)
                 {
                     txtidproducto.Text = modal._Productos.idproducto.ToString();
@@ -92,21 +87,18 @@ namespace presentacion
                     txtcolores.Text = modal._Productos.colores;
                     txtstock.Text = modal._Productos.stock.ToString();
                     txtprecioventa.Text = modal._Productos.precioventa.ToString();
-
                     txtcantidadprod.Select();
                 }
                 else
                 {
                     txtcodigoprod.Select();
                 }
-
             }
         }
 
         private void txtcodigoprod_TextChanged(object sender, EventArgs e)
         {
             Productos oProductos = new N_Productos().Listar().Where(p => p.codigo == txtcodigoprod.Text).FirstOrDefault();
-
             if (oProductos != null)
             {
                 txtidproducto.Text = oProductos.idproducto.ToString();
@@ -118,7 +110,6 @@ namespace presentacion
                 txtcolores.Text = oProductos.colores;
                 txtstock.Text = oProductos.stock.ToString();
                 txtprecioventa.Text = oProductos.precioventa.ToString();
-
                 txtcantidadprod.Select();
             }
             else
@@ -183,9 +174,7 @@ namespace presentacion
                 txtprecioventa.Text,
                 txtfecha.Text,
             });
-
             MessageBox.Show("Producto agregado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             limpiarProducto();
             txtcodigoprod.Select();
         }
