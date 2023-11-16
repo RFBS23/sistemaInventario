@@ -1,2 +1,8 @@
 # escluyendo la carpeta del instalador
 Instalador
+
+# excluimos los archivos con la extension de texto
+.txt
+
+#excluimos la licencia del software
+.rtf

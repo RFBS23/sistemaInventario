@@ -127,7 +127,6 @@ namespace presentacion
             }
         }
 
-
         private void dgcategorias_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
