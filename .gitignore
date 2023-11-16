@@ -2,7 +2,7 @@
 Instalador
 
 # excluimos los archivos con la extension de texto
-.txt
+*.txt
 
 #excluimos la licencia del software
-.rtf
+*.rtf
