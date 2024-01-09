@@ -21,7 +21,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p");
+                    query.AppendLine("select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa from productosropa p");
                     query.AppendLine("inner join categorias c on c.idcategoria = p.idcategoria");
                     query.AppendLine("inner join tallasropa tr on tr.idtallaropa = p.idtallaropa");
 
@@ -45,8 +45,6 @@ namespace datos
                                 stock = Convert.ToInt32(dr["stock"]),
                                 numcaja = dr["numcaja"].ToString(),
                                 precioventa = Convert.ToDecimal(dr["precioventa"]),
-                                devolucion = dr["devolucion"].ToString(),
-                                devoluciontalla = dr["devoluciontalla"].ToString()
                             });
                         }
                     }
@@ -77,8 +75,6 @@ namespace datos
                     cmd.Parameters.AddWithValue("stock", obj.stock);
                     cmd.Parameters.AddWithValue("numcaja", obj.numcaja);
                     cmd.Parameters.AddWithValue("precioventa", obj.precioventa);
-                    cmd.Parameters.AddWithValue("devolucion", obj.devolucion);
-                    cmd.Parameters.AddWithValue("devoluciontalla", obj.devoluciontalla);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -116,8 +112,6 @@ namespace datos
                     cmd.Parameters.AddWithValue("stock", obj.stock);
                     cmd.Parameters.AddWithValue("numcaja", obj.numcaja);
                     cmd.Parameters.AddWithValue("precioventa", obj.precioventa);
-                    cmd.Parameters.AddWithValue("devolucion", obj.devolucion);
-                    cmd.Parameters.AddWithValue("devoluciontalla", obj.devoluciontalla);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;

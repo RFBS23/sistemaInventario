@@ -18,14 +18,11 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using DocumentFormat.OpenXml.Office.Word;
 
 namespace presentacion
 {
     public partial class frmProductos : Form
     {
-        //SqlConnection con = new SqlConnection(@"Data Source=FabrizioBS23\SQLEXPRESS;Initial Catalog=sistemainventario;Integrated Security=True");
-
         public Productos _Productos { get; set; }
 
         public frmProductos()
@@ -74,61 +71,11 @@ namespace presentacion
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa, item.devolucion, item.devoluciontalla });
+                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa });
             }
 
-            //ListarCategorias(); //prueba de anidados
         }
 
-        /* pruebas anidados 
-        private void ListarCategorias()
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select idcategoria, nombrecategoria from categorias", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-
-            DataRow fila = dt.NewRow();
-            fila["nombrecategoria"] = "Elige una categoria";
-            dt.Rows.InsertAt(fila, 0);
-            listacategoria.ValueMember = "idcategoria";
-            listacategoria.DisplayMember = "nombrecategoria";
-            listacategoria.DataSource = dt;
-        }
-        
-        private void listarTalla(string idcategoria)
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select idtallaropa, nombretalla from tallasropa where idcategoria = @idcategoria", con);
-            cmd.Parameters.AddWithValue("idcategoria", idcategoria);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-
-            DataRow dr = dt.NewRow();
-            dr["nombretalla"] = "Elige una Talla";
-            dt.Rows.InsertAt(dr, 0);
-
-            listatallas.ValueMember = "idtallaropa";
-            listatallas.DisplayMember = "nombretalla";
-            listatallas.DataSource = dt;
-        }
-        */
-        
-        private void listacategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            if(listacategoria.SelectedIndex.ToString() != null)
-            {
-                string idcategoria = listacategoria.SelectedValue.ToString();
-                listatallas(idcategoria);
-            }
-            */
-        } 
-        /*fin pruebas de anidados*/
         
         private void dgproductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -186,8 +133,6 @@ namespace presentacion
                     txtstock.Text = dgproductos.Rows[indice].Cells["stock"].Value.ToString();
                     txtnumcaja.Text = dgproductos.Rows[indice].Cells["numcaja"].Value.ToString();
                     txtprecioventa.Text = dgproductos.Rows[indice].Cells["precioventa"].Value.ToString();
-                    txtdevolucion.Text = dgproductos.Rows[indice].Cells["devolucion"].Value.ToString();
-                    txtdevoluciontalla.Text = dgproductos.Rows[indice].Cells["devoluciontalla"].Value.ToString();
                 }
             }
         }
@@ -220,8 +165,6 @@ namespace presentacion
             txtstock.Text = "0";
             txtnumcaja.Text = "";
             txtprecioventa.Text = "0";
-            txtdevolucion.SelectedIndex = 0;
-            txtdevoluciontalla.SelectedIndex = 0;
 
             txtcodigo.Select();
         }
@@ -243,8 +186,6 @@ namespace presentacion
                 stock = Convert.ToInt32(txtstock.Text),
                 numcaja = txtnumcaja.Text,
                 precioventa = Convert.ToDecimal(txtprecioventa.Text),
-                devolucion = txtdevolucion.Text,
-                devoluciontalla = txtdevoluciontalla.Text,
             };
             if (objproductos.idproducto == 0)
             {
@@ -261,8 +202,6 @@ namespace presentacion
                         txtstock.Text,
                         txtnumcaja.Text,
                         Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"),
-                        txtdevolucion.Text,
-                        txtdevoluciontalla.Text
                     });
                     Limpiar();
                 }
@@ -288,9 +227,7 @@ namespace presentacion
                     row.Cells["colores"].Value = txtcolores.Text;
                     row.Cells["stock"].Value = txtstock.Text;
                     row.Cells["numcaja"].Value = txtnumcaja.Text;
-                    row.Cells["precioventa"].Value = Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"); ;
-                    row.Cells["devolucion"].Value = txtdevolucion.Text;
-                    row.Cells["devoluciontalla"].Value = txtdevoluciontalla.Text;
+                    row.Cells["precioventa"].Value = Convert.ToDecimal(txtprecioventa.Text).ToString("0.00");
                     Limpiar();
                 }
                 else
@@ -347,10 +284,11 @@ namespace presentacion
 
         private void btnexcel_Click(object sender, EventArgs e)
         {
-            if(dgproductos.Rows.Count < 1)
+            if (dgproductos.Rows.Count < 1)
             {
                 MessageBox.Show("NO HE PODIDO ENCONTRAR DATOS PARA PODER EXPORTARLOS", "VALENT FRANCE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else
+            }
+            else
             {
                 DataTable dt = new DataTable();
                 foreach (DataGridViewColumn columna in dgproductos.Columns)
@@ -367,18 +305,16 @@ namespace presentacion
                             row.Cells[2].Value.ToString(),
                             row.Cells[3].Value.ToString(),
                             row.Cells[4].Value.ToString(),
-                            row.Cells[5].Value.ToString(),
-                            row.Cells[7].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            row.Cells[8].Value.ToString(),
                             row.Cells[9].Value.ToString(),
                             row.Cells[10].Value.ToString(),
                             row.Cells[11].Value.ToString(),
                             row.Cells[12].Value.ToString(),
-                            row.Cells[13].Value.ToString(),
-                            row.Cells[14].Value.ToString() + "  |  " + row.Cells[15].Value.ToString()
                         });
                 }
                 SaveFileDialog savefile = new SaveFileDialog();
-                savefile.FileName = "ReporteProducto - ValentFrance.xlsx";
+                savefile.FileName = string.Format("ReporteProducto_{0}.xlsx", DateTime.Now.ToString("dd-MM-yyyy"));
                 savefile.Filter = "Excel Files | *.xlsx";
                 if (savefile.ShowDialog() == DialogResult.OK)
                 {
@@ -392,7 +328,7 @@ namespace presentacion
                     }
                     catch
                     {
-                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                        
+                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
@@ -422,18 +358,6 @@ namespace presentacion
                 }
             }
 
-            //juntar celdas
-            if (e.ColumnIndex == dgproductos.Columns["detalledevolucion"].Index && e.RowIndex >= 0)
-            {
-                string txtdevolucion = dgproductos["devolucion", e.RowIndex].Value as string;
-                string txtdevoluciontalla = dgproductos["devoluciontalla", e.RowIndex].Value as string;
-                
-                if (txtdevolucion != null && txtdevoluciontalla != null)
-                {
-                    e.Value = txtdevolucion + " " + txtdevoluciontalla;
-                    e.FormattingApplied = true;
-                }
-            }
         }
 
         private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
@@ -456,5 +380,14 @@ namespace presentacion
             }
         }
 
+        private void txtnumcaja_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar == 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

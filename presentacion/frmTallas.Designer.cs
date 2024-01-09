@@ -52,12 +52,12 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dgtallaprendas = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtallaropa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrecategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombretalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -382,7 +382,7 @@
             this.dgtallaprendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgtallaprendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
-            this.id,
+            this.idtallaropa,
             this.idcategoria,
             this.nombrecategoria,
             this.nombretalla});
@@ -442,6 +442,14 @@
             this.dgtallaprendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtallaprendas_CellContentClick);
             this.dgtallaprendas.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgtallaprendas_CellPainting);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 30;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // btnseleccionar
             // 
             this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -453,14 +461,14 @@
             this.btnseleccionar.Text = "";
             this.btnseleccionar.Width = 150;
             // 
-            // id
+            // idtallaropa
             // 
-            this.id.HeaderText = "idusuario";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 129;
+            this.idtallaropa.HeaderText = "idusuario";
+            this.idtallaropa.MinimumWidth = 6;
+            this.idtallaropa.Name = "idtallaropa";
+            this.idtallaropa.ReadOnly = true;
+            this.idtallaropa.Visible = false;
+            this.idtallaropa.Width = 129;
             // 
             // idcategoria
             // 
@@ -491,14 +499,6 @@
             this.nombretalla.Name = "nombretalla";
             this.nombretalla.ReadOnly = true;
             this.nombretalla.Width = 99;
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 30;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.HasFormShadow = false;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // frmTallas
             // 
@@ -541,11 +541,11 @@
         private Guna.UI2.WinForms.Guna2ComboBox listbuscar;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2DataGridView dgtallaprendas;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtallaropa;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrecategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombretalla;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

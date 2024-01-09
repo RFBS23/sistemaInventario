@@ -49,14 +49,6 @@ namespace negocio
             {
                 Mensaje += "• El precio del producto debe ser mayor a 0 \n";
             }
-            if (obj.devolucion == "")
-            {
-                Mensaje += "• Seleccione el motivo de la devolucion \n";
-            }
-            if (obj.devoluciontalla == "")
-            {
-                Mensaje += "• Seleccione la talla que esta devolviendo \n";
-            }
             if (Mensaje != string.Empty)
             {
                 return 0;
@@ -96,14 +88,6 @@ namespace negocio
             if (obj.precioventa <= 0)
             {
                 Mensaje += "• El precio del producto debe ser mayor a 0 \n";
-            }
-            if (obj.devolucion == "")
-            {
-                Mensaje += "• Seleccione el motivo de la devolucion \n";
-            }
-            if (obj.devoluciontalla == "")
-            {
-                Mensaje += "• Seleccione la talla que esta devolviendo \n";
             }
             if (Mensaje != string.Empty)
             {

@@ -208,7 +208,6 @@ namespace presentacion
         }
 
         /*Validacione y limitacion de numeros*/
-
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) !=0)

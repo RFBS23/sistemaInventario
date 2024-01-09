@@ -129,5 +129,29 @@ namespace presentacion.Utilidades.modales
                 }
             }
         }
+
+        private void dgproductosmodal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+            if (dgproductosmodal.Columns[e.ColumnIndex].Name == "btnseleccionar")
+            {
+                _Productos = new Productos()
+                {
+                    idproducto = Convert.ToInt32(dgproductosmodal.Rows[iRow].Cells["id"].Value.ToString()),
+                    codigo = dgproductosmodal.Rows[iRow].Cells["codigo"].Value.ToString(),
+                    nombre = dgproductosmodal.Rows[iRow].Cells["nombre"].Value.ToString(),
+                    descripcion = dgproductosmodal.Rows[iRow].Cells["descripcion"].Value.ToString(),
+                    oCategorias = new Categorias() { nombrecategoria = dgproductosmodal.Rows[iRow].Cells["nombrecategoria"].Value.ToString() },
+                    oTallasropa = new Tallasropa() { nombretalla = dgproductosmodal.Rows[iRow].Cells["nombretalla"].Value.ToString() },
+                    numcaja = dgproductosmodal.Rows[iRow].Cells["numcaja"].Value?.ToString(),
+                    colores = dgproductosmodal.Rows[iRow].Cells["colores"].Value?.ToString(),
+                    stock = Convert.ToInt32(dgproductosmodal.Rows[iRow].Cells["stock"].Value?.ToString()),
+                    precioventa = Convert.ToDecimal(dgproductosmodal.Rows[iRow].Cells["precioventa"].Value?.ToString()),
+                };
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }

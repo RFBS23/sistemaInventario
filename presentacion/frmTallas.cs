@@ -75,7 +75,7 @@ namespace presentacion
                 if (indice >= 0)
                 {
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgtallaprendas.Rows[indice].Cells["id"].Value.ToString();
+                    txtid.Text = dgtallaprendas.Rows[indice].Cells["idtallaropa"].Value.ToString();
                     foreach (opcionesComboBox ocb in listacategorias.Items)
                     {
                         if (Convert.ToInt32(ocb.Valor) == Convert.ToInt32(dgtallaprendas.Rows[indice].Cells["idcategoria"].Value))
@@ -169,6 +169,7 @@ namespace presentacion
 
                 }
             }
+            Limpiar() ;
         }
 
         private void btnlimpiar_Click(object sender, EventArgs e)

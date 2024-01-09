@@ -7,7 +7,7 @@ go
 
 create table rol(
 	idrol int primary key identity,
-	nombrerol varchar(50),
+	nombrerol varchar(50) not null,
 	fecharegistro datetime default getdate()
 )
 go
@@ -46,7 +46,6 @@ create table proveedores(
 	razonsocial varchar(50),
 	correo varchar(50),
 	telefono varchar(50),
-	estado bit,
 	fecharegistro date default getdate()
 )
 go
@@ -56,24 +55,23 @@ go
 
 create table clientes(
 	idcliente int primary key identity,
-	documento varchar(50),
+	documento varchar(50) unique,
 	nombres varchar(50),
 	apellidos varchar(50),
 	correo varchar(50),
-	telefono char(9),
-	estado bit,
+	telefono char(9) unique,
 	fecharegistro date default getdate()
 )
 go
 insert into clientes (documento, nombres, apellidos, correo, telefono) values
-('12345678', 'tio nacho', 'soyuz', 'tionacho@soyuz.com', '987654321')
+	('12345678', 'tio nacho', 'soyuz', 'tionacho@soyuz.com', '987654321')
 go
 select idcliente, documento, nombres, apellidos, correo, telefono from clientes
 go
 
 create table usuarios(
 	idusuario int primary key identity,
-	documento varchar(50),
+	documento varchar(50) unique,
 	nombreusuario varchar(50),
 	correo varchar(50),
 	clave varchar(50),
@@ -104,11 +102,12 @@ go
 
 create table tallasropa (
 	idtallaropa int primary key identity,
-	nombretalla varchar(50),
+	nombretalla varchar(50) not null,
 	idcategoria int references categorias(idcategoria) not null,
 	estado bit not null default 1,
 )
 go
+
 insert into tallasropa (idcategoria, nombretalla) VALUES 
 	(1, 'S');
 go
@@ -130,8 +129,6 @@ create table productosropa(
 	colores varchar(40) not null,
 	numcaja varchar(50) not null,
 	precioventa decimal(10,2) default 0 not null,
-	devolucion varchar(30) null,
-	devoluciontalla varchar(10) null,
 	estado bit not null default 1,
 	fecharegistro datetime default getdate()
 )
@@ -143,7 +140,7 @@ select * from productosropa
 go
 delete from productosropa where idproducto = 11;
 
-select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, devolucion, devoluciontalla from productosropa p
+select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa from productosropa p
 inner join categorias c on c.idcategoria = p.idcategoria
 inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
 go
@@ -155,9 +152,7 @@ create table productosropatienda(
 	fecharegistro datetime default getdate()
 )
 go
-
 select count(*) + 1 from productosropatienda
-
 delete from productosropatienda where idproductotienda = 5;
 
 create table detalletienda(
@@ -165,16 +160,16 @@ create table detalletienda(
 	idproductotienda int references productosropatienda(idproductotienda),
 	idproducto int references productosropa(idproducto),
 	cantidad int default 0 not null,
-	fecharegistro varchar(20)not null
+	fecharegistro varchar(20)not null,
 )
 go
 alter table detalletienda add descuento decimal(10, 2) default 0.00 not null
 
 UPDATE detalletienda
 SET descuento = 8.75
-WHERE iddetalletienda = 5;
+WHERE iddetalletienda = 1;
 
-SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.devolucion, pr.devoluciontalla, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt
+SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt
 JOIN productosropa pr ON dt.idproducto = pr.idproducto
 JOIN categorias cat ON pr.idcategoria = cat.idcategoria
 JOIN tallasropa tr ON pr.idtallaropa = tr.idtallaropa;
@@ -194,6 +189,8 @@ create table ventas(
 	fecharegistro datetime default getdate()
 )
 go
+select * from ventas
+go
 
 create table detalle_venta(
 	iddetalleventa int primary key identity,
@@ -206,12 +203,6 @@ create table detalle_venta(
 )
 go
 
-create table productos(
-	iddetalleproducto int primary key
-)
-go
-
-/*negocio de reportes*/
 create table negocios(
 	idnegocio int primary key identity,
 	nombre varchar(60),

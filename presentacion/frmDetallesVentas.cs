@@ -16,5 +16,10 @@ namespace presentacion
         {
             InitializeComponent();
         }
+
+        private void frmDetallesVentas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

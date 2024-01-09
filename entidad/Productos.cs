@@ -19,7 +19,5 @@ namespace entidad
         public decimal preciocompra { get; set; }
         public decimal precioventa { get; set; }
         public string numcaja { get; set; }
-        public string devolucion { get; set; }
-        public string devoluciontalla { get; set; }
     }
 }

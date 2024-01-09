@@ -39,7 +39,7 @@ go
 select p.idrol, p.nombremenu from permisos p
 inner join rol r on r.idrol = p.idrol
 inner join usuarios u on u.idrol = r.idrol
-where u.idusuario = 2
+where u.idusuario = 1
 
 insert into negocios(nombre,ruc,direccion,logo) values
 	('Valent France', '20232023', 'por ahi', null)

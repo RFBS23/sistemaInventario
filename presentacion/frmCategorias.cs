@@ -73,7 +73,7 @@ namespace presentacion
                 if (resultado)
                 {
                     DataGridViewRow row = dgcategorias.Rows[Convert.ToInt32(txtindice.Text)];
-                    row.Cells["id"].Value = txtid.Text;
+                    row.Cells["idcategoria"].Value = txtid.Text;
                     row.Cells["nombrecategoria"].Value = txtnombrecatecoria.Text;
                     Limpiarc();
                 }
@@ -115,7 +115,7 @@ namespace presentacion
                     if (resultado)
                     {
                         DataGridViewRow row = dgcategorias.Rows[Convert.ToInt32(txtindice.Text)];
-                        row.Cells["id"].Value = txtid.Text;
+                        row.Cells["idcategoria"].Value = txtid.Text;
                         row.Cells["nombrecategoria"].Value = txtnombrecatecoria.Text;
                         Limpiarc();
                     }
@@ -155,7 +155,7 @@ namespace presentacion
                 if (indice >= 0)
                 {
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgcategorias.Rows[indice].Cells["id"].Value.ToString();
+                    txtid.Text = dgcategorias.Rows[indice].Cells["idcategoria"].Value.ToString();
                     txtnombrecatecoria.Text = dgcategorias.Rows[indice].Cells["nombrecategoria"].Value.ToString();
                 }
             }

@@ -43,7 +43,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.devolucion, pr.devoluciontalla, pr.estado AS estado_producto, pr.fecharegistro AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt");
+                    query.AppendLine("SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt");
                     query.AppendLine("JOIN productosropa pr ON dt.idproducto = pr.idproducto");
                     query.AppendLine("JOIN categorias cat ON pr.idcategoria = cat.idcategoria");
                     query.AppendLine("JOIN tallasropa tr ON pr.idtallaropa = tr.idtallaropa");
@@ -75,8 +75,6 @@ namespace datos
                                             stock = Convert.ToInt32(dr["stock"]),
                                             numcaja = dr["numcaja"].ToString(),
                                             precioventa = Convert.ToDecimal(dr["precioventa"]),
-                                            devolucion = dr["devolucion"].ToString(),
-                                            devoluciontalla = dr["devoluciontalla"].ToString(),
                                         },
                                         cantidad = Convert.ToInt32(dr["cantidad"]),
                                         fecharegistro = Convert.ToString(dr["fecharegistro_detalletienda"])
@@ -95,8 +93,6 @@ namespace datos
                                     stock = Convert.ToInt32(dr["stock"]),
                                     numcaja = dr["numcaja"].ToString(),
                                     precioventa = Convert.ToDecimal(dr["precioventa"]),
-                                    devolucion = dr["devolucion"].ToString(),
-                                    devoluciontalla = dr["devoluciontalla"].ToString(),
                                 },
                                 cantidad = Convert.ToInt32(dr["cantidad"]),
                                 fecharegistro = Convert.ToString(dr["fecharegistro_detalletienda"])

@@ -84,9 +84,9 @@ namespace datos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("spu_editar_tallasropa", oconexion);
-                    cmd.Parameters.AddWithValue("idtallaropa", obj.idtallaropa);
-                    cmd.Parameters.AddWithValue("nombretalla", obj.nombretalla);
                     cmd.Parameters.AddWithValue("idcategoria", obj.oCategorias.idcategoria);
+                    cmd.Parameters.AddWithValue("idtallaropa", obj.idtallaropa);
+                    cmd.Parameters.AddWithValue("nombretalla", obj.nombretalla);                    
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;

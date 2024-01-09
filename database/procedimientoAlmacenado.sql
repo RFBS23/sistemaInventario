@@ -249,8 +249,6 @@ create procedure spu_registrar_productoropa(
 	@colores varchar(40),
 	@numcaja varchar(50),
 	@precioventa decimal(10,2),
-	@devolucion varchar(30),
-	@devoluciontalla varchar(10),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
@@ -259,8 +257,8 @@ begin
 	set @resultado = 0
 	if not exists (select * from productosropa where codigo = @codigo)
 	begin
-		insert into productosropa(/*imagenes,*/ codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, devolucion, devoluciontalla) values
-		(/*@imagenes,*/ @codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @devolucion, @devoluciontalla)
+		insert into productosropa(codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa) values
+		(@codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa)
 		set @resultado = SCOPE_IDENTITY()
 	end
 	set @mensaje = 'El codigo ya se encuentra registrado en otra prenda'
@@ -278,8 +276,6 @@ create procedure spu_editar_productoropa(
 	@colores varchar(40),
 	@numcaja varchar(50),
 	@precioventa decimal(10,2),
-	@devolucion varchar(30),
-	@devoluciontalla varchar(10),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
@@ -288,7 +284,6 @@ begin
 	set @resultado = 1
 	if not exists (select * from productosropa where codigo = @Codigo and idproducto != @idproducto)
 		update productosropa set
-		/*imagenes = @imagenes,*/
 		codigo = @codigo,
 		nombre = @nombre,
 		descripcion = @descripcion,
@@ -297,9 +292,7 @@ begin
 		stock = @stock,
 		colores = @colores,
 		numcaja = @numcaja,
-		precioventa = @precioventa,
-		devolucion = @devolucion,
-		devoluciontalla = @devoluciontalla
+		precioventa = @precioventa
 		where idproducto = @idproducto
 	else	
 	begin
@@ -324,7 +317,7 @@ begin
     if exists (
             select *
             from detalle_venta dv
-            inner join productosropa p on p.idproducto = dv.idproductos
+            inner join productosropa p on p.idproducto = dv.idproducto
             where p.idproducto = @idproducto
         )
     begin

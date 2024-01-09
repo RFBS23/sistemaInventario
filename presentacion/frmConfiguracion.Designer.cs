@@ -38,10 +38,9 @@
             // 
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.guna2ImageButton1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(332, 29);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1326, 710);
+            this.guna2Panel1.Size = new System.Drawing.Size(587, 594);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2ImageButton1
@@ -51,7 +50,7 @@
             this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(730, 165);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(116, 176);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.Size = new System.Drawing.Size(85, 75);
