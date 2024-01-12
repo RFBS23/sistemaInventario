@@ -338,11 +338,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades\modales\mdClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilidades\modales\mdClientes.Designer.cs">
+      <DependentUpon>mdClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\modales\mdProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utilidades\modales\mdProductos.Designer.cs">
       <DependentUpon>mdProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\modales\mdProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilidades\modales\mdProveedores.Designer.cs">
+      <DependentUpon>mdProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades\opcionesComboBox.cs" />
     <EmbeddedResource Include="Dashboard.resx">
@@ -399,8 +411,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Utilidades\modales\mdClientes.resx">
+      <DependentUpon>mdClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utilidades\modales\mdProductos.resx">
       <DependentUpon>mdProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilidades\modales\mdProveedores.resx">
+      <DependentUpon>mdProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="packages.config" />
@@ -436,7 +454,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\warning.png" />
     <None Include="Resources\boton-eliminar.png" />
+    <None Include="Resources\error.png" />
     <Content Include="Resources\icono.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -471,5 +493,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

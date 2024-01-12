@@ -20,11 +20,15 @@ namespace negocio
         public int Registrar(Proveedor obj, out string Mensaje)
         {
             Mensaje = string.Empty;
+            if (obj.nombreproveedor == "")
+            {
+                Mensaje += "Es necesario que ingrese el nombre del proveedor \n";
+            }
             if (obj.documento == "")
             {
                 Mensaje += "Es necesario que ingrese el documento del proveedor \n";
             }
-            if (obj.razonsocial == "")
+            if (obj.direccion == "")
             {
                 Mensaje += "• Ingrese el la razon social \n";
             }
@@ -49,11 +53,15 @@ namespace negocio
         public bool Editar(Proveedor obj, out string Mensaje)
         {
             Mensaje = string.Empty;
+            if (obj.nombreproveedor == "")
+            {
+                Mensaje += "Es necesario que ingrese el nombre del proveedor \n";
+            }
             if (obj.documento == "")
             {
                 Mensaje += "Es necesario que ingrese el documento del proveedor \n";
             }
-            if (obj.razonsocial == "")
+            if (obj.direccion == "")
             {
                 Mensaje += "• Ingrese el la razon social \n";
             }

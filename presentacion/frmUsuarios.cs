@@ -278,5 +278,6 @@ namespace presentacion
                 e.Cancel = true; // Evita que el foco se mueva fuera del TextBox si la validación falla.
             }
         }
+
     }
 }

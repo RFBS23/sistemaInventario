@@ -31,7 +31,7 @@ namespace presentacion
 
         private void frmTienda_Load(object sender, EventArgs e)
         {
-            txtfecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            //txtfecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
         private void dgproductostienda_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -172,7 +172,7 @@ namespace presentacion
                 cantidad.ToString(),
                 txtnumcaja.Text,
                 txtprecioventa.Text,
-                txtfecha.Text,
+                //txtfecha.Text,
             });
             MessageBox.Show("Producto agregado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             limpiarProducto();
@@ -249,7 +249,7 @@ namespace presentacion
                 MessageBox.Show("Producto Agregado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Limpiar los controles después de registrar
-                txtfecha.Text = "";
+                //txtfecha.Text = "";
                 dgproductostienda.Rows.Clear();
             }
             else

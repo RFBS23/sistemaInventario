@@ -64,7 +64,6 @@
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.txtid = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtidproducto = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtfecha = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtcodigoprod = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.listacategoria = new Guna.UI2.WinForms.Guna2TextBox();
@@ -412,7 +411,6 @@
             this.guna2Panel4.Controls.Add(this.btnbuscar);
             this.guna2Panel4.Controls.Add(this.txtid);
             this.guna2Panel4.Controls.Add(this.txtidproducto);
-            this.guna2Panel4.Controls.Add(this.txtfecha);
             this.guna2Panel4.Controls.Add(this.txtcodigoprod);
             this.guna2Panel4.Controls.Add(this.txtnombre);
             this.guna2Panel4.Controls.Add(this.txtdescripcion);
@@ -430,6 +428,7 @@
             this.btnbuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnbuscar.FlatAppearance.BorderSize = 0;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
@@ -487,16 +486,6 @@
             this.txtidproducto.Size = new System.Drawing.Size(41, 29);
             this.txtidproducto.TabIndex = 60;
             this.txtidproducto.Visible = false;
-            // 
-            // txtfecha
-            // 
-            this.txtfecha.BackColor = System.Drawing.Color.Transparent;
-            this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfecha.Location = new System.Drawing.Point(21, 7);
-            this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(56, 27);
-            this.txtfecha.TabIndex = 59;
-            this.txtfecha.Text = "fecha";
             // 
             // txtcodigoprod
             // 
@@ -985,7 +974,6 @@
             this.guna2Panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel7.ResumeLayout(false);
@@ -1029,7 +1017,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtfecha;
         private Guna.UI2.WinForms.Guna2NumericUpDown txtcantidadprod;
         private Guna.UI2.WinForms.Guna2TextBox txtid;
         private Guna.UI2.WinForms.Guna2TextBox txtidproducto;

@@ -164,7 +164,7 @@ namespace presentacion
             txtcolores.Text = "";
             txtstock.Text = "0";
             txtnumcaja.Text = "";
-            txtprecioventa.Text = "0";
+            txtprecioventa.Text = "0.00";
 
             txtcodigo.Select();
         }

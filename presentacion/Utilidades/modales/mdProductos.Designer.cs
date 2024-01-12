@@ -310,7 +310,7 @@
             this.groupboxproductos.Name = "groupboxproductos";
             this.groupboxproductos.Size = new System.Drawing.Size(1001, 602);
             this.groupboxproductos.TabIndex = 21;
-            this.groupboxproductos.Text = "Modal de Productos";
+            this.groupboxproductos.Text = "Informacion de Productos";
             this.groupboxproductos.TextOffset = new System.Drawing.Point(0, 5);
             this.groupboxproductos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.groupboxproductos_MouseDown);
             // 
@@ -319,7 +319,9 @@
             this.btnbuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnbuscar.FlatAppearance.BorderSize = 0;
+            this.btnbuscar.ForeColor = System.Drawing.Color.Transparent;
             this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnbuscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(178)))), ((int)(((byte)(59)))));
             this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;

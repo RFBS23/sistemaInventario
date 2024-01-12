@@ -9,8 +9,9 @@ namespace entidad
     public class Proveedor
     {
         public int idproveedor {  get; set; }
+        public string nombreproveedor {  set; get; }
         public string documento {  get; set; }
-        public string razonsocial { get; set;}
+        public string direccion { get; set;}
         public string correo { get; set; }
         public string telefono { get; set; }
         public bool estado { get; set; }

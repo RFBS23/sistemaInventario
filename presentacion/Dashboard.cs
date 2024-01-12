@@ -119,7 +119,7 @@ namespace presentacion
 
         private void submenuRVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuventas, new frmVentas());
+            AbrirFormulario(menuventas, new frmVentas(usuarioActual));
             submenu.Hide();
         }
 

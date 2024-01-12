@@ -40,7 +40,7 @@ namespace presentacion
             List<Proveedor> listaProveedor = new N_Proveedores().Listar();
             foreach (Proveedor item in listaProveedor)
             {
-                dgproveedores.Rows.Add(new object[] { "", item.idproveedor, item.documento, item.razonsocial, item.correo, item.telefono });
+                dgproveedores.Rows.Add(new object[] { "", item.idproveedor, item.nombreproveedor, item.documento, item.direccion, item.correo, item.telefono });
             }
         }
 
@@ -111,6 +111,7 @@ namespace presentacion
         {
             txtindice.Text = "-1";
             txtid.Text = "0";
+            txtnombreprov.Text = "";
             txtdocumento.Text = "";
             txtrazonsocial.Text = "";
             txtcorreo.Text = "";
@@ -126,8 +127,9 @@ namespace presentacion
             Proveedor objproveedor = new Proveedor()
             {
                 idproveedor = Convert.ToInt32(txtid.Text),
+                nombreproveedor = txtnombreprov.Text,
                 documento = txtdocumento.Text,
-                razonsocial = txtrazonsocial.Text,
+                direccion = txtrazonsocial.Text,
                 correo = txtcorreo.Text,
                 telefono = txttelefono.Text,
             };
@@ -137,7 +139,7 @@ namespace presentacion
 
                 if (idprovedorgenerado != 0)
                 {
-                    dgproveedores.Rows.Add(new object[] {"", idprovedorgenerado, txtdocumento.Text, txtrazonsocial.Text, txtcorreo.Text, txttelefono.Text });
+                    dgproveedores.Rows.Add(new object[] {"", idprovedorgenerado,txtnombreprov.Text, txtdocumento.Text, txtrazonsocial.Text, txtcorreo.Text, txttelefono.Text });
 
                     Limpiar();
                 }
@@ -153,8 +155,9 @@ namespace presentacion
                 {
                     DataGridViewRow row = dgproveedores.Rows[Convert.ToInt32(txtindice.Text)];
                     row.Cells["id"].Value = txtid.Text;
+                    row.Cells["nombreproveedor"].Value = txtnombreprov.Text;
                     row.Cells["documento"].Value = txtdocumento.Text;
-                    row.Cells["razonsocial"].Value = txtrazonsocial.Text;
+                    row.Cells["direccion"].Value = txtrazonsocial.Text;
                     row.Cells["correo"].Value = txtcorreo.Text;
                     row.Cells["telefono"].Value = txttelefono.Text;
 
@@ -196,8 +199,9 @@ namespace presentacion
                 {
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgproveedores.Rows[indice].Cells["id"].Value.ToString();
+                    txtnombreprov.Text = dgproveedores.Rows[indice].Cells["nombreproveedor"].Value.ToString();
                     txtdocumento.Text = dgproveedores.Rows[indice].Cells["documento"].Value.ToString();
-                    txtrazonsocial.Text = dgproveedores.Rows[indice].Cells["razonsocial"].Value.ToString();
+                    txtrazonsocial.Text = dgproveedores.Rows[indice].Cells["direccion"].Value.ToString();
                     txtcorreo.Text = dgproveedores.Rows[indice].Cells["correo"].Value.ToString();
                     txttelefono.Text = dgproveedores.Rows[indice].Cells["telefono"].Value.ToString();
                 }

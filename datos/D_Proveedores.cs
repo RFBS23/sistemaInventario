@@ -19,7 +19,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select idproveedor, documento, razonsocial, correo, telefono from proveedores");
+                    query.AppendLine("select idproveedor, nombreproveedor, documento, direccion, correo, telefono from proveedores");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -32,8 +32,9 @@ namespace datos
                             lista.Add(new Proveedor()
                             {
                                 idproveedor = Convert.ToInt32(dr["idproveedor"]),
+                                nombreproveedor = dr["nombreproveedor"].ToString(),
                                 documento = dr["documento"].ToString(),
-                                razonsocial = dr["razonsocial"].ToString(),
+                                direccion = dr["direccion"].ToString(),
                                 correo = dr["correo"].ToString(),
                                 telefono = dr["telefono"].ToString()
                             });
@@ -57,8 +58,9 @@ namespace datos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("spu_registrar_proveedores", oconexion);
+                    cmd.Parameters.AddWithValue("nombreproveedor", obj.nombreproveedor);
                     cmd.Parameters.AddWithValue("documento", obj.documento);
-                    cmd.Parameters.AddWithValue("razonsocial", obj.razonsocial);
+                    cmd.Parameters.AddWithValue("direccion", obj.direccion);
                     cmd.Parameters.AddWithValue("correo", obj.correo);
                     cmd.Parameters.AddWithValue("telefono", obj.telefono);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -89,8 +91,9 @@ namespace datos
                 {
                     SqlCommand cmd = new SqlCommand("spu_editar_proveedores", oconexion);
                     cmd.Parameters.AddWithValue("idproveedor", obj.idproveedor);
+                    cmd.Parameters.AddWithValue("nombreproveedor", obj.nombreproveedor);
                     cmd.Parameters.AddWithValue("documento", obj.documento);
-                    cmd.Parameters.AddWithValue("razonsocial", obj.razonsocial);
+                    cmd.Parameters.AddWithValue("direccion", obj.direccion);
                     cmd.Parameters.AddWithValue("correo", obj.correo);
                     cmd.Parameters.AddWithValue("telefono", obj.telefono);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;

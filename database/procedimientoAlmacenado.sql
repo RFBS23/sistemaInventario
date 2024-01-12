@@ -405,8 +405,9 @@ go
 
 /* ---------- PROCEDIMIENTOS PARA PROVEEDOR -----------------*/
 create procedure spu_registrar_proveedores(
+	@nombreproveedor varchar(225),
 	@documento varchar(50),
-	@razonsocial varchar(50),
+	@direccion varchar(50),
 	@correo varchar(50),
 	@telefono varchar(50),
 	@resultado int output,
@@ -418,7 +419,7 @@ begin
 	declare @idpersona int 
 	if not exists (select * from proveedores where documento = @documento)
 	begin
-		insert into proveedores(documento, razonsocial, correo, telefono) values (@documento, @razonsocial, @correo, @telefono)
+		insert into proveedores(nombreproveedor, documento, direccion, correo, telefono) values (@nombreproveedor, @documento, @direccion, @correo, @telefono)
 		set @resultado = SCOPE_IDENTITY()
 	end
 	else
@@ -428,8 +429,9 @@ go
 
 create procedure spu_editar_proveedores(
 	@idproveedor int,
+	@nombreproveedor varchar(225),
 	@documento varchar(50),
-	@razonsocial varchar(50),
+	@direccion varchar(50),
 	@correo varchar(50),
 	@telefono varchar(50),
 	@resultado int output,
@@ -442,8 +444,9 @@ begin
 	IF NOT EXISTS (select * from proveedores where documento = @documento and idproveedor != @idproveedor)
 	begin
 		update proveedores set
+		nombreproveedor = @nombreproveedor,
 		documento = @documento,
-		razonsocial = @razonsocial,
+		direccion = @direccion,
 		correo = @correo,
 		telefono = @telefono
 		where idproveedor = @idproveedor

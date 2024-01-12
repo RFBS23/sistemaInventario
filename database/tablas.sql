@@ -7,7 +7,7 @@ go
 
 create table rol(
 	idrol int primary key identity,
-	nombrerol varchar(50) not null,
+	nombrerol varchar(50) not null unique,
 	fecharegistro datetime default getdate()
 )
 go
@@ -42,16 +42,16 @@ go
 
 create table proveedores(
 	idproveedor int primary key identity,
-	documento varchar(50),
-	razonsocial varchar(50),
+	nombreproveedor varchar(225),
+	documento varchar(50), 
+	direccion varchar(50), -- direccion
 	correo varchar(50),
 	telefono varchar(50),
 	fecharegistro date default getdate()
 )
 go
-insert into proveedores (documento, razonsocial, correo, telefono) values ('123456789', '1234567898787', 'prueba@hotmailempresa.pe', '987654321')
-select idproveedor, documento, razonsocial, correo, telefono from proveedores
-go
+insert into proveedores (nombreproveedor, documento, direccion, correo, telefono) values ('provedor prueba s.a.c', '123456789', '1234567898787', 'prueba@hotmailempresa.pe', '987654321')
+select idproveedor, nombreproveedor, documento, direccion, correo, telefono from proveedores
 
 create table clientes(
 	idcliente int primary key identity,

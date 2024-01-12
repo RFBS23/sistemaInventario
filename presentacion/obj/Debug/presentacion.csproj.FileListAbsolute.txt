@@ -73,7 +73,9 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmVentas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.login.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Properties.Resources.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdClientes.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProductos.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProveedores.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.GenerateResource.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.CoreCompileInputs.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\Inventario - Valent France.exe.manifest

@@ -45,15 +45,16 @@
             this.txtnombrecatecoria = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.dgcategorias = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrecategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtid = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtindice = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrecategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -297,10 +298,44 @@
             this.dgcategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellContentClick);
             this.dgcategorias.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgcategorias_CellPainting);
             // 
+            // btnseleccionar
+            // 
+            this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btnseleccionar.FillWeight = 35.29412F;
+            this.btnseleccionar.HeaderText = "Seleccionar";
+            this.btnseleccionar.MinimumWidth = 6;
+            this.btnseleccionar.Name = "btnseleccionar";
+            this.btnseleccionar.ReadOnly = true;
+            this.btnseleccionar.Text = "";
+            this.btnseleccionar.Width = 150;
+            // 
+            // idcategoria
+            // 
+            this.idcategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idcategoria.HeaderText = "idcategoria";
+            this.idcategoria.MinimumWidth = 6;
+            this.idcategoria.Name = "idcategoria";
+            this.idcategoria.ReadOnly = true;
+            this.idcategoria.Visible = false;
+            this.idcategoria.Width = 149;
+            // 
+            // nombrecategoria
+            // 
+            this.nombrecategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nombrecategoria.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombrecategoria.FillWeight = 448.8688F;
+            this.nombrecategoria.HeaderText = "Categoria";
+            this.nombrecategoria.MinimumWidth = 6;
+            this.nombrecategoria.Name = "nombrecategoria";
+            this.nombrecategoria.ReadOnly = true;
+            this.nombrecategoria.Width = 129;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.AutoScroll = true;
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.txtid);
             this.guna2Panel1.Controls.Add(this.txtindice);
             this.guna2Panel1.Controls.Add(this.txtnombrecatecoria);
@@ -403,38 +438,16 @@
             this.guna2Panel3.Size = new System.Drawing.Size(926, 609);
             this.guna2Panel3.TabIndex = 47;
             // 
-            // btnseleccionar
+            // label5
             // 
-            this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btnseleccionar.FillWeight = 35.29412F;
-            this.btnseleccionar.HeaderText = "Seleccionar";
-            this.btnseleccionar.MinimumWidth = 6;
-            this.btnseleccionar.Name = "btnseleccionar";
-            this.btnseleccionar.ReadOnly = true;
-            this.btnseleccionar.Text = "";
-            this.btnseleccionar.Width = 150;
-            // 
-            // idcategoria
-            // 
-            this.idcategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idcategoria.HeaderText = "idcategoria";
-            this.idcategoria.MinimumWidth = 6;
-            this.idcategoria.Name = "idcategoria";
-            this.idcategoria.ReadOnly = true;
-            this.idcategoria.Visible = false;
-            this.idcategoria.Width = 149;
-            // 
-            // nombrecategoria
-            // 
-            this.nombrecategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nombrecategoria.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nombrecategoria.FillWeight = 448.8688F;
-            this.nombrecategoria.HeaderText = "Categoria";
-            this.nombrecategoria.MinimumWidth = 6;
-            this.nombrecategoria.Name = "nombrecategoria";
-            this.nombrecategoria.ReadOnly = true;
-            this.nombrecategoria.Width = 129;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(25, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 26);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Categoria";
             // 
             // frmCategorias
             // 
@@ -479,5 +492,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrecategoria;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1C6ogjx+C9At7Wp3vgTIu9Idf85FPU7Ir8tw7MUENKY=</dsig:DigestValue>
+        <dsig:DigestValue>G9ESSAVTV5PUo+TG+8Jjohr7f5Tm8idpy8Sae+o/aX4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZpoyscQnlC5BeGiPDVvgJY1xjW+2gs5rvtaJj1Uy++U=</dsig:DigestValue>
+        <dsig:DigestValue>rwsHH5FSOeu+efWlQpM3rjqYmmiTuDdnZw70MYPTMZA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,14 +139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario - Valent France.exe" size="2685904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario - Valent France.exe" size="2985936">
       <assemblyIdentity name="Inventario - Valent France" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Oa3LFdSjS7rWb/uhsWPxyn9EyR7WDYe1OnsYpWmBo78=</dsig:DigestValue>
+        <dsig:DigestValue>JfTAuGeEz3ZIwImq7v1wudinTWzjjkaPJa52iAtMxXs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -266,7 +266,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zERS4TRM/M8s5SL1JL8K8tpRqSDW+w4PUK1zDi5bL/8=</dsig:DigestValue>
+        <dsig:DigestValue>HgODNAVUYYIg9yl1Gq7DFTIDt2iEZz98zAH9Tykmn7E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

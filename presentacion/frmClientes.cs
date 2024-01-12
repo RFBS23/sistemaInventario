@@ -142,33 +142,52 @@ namespace presentacion
 
         private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            if (char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
+                e.Handled = false; // Permitir el carácter de control
                 return;
             }
-            // nos aseguramos que el munero y la cantidad del texto sea menor o igual a 9.
+
+            // Verificar si el carácter ingresado no es un dígito o si la longitud es mayor o igual a 9
             if (!char.IsDigit(e.KeyChar) || txttelefono.Text.Length >= 9)
             {
                 e.Handled = true; // Ignoramos el carácter.
+                return;
             }
 
-            // Aseguramos de que el primer carácter sea '9'.
+            // Asegurarnos de que el primer carácter sea '9'.
             if (txttelefono.Text.Length == 0 && e.KeyChar != '9')
             {
                 e.Handled = true; // Ignoramos el carácter.
                 MessageBox.Show("El Telefono debe de empezar con 9", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
         }
 
         private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            // Permitir teclas de control como backspace
+            if (char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Ingresa Solo Numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = false; // Permite el carácter de control
+                return;
+            }
+
+            // Verificar si el carácter ingresado no es un dígito
+            if (!char.IsDigit(e.KeyChar))
+            {
+                // Si no es un dígito, mostrar un mensaje de alerta y no permitir que se escriba en el TextBox
+                MessageBox.Show("Ingresa solo números.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }
+
+            // Verificar la longitud actual del texto en el TextBox
+            if (txtdocumento.Text.Length >= 8)
+            {
+                // Si la longitud es 20 o más, no permitir que se escriba más
+                MessageBox.Show("El límite es de 8 dígitos.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
             }
         }
 
