@@ -43,7 +43,7 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, dt.cantidad, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt");
+                    query.AppendLine("SELECT dt.iddetalletienda, dt.idproductotienda, pr.idproducto, pr.codigo, pr.nombre, pr.descripcion, cat.idcategoria, cat.nombrecategoria, tr.idtallaropa, tr.nombretalla, dt.cantidad, pr.stock, pr.colores, pr.numcaja, pr.precioventa, pr.descuento, pr.estado AS estado_producto, CONVERT(VARCHAR(10), pr.fecharegistro, 120)AS fecharegistro_producto, convert(varchar(12), dt.fecharegistro, 120) AS fecharegistro_detalletienda FROM detalletienda dt");
                     query.AppendLine("JOIN productosropa pr ON dt.idproducto = pr.idproducto");
                     query.AppendLine("JOIN categorias cat ON pr.idcategoria = cat.idcategoria");
                     query.AppendLine("JOIN tallasropa tr ON pr.idtallaropa = tr.idtallaropa");
@@ -73,8 +73,8 @@ namespace datos
                                             oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(dr["idtallaropa"]), nombretalla = dr["nombretalla"].ToString() },
                                             colores = dr["colores"].ToString(),
                                             stock = Convert.ToInt32(dr["stock"]),
-                                            numcaja = dr["numcaja"].ToString(),
                                             precioventa = Convert.ToDecimal(dr["precioventa"]),
+                                            descuento = Convert.ToInt32(dr["descuento"]),
                                         },
                                         cantidad = Convert.ToInt32(dr["cantidad"]),
                                         fecharegistro = Convert.ToString(dr["fecharegistro_detalletienda"])
@@ -91,7 +91,7 @@ namespace datos
                                     oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(dr["idtallaropa"]), nombretalla = dr["nombretalla"].ToString() },
                                     colores = dr["colores"].ToString(),
                                     stock = Convert.ToInt32(dr["stock"]),
-                                    numcaja = dr["numcaja"].ToString(),
+                                    descuento = Convert.ToInt32(dr["descuento"]),
                                     precioventa = Convert.ToDecimal(dr["precioventa"]),
                                 },
                                 cantidad = Convert.ToInt32(dr["cantidad"]),

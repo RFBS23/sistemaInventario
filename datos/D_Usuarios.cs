@@ -89,28 +89,30 @@ namespace datos
         {
             bool respuesta = false;
             Mensaje = string.Empty;
+
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("spu_editar_usuario", oconexion);
-                    cmd.Parameters.AddWithValue("idusuario", obj.idusuario);
-                    cmd.Parameters.AddWithValue("documento", obj.documento);
-                    cmd.Parameters.AddWithValue("nombreusuario", obj.nombreusuario);
-                    cmd.Parameters.AddWithValue("correo", obj.correo);
-                    cmd.Parameters.AddWithValue("clave", obj.clave);
-                    cmd.Parameters.AddWithValue("idrol", obj.oRol.idrol);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@idusuario", obj.idusuario);
+                    cmd.Parameters.AddWithValue("@documento", obj.documento);
+                    cmd.Parameters.AddWithValue("@nombreusuario", obj.nombreusuario);
+                    cmd.Parameters.AddWithValue("@correo", obj.correo);
+                    cmd.Parameters.AddWithValue("@clave", obj.clave);
+                    cmd.Parameters.AddWithValue("@idrol", obj.oRol.idrol);
+                    cmd.Parameters.Add("@respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
-                    respuesta = Convert.ToBoolean(cmd.Parameters["respuesta"].Value);
-                    Mensaje = cmd.Parameters["mensaje"].Value.ToString();
 
+                    respuesta = Convert.ToBoolean(cmd.Parameters["@respuesta"].Value);
+                    Mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 respuesta = false;
                 Mensaje = ex.Message;

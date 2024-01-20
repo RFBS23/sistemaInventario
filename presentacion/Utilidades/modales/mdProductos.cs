@@ -46,7 +46,7 @@ namespace presentacion.Utilidades.modales
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductosmodal.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.nombrecategoria, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa });
+                dgproductosmodal.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.nombrecategoria, item.oTallasropa.nombretalla, item.colores, item.stock, item.descuento, item.precioventa });
             }
         }
 
@@ -54,31 +54,6 @@ namespace presentacion.Utilidades.modales
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void dgproductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int iRow = e.RowIndex;
-            int iColum = e.ColumnIndex;
-
-            if (iRow >= 0 && iColum > 0)
-            {
-                _Productos = new Productos()
-                {
-                    idproducto = Convert.ToInt32(dgproductosmodal.Rows[iRow].Cells["id"].Value.ToString()),
-                    codigo = dgproductosmodal.Rows[iRow].Cells["codigo"].Value.ToString(),
-                    nombre = dgproductosmodal.Rows[iRow].Cells["nombre"].Value.ToString(),
-                    descripcion = dgproductosmodal.Rows[iRow].Cells["descripcion"].Value.ToString(),
-                    oCategorias = new Categorias() { nombrecategoria = dgproductosmodal.Rows[iRow].Cells["nombrecategoria"].Value.ToString() },
-                    oTallasropa = new Tallasropa() { nombretalla = dgproductosmodal.Rows[iRow].Cells["nombretalla"].Value.ToString() },
-                    numcaja = dgproductosmodal.Rows[iRow].Cells["numcaja"].Value?.ToString(),
-                    colores = dgproductosmodal.Rows[iRow].Cells["colores"].Value?.ToString(),
-                    stock = Convert.ToInt32(dgproductosmodal.Rows[iRow].Cells["stock"].Value?.ToString()),
-                    precioventa = Convert.ToDecimal(dgproductosmodal.Rows[iRow].Cells["precioventa"].Value?.ToString()),
-                };
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
         }
 
         private void dgproductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -144,9 +119,9 @@ namespace presentacion.Utilidades.modales
                     descripcion = dgproductosmodal.Rows[iRow].Cells["descripcion"].Value.ToString(),
                     oCategorias = new Categorias() { nombrecategoria = dgproductosmodal.Rows[iRow].Cells["nombrecategoria"].Value.ToString() },
                     oTallasropa = new Tallasropa() { nombretalla = dgproductosmodal.Rows[iRow].Cells["nombretalla"].Value.ToString() },
-                    numcaja = dgproductosmodal.Rows[iRow].Cells["numcaja"].Value?.ToString(),
                     colores = dgproductosmodal.Rows[iRow].Cells["colores"].Value?.ToString(),
                     stock = Convert.ToInt32(dgproductosmodal.Rows[iRow].Cells["stock"].Value?.ToString()),
+                    descuento = Convert.ToInt32(dgproductosmodal.Rows[iRow].Cells["descuento"].Value?.ToString()),
                     precioventa = Convert.ToDecimal(dgproductosmodal.Rows[iRow].Cells["precioventa"].Value?.ToString()),
                 };
                 this.DialogResult = DialogResult.OK;

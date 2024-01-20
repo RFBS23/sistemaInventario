@@ -49,7 +49,7 @@ namespace negocio
             {
                 Mensaje += "Es necesario el documento de identificacion del usuario\n";
             }
-            if(obj.nombreusuario == "")
+            if (obj.nombreusuario == "")
             {
                 Mensaje += "Es necesario el nombre completo del usuario\n";
             }

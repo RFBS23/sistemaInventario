@@ -31,7 +31,7 @@ namespace presentacion
 
         private void frmTienda_Load(object sender, EventArgs e)
         {
-            //txtfecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            txtfecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
         private void dgproductostienda_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -83,10 +83,10 @@ namespace presentacion
                     txtdescripcion.Text = modal._Productos.descripcion;
                     listacategoria.Text = modal._Productos.oCategorias.nombrecategoria.ToString();
                     listatallas.Text = modal._Productos.oTallasropa.nombretalla.ToString();
-                    txtnumcaja.Text = modal._Productos.numcaja;
                     txtcolores.Text = modal._Productos.colores;
                     txtstock.Text = modal._Productos.stock.ToString();
                     txtprecioventa.Text = modal._Productos.precioventa.ToString();
+                    txtdescuento.Text = modal._Productos.descuento.ToString();
                     txtcantidadprod.Select();
                 }
                 else
@@ -106,9 +106,9 @@ namespace presentacion
                 txtdescripcion.Text = oProductos.descripcion;
                 listacategoria.Text = oProductos.oCategorias.nombrecategoria.ToString();
                 listatallas.Text = oProductos.oTallasropa.nombretalla.ToString();
-                txtnumcaja.Text = oProductos.numcaja;
                 txtcolores.Text = oProductos.colores;
                 txtstock.Text = oProductos.stock.ToString();
+                txtdescuento.Text = oProductos.descuento.ToString();
                 txtprecioventa.Text = oProductos.precioventa.ToString();
                 txtcantidadprod.Select();
             }
@@ -119,23 +119,24 @@ namespace presentacion
                 txtdescripcion.Text = "";
                 listacategoria.Text = "";
                 listatallas.Text = "";
-                txtnumcaja.Text = "";
                 txtcolores.Text = "";
                 txtstock.Text = "";
+                txtdescuento.Text = "0.00";
                 txtprecioventa.Text = "";
             }
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
+            decimal cantidad = 0;
+            bool producto_existe = false;
+
             if (int.Parse(txtidproducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            
-            decimal cantidad = 0;
-            
+
             if (!decimal.TryParse(txtcantidadprod.Text, out cantidad))
             {
                 MessageBox.Show("Cantidad - Formato incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -143,39 +144,39 @@ namespace presentacion
                 return;
             }
 
-            // Buscar el producto en la lista
+            if (Convert.ToInt32(txtstock.Text) < Convert.ToInt32(txtcantidadprod.Value.ToString()))
+            {
+                MessageBox.Show("La cantidad no puede ser mayor al stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             foreach (DataGridViewRow fila in dgproductostienda.Rows)
             {
                 if (fila.Cells["idproducto"].Value.ToString() == txtidproducto.Text)
                 {
-                    // Producto encontrado, actualizar la cantidad
-                    decimal cantidadExistente = Convert.ToDecimal(fila.Cells["stock"].Value);
-                    fila.Cells["stock"].Value = cantidadExistente + cantidad;
-
-                    MessageBox.Show("Cantidad actualizada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    limpiarProducto();
-                    txtcodigoprod.Select();
-                    return;  // Salir de la función ya que encontramos el producto
+                    producto_existe = true;
+                    break;
                 }
             }
 
-            // Si el producto no existe, agregar uno nuevo
-            dgproductostienda.Rows.Add(new object[] {
-                txtidproducto.Text,
-                txtcodigoprod.Text,
-                txtnombre.Text,
-                txtdescripcion.Text,
-                listacategoria.Text,
-                listatallas.Text,
-                txtcolores.Text,
-                cantidad.ToString(),
-                txtnumcaja.Text,
-                txtprecioventa.Text,
-                //txtfecha.Text,
-            });
-            MessageBox.Show("Producto agregado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            limpiarProducto();
+            if (!producto_existe)
+            {
+                dgproductostienda.Rows.Add(new object[] {
+                    txtidproducto.Text,
+                    txtcodigoprod.Text,
+                    txtnombre.Text,
+                    txtdescripcion.Text,
+                    listacategoria.Text,
+                    listatallas.Text,
+                    txtcolores.Text,
+                    cantidad.ToString(),
+                    txtdescuento.Text,
+                    txtprecioventa.Text,
+                    txtfecha.Text,
+                });
+                limpiarProducto();
+            }
+            // limpiarProducto();
             txtcodigoprod.Select();
         }
 
@@ -189,8 +190,8 @@ namespace presentacion
             listatallas.Text = "";
             txtcolores.Text = "";
             txtstock.Text = "0";
-            txtnumcaja.Text = "";
             txtprecioventa.Text = "0";
+            txtdescuento.Text = "0.00";
             txtcantidadprod.Value = 1;
 
             txtcodigoprod.Select();
@@ -204,6 +205,7 @@ namespace presentacion
                 if (indice >= 0)
                 {
                     dgproductostienda.Rows.RemoveAt(indice);
+                    limpiarProducto();
                 }
             }
         }
@@ -246,10 +248,10 @@ namespace presentacion
 
             if (respuesta)
             {
-                MessageBox.Show("Producto Agregado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Producto Fue Agregado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Limpiar los controles después de registrar
-                //txtfecha.Text = "";
+                txtfecha.Text = "";
                 dgproductostienda.Rows.Clear();
             }
             else

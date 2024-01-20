@@ -4,6 +4,7 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Inventario - Valent France.exe
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Inventario - Valent France.pdb
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\ClosedXML.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\entidad.dll
@@ -15,11 +16,19 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\log4net.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Primitives.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\negocio.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Newtonsoft.Json.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\RJCodeAdvance.RJControls.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\SixLabors.Fonts.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Buffers.dll
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Drawing.Common.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.IO.Packaging.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Memory.dll
@@ -36,14 +45,23 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\entidad.pdb
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\negocio.pdb
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\ClosedXML.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\ExcelNumberFormat.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\itextsharp.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\log4net.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\Newtonsoft.Json.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\SixLabors.Fonts.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Buffers.xml
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Drawing.Common.pdb
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.Drawing.Common.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\bin\Debug\System.IO.Packaging.xml
@@ -71,9 +89,12 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmUsuarios.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmVentas.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmVentasTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.login.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\CustomAlertBoxDemo.Form_Alert.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Properties.Resources.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdClientes.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProdTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProductos.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProveedores.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.GenerateResource.cache

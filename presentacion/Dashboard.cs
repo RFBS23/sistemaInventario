@@ -1,17 +1,18 @@
 ﻿using entidad;
-using FontAwesome.Sharp;
 using negocio;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
+
 
 namespace presentacion
 {
@@ -40,6 +41,7 @@ namespace presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
             List<Permisos> ListaPermisos = new N_Permisos().Listar(usuarioActual.idusuario);
@@ -53,8 +55,20 @@ namespace presentacion
             }
 
             lblusuario.Text = usuarioActual.nombreusuario;
+            lblcargo.Text = usuarioActual.oRol.nombrerol;
+
+            MostrarFechaActual();
         }
 
+
+        private void MostrarFechaActual()
+        {
+            // Obtener la fecha actual
+            DateTime fechaActual = DateTime.Now;
+
+            // Mostrar la fecha en el formato deseado (día, mes, año)
+            lblfecha.Text = $"{fechaActual.Day}/{fechaActual.Month}/{fechaActual.Year}";
+        }
         /*mostramos formulario*/
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
@@ -119,6 +133,12 @@ namespace presentacion
 
         private void submenuRVentas_Click(object sender, EventArgs e)
         {
+            AbrirFormulario(menuventas, new frmVentasTienda(usuarioActual));
+            submenu.Hide();
+        }
+
+        private void submenuprovventas_Click(object sender, EventArgs e)
+        {
             AbrirFormulario(menuventas, new frmVentas(usuarioActual));
             submenu.Hide();
         }
@@ -160,6 +180,7 @@ namespace presentacion
 
         private void submenutienda_Click(object sender, EventArgs e)
         {
+
             AbrirFormulario(menuingresotienda, new frmTienda(usuarioActual));
             submenu.Hide();
         }
@@ -175,5 +196,12 @@ namespace presentacion
             AbrirFormulario((IconMenuItem)sender, new frmConfiguracion());
             submenu.Hide();
         }
+
+        private void menunegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmNegocio());
+            submenu.Hide();
+        }
+
     }
 }

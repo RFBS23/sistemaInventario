@@ -60,15 +60,15 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgusuarios = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idrol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelOpciones.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgusuarios)).BeginInit();
@@ -111,7 +111,7 @@
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("MesloLGL NF", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(20, 22);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(392, 34);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(373, 34);
             this.guna2HtmlLabel4.TabIndex = 19;
             this.guna2HtmlLabel4.Text = "REGISTRO DE USUARIOS";
             // 
@@ -149,7 +149,7 @@
             this.btnlimpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(164)))), ((int)(((byte)(225)))));
             this.btnlimpiar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnlimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiar.Location = new System.Drawing.Point(184, 660);
+            this.btnlimpiar.Location = new System.Drawing.Point(184, 646);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(186, 45);
             this.btnlimpiar.TabIndex = 17;
@@ -190,7 +190,7 @@
             this.btneliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.btneliminar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(28, 660);
+            this.btneliminar.Location = new System.Drawing.Point(28, 646);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(150, 45);
             this.btneliminar.TabIndex = 14;
@@ -209,7 +209,7 @@
             this.listarol.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.listarol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.listarol.ItemHeight = 30;
-            this.listarol.Location = new System.Drawing.Point(28, 524);
+            this.listarol.Location = new System.Drawing.Point(28, 534);
             this.listarol.Name = "listarol";
             this.listarol.Size = new System.Drawing.Size(342, 36);
             this.listarol.TabIndex = 6;
@@ -226,7 +226,7 @@
             this.txtconfirmarclave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtconfirmarclave.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             this.txtconfirmarclave.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtconfirmarclave.Location = new System.Drawing.Point(28, 443);
+            this.txtconfirmarclave.Location = new System.Drawing.Point(28, 453);
             this.txtconfirmarclave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtconfirmarclave.Name = "txtconfirmarclave";
             this.txtconfirmarclave.PasswordChar = '●';
@@ -248,7 +248,7 @@
             this.txtclave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtclave.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             this.txtclave.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtclave.Location = new System.Drawing.Point(28, 360);
+            this.txtclave.Location = new System.Drawing.Point(28, 370);
             this.txtclave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '●';
@@ -270,7 +270,7 @@
             this.txtcorreo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcorreo.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             this.txtcorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcorreo.Location = new System.Drawing.Point(28, 279);
+            this.txtcorreo.Location = new System.Drawing.Point(28, 289);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.PasswordChar = '\0';
@@ -292,7 +292,7 @@
             this.txtnombreusuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnombreusuario.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             this.txtnombreusuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombreusuario.Location = new System.Drawing.Point(28, 200);
+            this.txtnombreusuario.Location = new System.Drawing.Point(28, 210);
             this.txtnombreusuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtnombreusuario.Name = "txtnombreusuario";
             this.txtnombreusuario.PasswordChar = '\0';
@@ -300,7 +300,7 @@
             this.txtnombreusuario.SelectedText = "";
             this.txtnombreusuario.Size = new System.Drawing.Size(342, 44);
             this.txtnombreusuario.TabIndex = 8;
-            this.txtnombreusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreusuario_KeyPress);
+            this.txtnombreusuario.TextChanged += new System.EventHandler(this.txtnombreusuario_TextChanged);
             // 
             // txtdocumento
             // 
@@ -322,7 +322,6 @@
             this.txtdocumento.SelectedText = "";
             this.txtdocumento.Size = new System.Drawing.Size(342, 44);
             this.txtdocumento.TabIndex = 7;
-            this.txtdocumento.TextChanged += new System.EventHandler(this.txtdocumento_TextChanged);
             this.txtdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdocumento_KeyPress);
             // 
             // label1
@@ -347,7 +346,7 @@
             this.btnguardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(178)))), ((int)(((byte)(56)))));
             this.btnguardar.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Location = new System.Drawing.Point(28, 610);
+            this.btnguardar.Location = new System.Drawing.Point(28, 596);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(342, 45);
             this.btnguardar.TabIndex = 1;
@@ -358,7 +357,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 414);
+            this.label7.Location = new System.Drawing.Point(23, 424);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(212, 26);
             this.label7.TabIndex = 11;
@@ -368,7 +367,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 332);
+            this.label6.Location = new System.Drawing.Point(23, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 26);
             this.label6.TabIndex = 5;
@@ -378,7 +377,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 496);
+            this.label5.Location = new System.Drawing.Point(23, 506);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 26);
             this.label5.TabIndex = 4;
@@ -388,7 +387,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 168);
+            this.label3.Location = new System.Drawing.Point(23, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 26);
             this.label3.TabIndex = 2;
@@ -398,7 +397,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 248);
+            this.label2.Location = new System.Drawing.Point(23, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 26);
             this.label2.TabIndex = 1;
@@ -504,12 +503,10 @@
             // 
             this.dgusuarios.AllowUserToAddRows = false;
             this.dgusuarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.dgusuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgusuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
@@ -521,7 +518,7 @@
             this.dgusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgusuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
-            this.id,
+            this.idusuario,
             this.documento,
             this.nombreusuario,
             this.correo,
@@ -529,7 +526,7 @@
             this.idrol,
             this.rol});
             this.dgusuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
@@ -542,17 +539,14 @@
             this.dgusuarios.Location = new System.Drawing.Point(418, 93);
             this.dgusuarios.Name = "dgusuarios";
             this.dgusuarios.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgusuarios.RowHeadersVisible = false;
             this.dgusuarios.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgusuarios.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgusuarios.RowTemplate.Height = 24;
@@ -584,6 +578,15 @@
             this.dgusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgusuarios_CellContentClick);
             this.dgusuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgusuarios_CellPainting);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.DarkGray;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // btnseleccionar
             // 
             this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -595,14 +598,14 @@
             this.btnseleccionar.Text = "";
             this.btnseleccionar.Width = 150;
             // 
-            // id
+            // idusuario
             // 
-            this.id.HeaderText = "idusuario";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 129;
+            this.idusuario.HeaderText = "idusuario";
+            this.idusuario.MinimumWidth = 6;
+            this.idusuario.Name = "idusuario";
+            this.idusuario.ReadOnly = true;
+            this.idusuario.Visible = false;
+            this.idusuario.Width = 129;
             // 
             // documento
             // 
@@ -663,15 +666,6 @@
             this.rol.ReadOnly = true;
             this.rol.Width = 159;
             // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 20;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.DarkGray;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.HasFormShadow = false;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -722,7 +716,7 @@
         private FontAwesome.Sharp.IconButton btnbuscar;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idusuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreusuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;

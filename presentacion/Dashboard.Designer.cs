@@ -32,11 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.header = new Guna.UI2.WinForms.Guna2Panel();
             this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.imguser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.lblusuario = new System.Windows.Forms.Label();
             this.NombreEmpresa = new System.Windows.Forms.Label();
+            this.lblhora = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblusuario = new System.Windows.Forms.Label();
+            this.imguser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.menu = new System.Windows.Forms.MenuStrip();
@@ -52,6 +53,7 @@
             this.menuproveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.submenuRVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenuprovventas = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuDetVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
             this.menunegocio = new FontAwesome.Sharp.IconMenuItem();
@@ -59,7 +61,20 @@
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
             this.panelEscritorio = new Guna.UI2.WinForms.Guna2Panel();
             this.submenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblhora = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblfecha = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblcargo = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.piclogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.footer = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -71,6 +86,12 @@
             this.menu.SuspendLayout();
             this.panelEscritorio.SuspendLayout();
             this.submenu.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.footer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,10 +100,8 @@
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(90)))), ((int)(((byte)(189)))));
             this.header.BorderRadius = 10;
             this.header.Controls.Add(this.logo);
-            this.header.Controls.Add(this.imguser);
             this.header.Controls.Add(this.guna2ControlBox2);
             this.header.Controls.Add(this.guna2ControlBox1);
-            this.header.Controls.Add(this.lblusuario);
             this.header.Controls.Add(this.NombreEmpresa);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
@@ -104,20 +123,6 @@
             this.logo.TabIndex = 8;
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.logo_Click);
-            // 
-            // imguser
-            // 
-            this.imguser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.imguser.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imguser.ErrorImage")));
-            this.imguser.Image = ((System.Drawing.Image)(resources.GetObject("imguser.Image")));
-            this.imguser.ImageRotate = 0F;
-            this.imguser.Location = new System.Drawing.Point(1287, 11);
-            this.imguser.Name = "imguser";
-            this.imguser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.imguser.Size = new System.Drawing.Size(47, 43);
-            this.imguser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imguser.TabIndex = 7;
-            this.imguser.TabStop = false;
             // 
             // guna2ControlBox2
             // 
@@ -149,21 +154,6 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(48, 34);
             this.guna2ControlBox1.TabIndex = 5;
             // 
-            // lblusuario
-            // 
-            this.lblusuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblusuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblusuario.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(1340, 8);
-            this.lblusuario.Name = "lblusuario";
-            this.lblusuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblusuario.Size = new System.Drawing.Size(202, 49);
-            this.lblusuario.TabIndex = 2;
-            this.lblusuario.Text = "lblusuario";
-            this.lblusuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblusuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblusuario_MouseDown);
-            // 
             // NombreEmpresa
             // 
             this.NombreEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -178,17 +168,57 @@
             this.NombreEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NombreEmpresa.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
+            // lblhora
+            // 
+            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblhora.AutoSize = false;
+            this.lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.lblhora.Font = new System.Drawing.Font("MesloLGL NF", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.Location = new System.Drawing.Point(844, 156);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(485, 80);
+            this.lblhora.TabIndex = 0;
+            this.lblhora.Text = "lblhora";
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblusuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblusuario.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.ForeColor = System.Drawing.Color.Black;
+            this.lblusuario.Location = new System.Drawing.Point(223, 89);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblusuario.Size = new System.Drawing.Size(331, 49);
+            this.lblusuario.TabIndex = 2;
+            this.lblusuario.Text = "lblusuario";
+            this.lblusuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblusuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblusuario_MouseDown);
+            // 
+            // imguser
+            // 
+            this.imguser.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imguser.ErrorImage")));
+            this.imguser.Image = ((System.Drawing.Image)(resources.GetObject("imguser.Image")));
+            this.imguser.ImageRotate = 0F;
+            this.imguser.Location = new System.Drawing.Point(51, 89);
+            this.imguser.Name = "imguser";
+            this.imguser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.imguser.Size = new System.Drawing.Size(51, 49);
+            this.imguser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imguser.TabIndex = 7;
+            this.imguser.TabStop = false;
+            // 
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
             this.panelMenu.BorderRadius = 20;
             this.panelMenu.Controls.Add(this.guna2HtmlLabel1);
             this.panelMenu.Controls.Add(this.menu);
             this.panelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelMenu.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(167)))), ((int)(((byte)(254)))));
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(238)))), ((int)(((byte)(230)))));
+            this.panelMenu.FillColor = System.Drawing.Color.White;
             this.panelMenu.Location = new System.Drawing.Point(0, 65);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(365, 757);
@@ -304,6 +334,7 @@
             this.menuingresotienda.Name = "menuingresotienda";
             this.menuingresotienda.Size = new System.Drawing.Size(240, 70);
             this.menuingresotienda.Text = "Tienda";
+            this.menuingresotienda.Visible = false;
             // 
             // submenutienda
             // 
@@ -337,6 +368,7 @@
             this.menuclientes.Name = "menuclientes";
             this.menuclientes.Size = new System.Drawing.Size(240, 70);
             this.menuclientes.Text = "Clientes";
+            this.menuclientes.Visible = false;
             this.menuclientes.Click += new System.EventHandler(this.menuclientes_Click);
             // 
             // menuproveedores
@@ -358,6 +390,7 @@
             this.menuventas.AutoSize = false;
             this.menuventas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.submenuRVentas,
+            this.submenuprovventas,
             this.submenuDetVentas});
             this.menuventas.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuventas.IconChar = FontAwesome.Sharp.IconChar.Tags;
@@ -374,15 +407,24 @@
             this.submenuRVentas.Image = ((System.Drawing.Image)(resources.GetObject("submenuRVentas.Image")));
             this.submenuRVentas.Name = "submenuRVentas";
             this.submenuRVentas.Size = new System.Drawing.Size(298, 34);
-            this.submenuRVentas.Text = "Registrar Ventas";
+            this.submenuRVentas.Text = "Ventas Clientes";
+            this.submenuRVentas.Visible = false;
             this.submenuRVentas.Click += new System.EventHandler(this.submenuRVentas_Click);
+            // 
+            // submenuprovventas
+            // 
+            this.submenuprovventas.Image = global::presentacion.Properties.Resources.puntero;
+            this.submenuprovventas.Name = "submenuprovventas";
+            this.submenuprovventas.Size = new System.Drawing.Size(298, 34);
+            this.submenuprovventas.Text = "ventas Proveedor";
+            this.submenuprovventas.Click += new System.EventHandler(this.submenuprovventas_Click);
             // 
             // submenuDetVentas
             // 
             this.submenuDetVentas.Image = ((System.Drawing.Image)(resources.GetObject("submenuDetVentas.Image")));
             this.submenuDetVentas.Name = "submenuDetVentas";
             this.submenuDetVentas.Size = new System.Drawing.Size(298, 34);
-            this.submenuDetVentas.Text = "Detalles de Ventas";
+            this.submenuDetVentas.Text = "Detalles de Tienda";
             this.submenuDetVentas.Click += new System.EventHandler(this.submenuDetVentas_Click);
             // 
             // menureportes
@@ -410,6 +452,7 @@
             this.menunegocio.Name = "menunegocio";
             this.menunegocio.Size = new System.Drawing.Size(240, 70);
             this.menunegocio.Text = "Datos de Tienda";
+            this.menunegocio.Click += new System.EventHandler(this.menunegocio_Click);
             // 
             // menuconfiguracion
             // 
@@ -423,6 +466,7 @@
             this.menuconfiguracion.Name = "menuconfiguracion";
             this.menuconfiguracion.Size = new System.Drawing.Size(240, 70);
             this.menuconfiguracion.Text = "Configuraciones";
+            this.menuconfiguracion.Visible = false;
             this.menuconfiguracion.Click += new System.EventHandler(this.menuconfiguracion_Click);
             // 
             // menuacercade
@@ -452,22 +496,194 @@
             // submenu
             // 
             this.submenu.AutoScroll = true;
-            this.submenu.Controls.Add(this.lblhora);
+            this.submenu.Controls.Add(this.tableLayoutPanel1);
             this.submenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.submenu.Location = new System.Drawing.Point(0, 0);
             this.submenu.Name = "submenu";
             this.submenu.Size = new System.Drawing.Size(1344, 757);
             this.submenu.TabIndex = 0;
             // 
-            // lblhora
+            // tableLayoutPanel1
             // 
-            this.lblhora.BackColor = System.Drawing.Color.Transparent;
-            this.lblhora.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhora.Location = new System.Drawing.Point(22, 23);
-            this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(87, 33);
-            this.lblhora.TabIndex = 0;
-            this.lblhora.Text = "lblhora";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.96565F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61295F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1344, 757);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.White;
+            this.guna2Panel3.Controls.Add(this.lblfecha);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel7);
+            this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox1);
+            this.guna2Panel3.Controls.Add(this.lblcargo);
+            this.guna2Panel3.Controls.Add(this.lblhora);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2Panel3.Controls.Add(this.lblusuario);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2Panel3.Controls.Add(this.imguser);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel3.Location = new System.Drawing.Point(3, 507);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(1338, 247);
+            this.guna2Panel3.TabIndex = 2;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblfecha.AutoSize = false;
+            this.lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.lblfecha.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(844, 86);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(578, 64);
+            this.lblfecha.TabIndex = 13;
+            this.lblfecha.Text = "lblfecha";
+            // 
+            // guna2HtmlLabel7
+            // 
+            this.guna2HtmlLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2HtmlLabel7.AutoSize = false;
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("MesloLGM NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(783, 17);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(894, 63);
+            this.guna2HtmlLabel7.TabIndex = 12;
+            this.guna2HtmlLabel7.Text = "Fecha y Hora del sistema";
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.ErrorImage")));
+            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(51, 144);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(51, 49);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 11;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // lblcargo
+            // 
+            this.lblcargo.BackColor = System.Drawing.Color.Transparent;
+            this.lblcargo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcargo.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcargo.ForeColor = System.Drawing.Color.Black;
+            this.lblcargo.Location = new System.Drawing.Point(223, 146);
+            this.lblcargo.Name = "lblcargo";
+            this.lblcargo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblcargo.Size = new System.Drawing.Size(331, 49);
+            this.lblcargo.TabIndex = 10;
+            this.lblcargo.Text = "lblcargo";
+            this.lblcargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.AutoSize = false;
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("MesloLGM NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(108, 156);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(371, 84);
+            this.guna2HtmlLabel6.TabIndex = 9;
+            this.guna2HtmlLabel6.Text = "Cargo: ";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.AutoSize = false;
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("MesloLGM NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(37, 17);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(716, 63);
+            this.guna2HtmlLabel4.TabIndex = 0;
+            this.guna2HtmlLabel4.Text = "Sesión Iniciada";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.AutoSize = false;
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("MesloLGM NF", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(108, 99);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(371, 84);
+            this.guna2HtmlLabel5.TabIndex = 8;
+            this.guna2HtmlLabel5.Text = "Usuario: ";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.piclogo);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 139);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1338, 362);
+            this.guna2Panel2.TabIndex = 1;
+            // 
+            // piclogo
+            // 
+            this.piclogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.piclogo.BorderRadius = 20;
+            this.piclogo.Image = global::presentacion.Properties.Resources.icono;
+            this.piclogo.ImageRotate = 0F;
+            this.piclogo.Location = new System.Drawing.Point(409, 22);
+            this.piclogo.Name = "piclogo";
+            this.piclogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
+            this.piclogo.Size = new System.Drawing.Size(379, 323);
+            this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.piclogo.TabIndex = 2;
+            this.piclogo.TabStop = false;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1338, 130);
+            this.guna2Panel1.TabIndex = 0;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.AutoSize = false;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("MesloLGSDZ NF", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(693, 71);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(692, 79);
+            this.guna2HtmlLabel3.TabIndex = 1;
+            this.guna2HtmlLabel3.Text = "v 1.0.3";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2HtmlLabel2.AutoSize = false;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("MesloLGL Nerd Font", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(434, 28);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(1243, 124);
+            this.guna2HtmlLabel2.TabIndex = 0;
+            this.guna2HtmlLabel2.Text = "SISTEMA DE INVENTARIO";
             // 
             // footer
             // 
@@ -525,8 +741,8 @@
             this.ClientSize = new System.Drawing.Size(1709, 879);
             this.Controls.Add(this.panelEscritorio);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.header);
             this.Controls.Add(this.footer);
+            this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
@@ -541,7 +757,12 @@
             this.menu.PerformLayout();
             this.panelEscritorio.ResumeLayout(false);
             this.submenu.ResumeLayout(false);
-            this.submenu.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.footer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -582,5 +803,20 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblhora;
         private FontAwesome.Sharp.IconMenuItem menuconfiguracion;
         private FontAwesome.Sharp.IconMenuItem menuacercade;
+        private System.Windows.Forms.ToolStripMenuItem submenuprovventas;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private System.Windows.Forms.Label lblcargo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblfecha;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox piclogo;
     }
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recibo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center bold" style="font-size: 18px;">@nombrenegocio</div>
+        <div class="center">@docnegocio</div>
+        <div class="center">@direcnegocio</div>
+        <hr />
+
+        <div>
+            <div><span class="bold">Documento Cliente:</span> @doccliente</div>
+            <div><span class="bold">Nombre Cliente:</span> @nombrecliente</div>
+            <div><span class="bold">Fecha Registro:</span> @fecharegistro</div>
+            <div><span class="bold">Usuario Registro:</span> @usuarioregistro</div>
+        </div>
+
+        <hr />
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Sub Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @filas
+            </tbody>
+        </table>
+
+        <hr />
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Monto Total</th>
+                    <th>Pago Con</th>
+                    <th>Cambio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@montototal</td>
+                    <td>@pagocon</td>
+                    <td>@cambio</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

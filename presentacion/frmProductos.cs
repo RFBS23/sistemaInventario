@@ -28,10 +28,24 @@ namespace presentacion
         public frmProductos()
         {
             InitializeComponent();
+
+            txtdecuento.TextChanged += txtdecuento_TextChanged;
+
+            txtprecioventa.TextChanged += txtprecioventa_TextChanged;
+            txtstock.TextChanged += txtstock_TextChanged;
         }
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
+            txtfecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            LlenarComboBox();
+            /**/
+            txtstock.Text = "0";
+            txtdecuento.Text = "0.00";
+            txttotal.Text = "0.00";
+            txtprecioventa.Text = "0.00";
+            /**/
+
             /*categorias*/
             List<Categorias> listaCat = new N_Categorias().Listar();
             foreach (Categorias item in listaCat)
@@ -71,7 +85,7 @@ namespace presentacion
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.precioventa });
+                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.temporada, item.descuento, item.precioventa, item.total, item.fecharegistro });
             }
 
         }
@@ -132,7 +146,10 @@ namespace presentacion
                     txtcolores.Text = dgproductos.Rows[indice].Cells["colores"].Value.ToString();
                     txtstock.Text = dgproductos.Rows[indice].Cells["stock"].Value.ToString();
                     txtnumcaja.Text = dgproductos.Rows[indice].Cells["numcaja"].Value.ToString();
+                    cbestaciones.Text = dgproductos.Rows[indice].Cells["temporada"].Value.ToString();
+                    txtdecuento.Text = dgproductos.Rows[indice].Cells["descuento"].Value.ToString();
                     txtprecioventa.Text = dgproductos.Rows[indice].Cells["precioventa"].Value.ToString();
+                    txttotal.Text = dgproductos.Rows[indice].Cells["total"].Value.ToString();
                 }
             }
         }
@@ -164,6 +181,9 @@ namespace presentacion
             txtcolores.Text = "";
             txtstock.Text = "0";
             txtnumcaja.Text = "";
+            cbestaciones.Text = "";
+            txtdecuento.Text = "0.00";
+            txttotal.Text = "0.00";
             txtprecioventa.Text = "0.00";
 
             txtcodigo.Select();
@@ -185,7 +205,11 @@ namespace presentacion
                 colores = txtcolores.Text,
                 stock = Convert.ToInt32(txtstock.Text),
                 numcaja = txtnumcaja.Text,
+                temporada = cbestaciones.Text,
+                descuento = Convert.ToInt32(txtdecuento.Text),
                 precioventa = Convert.ToDecimal(txtprecioventa.Text),
+                total = Convert.ToDecimal(txttotal.Text),
+                fecharegistro = txtfecha.Text,
             };
             if (objproductos.idproducto == 0)
             {
@@ -201,7 +225,11 @@ namespace presentacion
                         txtcolores.Text,
                         txtstock.Text,
                         txtnumcaja.Text,
+                        cbestaciones.Text,
+                        txtdecuento.Text,
+                        txttotal.Text,
                         Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"),
+                        txtfecha.Text,
                     });
                     Limpiar();
                 }
@@ -227,7 +255,10 @@ namespace presentacion
                     row.Cells["colores"].Value = txtcolores.Text;
                     row.Cells["stock"].Value = txtstock.Text;
                     row.Cells["numcaja"].Value = txtnumcaja.Text;
+                    row.Cells["temporada"].Value = cbestaciones.Text;
+                    row.Cells["descuento"].Value = txtdecuento.Text;
                     row.Cells["precioventa"].Value = Convert.ToDecimal(txtprecioventa.Text).ToString("0.00");
+                    row.Cells["total"].Value = txttotal.Text;
                     Limpiar();
                 }
                 else
@@ -311,6 +342,10 @@ namespace presentacion
                             row.Cells[10].Value.ToString(),
                             row.Cells[11].Value.ToString(),
                             row.Cells[12].Value.ToString(),
+                            row.Cells[13].Value.ToString(),
+                            row.Cells[14].Value.ToString(),
+                            row.Cells[15].Value.ToString(),
+                            row.Cells[16].Value.ToString(),
                         });
                 }
                 SaveFileDialog savefile = new SaveFileDialog();
@@ -331,6 +366,7 @@ namespace presentacion
                         MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+                System.Diagnostics.Process.Start(savefile.FileName);
             }
         }
 
@@ -338,26 +374,24 @@ namespace presentacion
         {
             if (this.dgproductos.Columns[e.ColumnIndex].Name == "stock")
             {
-                if (e.Value != null)
+                if (e.Value != null && e.Value != DBNull.Value)
                 {
-                    if (e.Value.GetType() != typeof(System.DBNull))
+                    int stockValue = Convert.ToInt32(e.Value);
+
+                    // Stock mayor a 20
+                    if (stockValue >= 20)
                     {
-                        //Stock mayor a 20
-                        if (Convert.ToInt32(e.Value) >= 20)
-                        {
-                            e.CellStyle.BackColor = Color.FromArgb(129,250,123) ;
-                            e.CellStyle.ForeColor = Color.Black;
-                        }
-                        //Stock menor a 19
-                        if (Convert.ToInt32(e.Value) <= 19)
-                        {
-                            e.CellStyle.BackColor = Color.Salmon;
-                            e.CellStyle.ForeColor = Color.Red;
-                        }
+                        e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                        e.CellStyle.ForeColor = Color.Black;
+                    }
+                    // Stock menor o igual a 19
+                    else if (stockValue <= 19)
+                    {
+                        e.CellStyle.BackColor = Color.Salmon;
+                        e.CellStyle.ForeColor = Color.Red;
                     }
                 }
             }
-
         }
 
         private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
@@ -389,5 +423,64 @@ namespace presentacion
                 return;
             }
         }
+
+        private void LlenarComboBox()
+        {
+            // Crear una lista de estaciones del año con nombre y año
+            List<string> estaciones = new List<string>
+            {
+                ObtenerEstacionDelAño("Primavera", DateTime.Now.Year - 1),
+                ObtenerEstacionDelAño("Verano", DateTime.Now.Year - 1),
+                ObtenerEstacionDelAño("Otoño", DateTime.Now.Year - 1),
+                ObtenerEstacionDelAño("Invierno", DateTime.Now.Year - 1) 
+                // -1 o +1 es para retroceder o adelantar el año en el que estamos
+            };
+            // Asignar la lista al ComboBox
+            cbestaciones.DataSource = estaciones;
+        }
+
+        private string ObtenerEstacionDelAño(string nombreEstacion, int año)
+        {
+            // Construir la cadena con el nombre y el año
+            return $"{nombreEstacion} - {año}";
+        }
+
+        private void txtdecuento_TextChanged(object sender, EventArgs e)
+        {
+            calculardescuento();
+        }
+
+        private void calculardescuento()
+        {
+            if (decimal.TryParse(txtprecioventa.Text, out decimal precioVenta) && decimal.TryParse(txtdecuento.Text, out decimal descuento))
+            {
+                // Calcular el nuevo precio con descuento
+                decimal nuevoPrecio = precioVenta - (precioVenta * descuento / 100);
+
+                // Mostrar el nuevo precio en txtprecioventa
+                txtprecioventa.Text = nuevoPrecio.ToString("0.00");
+            }
+        }
+
+        private void txtprecioventa_TextChanged(object sender, EventArgs e)
+        {
+            CalcularTotal();
+        }
+
+        private void txtstock_TextChanged(object sender, EventArgs e)
+        {
+            CalcularTotal();
+        }
+
+        private void CalcularTotal()
+        {
+            if (decimal.TryParse(txtprecioventa.Text, out decimal precioVenta) && int.TryParse(txtstock.Text, out int stock))
+            {
+                decimal nuevoTotal = precioVenta * stock;
+
+                txttotal.Text = nuevoTotal.ToString("0.00");
+            }
+        }
+
     }
 }

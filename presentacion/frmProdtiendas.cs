@@ -51,8 +51,8 @@ namespace presentacion
                         item.oProductos.oTallasropa.nombretalla,
                         item.oProductos.colores,
                         item.cantidad,
-                        item.oProductos.numcaja,
                         item.oProductos.precioventa,
+                        item.oProductos.descuento,
                         item.fecharegistro,
                     });
                 }

@@ -10,6 +10,7 @@ namespace entidad
     {
         public int iddetalletienda {  get; set; }
         public Productos oProductos { get; set; }
+        public Productostienda oProductostienda { get; set; }
         public int cantidad { get; set; }
         public string fecharegistro { get; set; }
     }

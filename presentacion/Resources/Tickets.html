@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recibo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px; /* Ajusta el tamaño de fuente general */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 6px; /* Ajusta el espacio interno de las celdas de la tabla */
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 10px 0; /* Ajusta el margen superior e inferior del separador horizontal */
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 300px; /* Ajusta el ancho máximo del contenedor */
+            margin: auto;
+        }
+
+        img {
+            max-width: 80%; /* Ajusta el ancho máximo de la imagen */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center bold" style="font-size: 18px;">@nombrenegocio</div>
+        <div class="center">@docnegocio</div>
+        <div class="center">@direcnegocio</div>
+        <hr />
+
+        <div>
+            <div><span class="bold">RUC:</span> @docproveedor</div>
+            <div><span class="bold">Nombre Proveedor:</span> @nombreproveedor</div>
+            <div><span class="bold">Fecha Registro:</span> @fecharegistro</div>
+            <div><span class="bold">Usuario Registro:</span> @usuarioregistro</div>
+        </div>
+
+        <hr />
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Desc.</th>
+                    <th>Prec.</th>
+                    <th>Cant.</th>
+                    <th>SubT.</th>
+                </tr>
+            </thead>
+            <tbody>
+                @filas
+            </tbody>
+        </table>
+
+        <hr />
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Monto Total</th>
+                    <th>Pago Con</th>
+                    <th>Cambio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@montototal</td>
+                    <td>@pagocon</td>
+                    <td>@cambio</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="text-align: center; margin-top: 20px;">Visita nuestra web aqui escaneando el QR</p>
+            <img src="@urlCodigoQR" alt="Codigo QR" />
+            <p>Gracias por su compra, vuelva pronto.</p>
+        </div>
+    </div>
+</body>
+</html>

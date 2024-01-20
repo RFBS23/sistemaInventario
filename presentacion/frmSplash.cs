@@ -23,6 +23,8 @@ namespace presentacion
             Timer.Interval = 3000; // 3000 milisegundos (3 segundos)
             Timer.Tick += Timer_Tick;
             Timer.Start();
+
+            btnportafolio.Click += new EventHandler(btnportafolio_Click);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -39,6 +41,27 @@ namespace presentacion
         {
             Timer.Stop();
             this.Close();
+        }
+
+        private void guna2TileButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnportafolio_Click(object sender, EventArgs e)
+        {
+            string url = "https://rfbs23.github.io/portafolio/";
+
+            try
+            {
+                // Intenta abrir la URL en el navegador predeterminado del usuario
+                System.Diagnostics.Process.Start(url);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores: muestra un mensaje si no se puede abrir la URL
+                MessageBox.Show("No se pudo abrir la página. Detalles del error: " + ex.Message);
+            }
         }
     }
 }

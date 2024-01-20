@@ -1,4 +1,5 @@
-﻿using entidad;
+﻿using CustomAlertBoxDemo;
+using entidad;
 using Guna.UI2.WinForms;
 using negocio;
 using presentacion.Utilidades;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +25,11 @@ namespace presentacion
             InitializeComponent();
         }
 
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             /*obtenemos lista de roles*/
@@ -91,7 +98,7 @@ namespace presentacion
                 if (resultado)
                 {
                     DataGridViewRow row = dgusuarios.Rows[Convert.ToInt32(txtindice.Text)];
-                    row.Cells["id"].Value = txtid.Text;
+                    row.Cells["idusuario"].Value = Convert.ToInt32(txtid.Text);
                     row.Cells["documento"].Value = txtdocumento.Text;
                     row.Cells["nombreusuario"].Value = txtnombreusuario.Text;
                     row.Cells["correo"].Value = txtcorreo.Text;
@@ -99,10 +106,12 @@ namespace presentacion
                     row.Cells["idrol"].Value = ((opcionesComboBox)listarol.SelectedItem).Valor.ToString();
                     row.Cells["rol"].Value = ((opcionesComboBox)listarol.SelectedItem).Texto.ToString();
                     Limpiar();
+                    this.Alert("Usuario Editado", Form_Alert.enmType.Success);
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
+                    this.Alert("No se pudo editar", Form_Alert.enmType.Error);
                 }
             }
         } 
@@ -154,7 +163,7 @@ namespace presentacion
                 if(indice >= 0)
                 {
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgusuarios.Rows[indice].Cells["id"].Value.ToString();
+                    txtid.Text = dgusuarios.Rows[indice].Cells["idusuario"].Value.ToString();
                     txtdocumento.Text = dgusuarios.Rows[indice].Cells["documento"].Value.ToString();
                     txtnombreusuario.Text = dgusuarios.Rows[indice].Cells["nombreusuario"].Value.ToString();
                     txtcorreo.Text = dgusuarios.Rows[indice].Cells["correo"].Value.ToString();
@@ -185,28 +194,7 @@ namespace presentacion
             }
         }
 
-        private void txtdocumento_TextChanged(object sender, EventArgs e)
-        {
-            int maxLength = 20;
-            if (txtdocumento.Text.Length > maxLength)
-            {
-                // Si el texto supera el límite, truncamos el exceso de caracteres
-                txtdocumento.Text = txtdocumento.Text.Substring(0, maxLength);
-                txtdocumento.SelectionStart = maxLength;
-                txtdocumento.SelectionLength = 0;
-            }
-        }
-
-        private void txtnombreusuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Ingresa Solo Letras Por Favor", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
+        
         /*Validacione y limitacion de numeros*/
         private void btneliminar_Click(object sender, EventArgs e)
         {
@@ -277,6 +265,14 @@ namespace presentacion
                 txtcorreo.Focus();
                 e.Cancel = true; // Evita que el foco se mueva fuera del TextBox si la validación falla.
             }
+        }
+
+        private void txtnombreusuario_TextChanged(object sender, EventArgs e)
+        {
+            txtnombreusuario.Text = txtnombreusuario.Text.ToUpper();
+
+            // Puedes mantener el cursor en la última posición después de convertir a mayúsculas
+            txtnombreusuario.SelectionStart = txtnombreusuario.Text.Length;
         }
 
     }

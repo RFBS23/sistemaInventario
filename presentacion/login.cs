@@ -22,7 +22,7 @@ namespace presentacion
 
         private void btniniciarsesion_Click(object sender, EventArgs e)
         {
-            Usuarios ousuario = new N_Usuarios().Listar().Where(u => u.nombreusuario == txtnombreusuario.Text && u.clave == txtclave.Text).FirstOrDefault();
+            Usuarios ousuario = new N_Usuarios().Listar().Where(u => u.correo == txtnombreusuario.Text && u.clave == txtclave.Text).FirstOrDefault();
 
             if (ousuario != null)
             {
@@ -40,7 +40,7 @@ namespace presentacion
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                Usuarios ousuario = new N_Usuarios().Listar().Where(u => u.nombreusuario == txtnombreusuario.Text && u.clave == txtclave.Text).FirstOrDefault();
+                Usuarios ousuario = new N_Usuarios().Listar().Where(u => u.correo == txtnombreusuario.Text && u.clave == txtclave.Text).FirstOrDefault();
 
                 if (ousuario != null)
                 {
