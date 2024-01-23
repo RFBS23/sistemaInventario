@@ -52,44 +52,29 @@ namespace presentacion
             {
                 btnbuscardoc.Visible = true;
                 btnbuscardocproveedor.Visible = false;
-                /*
-                txtdocumento.Visible = true;
-                txtnombrecliente.Visible = true;
-                
-                lbldoccliente.Visible = true;
-                lblnomcliente.Visible = true;
-
-                
-                txtdocproveedor.Visible = false;
-                txtnombreproveedor.Visible = false;
                 lbldocproveedor.Visible = false;
                 lblnomproveedor.Visible = false;
 
-                txtdocumento.Text = "";
-                txtnombrecliente.Text = "";
+                lbldoccliente.Visible = true;
+                lblnomcliente.Visible = true;
+
                 txtdocproveedor.Text = "";
-                txtnombreproveedor.Text = "";*/
+                txtnombreproveedor.Text = "";
             }
             else if (rbProveedores.Checked)
             {
                 btnbuscardocproveedor.Visible = true;
                 btnbuscardoc.Visible = false;
-                /*
-                txtdocproveedor.Visible = true;
-                txtnombreproveedor.Visible = true;
+
                 lbldocproveedor.Visible = true;
                 lblnomproveedor.Visible = true;
 
-                txtdocumento.Visible = false;
-                txtnombrecliente.Visible = false;
-                
                 lbldoccliente.Visible = false;
                 lblnomcliente.Visible = false;
 
-                txtdocumento.Text = "";
-                txtnombrecliente.Text = "";
                 txtdocproveedor.Text = "";
-                txtnombreproveedor.Text = "";*/
+                txtnombreproveedor.Text = "";
+
             }
         }
 
@@ -507,23 +492,14 @@ namespace presentacion
             {
                 btnbuscardoc.Visible = true;
                 btnbuscardocproveedor.Visible = false;
-                /*
-                txtdocumento.Visible = true;
-                txtnombrecliente.Visible = true;
-                
-                lbldoccliente.Visible = true;
-                lblnomcliente.Visible = true;
-
-                
-                txtdocproveedor.Visible = false;
-                txtnombreproveedor.Visible = false;
                 lbldocproveedor.Visible = false;
                 lblnomproveedor.Visible = false;
 
-                txtdocumento.Text = "";
-                txtnombrecliente.Text = "";
+                lbldoccliente.Visible = true;
+                lblnomcliente.Visible = true;
+
                 txtdocproveedor.Text = "";
-                txtnombreproveedor.Text = "";*/
+                txtnombreproveedor.Text = "";
             }
         }
 
@@ -533,22 +509,15 @@ namespace presentacion
             {
                 btnbuscardocproveedor.Visible = true;
                 btnbuscardoc.Visible = false;
-                /*
-                txtdocproveedor.Visible = true;
-                txtnombreproveedor.Visible = true;
+
                 lbldocproveedor.Visible = true;
                 lblnomproveedor.Visible = true;
 
-                txtdocumento.Visible = false;
-                txtnombrecliente.Visible = false;
-                
                 lbldoccliente.Visible = false;
                 lblnomcliente.Visible = false;
 
-                txtdocumento.Text = "";
-                txtnombrecliente.Text = "";
                 txtdocproveedor.Text = "";
-                txtnombreproveedor.Text = "";*/
+                txtnombreproveedor.Text = "";
             }
         }
 

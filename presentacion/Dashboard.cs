@@ -41,7 +41,6 @@ namespace presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             List<Permisos> ListaPermisos = new N_Permisos().Listar(usuarioActual.idusuario);
@@ -203,5 +202,10 @@ namespace presentacion
             submenu.Hide();
         }
 
+        private void menureportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmReportesVentas());
+            submenu.Hide();
+        }
     }
 }

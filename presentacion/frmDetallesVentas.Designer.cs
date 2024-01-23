@@ -134,7 +134,7 @@
             this.tablaclientes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablaclientes.Controls.Add(this.btnbuscarventacli, 0, 0);
             this.tablaclientes.Controls.Add(this.btneliminarvencli, 1, 0);
-            this.tablaclientes.Location = new System.Drawing.Point(786, 105);
+            this.tablaclientes.Location = new System.Drawing.Point(744, 105);
             this.tablaclientes.Name = "tablaclientes";
             this.tablaclientes.RowCount = 1;
             this.tablaclientes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -151,7 +151,6 @@
             this.btnbuscarventacli.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnbuscarventacli.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnbuscarventacli.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnbuscarventacli.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnbuscarventacli.Font = new System.Drawing.Font("MesloLGL NF", 10F, System.Drawing.FontStyle.Bold);
             this.btnbuscarventacli.ForeColor = System.Drawing.Color.White;
             this.btnbuscarventacli.Image = global::presentacion.Properties.Resources.buscar;
@@ -182,6 +181,7 @@
             this.btneliminarvencli.Size = new System.Drawing.Size(231, 50);
             this.btneliminarvencli.TabIndex = 67;
             this.btneliminarvencli.Text = "Lim. Form";
+            this.btneliminarvencli.Click += new System.EventHandler(this.btneliminarvencli_Click);
             // 
             // txtmontocambio
             // 
@@ -266,7 +266,7 @@
             this.btnfacturaprov.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfacturaprov.ForeColor = System.Drawing.Color.White;
             this.btnfacturaprov.Image = global::presentacion.Properties.Resources.pdf;
-            this.btnfacturaprov.Location = new System.Drawing.Point(797, 894);
+            this.btnfacturaprov.Location = new System.Drawing.Point(755, 894);
             this.btnfacturaprov.Name = "btnfacturaprov";
             this.btnfacturaprov.Size = new System.Drawing.Size(222, 48);
             this.btnfacturaprov.TabIndex = 94;
@@ -289,7 +289,7 @@
             this.btnticketprov.ForeColor = System.Drawing.Color.White;
             this.btnticketprov.Image = global::presentacion.Properties.Resources.boleto;
             this.btnticketprov.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnticketprov.Location = new System.Drawing.Point(1045, 894);
+            this.btnticketprov.Location = new System.Drawing.Point(1003, 894);
             this.btnticketprov.Name = "btnticketprov";
             this.btnticketprov.Size = new System.Drawing.Size(208, 48);
             this.btnticketprov.TabIndex = 93;
@@ -340,7 +340,7 @@
             this.gpProveedores.ForeColor = System.Drawing.Color.Black;
             this.gpProveedores.Location = new System.Drawing.Point(28, 351);
             this.gpProveedores.Name = "gpProveedores";
-            this.gpProveedores.Size = new System.Drawing.Size(946, 165);
+            this.gpProveedores.Size = new System.Drawing.Size(904, 165);
             this.gpProveedores.TabIndex = 84;
             this.gpProveedores.Text = "Informacion de Proveedores";
             // 
@@ -350,7 +350,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.31461F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.68539F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel5, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel6, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel7, 2, 0);
@@ -359,7 +359,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(946, 125);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(904, 125);
             this.tableLayoutPanel2.TabIndex = 83;
             // 
             // guna2Panel5
@@ -367,9 +367,9 @@
             this.guna2Panel5.Controls.Add(this.txtnombreproveedor);
             this.guna2Panel5.Controls.Add(this.textnombreproveedor);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel5.Location = new System.Drawing.Point(378, 3);
+            this.guna2Panel5.Location = new System.Drawing.Point(357, 3);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(395, 119);
+            this.guna2Panel5.Size = new System.Drawing.Size(372, 119);
             this.guna2Panel5.TabIndex = 2;
             // 
             // txtnombreproveedor
@@ -394,7 +394,7 @@
             this.txtnombreproveedor.PasswordChar = '\0';
             this.txtnombreproveedor.PlaceholderText = "";
             this.txtnombreproveedor.SelectedText = "";
-            this.txtnombreproveedor.Size = new System.Drawing.Size(350, 54);
+            this.txtnombreproveedor.Size = new System.Drawing.Size(327, 54);
             this.txtnombreproveedor.TabIndex = 68;
             this.txtnombreproveedor.TextChanged += new System.EventHandler(this.txtnombrecliente_TextChanged);
             // 
@@ -407,7 +407,7 @@
             this.textnombreproveedor.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textnombreproveedor.Location = new System.Drawing.Point(19, 10);
             this.textnombreproveedor.Name = "textnombreproveedor";
-            this.textnombreproveedor.Size = new System.Drawing.Size(918, 65);
+            this.textnombreproveedor.Size = new System.Drawing.Size(895, 65);
             this.textnombreproveedor.TabIndex = 69;
             this.textnombreproveedor.Text = "Razon Social";
             // 
@@ -418,7 +418,7 @@
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel6.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(369, 119);
+            this.guna2Panel6.Size = new System.Drawing.Size(348, 119);
             this.guna2Panel6.TabIndex = 1;
             // 
             // txtdocproveedor
@@ -443,7 +443,7 @@
             this.txtdocproveedor.PasswordChar = '\0';
             this.txtdocproveedor.PlaceholderText = "";
             this.txtdocproveedor.SelectedText = "";
-            this.txtdocproveedor.Size = new System.Drawing.Size(337, 54);
+            this.txtdocproveedor.Size = new System.Drawing.Size(316, 54);
             this.txtdocproveedor.TabIndex = 66;
             this.txtdocproveedor.TextChanged += new System.EventHandler(this.txtdoccliente_TextChanged);
             // 
@@ -456,7 +456,7 @@
             this.textoproveedor.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textoproveedor.Location = new System.Drawing.Point(20, 10);
             this.textoproveedor.Name = "textoproveedor";
-            this.textoproveedor.Size = new System.Drawing.Size(844, 65);
+            this.textoproveedor.Size = new System.Drawing.Size(823, 65);
             this.textoproveedor.TabIndex = 67;
             this.textoproveedor.Text = "Doc. o Ruc";
             // 
@@ -464,9 +464,9 @@
             // 
             this.guna2Panel7.Controls.Add(this.txtnumerodocumentoprove);
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel7.Location = new System.Drawing.Point(779, 3);
+            this.guna2Panel7.Location = new System.Drawing.Point(735, 3);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(164, 119);
+            this.guna2Panel7.Size = new System.Drawing.Size(166, 119);
             this.guna2Panel7.TabIndex = 3;
             // 
             // txtnumerodocumentoprove
@@ -491,7 +491,7 @@
             this.txtnumerodocumentoprove.PasswordChar = '\0';
             this.txtnumerodocumentoprove.PlaceholderText = "";
             this.txtnumerodocumentoprove.SelectedText = "";
-            this.txtnumerodocumentoprove.Size = new System.Drawing.Size(133, 54);
+            this.txtnumerodocumentoprove.Size = new System.Drawing.Size(135, 54);
             this.txtnumerodocumentoprove.TabIndex = 69;
             // 
             // guna2HtmlLabel7
@@ -500,7 +500,7 @@
             this.guna2HtmlLabel7.AutoSize = false;
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(7, 956);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(-35, 956);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(297, 31);
             this.guna2HtmlLabel7.TabIndex = 82;
@@ -562,7 +562,7 @@
             this.dgdetallestienda.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgdetallestienda.RowTemplate.Height = 24;
             this.dgdetallestienda.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdetallestienda.Size = new System.Drawing.Size(1229, 345);
+            this.dgdetallestienda.Size = new System.Drawing.Size(1187, 345);
             this.dgdetallestienda.TabIndex = 81;
             this.dgdetallestienda.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.SunFlower;
             this.dgdetallestienda.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(183)))));
@@ -661,7 +661,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(28, 177);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1229, 165);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1187, 165);
             this.guna2GroupBox1.TabIndex = 77;
             this.guna2GroupBox1.Text = "Informacion de Ventas";
             // 
@@ -680,7 +680,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1229, 125);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1187, 125);
             this.tableLayoutPanel1.TabIndex = 83;
             // 
             // guna2Panel4
@@ -688,9 +688,9 @@
             this.guna2Panel4.Controls.Add(this.txtnombreusuario);
             this.guna2Panel4.Controls.Add(this.lblnomcliente);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel4.Location = new System.Drawing.Point(728, 3);
+            this.guna2Panel4.Location = new System.Drawing.Point(703, 3);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(498, 119);
+            this.guna2Panel4.Size = new System.Drawing.Size(481, 119);
             this.guna2Panel4.TabIndex = 2;
             // 
             // txtnombreusuario
@@ -715,7 +715,7 @@
             this.txtnombreusuario.PasswordChar = '\0';
             this.txtnombreusuario.PlaceholderText = "USUARIO";
             this.txtnombreusuario.SelectedText = "";
-            this.txtnombreusuario.Size = new System.Drawing.Size(453, 54);
+            this.txtnombreusuario.Size = new System.Drawing.Size(436, 54);
             this.txtnombreusuario.TabIndex = 68;
             this.txtnombreusuario.TextChanged += new System.EventHandler(this.txtnombreusuario_TextChanged);
             // 
@@ -728,7 +728,7 @@
             this.lblnomcliente.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnomcliente.Location = new System.Drawing.Point(19, 10);
             this.lblnomcliente.Name = "lblnomcliente";
-            this.lblnomcliente.Size = new System.Drawing.Size(882, 65);
+            this.lblnomcliente.Size = new System.Drawing.Size(865, 65);
             this.lblnomcliente.TabIndex = 69;
             this.lblnomcliente.Text = "Nombre Usuario";
             // 
@@ -737,9 +737,9 @@
             this.guna2Panel3.Controls.Add(this.txtcomprobantepago);
             this.guna2Panel3.Controls.Add(this.lbldoccliente);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(290, 3);
+            this.guna2Panel3.Location = new System.Drawing.Point(280, 3);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(432, 119);
+            this.guna2Panel3.Size = new System.Drawing.Size(417, 119);
             this.guna2Panel3.TabIndex = 1;
             // 
             // txtcomprobantepago
@@ -764,7 +764,7 @@
             this.txtcomprobantepago.PasswordChar = '\0';
             this.txtcomprobantepago.PlaceholderText = "COMPROBANTE DE PAGO";
             this.txtcomprobantepago.SelectedText = "";
-            this.txtcomprobantepago.Size = new System.Drawing.Size(400, 54);
+            this.txtcomprobantepago.Size = new System.Drawing.Size(385, 54);
             this.txtcomprobantepago.TabIndex = 66;
             this.txtcomprobantepago.TextChanged += new System.EventHandler(this.txtcomprobantepago_TextChanged);
             // 
@@ -777,7 +777,7 @@
             this.lbldoccliente.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldoccliente.Location = new System.Drawing.Point(20, 10);
             this.lbldoccliente.Name = "lbldoccliente";
-            this.lbldoccliente.Size = new System.Drawing.Size(951, 65);
+            this.lbldoccliente.Size = new System.Drawing.Size(936, 65);
             this.lbldoccliente.TabIndex = 67;
             this.lbldoccliente.Text = "Tipo de Comprobante";
             // 
@@ -788,7 +788,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(281, 119);
+            this.guna2Panel2.Size = new System.Drawing.Size(271, 119);
             this.guna2Panel2.TabIndex = 0;
             // 
             // txtfecha
@@ -824,7 +824,7 @@
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(43, 10);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(258, 65);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(248, 65);
             this.guna2HtmlLabel5.TabIndex = 56;
             this.guna2HtmlLabel5.Text = "Fecha";
             // 
@@ -836,7 +836,7 @@
             this.panelbotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelbotones.Controls.Add(this.btnbuscarventaprove, 0, 0);
             this.panelbotones.Controls.Add(this.btnlimpiarventprove, 1, 0);
-            this.panelbotones.Location = new System.Drawing.Point(786, 105);
+            this.panelbotones.Location = new System.Drawing.Point(744, 105);
             this.panelbotones.Name = "panelbotones";
             this.panelbotones.RowCount = 1;
             this.panelbotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -862,7 +862,6 @@
             this.btnbuscarventaprove.Size = new System.Drawing.Size(231, 50);
             this.btnbuscarventaprove.TabIndex = 66;
             this.btnbuscarventaprove.Text = "Buscar";
-            this.btnbuscarventaprove.Click += new System.EventHandler(this.btnbuscarprod_Click);
             // 
             // btnlimpiarventprove
             // 
@@ -898,7 +897,7 @@
             this.txtbusqueda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbusqueda.Font = new System.Drawing.Font("MesloLGL NF", 14F);
             this.txtbusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbusqueda.Location = new System.Drawing.Point(786, 46);
+            this.txtbusqueda.Location = new System.Drawing.Point(744, 46);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.PasswordChar = '\0';
@@ -913,7 +912,7 @@
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(517, 34);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(475, 34);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(297, 68);
             this.guna2HtmlLabel3.TabIndex = 74;

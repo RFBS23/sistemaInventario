@@ -2,12 +2,12 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>C:\Users\fabri\Documents\Programacion\C-Sharp\appventas\|publish\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\fabri\Documents\Programacion\C-Sharp\instaladores\Inventario\|C:\Users\fabri\Documents\Programacion\C-Sharp\appventas\|publish\</PublishUrlHistory>
     <InstallUrlHistory />
-    <SupportUrlHistory />
+    <SupportUrlHistory>https://rfbs23.github.io/portafolio/|https://github.com/RFBS23/sistemaInventario/issues/1</SupportUrlHistory>
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
-    <ErrorReportUrlHistory />
+    <ErrorReportUrlHistory>https://github.com/RFBS23/sistemaInventario/issues/1</ErrorReportUrlHistory>
     <FallbackCulture>es-ES</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>

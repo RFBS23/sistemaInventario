@@ -63,7 +63,8 @@ namespace presentacion
             txtnombreproveedor.SelectionStart = txtnombreproveedor.Text.Length;
         }
 
-        private void btnbuscarprod_Click(object sender, EventArgs e)
+
+        private void btnbuscarventacli_Click(object sender, EventArgs e)
         {
             Ventas oVentas = new N_Ventas().ObtenerVentas(txtbusqueda.Text);
             if (oVentas.idventa != 0)
@@ -78,17 +79,12 @@ namespace presentacion
                 dgdetallestienda.Rows.Clear();
                 foreach (Detalle_Venta dv in oVentas.oDetalle_Venta)
                 {
-                    dgdetallestienda.Rows.Add(new object[] {dv.oProductos.nombre + " " + dv.oProductos.descripcion + " " + dv.oProductos.colores + " " + dv.oProductos.oTallasropa , dv.oProductos.descuento, dv.precioventa, dv.cantidad, dv.subtotal} );
+                    dgdetallestienda.Rows.Add(new object[] { dv.oProductos.nombre + " " + dv.oProductos.descripcion + " " + dv.oProductos.colores + " " + dv.oProductos.oTallasropa, dv.oProductos.descuento, dv.precioventa, dv.cantidad, dv.subtotal });
                 }
                 txtmontototal.Text = oVentas.montototal.ToString("0.00");
                 txtmontopago.Text = oVentas.montopago.ToString("0.00");
                 txtmontocambio.Text = oVentas.montocambio.ToString("0.00");
             }
-        }
-
-        private void btnbuscarventacli_Click(object sender, EventArgs e)
-        {
-            //Ventas_Tienda oVentasTienda = new N_Ventastienda();
         }
 
         /*botones para proveedores*/
@@ -253,6 +249,19 @@ namespace presentacion
                 }
             }
         }
-                
+
+        private void btneliminarvencli_Click(object sender, EventArgs e)
+        {
+            txtfecha.Text = "";
+            txtcomprobantepago.Text = "";
+            txtnombreusuario.Text = "";
+            txtnombreproveedor.Text = "";
+            txtdocproveedor.Text = "";
+            txtnumerodocumentoprove.Text = "";
+            dgdetallestienda.Rows.Clear();
+            txtmontocambio.Text = "0.00";
+            txtmontopago.Text = "0.00";
+            txtmontototal.Text = "0.00";
+        }
     }
 }

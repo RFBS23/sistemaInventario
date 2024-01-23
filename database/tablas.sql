@@ -331,12 +331,3 @@ inner join productosropatienda pt on pt.idproductotienda = dvt.idproductotienda
 inner join productosropa p on p.idproducto = dvt.idproducto
 inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
 where dvt.idventatienda = '00005'
-
-
-SELECT pt.idproductotienda, pt.idusuario, pt.estado AS estadoProductotienda, convert(char(10), pt.fecharegistro, 103) AS fecharegistroProductotienda,
-dvt.precioventa, dvt.cantidad, dvt.subtotal, p.nombre AS nombreProducto, dt.cantidad AS cantidadDetalle,
-dt.fecharegistro AS fecharegistroDetalletienda FROM detalle_ventatienda dvt
-INNER JOIN productosropatienda pt ON pt.idproductotienda = dvt.idproductotienda
-INNER JOIN detalletienda dt ON dt.idproductotienda = pt.idproductotienda
-INNER JOIN productosropa p ON p.idproducto = dt.idproducto
-WHERE dvt.idventatienda = '00005'

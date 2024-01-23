@@ -30,17 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.rbProveedores = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbclientes = new Guna.UI2.WinForms.Guna2RadioButton();
             this.panelbotones = new System.Windows.Forms.TableLayoutPanel();
             this.btnbuscarprove = new Guna.UI2.WinForms.Guna2Button();
             this.btnlimpiar = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +54,8 @@
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbldoccliente = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnbuscardoc = new FontAwesome.Sharp.IconButton();
             this.txtcolores = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.listatallas = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,6 +68,7 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblnomcliente = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnagregar = new Guna.UI2.WinForms.Guna2Button();
             this.txtdescuento = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -96,13 +101,6 @@
             this.txttotalpagar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.rbProveedores = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbclientes = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.btnbuscardoc = new FontAwesome.Sharp.IconButton();
-            this.txtdocumento = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtnombrecliente = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbldoccliente = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblnomcliente = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panelbotones.SuspendLayout();
@@ -150,6 +148,53 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(435, 359);
             this.guna2Panel4.TabIndex = 0;
+            // 
+            // rbProveedores
+            // 
+            this.rbProveedores.Animated = true;
+            this.rbProveedores.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbProveedores.CheckedState.BorderThickness = 0;
+            this.rbProveedores.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbProveedores.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbProveedores.CheckedState.InnerOffset = -4;
+            this.rbProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbProveedores.ForeColor = System.Drawing.Color.Black;
+            this.rbProveedores.Location = new System.Drawing.Point(193, 282);
+            this.rbProveedores.Name = "rbProveedores";
+            this.rbProveedores.Size = new System.Drawing.Size(208, 62);
+            this.rbProveedores.TabIndex = 82;
+            this.rbProveedores.Text = "Proveedores";
+            this.rbProveedores.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbProveedores.UncheckedState.BorderThickness = 2;
+            this.rbProveedores.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbProveedores.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbProveedores.CheckedChanged += new System.EventHandler(this.rbProveedores_CheckedChanged);
+            // 
+            // rbclientes
+            // 
+            this.rbclientes.Animated = true;
+            this.rbclientes.AutoSize = true;
+            this.rbclientes.Checked = true;
+            this.rbclientes.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbclientes.CheckedState.BorderThickness = 0;
+            this.rbclientes.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbclientes.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbclientes.CheckedState.InnerOffset = -4;
+            this.rbclientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbclientes.ForeColor = System.Drawing.Color.Black;
+            this.rbclientes.Location = new System.Drawing.Point(37, 300);
+            this.rbclientes.Name = "rbclientes";
+            this.rbclientes.Size = new System.Drawing.Size(99, 24);
+            this.rbclientes.TabIndex = 81;
+            this.rbclientes.TabStop = true;
+            this.rbclientes.Text = "Clientes";
+            this.rbclientes.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbclientes.UncheckedState.BorderThickness = 2;
+            this.rbclientes.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbclientes.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbclientes.CheckedChanged += new System.EventHandler(this.rbclientes_CheckedChanged);
             // 
             // panelbotones
             // 
@@ -344,7 +389,6 @@
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.lbldoccliente);
-            this.guna2Panel5.Controls.Add(this.txtdocumento);
             this.guna2Panel5.Controls.Add(this.btnbuscardoc);
             this.guna2Panel5.Controls.Add(this.txtcolores);
             this.guna2Panel5.Controls.Add(this.guna2HtmlLabel4);
@@ -362,6 +406,39 @@
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(436, 359);
             this.guna2Panel5.TabIndex = 0;
+            // 
+            // lbldoccliente
+            // 
+            this.lbldoccliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbldoccliente.BackColor = System.Drawing.Color.Transparent;
+            this.lbldoccliente.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldoccliente.Location = new System.Drawing.Point(19, 28);
+            this.lbldoccliente.Name = "lbldoccliente";
+            this.lbldoccliente.Size = new System.Drawing.Size(207, 33);
+            this.lbldoccliente.TabIndex = 79;
+            this.lbldoccliente.Text = "documento cliente";
+            this.lbldoccliente.Visible = false;
+            // 
+            // btnbuscardoc
+            // 
+            this.btnbuscardoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnbuscardoc.BackColor = System.Drawing.Color.Transparent;
+            this.btnbuscardoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbuscardoc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnbuscardoc.FlatAppearance.BorderSize = 0;
+            this.btnbuscardoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscardoc.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnbuscardoc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
+            this.btnbuscardoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnbuscardoc.IconSize = 40;
+            this.btnbuscardoc.Location = new System.Drawing.Point(325, 64);
+            this.btnbuscardoc.Name = "btnbuscardoc";
+            this.btnbuscardoc.Size = new System.Drawing.Size(90, 54);
+            this.btnbuscardoc.TabIndex = 76;
+            this.btnbuscardoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnbuscardoc.UseVisualStyleBackColor = false;
+            this.btnbuscardoc.Click += new System.EventHandler(this.btnbuscardoc_Click);
             // 
             // txtcolores
             // 
@@ -493,7 +570,7 @@
             this.txtdocproveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtdocproveedor.Name = "txtdocproveedor";
             this.txtdocproveedor.PasswordChar = '\0';
-            this.txtdocproveedor.PlaceholderText = "Ruc del proveedor";
+            this.txtdocproveedor.PlaceholderText = "";
             this.txtdocproveedor.SelectedText = "";
             this.txtdocproveedor.Size = new System.Drawing.Size(303, 54);
             this.txtdocproveedor.TabIndex = 69;
@@ -580,7 +657,6 @@
             // guna2Panel6
             // 
             this.guna2Panel6.Controls.Add(this.lblnomcliente);
-            this.guna2Panel6.Controls.Add(this.txtnombrecliente);
             this.guna2Panel6.Controls.Add(this.btnagregar);
             this.guna2Panel6.Controls.Add(this.txtdescuento);
             this.guna2Panel6.Controls.Add(this.guna2HtmlLabel13);
@@ -595,6 +671,19 @@
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(437, 359);
             this.guna2Panel6.TabIndex = 0;
+            // 
+            // lblnomcliente
+            // 
+            this.lblnomcliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblnomcliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblnomcliente.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnomcliente.Location = new System.Drawing.Point(23, 28);
+            this.lblnomcliente.Name = "lblnomcliente";
+            this.lblnomcliente.Size = new System.Drawing.Size(171, 33);
+            this.lblnomcliente.TabIndex = 80;
+            this.lblnomcliente.Text = "Nombre Cliente";
+            this.lblnomcliente.Visible = false;
             // 
             // btnagregar
             // 
@@ -691,7 +780,7 @@
             this.txtnombreproveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtnombreproveedor.Name = "txtnombreproveedor";
             this.txtnombreproveedor.PasswordChar = '\0';
-            this.txtnombreproveedor.PlaceholderText = "Razon social";
+            this.txtnombreproveedor.PlaceholderText = "";
             this.txtnombreproveedor.SelectedText = "";
             this.txtnombreproveedor.Size = new System.Drawing.Size(388, 54);
             this.txtnombreproveedor.TabIndex = 72;
@@ -798,19 +887,19 @@
             // 
             this.dgproductosventa.AllowUserToAddRows = false;
             this.dgproductosventa.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(183)))));
-            this.dgproductosventa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(183)))));
+            this.dgproductosventa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgproductosventa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgproductosventa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgproductosventa.BackgroundColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgproductosventa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MesloLGL NF", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgproductosventa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgproductosventa.ColumnHeadersHeight = 30;
             this.dgproductosventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgproductosventa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -826,31 +915,31 @@
             this.subtotal,
             this.btneliminar});
             this.dgproductosventa.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(249)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(215)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgproductosventa.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(249)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(215)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgproductosventa.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgproductosventa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgproductosventa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(233)))), ((int)(((byte)(170)))));
             this.dgproductosventa.Location = new System.Drawing.Point(0, 0);
             this.dgproductosventa.Name = "dgproductosventa";
             this.dgproductosventa.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgproductosventa.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("MesloLGL NF", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgproductosventa.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgproductosventa.RowHeadersVisible = false;
             this.dgproductosventa.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgproductosventa.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgproductosventa.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgproductosventa.RowTemplate.Height = 24;
             this.dgproductosventa.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgproductosventa.Size = new System.Drawing.Size(921, 345);
@@ -909,8 +998,8 @@
             // nombre
             // 
             this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nombre.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nombre.DefaultCellStyle = dataGridViewCellStyle12;
             this.nombre.FillWeight = 113.9045F;
             this.nombre.HeaderText = "Producto";
             this.nombre.MinimumWidth = 6;
@@ -937,8 +1026,8 @@
             // precioventa
             // 
             this.precioventa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.precioventa.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.precioventa.DefaultCellStyle = dataGridViewCellStyle13;
             this.precioventa.HeaderText = "Precio";
             this.precioventa.MinimumWidth = 6;
             this.precioventa.Name = "precioventa";
@@ -956,8 +1045,8 @@
             // stock
             // 
             this.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.stock.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.stock.DefaultCellStyle = dataGridViewCellStyle14;
             this.stock.HeaderText = "Cantidades";
             this.stock.MinimumWidth = 6;
             this.stock.Name = "stock";
@@ -967,8 +1056,8 @@
             // subtotal
             // 
             this.subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle15;
             this.subtotal.FillWeight = 0.570844F;
             this.subtotal.HeaderText = "Sub Total";
             this.subtotal.MinimumWidth = 6;
@@ -1146,148 +1235,6 @@
             this.guna2BorderlessForm1.HasFormShadow = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // rbProveedores
-            // 
-            this.rbProveedores.Animated = true;
-            this.rbProveedores.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbProveedores.CheckedState.BorderThickness = 0;
-            this.rbProveedores.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbProveedores.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbProveedores.CheckedState.InnerOffset = -4;
-            this.rbProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbProveedores.ForeColor = System.Drawing.Color.Black;
-            this.rbProveedores.Location = new System.Drawing.Point(193, 282);
-            this.rbProveedores.Name = "rbProveedores";
-            this.rbProveedores.Size = new System.Drawing.Size(208, 62);
-            this.rbProveedores.TabIndex = 82;
-            this.rbProveedores.Text = "Proveedores";
-            this.rbProveedores.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbProveedores.UncheckedState.BorderThickness = 2;
-            this.rbProveedores.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbProveedores.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbProveedores.CheckedChanged += new System.EventHandler(this.rbProveedores_CheckedChanged);
-            // 
-            // rbclientes
-            // 
-            this.rbclientes.Animated = true;
-            this.rbclientes.AutoSize = true;
-            this.rbclientes.Checked = true;
-            this.rbclientes.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbclientes.CheckedState.BorderThickness = 0;
-            this.rbclientes.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbclientes.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbclientes.CheckedState.InnerOffset = -4;
-            this.rbclientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbclientes.ForeColor = System.Drawing.Color.Black;
-            this.rbclientes.Location = new System.Drawing.Point(37, 300);
-            this.rbclientes.Name = "rbclientes";
-            this.rbclientes.Size = new System.Drawing.Size(99, 24);
-            this.rbclientes.TabIndex = 81;
-            this.rbclientes.TabStop = true;
-            this.rbclientes.Text = "Clientes";
-            this.rbclientes.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbclientes.UncheckedState.BorderThickness = 2;
-            this.rbclientes.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbclientes.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbclientes.CheckedChanged += new System.EventHandler(this.rbclientes_CheckedChanged);
-            // 
-            // btnbuscardoc
-            // 
-            this.btnbuscardoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnbuscardoc.BackColor = System.Drawing.Color.Transparent;
-            this.btnbuscardoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbuscardoc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnbuscardoc.FlatAppearance.BorderSize = 0;
-            this.btnbuscardoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscardoc.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnbuscardoc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
-            this.btnbuscardoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnbuscardoc.IconSize = 40;
-            this.btnbuscardoc.Location = new System.Drawing.Point(325, 64);
-            this.btnbuscardoc.Name = "btnbuscardoc";
-            this.btnbuscardoc.Size = new System.Drawing.Size(90, 54);
-            this.btnbuscardoc.TabIndex = 76;
-            this.btnbuscardoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnbuscardoc.UseVisualStyleBackColor = false;
-            this.btnbuscardoc.Click += new System.EventHandler(this.btnbuscardoc_Click);
-            // 
-            // txtdocumento
-            // 
-            this.txtdocumento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtdocumento.BorderRadius = 10;
-            this.txtdocumento.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtdocumento.DefaultText = "";
-            this.txtdocumento.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtdocumento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtdocumento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtdocumento.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtdocumento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdocumento.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdocumento.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdocumento.Location = new System.Drawing.Point(15, 64);
-            this.txtdocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.PasswordChar = '\0';
-            this.txtdocumento.PlaceholderText = "N° de documento";
-            this.txtdocumento.SelectedText = "";
-            this.txtdocumento.Size = new System.Drawing.Size(303, 54);
-            this.txtdocumento.TabIndex = 77;
-            this.txtdocumento.Visible = false;
-            // 
-            // txtnombrecliente
-            // 
-            this.txtnombrecliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtnombrecliente.BorderRadius = 10;
-            this.txtnombrecliente.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnombrecliente.DefaultText = "";
-            this.txtnombrecliente.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnombrecliente.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnombrecliente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnombrecliente.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnombrecliente.Enabled = false;
-            this.txtnombrecliente.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombrecliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombrecliente.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombrecliente.Location = new System.Drawing.Point(23, 64);
-            this.txtnombrecliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtnombrecliente.Name = "txtnombrecliente";
-            this.txtnombrecliente.PasswordChar = '\0';
-            this.txtnombrecliente.PlaceholderText = "nombre cliente";
-            this.txtnombrecliente.SelectedText = "";
-            this.txtnombrecliente.Size = new System.Drawing.Size(388, 54);
-            this.txtnombrecliente.TabIndex = 78;
-            this.txtnombrecliente.Visible = false;
-            // 
-            // lbldoccliente
-            // 
-            this.lbldoccliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbldoccliente.BackColor = System.Drawing.Color.Transparent;
-            this.lbldoccliente.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldoccliente.Location = new System.Drawing.Point(19, 28);
-            this.lbldoccliente.Name = "lbldoccliente";
-            this.lbldoccliente.Size = new System.Drawing.Size(207, 33);
-            this.lbldoccliente.TabIndex = 79;
-            this.lbldoccliente.Text = "documento cliente";
-            this.lbldoccliente.Visible = false;
-            // 
-            // lblnomcliente
-            // 
-            this.lblnomcliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblnomcliente.BackColor = System.Drawing.Color.Transparent;
-            this.lblnomcliente.Font = new System.Drawing.Font("MesloLGL NF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnomcliente.Location = new System.Drawing.Point(23, 28);
-            this.lblnomcliente.Name = "lblnomcliente";
-            this.lblnomcliente.Size = new System.Drawing.Size(171, 33);
-            this.lblnomcliente.TabIndex = 80;
-            this.lblnomcliente.Text = "Nombre Cliente";
-            this.lblnomcliente.Visible = false;
-            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1376,8 +1323,6 @@
         private Guna.UI2.WinForms.Guna2RadioButton rbProveedores;
         private Guna.UI2.WinForms.Guna2RadioButton rbclientes;
         private FontAwesome.Sharp.IconButton btnbuscardoc;
-        private Guna.UI2.WinForms.Guna2TextBox txtdocumento;
-        private Guna.UI2.WinForms.Guna2TextBox txtnombrecliente;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbldoccliente;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblnomcliente;
     }

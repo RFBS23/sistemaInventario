@@ -681,3 +681,24 @@ BEGIN
     END CATCH
 END
 GO
+
+
+/*reporte de venta*/
+create procedure spu_reporte_venta(
+	@fechainicio varchar(10),
+	@fechafin varchar(10)
+)
+as
+begin
+set dateformat dmy;
+select
+convert(char(10), v.fecharegistro, 103)[FechaRegistro], v.tipodocumento, v.numerodocumento, v.montototal,
+u.nombreusuario[UsuarioRegistro], v.documentocliente, v.nombrecliente,
+p.codigo[CodigoProducto], p.nombre[NombreProducto], p.descuento[Descuento], ca.nombrecategoria[Categoria], dv.precioventa, dv.cantidad, dv.subtotal
+from ventas v
+inner join usuarios u on u.idusuario = v.idusuario
+inner join detalle_venta dv on dv.idventa = v.idventa
+inner join productosropa p on p.idproducto = dv.idproducto
+inner join categorias ca on ca.idcategoria = p.idcategoria
+where convert(date, v.fecharegistro) between @fechainicio and @fechafin
+end

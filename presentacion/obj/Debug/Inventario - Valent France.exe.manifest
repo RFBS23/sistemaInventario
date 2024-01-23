@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Inventario - Valent France.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Inventario - Valent France.exe" version="1.0.0.6" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="datos.dll" size="36864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="datos.dll" size="38400">
       <assemblyIdentity name="datos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9bpYzwnzLWp9j4NP7LKD0g3eW/BBe6+3D9NCjlMdJZI=</dsig:DigestValue>
+        <dsig:DigestValue>cHnQ0b0TIqOsM6fRhq+ETFiVhepVDp+g4CgXHqBmVXQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="entidad.dll" size="20992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="entidad.dll" size="23040">
       <assemblyIdentity name="entidad" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dZy6FwT02xsL7OrXmC3bLC11YhCZxTw7oGVIqFdDXRk=</dsig:DigestValue>
+        <dsig:DigestValue>oZ6zaBP+lv7dtEwjLgzdv3UT+EcWkkaX5c98KtNDHGU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -151,14 +151,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario - Valent France.exe" size="3503568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario - Valent France.exe" size="3544016">
       <assemblyIdentity name="Inventario - Valent France" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RYwklEHh3pfW8riJBuJueByzbMOqUAzYbJdccW2yapw=</dsig:DigestValue>
+        <dsig:DigestValue>zZ+u9GnNEaQoQz46Yi2s2CFkXCNk1H7dPPWkhhtaxnM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -350,7 +350,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9DX4t3u5BKK5vjwDC1sgpT1lxlovjJAWKaOKGAM7KKM=</dsig:DigestValue>
+        <dsig:DigestValue>4HqexIIPbKx0JTsnljKK3w0TjW7f+mIkIeV01rmWjgs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -549,7 +549,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0XPiLtP5A2W892dJUkrp+Rt7CV+pqSxUE26S69HcBJo=</dsig:DigestValue>
+      <dsig:DigestValue>oBsUvGAlf8hC6ZoJewFRFcfOtI4eKK1dIRNNyJQ7j80=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\icono.ico" size="270398">

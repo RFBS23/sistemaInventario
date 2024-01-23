@@ -71,7 +71,11 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.piclogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -90,6 +94,8 @@
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.footer.SuspendLayout();
@@ -416,7 +422,7 @@
             this.submenuprovventas.Image = global::presentacion.Properties.Resources.puntero;
             this.submenuprovventas.Name = "submenuprovventas";
             this.submenuprovventas.Size = new System.Drawing.Size(298, 34);
-            this.submenuprovventas.Text = "ventas Proveedor";
+            this.submenuprovventas.Text = "Ventas";
             this.submenuprovventas.Click += new System.EventHandler(this.submenuprovventas_Click);
             // 
             // submenuDetVentas
@@ -439,6 +445,7 @@
             this.menureportes.Name = "menureportes";
             this.menureportes.Size = new System.Drawing.Size(240, 70);
             this.menureportes.Text = "Reportes";
+            this.menureportes.Click += new System.EventHandler(this.menureportes_Click);
             // 
             // menunegocio
             // 
@@ -514,9 +521,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.96565F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61295F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.38045F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.17966F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.30779F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1344, 757);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -534,9 +541,9 @@
             this.guna2Panel3.Controls.Add(this.imguser);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel5);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(3, 507);
+            this.guna2Panel3.Location = new System.Drawing.Point(3, 522);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1338, 247);
+            this.guna2Panel3.Size = new System.Drawing.Size(1338, 232);
             this.guna2Panel3.TabIndex = 2;
             // 
             // lblfecha
@@ -626,12 +633,40 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.Controls.Add(this.piclogo);
+            this.guna2Panel2.Controls.Add(this.tableLayoutPanel2);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 139);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 127);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1338, 362);
+            this.guna2Panel2.Size = new System.Drawing.Size(1338, 389);
             this.guna2Panel2.TabIndex = 1;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel4, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel5, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel6, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 389F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1338, 389);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BorderRadius = 10;
+            this.guna2Panel4.Controls.Add(this.piclogo);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel4.Location = new System.Drawing.Point(449, 3);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(440, 383);
+            this.guna2Panel4.TabIndex = 0;
             // 
             // piclogo
             // 
@@ -641,13 +676,31 @@
             this.piclogo.BorderRadius = 20;
             this.piclogo.Image = global::presentacion.Properties.Resources.icono;
             this.piclogo.ImageRotate = 0F;
-            this.piclogo.Location = new System.Drawing.Point(409, 22);
+            this.piclogo.Location = new System.Drawing.Point(31, 16);
             this.piclogo.Name = "piclogo";
             this.piclogo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.piclogo.Size = new System.Drawing.Size(379, 323);
+            this.piclogo.Size = new System.Drawing.Size(379, 350);
             this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.piclogo.TabIndex = 2;
+            this.piclogo.TabIndex = 3;
             this.piclogo.TabStop = false;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BorderRadius = 10;
+            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel5.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(440, 383);
+            this.guna2Panel5.TabIndex = 1;
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BorderRadius = 10;
+            this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel6.Location = new System.Drawing.Point(895, 3);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(440, 383);
+            this.guna2Panel6.TabIndex = 2;
             // 
             // guna2Panel1
             // 
@@ -657,7 +710,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1338, 130);
+            this.guna2Panel1.Size = new System.Drawing.Size(1338, 118);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2HtmlLabel3
@@ -681,7 +734,7 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("MesloLGL Nerd Font", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(434, 28);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(1243, 124);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(1243, 112);
             this.guna2HtmlLabel2.TabIndex = 0;
             this.guna2HtmlLabel2.Text = "SISTEMA DE INVENTARIO";
             // 
@@ -761,6 +814,8 @@
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.footer.ResumeLayout(false);
@@ -817,6 +872,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblfecha;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2PictureBox piclogo;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
     }
 }

@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="datos.dll" size="34816">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="datos.dll" size="36352">
       <assemblyIdentity name="datos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KtP6hDnJL0L2xMbDH0BXWkb/qV59roR9IDTvTE7uZNE=</dsig:DigestValue>
+        <dsig:DigestValue>UjIZGWGTrhGkdY2nd4CJIlheMDF2wqm8ZJ/p2IFfEys=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="entidad.dll" size="19968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="entidad.dll" size="22016">
       <assemblyIdentity name="entidad" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Hiu3YCJtKLRUV74Y55VGRJWwNCwQZrs6B21rgqsYSNg=</dsig:DigestValue>
+        <dsig:DigestValue>83k5cPLCFzV9I7e6QlfM2zhw5I7Ozjnp+xDmdDppFV0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -151,14 +151,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario - Valent France.exe" size="3442128">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario - Valent France.exe" size="3527632">
       <assemblyIdentity name="Inventario - Valent France" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZRm2elU8QwTWFyZ/MGSXiKWMUCuJpvVLMSnAR/yp6LI=</dsig:DigestValue>
+        <dsig:DigestValue>yoAB96uoQl8WpAgDxzplfroy4wTNloY8Aoeghhr6siA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -350,7 +350,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>E5q92t9ESUoBgLSgA8+i2Vvb3IkKY4zb5O4VR9qqWYM=</dsig:DigestValue>
+        <dsig:DigestValue>mD9A2pfLxTOhdGsnsOXLXRCcINUkrugZisq090JO/CM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -543,13 +543,13 @@
       <dsig:DigestValue>wD3ri1tSegmbcPkzB21uUQJBGW8hK+tPq7VIs+8Pxbw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Inventario - Valent France.exe.config" size="4967">
+  <file name="Inventario - Valent France.exe.config" size="5205">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>GMCNJeg76NxfRqEabIoCptwaqAdsIPsLMkPDZgfbXVk=</dsig:DigestValue>
+      <dsig:DigestValue>42NIjG8wq8bteC9LjRRAhxSKH0b8ZMChoN9VFiQ6+wE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\icono.ico" size="270398">

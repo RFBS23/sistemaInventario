@@ -84,6 +84,7 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmProdtiendas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmProductos.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmProveedores.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmReportesVentas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmSplash.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmTallas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmTienda.resources

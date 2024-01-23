@@ -104,3 +104,4 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.Utilidades.modales.mdClientes.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.Utilidades.modales.mdProdTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.Utilidades.modales.mdProveedores.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Release\presentacion.frmReportesVentas.resources

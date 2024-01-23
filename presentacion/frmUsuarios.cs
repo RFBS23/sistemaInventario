@@ -10,11 +10,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Guna.UI2.Native.WinApi;
 
 namespace presentacion
 {
