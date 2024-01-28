@@ -1,6 +1,6 @@
 # escluyendo la carpeta del instalador
 Instalador
-*database
+Database
 
 # excluimos los archivos con la extension de texto
 *.txt
