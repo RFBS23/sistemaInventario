@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace presentacion
     public partial class frmVentas : Form
     {
         private Usuarios _usuarios;
+
 
         public frmVentas(Usuarios oUsuarios = null)
         {
@@ -177,11 +179,23 @@ namespace presentacion
             }
 
             // Verificar la longitud actual del texto en el TextBox
-            if (txtdocproveedor.Text.Length >= 20)
+            if (rbclientes.Checked)
             {
-                // Si la longitud es 20 o más, no permitir que se escriba más
-                MessageBox.Show("El límite es de 20 dígitos.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
+                // Límite de 8 dígitos para clientes
+                if (txtdocproveedor.Text.Length >= 8)
+                {
+                    MessageBox.Show("El límite es de 8 dígitos.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtdocproveedor.Text = txtdocproveedor.Text.Substring(0, 8); // Truncar a 8 dígitos
+                }
+            }
+            else if (rbProveedores.Checked)
+            {
+                // Límite de 20 dígitos para proveedores
+                if (txtdocproveedor.Text.Length >= 11)
+                {
+                    MessageBox.Show("El límite es de 11 dígitos.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtdocproveedor.Text = txtdocproveedor.Text.Substring(0, 11); // Truncar a 20 dígitos
+                }
             }
         }
 
@@ -442,6 +456,8 @@ namespace presentacion
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        
+
         private void btnbuscarprove_Click(object sender, EventArgs e)
         {
             using (var modal = new mdProductos())
@@ -494,7 +510,6 @@ namespace presentacion
                 btnbuscardocproveedor.Visible = false;
                 lbldocproveedor.Visible = false;
                 lblnomproveedor.Visible = false;
-
                 lbldoccliente.Visible = true;
                 lblnomcliente.Visible = true;
 
@@ -568,5 +583,6 @@ namespace presentacion
                 }
             }
         }
+
     }
 }

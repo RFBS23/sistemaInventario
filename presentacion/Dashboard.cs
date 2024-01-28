@@ -118,21 +118,9 @@ namespace presentacion
             submenu.Hide();
         }
 
-        private void menuclientes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmClientes());
-           submenu.Hide();
-        }
-
         private void menuproveedores_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmProveedores());
-            submenu.Hide();
-        }
-
-        private void submenuRVentas_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuventas, new frmVentasTienda(usuarioActual));
             submenu.Hide();
         }
 
@@ -177,19 +165,6 @@ namespace presentacion
             submenu.Show();
         }
 
-        private void submenutienda_Click(object sender, EventArgs e)
-        {
-
-            AbrirFormulario(menuingresotienda, new frmTienda(usuarioActual));
-            submenu.Hide();
-        }
-
-        private void subprodtienda_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuingresotienda, new frmProdtiendas());
-            submenu.Hide();
-        }
-
         private void menuconfiguracion_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmConfiguracion());
@@ -205,6 +180,24 @@ namespace presentacion
         private void menureportes_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmReportesVentas());
+            submenu.Hide();
+        }
+
+        private void menuprodtienda_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmPTienda());
+            submenu.Hide();
+        }
+
+        private void subventienda_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmVentasTienda(usuarioActual));
+            submenu.Hide();
+        }
+
+        private void detventas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmDetallesVentas());
             submenu.Hide();
         }
     }

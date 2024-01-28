@@ -250,24 +250,25 @@ create procedure spu_registrar_productoropa(
 	@temporada VARCHAR(60),
     @descuento INT = 0,
     @total DECIMAL(10, 2) = 0,
+	@ubicacion varchar(50),
 	@resultado int output,
 	@mensaje varchar(100) output
 )
 as
 begin
 	set @resultado = 0
-	if not exists (select * from productosropa where codigo = @codigo)
+	-- if not exists (select * from productosropa where codigo = @codigo)
 	begin
-		insert into productosropa(codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, temporada, descuento, total) values
-		(@codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @temporada, @descuento, @total)
+		insert into productosropa(codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, temporada, descuento, total, ubicacion) values
+		(@codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @temporada, @descuento, @total, @ubicacion)
 		set @resultado = SCOPE_IDENTITY()
 	end
-	set @mensaje = 'El codigo ya se encuentra registrado en otra prenda'
+	--set @mensaje = 'El codigo ya se encuentra registrado en otra prenda'
 end
 go
 
-/*
-CREATE PROCEDURE spu_registrar_productoropa
+create PROCEDURE spu_editar_productoropa (
+    @idproducto INT,
     @codigo VARCHAR(50),
     @nombre VARCHAR(50),
     @descripcion VARCHAR(50),
@@ -276,81 +277,40 @@ CREATE PROCEDURE spu_registrar_productoropa
     @stock INT,
     @colores VARCHAR(40),
     @numcaja VARCHAR(50),
-    @precioventa DECIMAL(10, 2),
+    @precioventa DECIMAL(10,2),
     @temporada VARCHAR(60),
     @descuento INT = 0,
     @total DECIMAL(10, 2) = 0,
+    @ubicacion VARCHAR(50),
     @resultado INT OUTPUT,
     @mensaje VARCHAR(100) OUTPUT
+)
 AS
 BEGIN
-    DECLARE @precioConDescuento DECIMAL(10, 2);
-
-    SET @resultado = 0;
-    SET @mensaje = '';
-
-    IF NOT EXISTS (SELECT * FROM productosropa WHERE codigo = @codigo)
+    SET @resultado = 1;
+    UPDATE productosropa
+    SET
+        codigo = @codigo,
+        nombre = @nombre,
+        descripcion = @descripcion,
+        idcategoria = @idcategoria,
+        idtallaropa = @idtallaropa,
+        stock = @stock,
+        colores = @colores,
+        numcaja = @numcaja,
+        precioventa = @precioventa,
+        temporada = @temporada,
+        descuento = @descuento,
+        total = @total,
+        ubicacion = @ubicacion
+    WHERE idproducto = @idproducto;
+    
+    IF @@ROWCOUNT = 0
     BEGIN
-        -- Calcula el nuevo precio con descuento
-        SET @precioConDescuento = @precioventa - (@precioventa * @descuento / 100);
-
-        -- Inserta el nuevo producto
-        INSERT INTO productosropa (codigo, nombre, descripcion, idcategoria, idtallaropa, stock, colores, numcaja, precioventa, temporada, descuento, total)
-        VALUES (@codigo, @nombre, @descripcion, @idcategoria, @idtallaropa, @stock, @colores, @numcaja, @precioventa, @temporada, @descuento, @total);
-
-        -- Obtiene el ID del producto insertado
-        SET @resultado = SCOPE_IDENTITY();
-    END
-    ELSE
-    BEGIN
-        SET @mensaje = 'El código ya se encuentra registrado en otra prenda';
+        SET @resultado = 0;
+        SET @mensaje = 'No se encontró el producto para actualizar.';
     END
 END
-GO
-*/
-/**/
-
-create procedure spu_editar_productoropa(
-	@idproducto int,
-	@codigo varchar(50),
-	@nombre varchar(50),
-	@descripcion varchar(50),
-	@idcategoria int,
-	@idtallaropa int,
-	@stock int,
-	@colores varchar(40),
-	@numcaja varchar(50),
-	@precioventa decimal(10,2),
-	@temporada VARCHAR(60),
-    @descuento INT = 0,
-    @total DECIMAL(10, 2) = 0,
-	@resultado int output,
-	@mensaje varchar(100) output
-)
-as
-begin
-	set @resultado = 1
-	if not exists (select * from productosropa where codigo = @Codigo and idproducto != @idproducto)
-		update productosropa set
-		codigo = @codigo,
-		nombre = @nombre,
-		descripcion = @descripcion,
-		idcategoria = @idcategoria,
-		idtallaropa = @idtallaropa,
-		stock = @stock,
-		colores = @colores,
-		numcaja = @numcaja,
-		precioventa = @precioventa,
-		temporada = @temporada,
-		descuento = @descuento,
-		total = @total
-		where idproducto = @idproducto
-	else	
-	begin
-		set @resultado = 0
-		set @mensaje = 'Ya existe un producto con el mismo codigo'
-	end
-end
 go
 
 create procedure spu_eliminar_productoropa(
@@ -378,6 +338,7 @@ begin
     end
 
     -- Verificar si el producto está relacionado a la tabla detalletienda
+	/*
     if exists (
             SELECT *
             FROM detalletienda dt
@@ -388,6 +349,7 @@ begin
         set @respuesta = 0;
         set @mensaje = @mensaje + 'No se puede eliminar porque se encuentra ubicado en la tienda';
     end
+	*/
 
     if (@pasoreglas = 1)
     begin
@@ -397,65 +359,6 @@ begin
 end;
 go
 
-/* ---------- PROCEDIMIENTOS PARA CLIENTE -----------------
-create procedure spu_registrar_cliente(
-	@documento varchar(50),
-	@nombres varchar(50),
-	@apellidos varchar(50),
-	@correo varchar(50),
-	@telefono varchar(9),
-	@resultado int output,
-	@mensaje varchar(500) output
-)
-as
-begin
-	set @resultado = 0
-	declare @idpersona INT 
-	if not exists (select * from clientes where documento = @documento)
-	begin
-		insert into clientes(documento,nombres, apellidos, correo, telefono) values
-		(@documento, @nombres, @apellidos, @correo, @telefono)
-		set @resultado = SCOPE_IDENTITY()
-	end
-	else
-		set @mensaje = 'El numero de documento ya existe'
-end
-go
-
-create procedure spu_editar_clientes(
-	@idcliente int,
-	@documento varchar(50),
-	@nombres varchar(50),
-	@apellidos varchar(50),
-	@correo varchar(50),
-	@telefono varchar(20),
-	@resultado bit output,
-	@mensaje varchar(500) output
-)
-as
-begin
-	set @resultado = 1
-	declare @idpersona int 
-	if not exists (select * from clientes where documento = @documento and idcliente != @idcliente)
-	begin
-		update clientes set
-		documento = @Documento,
-		nombres = @nombres,
-		apellidos = @apellidos,
-		correo = @correo,
-		telefono = @telefono
-		where idcliente = @idcliente
-	end
-	else
-	begin
-		SET @resultado = 0
-		set @mensaje = 'El numero de documento ya existe'
-	end
-end
-go
-*/
-
-/* ---------- PROCEDIMIENTOS PARA PROVEEDOR -----------------*/
 
 create procedure spu_registrar_proveedores(
 	@nombreproveedor varchar(225),
@@ -526,62 +429,6 @@ begin
 end
 go
 
-create procedure ContarProductos
-as
-begin
-    declare @TotalProductos int;
-
-    select @TotalProductos = count(*) from productosropa;
-
-    select @TotalProductos as 'TotalProductos';
-end
-go
-exec ContarProductos;
-
-create type [dbo].[EdetalleTienda] as table (
-	[idproducto] int null,
-	[cantidad] int default 0 not null,
-	[fecharegistro] datetime
-)
-go
-
-create procedure spu_registrar_productosropatienda(
-    @idusuario int,
-    @cantidad int,
-    @fecharegistro varchar(20),
-	@detalletienda [Edetalletienda] readonly,
-    @resultado bit output,
-    @mensaje varchar(100) output
-)
-as
-begin
-    begin try
-		declare @idproductotienda int = 0
-		set @resultado = 1
-		set @mensaje = ''
-		begin transaction registro
-		insert into productosropatienda(idusuario)
-		values (@idusuario)
-		set @idproductotienda = SCOPE_IDENTITY()
-		insert into detalletienda(idproductotienda, idproducto, cantidad, fecharegistro)
-		select @idproductotienda, idproducto, cantidad, fecharegistro from @detalletienda
-
-		update pr
-		set pr.stock = pr.stock - dt.cantidad
-		from productosropa pr
-		inner join @detalletienda dt on dt.idproducto = pr.idproducto
-
-		commit transaction registro
-	end try
-	begin catch
-		set @resultado = 0
-		set @mensaje = ERROR_MESSAGE()
-		rollback transaction registro
-	end catch
-end
-go
-
-/*nuevo procedimiento */
 create type [dbo].[EDetalle_Venta] as table(
 	[idproducto] int null,
 	[precioventa] decimal(10,2) null,
@@ -631,59 +478,7 @@ BEGIN
 END
 GO
 
--- procedimiento venta tienda
-create type [dbo].[EDetalle_VentaTienda] as table(
-	[idproductotienda] int null,
-	--[idproducto] int null,
-	[precioventa] decimal(10,2) null,
-	[cantidad] int null,
-	[subtotal] decimal(10,2) null
-)
-go
 
-create procedure spu_registrar_ventatienda
-    @idusuario int,
-    @tipodocumento varchar(50),
-    @numerodocumento varchar(50),
-    @documentocliente varchar(50),
-    @nombrecliente varchar(100),
-    @montopago decimal(10,2),
-    @montocambio decimal(10,2),
-    @montototal decimal(10,2),
-    @detalleventatienda [EDetalle_VentaTienda] readonly,
-    @resultado bit OUTPUT,
-    @mensaje varchar(100) OUTPUT
-AS
-BEGIN
-    BEGIN TRY
-        DECLARE @idventatienda int = 0
-        SET @resultado = 1
-        SET @mensaje = ''
-        
-        BEGIN TRANSACTION registro
-
-        -- Insertar en la tabla ventas
-        INSERT INTO ventastienda(idusuario, tipodocumento, numerodocumento, documentocliente, nombrecliente, montopago, montocambio, montototal)
-        VALUES (@idusuario, @tipodocumento, @numerodocumento, @documentocliente, @nombrecliente, @montopago, @montocambio, @montototal)
-        
-        SET @idventatienda = SCOPE_IDENTITY()
-
-        -- Insertar detalles de la venta en la tabla detalle_venta
-        INSERT INTO detalle_ventatienda(idventatienda, idproductotienda,  precioventa, cantidad, subtotal)
-        SELECT @idventatienda, idproductotienda, precioventa, cantidad, subtotal FROM @detalleventatienda
-
-		COMMIT TRANSACTION registro
-    END TRY
-    BEGIN CATCH
-        SET @resultado = 0
-        SET @mensaje = ERROR_MESSAGE()
-        ROLLBACK TRANSACTION registro
-    END CATCH
-END
-GO
-
-
-/*reporte de venta*/
 create procedure spu_reporte_venta(
 	@fechainicio varchar(10),
 	@fechafin varchar(10)
@@ -702,3 +497,4 @@ inner join productosropa p on p.idproducto = dv.idproducto
 inner join categorias ca on ca.idcategoria = p.idcategoria
 where convert(date, v.fecharegistro) between @fechainicio and @fechafin
 end
+go

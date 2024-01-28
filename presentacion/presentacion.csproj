@@ -27,8 +27,8 @@
     <ErrorReportUrl>https://github.com/RFBS23/sistemaInventario/issues/1</ErrorReportUrl>
     <ProductName>Inventario - Valent France</ProductName>
     <PublisherName>FabriDev</PublisherName>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,6 +71,15 @@
   <PropertyGroup>
     <ManifestTimestampUrl>
     </ManifestTimestampUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -260,15 +269,6 @@
     <Compile Include="frmCategorias.Designer.cs">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmClientes.Designer.cs">
-      <DependentUpon>frmClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,12 +293,6 @@
     <Compile Include="frmNegocio.Designer.cs">
       <DependentUpon>frmNegocio.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProdtiendas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProdtiendas.Designer.cs">
-      <DependentUpon>frmProdtiendas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,14 +311,11 @@
     <Compile Include="frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistroCompras.cs">
+    <Compile Include="frmPTienda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistroCompras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRegistroCompras.Designer.cs">
-      <DependentUpon>frmRegistroCompras.cs</DependentUpon>
+    <Compile Include="frmPTienda.Designer.cs">
+      <DependentUpon>frmPTienda.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportesVentas.cs">
       <SubType>Form</SubType>
@@ -343,12 +334,6 @@
     </Compile>
     <Compile Include="frmTallas.Designer.cs">
       <DependentUpon>frmTallas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTienda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTienda.Designer.cs">
-      <DependentUpon>frmTienda.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -393,12 +378,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utilidades\modales\mdClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Utilidades\modales\mdClientes.Designer.cs">
-      <DependentUpon>mdClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilidades\modales\mdProdTienda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -424,9 +403,6 @@
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientes.resx">
-      <DependentUpon>frmClientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,14 +412,14 @@
     <EmbeddedResource Include="frmNegocio.resx">
       <DependentUpon>frmNegocio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProdtiendas.resx">
-      <DependentUpon>frmProdtiendas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPTienda.resx">
+      <DependentUpon>frmPTienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportesVentas.resx">
       <DependentUpon>frmReportesVentas.cs</DependentUpon>
@@ -453,9 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTallas.resx">
       <DependentUpon>frmTallas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTienda.resx">
-      <DependentUpon>frmTienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
@@ -481,9 +454,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Utilidades\modales\mdClientes.resx">
-      <DependentUpon>mdClientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Utilidades\modales\mdProdTienda.resx">
       <DependentUpon>mdProdTienda.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,6 +466,7 @@
     <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

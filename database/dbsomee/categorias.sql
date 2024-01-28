@@ -1,4 +1,3 @@
-/*tablas*/
 create table categorias(
 	idcategoria int primary key identity,
 	nombrecategoria varchar(100) not null,
@@ -15,7 +14,6 @@ insert into categorias (nombrecategoria) values
 	('caballero Juvenil');
 select * from categorias
 go
-
 
 /*procedimientos*/
 create procedure spu_registrar_categoria(

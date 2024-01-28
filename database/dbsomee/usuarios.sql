@@ -1,9 +1,6 @@
-/*tablas*/
 create table usuarios(
 	idusuario int primary key identity,
 	documento varchar(50) unique not null,
-	nombres varchar(100) null,
-	apellidos varchar(100) null,
 	nombreusuario varchar(50) not null,
 	correo varchar(100) not null,
 	clave varchar(150) not null,
@@ -13,25 +10,15 @@ create table usuarios(
 	fecharegistro datetime default getdate()
 )
 go
-insert into usuarios (documento, nombres, apellidos, nombreusuario, correo, clave, idrol) values
-	('12345678', 'lucas', 'pelucas', 'pepe', 'pepe@hotmail.pe', '12345', 1),
-	('12345688', 'pedro', 'pedron', 'pedrito', 'pedro@gmail.com', '12345', 2)
+insert into usuarios (documento, nombreusuario, correo, clave, idrol) values
+	('12345678', 'pepe', 'pepe@hotmail.pe', '12345', 1),
+	('12345688', 'pedro', 'pedro@gmail.com', '12345', 2)
 select * from usuarios
 go
-select u.idusuario, u.documento, u.nombres, u.apellidos, u.nombreusuario, u.correo, u.clave, u.estado, r.idrol, r.nombrerol from usuarios u
-inner join rol r on r.idrol = u.idrol
 
-ALTER TABLE usuarios
-ALTER COLUMN nombres varchar(100) NULL;
 
-ALTER TABLE usuarios
-ALTER COLUMN apellidos varchar(100) NULL;
-
-/*procedimientos*/
 create procedure spu_registrar_usuario(
 	@documento varchar(20),
-	@nombres varchar(100),
-	@apellidos varchar(100),
 	@nombreusuario varchar(50),
 	@correo varchar(100),
 	@clave varchar(50),
@@ -46,8 +33,8 @@ begin
 
 	if not exists(select * from usuarios where documento = @documento)
 	begin
-		insert into usuarios(documento, nombres, apellidos, nombreusuario, correo, clave, idrol) values
-		(@documento, @nombres, @apellidos, @nombreusuario, @correo, @clave, @idrol)
+		insert into usuarios(documento, nombreusuario, correo, clave, idrol) values
+		(@documento, @nombreusuario, @correo, @clave, @idrol)
 		set @idusuarioresultado = SCOPE_IDENTITY()
 	end
 	else
@@ -64,8 +51,6 @@ go
 create procedure spu_editar_usuario(
 	@idusuario int,
 	@documento varchar(50),
-	@nombres varchar(100),
-	@apellidos varchar(100),	
 	@nombreusuario varchar(50),
 	@correo varchar(100),
 	@clave varchar(50),
@@ -82,8 +67,6 @@ begin
 	begin
 		update  usuarios set
 		documento = @documento,
-		nombres = @nombres,
-		apellidos = @apellidos,
 		nombreusuario = @nombreusuario,
 		correo = @correo,
 		clave = @clave,

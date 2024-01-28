@@ -21,9 +21,10 @@ namespace datos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select p.idproducto, p.codigo, p.nombre, p.descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, p.stock, p.colores, p.numcaja, p.precioventa, p.temporada, p.descuento, p.total, CONVERT(VARCHAR(10), p.fecharegistro, 120)AS fecharegistro_producto from productosropa p");
+                    query.AppendLine("select idproducto, codigo, nombre, descripcion, c.idcategoria, c.nombrecategoria, tr.idtallaropa, tr.nombretalla, stock, colores, numcaja, precioventa, temporada, descuento, total, ubicacion, CONVERT(VARCHAR(10), p.fecharegistro, 120)AS fecharegistro_producto from productosropa p");
                     query.AppendLine("inner join categorias c on c.idcategoria = p.idcategoria");
                     query.AppendLine("inner join tallasropa tr on tr.idtallaropa = p.idtallaropa");
+                    query.AppendLine("where ubicacion = 'Almacen'");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -48,6 +49,7 @@ namespace datos
                                 temporada = dr["temporada"].ToString(),
                                 descuento = Convert.ToInt32(dr["descuento"]),
                                 total = Convert.ToDecimal(dr["total"]),
+                                ubicacion = dr["ubicacion"].ToString(),
                                 fecharegistro = dr["fecharegistro_producto"].ToString()
                             });
                         }
@@ -70,8 +72,6 @@ namespace datos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("spu_registrar_productoropa", oconexion);
-                    //cmd.Parameters.AddWithValue("rutaimagen", obj.rutaimagen);
-                    //cmd.Parameters.AddWithValue("nombreimagen", obj.nombreimagen);
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
@@ -83,6 +83,7 @@ namespace datos
                     cmd.Parameters.AddWithValue("precioventa", obj.precioventa);
                     cmd.Parameters.AddWithValue("temporada", obj.temporada);
                     cmd.Parameters.AddWithValue("descuento", obj.descuento);
+                    cmd.Parameters.AddWithValue("ubicacion", obj.ubicacion);
                     cmd.Parameters.AddWithValue("total", obj.total);
 
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -125,6 +126,8 @@ namespace datos
                     cmd.Parameters.AddWithValue("temporada", obj.temporada);
                     cmd.Parameters.AddWithValue("descuento", obj.descuento);
                     cmd.Parameters.AddWithValue("total", obj.total);
+                    cmd.Parameters.AddWithValue("ubicacion", obj.ubicacion);
+                    
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;

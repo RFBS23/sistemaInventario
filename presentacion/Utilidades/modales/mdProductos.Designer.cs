@@ -38,12 +38,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdProductos));
             this.listbuscar = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgproductosmodal = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.groupboxproductos = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnbuscar = new FontAwesome.Sharp.IconButton();
-            this.txtbusqueda = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cerrarlogin = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.bordesmodal = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +49,12 @@
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupboxproductos = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnbuscar = new FontAwesome.Sharp.IconButton();
+            this.txtbusqueda = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cerrarlogin = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.bordesmodal = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgproductosmodal)).BeginInit();
             this.groupboxproductos.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +164,115 @@
             this.dgproductosmodal.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgproductosmodal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgproductosmodal_CellContentClick);
             this.dgproductosmodal.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgproductos_CellPainting);
+            // 
+            // btnseleccionar
+            // 
+            this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btnseleccionar.FillWeight = 35.29412F;
+            this.btnseleccionar.HeaderText = "Seleccionar";
+            this.btnseleccionar.MinimumWidth = 6;
+            this.btnseleccionar.Name = "btnseleccionar";
+            this.btnseleccionar.ReadOnly = true;
+            this.btnseleccionar.Text = "";
+            this.btnseleccionar.Width = 150;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.HeaderText = "idusuario";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 127;
+            // 
+            // codigo
+            // 
+            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 105;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombre.FillWeight = 113.9045F;
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 112;
+            // 
+            // descripcion
+            // 
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.descripcion.FillWeight = 0.570844F;
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 150;
+            // 
+            // nombrecategoria
+            // 
+            this.nombrecategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombrecategoria.HeaderText = "Categoria";
+            this.nombrecategoria.MinimumWidth = 6;
+            this.nombrecategoria.Name = "nombrecategoria";
+            this.nombrecategoria.ReadOnly = true;
+            this.nombrecategoria.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.nombrecategoria.Width = 130;
+            // 
+            // nombretalla
+            // 
+            this.nombretalla.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombretalla.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombretalla.HeaderText = "Talla";
+            this.nombretalla.MinimumWidth = 6;
+            this.nombretalla.Name = "nombretalla";
+            this.nombretalla.ReadOnly = true;
+            this.nombretalla.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.nombretalla.Width = 83;
+            // 
+            // colores
+            // 
+            this.colores.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colores.HeaderText = "Color";
+            this.colores.MinimumWidth = 6;
+            this.colores.Name = "colores";
+            this.colores.ReadOnly = true;
+            this.colores.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colores.Width = 89;
+            // 
+            // stock
+            // 
+            this.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stock.HeaderText = "Stock en Almacen";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Width = 208;
+            // 
+            // descuento
+            // 
+            this.descuento.HeaderText = "Descuento";
+            this.descuento.MinimumWidth = 6;
+            this.descuento.Name = "descuento";
+            this.descuento.ReadOnly = true;
+            this.descuento.Width = 139;
+            // 
+            // precioventa
+            // 
+            this.precioventa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.precioventa.HeaderText = "Precio";
+            this.precioventa.MinimumWidth = 6;
+            this.precioventa.Name = "precioventa";
+            this.precioventa.ReadOnly = true;
+            this.precioventa.Width = 98;
             // 
             // groupboxproductos
             // 
@@ -277,115 +386,6 @@
             this.bordesmodal.HasFormShadow = false;
             this.bordesmodal.ResizeForm = false;
             this.bordesmodal.TransparentWhileDrag = true;
-            // 
-            // btnseleccionar
-            // 
-            this.btnseleccionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btnseleccionar.FillWeight = 35.29412F;
-            this.btnseleccionar.HeaderText = "Seleccionar";
-            this.btnseleccionar.MinimumWidth = 6;
-            this.btnseleccionar.Name = "btnseleccionar";
-            this.btnseleccionar.ReadOnly = true;
-            this.btnseleccionar.Text = "";
-            this.btnseleccionar.Width = 150;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.HeaderText = "idusuario";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 127;
-            // 
-            // codigo
-            // 
-            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.MinimumWidth = 6;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 105;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombre.FillWeight = 113.9045F;
-            this.nombre.HeaderText = "nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 112;
-            // 
-            // descripcion
-            // 
-            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.descripcion.FillWeight = 0.570844F;
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 150;
-            // 
-            // nombrecategoria
-            // 
-            this.nombrecategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombrecategoria.HeaderText = "Categoria";
-            this.nombrecategoria.MinimumWidth = 6;
-            this.nombrecategoria.Name = "nombrecategoria";
-            this.nombrecategoria.ReadOnly = true;
-            this.nombrecategoria.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.nombrecategoria.Width = 130;
-            // 
-            // nombretalla
-            // 
-            this.nombretalla.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombretalla.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nombretalla.HeaderText = "Talla";
-            this.nombretalla.MinimumWidth = 6;
-            this.nombretalla.Name = "nombretalla";
-            this.nombretalla.ReadOnly = true;
-            this.nombretalla.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.nombretalla.Width = 83;
-            // 
-            // colores
-            // 
-            this.colores.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colores.HeaderText = "Color";
-            this.colores.MinimumWidth = 6;
-            this.colores.Name = "colores";
-            this.colores.ReadOnly = true;
-            this.colores.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colores.Width = 89;
-            // 
-            // stock
-            // 
-            this.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stock.HeaderText = "Stock en Almacen";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 208;
-            // 
-            // descuento
-            // 
-            this.descuento.HeaderText = "Descuento";
-            this.descuento.MinimumWidth = 6;
-            this.descuento.Name = "descuento";
-            this.descuento.ReadOnly = true;
-            this.descuento.Width = 139;
-            // 
-            // precioventa
-            // 
-            this.precioventa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.precioventa.HeaderText = "Precio";
-            this.precioventa.MinimumWidth = 6;
-            this.precioventa.Name = "precioventa";
-            this.precioventa.ReadOnly = true;
-            this.precioventa.Width = 98;
             // 
             // mdProductos
             // 

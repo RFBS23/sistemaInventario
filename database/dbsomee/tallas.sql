@@ -1,4 +1,3 @@
-/*tablas*/
 create table tallasropa (
 	idtallaropa int primary key identity,
 	nombretalla varchar(50) not null,
@@ -10,7 +9,9 @@ insert into tallasropa (idcategoria, nombretalla) VALUES
 	(1, 'S'),
 	(1, 'M'),
 	(1, 'L'),
-	(1, 'xl');
+	(1, 'XL'),
+	(1, 'XS'),
+	(1, 'XXL');
 go
 SELECT * FROM tallasropa
 go
@@ -18,7 +19,7 @@ select idtallaropa, c.idcategoria, c.nombrecategoria, nombretalla from tallasrop
 inner join categorias c on c.idcategoria = tr.idcategoria
 go
 
-/*procedimiento*/
+/**/
 create procedure spu_registrar_tallasropa(
 	@nombretalla varchar(50),
 	@idcategoria int,

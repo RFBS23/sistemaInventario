@@ -1,4 +1,3 @@
-/*tablas*/
 create table ventas(
 	idventa int primary key identity,
 	idusuario int references usuarios(idusuario),
@@ -12,7 +11,7 @@ create table ventas(
 	fecharegistro datetime default getdate()
 )
 go
-select * from ventas where numerodocumento = '00001'
+select * from ventas where numerodocumento = '00002'
 go
 
 create table detalle_venta(
@@ -28,18 +27,7 @@ go
 select * from detalle_venta
 go
 
-select v.idventa, u.nombreusuario, v.documentocliente, v.nombrecliente, v.tipodocumento,
-v.numerodocumento, v.montopago, v.montocambio, v.montototal, convert(char(10), v.fecharegistro, 103)[FechaRegistro] from ventas v
-inner join usuarios u on u.idusuario = v.idusuario
-where v.numerodocumento = '00001'
 
-select p.nombre + ' ' + p.descripcion + ' ' + p.colores + ' ' + tr.nombretalla as productos, p.descuento, dv.precioventa, dv.cantidad, dv.subtotal from detalle_venta dv
-inner join productosropa p on p.idproducto = dv.idproducto
-inner join tallasropa tr on tr.idtallaropa = p.idtallaropa
-where dv.idventa = '00001'
-
-
-/*procediminetos*/
 create type [dbo].[EDetalle_Venta] as table(
 	[idproducto] int null,
 	[precioventa] decimal(10,2) null,

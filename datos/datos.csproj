@@ -46,7 +46,6 @@
     <Compile Include="D_Categorias.cs" />
     <Compile Include="D_Categorias.cs" />
     <Compile Include="D_Categorias.cs" />
-    <Compile Include="D_Clientes.cs" />
     <Compile Include="D_Negocios.cs" />
     <Compile Include="D_Permisos.cs" />
     <Compile Include="D_Productos.cs" />
@@ -60,7 +59,6 @@
     <Compile Include="D_Usuarios.cs" />
     <Compile Include="D_Usuarios.cs" />
     <Compile Include="D_Ventas.cs" />
-    <Compile Include="D_Ventastienda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

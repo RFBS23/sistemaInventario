@@ -1,4 +1,3 @@
-/*tablas*/
 create table proveedores(
 	idproveedor int primary key identity,
 	nombreproveedor varchar(225),
@@ -11,8 +10,8 @@ create table proveedores(
 go
 insert into proveedores (nombreproveedor, documento, direccion, correo, telefono) values ('provedor prueba s.a.c', '123456789', '1234567898787', 'prueba@hotmailempresa.pe', '987654321')
 select idproveedor, nombreproveedor, documento, direccion, correo, telefono from proveedores
+go
 
-/*procedimiento*/
 create procedure spu_registrar_proveedores(
 	@nombreproveedor varchar(225),
 	@documento varchar(50),

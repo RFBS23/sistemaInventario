@@ -41,7 +41,7 @@ namespace presentacion
             LlenarComboBox();
             /**/
             txtstock.Text = "0";
-            txtdecuento.Text = "0.00";
+            txtdecuento.Text = "0";
             txttotal.Text = "0.00";
             txtprecioventa.Text = "0.00";
             /**/
@@ -81,11 +81,70 @@ namespace presentacion
                 listbuscarC.SelectedIndex = 0;
             }
 
+            foreach (DataGridViewColumn columna in dgtienda.Columns)
+            {
+                if (columna.Visible == true)
+                {
+                    listabucartienda.Items.Add(new opcionesComboBox() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+
+                listabucartienda.DisplayMember = "Texto";
+                listabucartienda.ValueMember = "Valor";
+                listabucartienda.SelectedIndex = 0;
+            }
+
             /*lista de productos en la tabla*/
             List<Productos> listaProductos = new N_Productos().Listar();
             foreach (Productos item in listaProductos)
             {
-                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.temporada, item.descuento, item.precioventa, item.total, item.fecharegistro });
+                dgproductos.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.temporada, item.descuento, item.precioventa, item.total, item.ubicacion, item.fecharegistro });
+            }
+
+
+            List<Productos> lista = new N_Ptienda().Listar();
+            foreach (Productos item in lista)
+            {
+                dgtienda.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.idcategoria, item.oCategorias.nombrecategoria, item.oTallasropa.idtallaropa, item.oTallasropa.nombretalla, item.colores, item.stock, item.numcaja, item.temporada, item.descuento, item.precioventa, item.total, item.ubicacion, item.fecharegistro });
+            }
+
+            rbAlmacen_CheckedChanged(rbAlmacen, EventArgs.Empty);
+            if (rbAlmacen.Checked)
+            {
+                dgproductos.Visible = true;
+                btnexcel.Visible = true;
+                listbuscarC.Visible = true;
+                txtbusqueda.Visible = true;
+                btneliminar.Visible = true;
+                btnguardar.Visible = true;
+
+                dgtienda.Visible = false;
+                btnexceltienda.Visible = false;
+                txttienda.Visible = false;
+                listabucartienda.Visible = false;
+                btnrtienda.Visible = false;
+                btndeletetienda.Visible = false;
+
+                Limpiar();
+
+            }
+            else if (rbTienda.Checked)
+            {
+                dgtienda.Visible = true;
+                btnexceltienda.Visible = true;
+                txttienda.Visible = true;
+                listabucartienda.Visible = true;
+                btnrtienda.Visible = true;
+                btndeletetienda.Visible = true;
+
+                dgproductos.Visible = false;
+                btnexcel.Visible = false;
+                listbuscarC.Visible = false;
+                txtbusqueda.Visible = false;
+                btneliminar.Visible = false;
+                btnguardar.Visible = false;
+
+                Limpiar();
+
             }
 
         }
@@ -150,6 +209,7 @@ namespace presentacion
                     txtdecuento.Text = dgproductos.Rows[indice].Cells["descuento"].Value.ToString();
                     txtprecioventa.Text = dgproductos.Rows[indice].Cells["precioventa"].Value.ToString();
                     txttotal.Text = dgproductos.Rows[indice].Cells["total"].Value.ToString();
+                    cbubicacion.Text = dgproductos.Rows[indice].Cells["ubicacion"].Value.ToString();
                 }
             }
         }
@@ -181,8 +241,9 @@ namespace presentacion
             txtcolores.Text = "";
             txtstock.Text = "0";
             txtnumcaja.Text = "";
-            cbestaciones.Text = "";
-            txtdecuento.Text = "0.00";
+            cbestaciones.SelectedIndex = 0;
+            cbubicacion.SelectedIndex = 0;
+            txtdecuento.Text = "0";
             txttotal.Text = "0.00";
             txtprecioventa.Text = "0.00";
 
@@ -209,6 +270,7 @@ namespace presentacion
                 descuento = Convert.ToInt32(txtdecuento.Text),
                 precioventa = Convert.ToDecimal(txtprecioventa.Text),
                 total = Convert.ToDecimal(txttotal.Text),
+                ubicacion = cbubicacion.Text,
                 fecharegistro = txtfecha.Text,
             };
             if (objproductos.idproducto == 0)
@@ -227,8 +289,9 @@ namespace presentacion
                         txtnumcaja.Text,
                         cbestaciones.Text,
                         txtdecuento.Text,
-                        txttotal.Text,
                         Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"),
+                        txttotal.Text,
+                        cbubicacion.Text,
                         txtfecha.Text,
                     });
                     Limpiar();
@@ -259,6 +322,7 @@ namespace presentacion
                     row.Cells["descuento"].Value = txtdecuento.Text;
                     row.Cells["precioventa"].Value = Convert.ToDecimal(txtprecioventa.Text).ToString("0.00");
                     row.Cells["total"].Value = txttotal.Text;
+                    row.Cells["ubicacion"].Value = cbubicacion.Text;
                     Limpiar();
                 }
                 else
@@ -346,6 +410,7 @@ namespace presentacion
                             row.Cells[14].Value.ToString(),
                             row.Cells[15].Value.ToString(),
                             row.Cells[16].Value.ToString(),
+                            row.Cells[17].Value.ToString(),
                         });
                 }
                 SaveFileDialog savefile = new SaveFileDialog();
@@ -482,5 +547,310 @@ namespace presentacion
             }
         }
 
+        private void rbAlmacen_CheckedChanged(object sender, EventArgs e)
+        {
+            dgproductos.Visible = true;
+            btnexcel.Visible = true;
+            listbuscarC.Visible = true;
+            txtbusqueda.Visible = true;
+            btneliminar.Visible = true;
+            btnguardar.Visible = true;
+
+            dgtienda.Visible = false;
+            btnexceltienda.Visible = false;
+            txttienda.Visible = false;
+            listabucartienda.Visible = false;
+            btnrtienda.Visible = false;
+            btndeletetienda.Visible = false;
+
+            Limpiar();
+        }
+
+        private void rbTienda_CheckedChanged(object sender, EventArgs e)
+        {
+            dgtienda.Visible = true;
+            btnexceltienda.Visible = true;
+            txttienda.Visible = true;
+            listabucartienda.Visible = true;
+            btnrtienda.Visible = true;
+            btndeletetienda.Visible = true;
+
+            dgproductos.Visible = false;
+            btnexcel.Visible = false;
+            listbuscarC.Visible = false;
+            txtbusqueda.Visible = false;
+            btneliminar.Visible = false;
+            btnguardar.Visible = false;
+
+            Limpiar();
+        }
+
+        private void dgtienda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgtienda.Columns[e.ColumnIndex].Name == "btnselec")
+            {
+                int indice = e.RowIndex;
+                if (indice >= 0)
+                {
+                    txtindice.Text = indice.ToString();
+                    txtid.Text = dgtienda.Rows[indice].Cells["idprod"].Value.ToString();
+                    txtcodigo.Text = dgtienda.Rows[indice].Cells["codigotienda"].Value.ToString();
+                    txtnombre.Text = dgtienda.Rows[indice].Cells["nombretienda"].Value.ToString();
+                    txtdescripcion.Text = dgtienda.Rows[indice].Cells["desctienda"].Value.ToString();
+
+                    foreach (opcionesComboBox ocb in listacategoria.Items)
+                    {
+                        if (Convert.ToInt32(ocb.Valor) == Convert.ToInt32(dgtienda.Rows[indice].Cells["idcat"].Value))
+                        {
+                            int indice_combo = listacategoria.Items.IndexOf(ocb);
+                            listacategoria.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+
+                    foreach (opcionesComboBox otb in listatallas.Items)
+                    {
+                        if (Convert.ToInt32(otb.Valor) == Convert.ToInt32(dgtienda.Rows[indice].Cells["idtalla"].Value))
+                        {
+                            int indice_combo = listatallas.Items.IndexOf(otb);
+                            listatallas.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+
+                    txtcolores.Text = dgtienda.Rows[indice].Cells["colortienda"].Value.ToString();
+                    txtstock.Text = dgtienda.Rows[indice].Cells["stocktienda"].Value.ToString();
+                    txtnumcaja.Text = dgtienda.Rows[indice].Cells["numcajatienda"].Value.ToString();
+                    cbestaciones.Text = dgtienda.Rows[indice].Cells["temporadatienda"].Value.ToString();
+                    txtdecuento.Text = dgtienda.Rows[indice].Cells["descuentotienda"].Value.ToString();
+                    txtprecioventa.Text = dgtienda.Rows[indice].Cells["preciotienda"].Value.ToString();
+                    txttotal.Text = dgtienda.Rows[indice].Cells["totaltienda"].Value.ToString();
+                    cbubicacion.Text = dgtienda.Rows[indice].Cells["ubitienda"].Value.ToString();
+                }
+            }
+        }
+
+        private void dgtienda_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.check1.Width;
+                var h = Properties.Resources.check1.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.check1, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void dgtienda_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgtienda.Columns[e.ColumnIndex].Name == "stocktienda")
+            {
+                if (e.Value != null && e.Value != DBNull.Value)
+                {
+                    int stockValue = Convert.ToInt32(e.Value);
+
+                    // Stock mayor a 20
+                    if (stockValue >= 20)
+                    {
+                        e.CellStyle.BackColor = Color.FromArgb(129, 250, 123);
+                        e.CellStyle.ForeColor = Color.Black;
+                    }
+                    // Stock menor o igual a 19
+                    else if (stockValue <= 19)
+                    {
+                        e.CellStyle.BackColor = Color.Salmon;
+                        e.CellStyle.ForeColor = Color.Red;
+                    }
+                }
+            }
+        }
+
+        private void btnexceltienda_Click(object sender, EventArgs e)
+        {
+            if (dgtienda.Rows.Count < 1)
+            {
+                MessageBox.Show("NO HE PODIDO ENCONTRAR DATOS PARA PODER EXPORTARLOS", "VALENT FRANCE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataTable dtt = new DataTable();
+                foreach (DataGridViewColumn columna in dgtienda.Columns)
+                {
+                    if (columna.HeaderText != "" && columna.Visible)
+                        dtt.Columns.Add(columna.HeaderText, typeof(string));
+                }
+
+                foreach (DataGridViewRow row in dgtienda.Rows)
+                {
+                    if (row.Visible)
+                        dtt.Rows.Add(new object[] {
+                            row.Cells[0].Value.ToString(),
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            row.Cells[8].Value.ToString(),
+                            row.Cells[9].Value.ToString(),
+                            row.Cells[10].Value.ToString(),
+                            row.Cells[11].Value.ToString(),
+                            row.Cells[12].Value.ToString(),
+                            row.Cells[13].Value.ToString(),
+                            row.Cells[14].Value.ToString(),
+                            row.Cells[15].Value.ToString(),
+                            row.Cells[16].Value.ToString(),
+                            row.Cells[17].Value.ToString(),
+                        });
+                }
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.FileName = string.Format("ReporteProductoTienda_{0}.xlsx", DateTime.Now.ToString("dd-MM-yyyy"));
+                savefile.Filter = "Excel Files | *.xlsx";
+                if (savefile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dtt, "Informe de productos en stock");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(savefile.FileName);
+                        MessageBox.Show("REPORTE GENERADO EXITOSAMENTE", "VALENT FRANCE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                System.Diagnostics.Process.Start(savefile.FileName);
+            }
+        }
+
+        private void txttienda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listabucartienda.SelectedItem).Valor.ToString();
+            if (dgtienda.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgtienda.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void btndeletetienda_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtid.Text) != 0)
+            {
+                if (MessageBox.Show("¿ESTA SEGURO DE ELIMINAR A ESTE PRODUCTO?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Productos objproductos = new Productos()
+                    {
+                        idproducto = Convert.ToInt32(txtid.Text)
+                    };
+                    bool respuesta = new N_Productos().Eliminar(objproductos, out mensaje);
+                    if (respuesta)
+                    {
+                        dgtienda.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                Limpiar();
+            }
+        }
+
+        private void btnrtienda_Click(object sender, EventArgs e)
+        {
+            decimal precioventa = 0;
+            string mensaje = string.Empty;
+
+            Productos objproductos = new Productos()
+            {
+                idproducto = Convert.ToInt32(txtid.Text),
+                codigo = txtcodigo.Text,
+                nombre = txtnombre.Text,
+                descripcion = txtdescripcion.Text,
+                oCategorias = new Categorias() { idcategoria = Convert.ToInt32(((opcionesComboBox)listacategoria.SelectedItem).Valor) },
+                oTallasropa = new Tallasropa() { idtallaropa = Convert.ToInt32(((opcionesComboBox)listatallas.SelectedItem).Valor) },
+                colores = txtcolores.Text,
+                stock = Convert.ToInt32(txtstock.Text),
+                numcaja = txtnumcaja.Text,
+                temporada = cbestaciones.Text,
+                descuento = Convert.ToInt32(txtdecuento.Text),
+                precioventa = Convert.ToDecimal(txtprecioventa.Text),
+                total = Convert.ToDecimal(txttotal.Text),
+                ubicacion = cbubicacion.Text,
+                fecharegistro = txtfecha.Text,
+            };
+            if (objproductos.idproducto == 0)
+            {
+                int idproductogenerado = new N_Productos().Registrar(objproductos, out mensaje);
+
+                if (idproductogenerado != 0)
+                {
+                    dgproductos.Rows.Add(new object[] {"", idproductogenerado, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
+                        ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
+                        ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
+                        ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString(),
+                        ((opcionesComboBox)listatallas.SelectedItem).Texto.ToString(),
+                        txtcolores.Text,
+                        txtstock.Text,
+                        txtnumcaja.Text,
+                        cbestaciones.Text,
+                        txtdecuento.Text,
+                        Convert.ToDecimal(txtprecioventa.Text).ToString("0.00"),
+                        txttotal.Text,
+                        cbubicacion.Text,
+                        txtfecha.Text,
+                    });
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+            else
+            {
+                bool resultado = new N_Productos().Editar(objproductos, out mensaje);
+                if (resultado)
+                {
+                    DataGridViewRow row = dgtienda.Rows[Convert.ToInt32(txtindice.Text)];
+                    row.Cells["idprod"].Value = txtid.Text;
+                    row.Cells["codigotienda"].Value = txtcodigo.Text;
+                    row.Cells["nombretienda"].Value = txtnombre.Text;
+                    row.Cells["desctienda"].Value = txtdescripcion.Text;
+                    row.Cells["idcat"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString();
+                    row.Cells["cattienda"].Value = ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString();
+                    row.Cells["idtalla"].Value = ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString();
+                    row.Cells["tallatienda"].Value = ((opcionesComboBox)listatallas.SelectedItem).Texto.ToString();
+                    row.Cells["colortienda"].Value = txtcolores.Text;
+                    row.Cells["stocktienda"].Value = txtstock.Text;
+                    row.Cells["numcajatienda"].Value = txtnumcaja.Text;
+                    row.Cells["temporadatienda"].Value = cbestaciones.Text;
+                    row.Cells["descuentotienda"].Value = txtdecuento.Text;
+                    row.Cells["preciotienda"].Value = Convert.ToDecimal(txtprecioventa.Text).ToString("0.00");
+                    row.Cells["totaltienda"].Value = txttotal.Text;
+                    row.Cells["ubitienda"].Value = cbubicacion.Text;
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+        }
     }
 }

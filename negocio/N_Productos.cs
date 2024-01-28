@@ -45,9 +45,17 @@ namespace negocio
             {
                 Mensaje += "• El numero de caja y/o bolsa esta vacio \n";
             }
+            if (obj.temporada == "")
+            {
+                Mensaje += "• Ingrese la temporada \n";
+            }
             if (obj.precioventa <= 0)
             {
                 Mensaje += "• El precio del producto debe ser mayor a 0 \n";
+            }
+            if (obj.ubicacion == "")
+            {
+                Mensaje += "• Debe Seleccionar la Ubicacion del productos \n";
             }
             if (Mensaje != string.Empty)
             {
@@ -85,9 +93,17 @@ namespace negocio
             {
                 Mensaje += "• El numero de caja y/o bolsa esta vacio \n";
             }
+            if (obj.temporada == "")
+            {
+                Mensaje += "• Ingrese la temporada \n";
+            }
             if (obj.precioventa <= 0)
             {
                 Mensaje += "• El precio del producto debe ser mayor a 0 \n";
+            }
+            if (obj.ubicacion == "")
+            {
+                Mensaje += "• Debe Seleccionar la Ubicacion del productos \n";
             }
             if (Mensaje != string.Empty)
             {

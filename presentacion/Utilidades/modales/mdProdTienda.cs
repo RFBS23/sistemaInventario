@@ -15,7 +15,7 @@ namespace presentacion.Utilidades.modales
 {
     public partial class mdProdTienda : Form
     {
-        public Productostienda _Productostienda { get; set; }
+        public Productos _ProductosTienda { get; set; }
 
         public mdProdTienda()
         {
@@ -29,7 +29,7 @@ namespace presentacion.Utilidades.modales
 
         private void mdProdTienda_Load(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn columna in dgverproductostienda.Columns)
+            foreach (DataGridViewColumn columna in dgprotiendamodal.Columns)
             {
                 if (columna.Visible == true)
                 {
@@ -41,45 +41,35 @@ namespace presentacion.Utilidades.modales
                 listbuscar.SelectedIndex = 0;
             }
 
-            List<Productostienda> listaProductostienda = new N_Productostienda().Listar();
-            
-            foreach (Productostienda item in listaProductostienda)
+            List<Productos> listaProductos = new N_Ptienda().Listar();
+            foreach (Productos item in listaProductos)
             {
-                // Buscar si el producto ya existe en el DataGridView
-                DataGridViewRow existingRow = dgverproductostienda.Rows
-                    .Cast<DataGridViewRow>()
-                    .Where(r => Convert.ToInt32(r.Cells["idproductotienda"].Value) == item.oProductos.idproducto)
-                    .FirstOrDefault();
-
-                if (existingRow != null)
-                {
-                    // Si el producto ya existe, actualiza la cantidad
-                    int existingIndex = existingRow.Index;
-                    int newCantidad = Convert.ToInt32(existingRow.Cells["stock"].Value) + item.cantidad;
-                    existingRow.Cells["stock"].Value = newCantidad;
-                }
-                else
-                {
-                    // Si el producto no existe, agrega una nueva fila
-                    dgverproductostienda.Rows.Add(new object[] {
-                        "",
-                        item.oProductos.idproducto,
-                        item.oProductos.codigo,
-                        item.oProductos.nombre,
-                        item.oProductos.descripcion,
-                        item.oProductos.oCategorias.nombrecategoria,
-                        item.oProductos.oTallasropa.nombretalla,
-                        item.oProductos.colores,
-                        item.cantidad,
-                        item.oProductos.precioventa,
-                        item.oProductos.descuento,
-                    });
-                }
+                dgprotiendamodal.Rows.Add(new object[] { "", item.idproducto, item.codigo, item.nombre, item.descripcion, item.oCategorias.nombrecategoria, item.oTallasropa.nombretalla, item.colores, item.stock, item.descuento, item.precioventa });
             }
-            /**/
         }
 
-        private void dgverproductostienda_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void groupboxproductos_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
+            if (dgprotiendamodal.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgprotiendamodal.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void dgproductosmodal_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
@@ -98,42 +88,12 @@ namespace presentacion.Utilidades.modales
             }
         }
 
-        private void dgverproductostienda_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int iRow = e.RowIndex;
-            int iColum = e.ColumnIndex;
-
-            if (iRow >= 0 && iColum >= 0 && dgverproductostienda.Columns[e.ColumnIndex].Name == "btnseleccionar")
-            {
-                _Productostienda = new Productostienda()
-                {
-                    idproductotienda = Convert.ToInt32(dgverproductostienda.Rows[iRow].Cells["idproductotienda"].Value.ToString()),
-                    oProductos = new Productos()
-                    {
-                        codigo = dgverproductostienda.Rows[iRow].Cells["codigo"].Value.ToString(),
-                        nombre = dgverproductostienda.Rows[iRow].Cells["nombre"].Value.ToString(),
-                        descripcion = dgverproductostienda.Rows[iRow].Cells["descripcion"].Value.ToString(),
-                        oCategorias = new Categorias() { nombrecategoria = dgverproductostienda.Rows[iRow].Cells["nombrecategoria"].Value.ToString() },
-                        oTallasropa = new Tallasropa() { nombretalla = dgverproductostienda.Rows[iRow].Cells["nombretalla"].Value.ToString() },
-                        colores = dgverproductostienda.Rows[iRow].Cells["colores"].Value?.ToString(),
-                        stock = Convert.ToInt32(dgverproductostienda.Rows[iRow].Cells["stock"].Value?.ToString()),
-                        precioventa = Convert.ToDecimal(dgverproductostienda.Rows[iRow].Cells["precioventa"].Value?.ToString()),
-                        descuento = Convert.ToInt32(dgverproductostienda.Rows[iRow].Cells["descuento"].Value?.ToString()),
-                    },
-                    // Aquí puedes continuar con otras propiedades si las tienes
-                };
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-        }
-
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
-            if (dgverproductostienda.Rows.Count > 0)
+            if (dgprotiendamodal.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgverproductostienda.Rows)
+                foreach (DataGridViewRow row in dgprotiendamodal.Rows)
                 {
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                         row.Visible = true;
@@ -143,24 +103,28 @@ namespace presentacion.Utilidades.modales
             }
         }
 
-        private void guna2GroupBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
 
-        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        private void dgproductosmodal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            String columnaFiltro = ((opcionesComboBox)listbuscar.SelectedItem).Valor.ToString();
-            if (dgverproductostienda.Rows.Count > 0)
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+            if (dgprotiendamodal.Columns[e.ColumnIndex].Name == "btnseleccionar")
             {
-                foreach (DataGridViewRow row in dgverproductostienda.Rows)
+                _ProductosTienda = new Productos()
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
-                        row.Visible = true;
-                    else
-                        row.Visible = false;
-                }
+                    idproducto = Convert.ToInt32(dgprotiendamodal.Rows[iRow].Cells["id"].Value.ToString()),
+                    codigo = dgprotiendamodal.Rows[iRow].Cells["codigo"].Value.ToString(),
+                    nombre = dgprotiendamodal.Rows[iRow].Cells["nombre"].Value.ToString(),
+                    descripcion = dgprotiendamodal.Rows[iRow].Cells["descripcion"].Value.ToString(),
+                    oCategorias = new Categorias() { nombrecategoria = dgprotiendamodal.Rows[iRow].Cells["nombrecategoria"].Value.ToString() },
+                    oTallasropa = new Tallasropa() { nombretalla = dgprotiendamodal.Rows[iRow].Cells["nombretalla"].Value.ToString() },
+                    colores = dgprotiendamodal.Rows[iRow].Cells["colores"].Value?.ToString(),
+                    stock = Convert.ToInt32(dgprotiendamodal.Rows[iRow].Cells["stock"].Value?.ToString()),
+                    descuento = Convert.ToInt32(dgprotiendamodal.Rows[iRow].Cells["descuento"].Value?.ToString()),
+                    precioventa = Convert.ToDecimal(dgprotiendamodal.Rows[iRow].Cells["precioventa"].Value?.ToString()),
+                };
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }

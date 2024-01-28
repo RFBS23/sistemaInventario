@@ -23,6 +23,7 @@ namespace entidad
         public string temporada { get; set; }
         public int descuento { get; set; }
         public decimal total {  get; set; }
+        public string ubicacion { get; set; }
         public string fecharegistro { get; set; }
     }
 }

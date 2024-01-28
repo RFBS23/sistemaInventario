@@ -77,29 +77,27 @@ C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.ResolveComReference.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Dashboard.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmCategorias.resources
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmClientes.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmConfiguracion.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmDetallesVentas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmNegocio.resources
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmProdtiendas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmProductos.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmProveedores.resources
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmPTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmReportesVentas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmSplash.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmTallas.resources
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmUsuarios.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmVentas.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.frmVentasTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.login.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\CustomAlertBoxDemo.Form_Alert.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Properties.Resources.resources
-C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdClientes.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProdTienda.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProductos.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.Utilidades.modales.mdProveedores.resources
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.GenerateResource.cache
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.CoreCompileInputs.cache
+C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\Inventario - Valent France.TrustInfo.xml
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\Inventario - Valent France.exe.manifest
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\Inventario - Valent France.application
 C:\Users\fabri\Documents\Programacion\C-Sharp\sistemainventario\presentacion\obj\Debug\presentacion.csproj.CopyComplete
