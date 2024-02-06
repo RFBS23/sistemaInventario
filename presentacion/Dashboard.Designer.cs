@@ -51,6 +51,9 @@
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.submenuprovventas = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuDetVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuventastienda = new FontAwesome.Sharp.IconMenuItem();
+            this.subventienda = new System.Windows.Forms.ToolStripMenuItem();
+            this.detventas = new System.Windows.Forms.ToolStripMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
             this.menunegocio = new FontAwesome.Sharp.IconMenuItem();
             this.menuconfiguracion = new FontAwesome.Sharp.IconMenuItem();
@@ -73,15 +76,16 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.footer = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.menuventastienda = new FontAwesome.Sharp.IconMenuItem();
-            this.subventienda = new System.Windows.Forms.ToolStripMenuItem();
-            this.detventas = new System.Windows.Forms.ToolStripMenuItem();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imguser)).BeginInit();
@@ -97,6 +101,8 @@
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
             this.footer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -384,6 +390,38 @@
             this.submenuDetVentas.Text = "Detalles de Ventas";
             this.submenuDetVentas.Click += new System.EventHandler(this.submenuDetVentas_Click);
             // 
+            // menuventastienda
+            // 
+            this.menuventastienda.AutoSize = false;
+            this.menuventastienda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subventienda,
+            this.detventas});
+            this.menuventastienda.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuventastienda.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.menuventastienda.IconColor = System.Drawing.Color.Black;
+            this.menuventastienda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuventastienda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuventastienda.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuventastienda.Name = "menuventastienda";
+            this.menuventastienda.Size = new System.Drawing.Size(240, 70);
+            this.menuventastienda.Text = "Ventas";
+            // 
+            // subventienda
+            // 
+            this.subventienda.Image = global::presentacion.Properties.Resources.puntero;
+            this.subventienda.Name = "subventienda";
+            this.subventienda.Size = new System.Drawing.Size(298, 34);
+            this.subventienda.Text = "Ventas";
+            this.subventienda.Click += new System.EventHandler(this.subventienda_Click);
+            // 
+            // detventas
+            // 
+            this.detventas.Image = ((System.Drawing.Image)(resources.GetObject("detventas.Image")));
+            this.detventas.Name = "detventas";
+            this.detventas.Size = new System.Drawing.Size(298, 34);
+            this.detventas.Text = "Detalles de Ventas";
+            this.detventas.Click += new System.EventHandler(this.detventas_Click);
+            // 
             // menureportes
             // 
             this.menureportes.AutoSize = false;
@@ -655,38 +693,80 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel1.Controls.Add(this.tableLayoutPanel3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1338, 118);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // guna2HtmlLabel3
+            // tableLayoutPanel3
             // 
-            this.guna2HtmlLabel3.AutoSize = false;
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("MesloLGSDZ NF", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(693, 71);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(692, 79);
-            this.guna2HtmlLabel3.TabIndex = 1;
-            this.guna2HtmlLabel3.Text = "v 1.0.3";
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.guna2Panel9, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.guna2Panel8, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.guna2Panel7, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1338, 118);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // guna2HtmlLabel2
+            // guna2Panel9
             // 
-            this.guna2HtmlLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel9.Location = new System.Drawing.Point(895, 3);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(440, 112);
+            this.guna2Panel9.TabIndex = 2;
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.label2);
+            this.guna2Panel8.Controls.Add(this.label1);
+            this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel8.Location = new System.Drawing.Point(449, 3);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(440, 112);
+            this.guna2Panel8.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(278, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "V. 1.1.2.15";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2HtmlLabel2.AutoSize = false;
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("MesloLGL Nerd Font", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(434, 28);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(1243, 112);
-            this.guna2HtmlLabel2.TabIndex = 0;
-            this.guna2HtmlLabel2.Text = "SISTEMA DE INVENTARIO";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(49, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SISTEMA INVENTARIOS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel7.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(440, 112);
+            this.guna2Panel7.TabIndex = 0;
             // 
             // footer
             // 
@@ -737,38 +817,6 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // menuventastienda
-            // 
-            this.menuventastienda.AutoSize = false;
-            this.menuventastienda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subventienda,
-            this.detventas});
-            this.menuventastienda.Font = new System.Drawing.Font("MesloLGL NF", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuventastienda.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.menuventastienda.IconColor = System.Drawing.Color.Black;
-            this.menuventastienda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuventastienda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuventastienda.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuventastienda.Name = "menuventastienda";
-            this.menuventastienda.Size = new System.Drawing.Size(240, 70);
-            this.menuventastienda.Text = "Ventas";
-            // 
-            // subventienda
-            // 
-            this.subventienda.Image = global::presentacion.Properties.Resources.puntero;
-            this.subventienda.Name = "subventienda";
-            this.subventienda.Size = new System.Drawing.Size(298, 34);
-            this.subventienda.Text = "Ventas";
-            this.subventienda.Click += new System.EventHandler(this.subventienda_Click);
-            // 
-            // detventas
-            // 
-            this.detventas.Image = ((System.Drawing.Image)(resources.GetObject("detventas.Image")));
-            this.detventas.Name = "detventas";
-            this.detventas.Size = new System.Drawing.Size(298, 34);
-            this.detventas.Text = "Detalles de Ventas";
-            this.detventas.Click += new System.EventHandler(this.detventas_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -800,6 +848,9 @@
             this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
             this.footer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -840,8 +891,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
@@ -858,5 +907,11 @@
         private FontAwesome.Sharp.IconMenuItem menuventastienda;
         private System.Windows.Forms.ToolStripMenuItem subventienda;
         private System.Windows.Forms.ToolStripMenuItem detventas;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private System.Windows.Forms.Label label2;
     }
 }

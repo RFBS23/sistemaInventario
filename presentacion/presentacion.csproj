@@ -27,8 +27,8 @@
     <ErrorReportUrl>https://github.com/RFBS23/sistemaInventario/issues/1</ErrorReportUrl>
     <ProductName>Inventario - Valent France</ProductName>
     <PublisherName>FabriDev</PublisherName>
-    <ApplicationRevision>12</ApplicationRevision>
-    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

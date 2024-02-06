@@ -29,7 +29,6 @@ namespace presentacion
         {
             InitializeComponent();
 
-            txtdecuento.TextChanged += txtdecuento_TextChanged;
 
             txtprecioventa.TextChanged += txtprecioventa_TextChanged;
             txtstock.TextChanged += txtstock_TextChanged;
@@ -509,24 +508,7 @@ namespace presentacion
             // Construir la cadena con el nombre y el año
             return $"{nombreEstacion} - {año}";
         }
-
-        private void txtdecuento_TextChanged(object sender, EventArgs e)
-        {
-            calculardescuento();
-        }
-
-        private void calculardescuento()
-        {
-            if (decimal.TryParse(txtprecioventa.Text, out decimal precioVenta) && decimal.TryParse(txtdecuento.Text, out decimal descuento))
-            {
-                // Calcular el nuevo precio con descuento
-                decimal nuevoPrecio = precioVenta - (precioVenta * descuento / 100);
-
-                // Mostrar el nuevo precio en txtprecioventa
-                txtprecioventa.Text = nuevoPrecio.ToString("0.00");
-            }
-        }
-
+                
         private void txtprecioventa_TextChanged(object sender, EventArgs e)
         {
             CalcularTotal();
@@ -731,21 +713,6 @@ namespace presentacion
             }
         }
 
-        private void txttienda_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            String columnaFiltro = ((opcionesComboBox)listabucartienda.SelectedItem).Valor.ToString();
-            if (dgtienda.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgtienda.Rows)
-                {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
-                        row.Visible = true;
-                    else
-                        row.Visible = false;
-                }
-            }
-        }
-
         private void btndeletetienda_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -800,7 +767,7 @@ namespace presentacion
 
                 if (idproductogenerado != 0)
                 {
-                    dgproductos.Rows.Add(new object[] {"", idproductogenerado, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
+                    dgtienda.Rows.Add(new object[] {"", idproductogenerado, txtcodigo.Text, txtnombre.Text, txtdescripcion.Text,
                         ((opcionesComboBox)listacategoria.SelectedItem).Valor.ToString(),
                         ((opcionesComboBox)listacategoria.SelectedItem).Texto.ToString(),
                         ((opcionesComboBox)listatallas.SelectedItem).Valor.ToString(),
@@ -849,6 +816,21 @@ namespace presentacion
                 else
                 {
                     MessageBox.Show(mensaje);
+                }
+            }
+        }
+
+        private void txttienda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String columnaFiltro = ((opcionesComboBox)listabucartienda.SelectedItem).Valor.ToString();
+            if (dgtienda.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgtienda.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txttienda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
                 }
             }
         }

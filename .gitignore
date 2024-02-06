@@ -1,12 +1,11 @@
 # escluyendo la carpeta del instalador
-Instalador
-Database
+packages
+database
+assets
 
 # excluimos los archivos con la extension de texto
 *.txt
 readme.txt
-updates.txt
-
 
 #excluimos la licencia del software
 *.rtf

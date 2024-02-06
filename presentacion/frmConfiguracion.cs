@@ -20,6 +20,7 @@ namespace presentacion
         {
             InitializeComponent();
 
+            /*
             WebClient webClient = new WebClient();
             var client = new WebClient();
             if (!webClient.DownloadString("https://www.dropbox.com/scl/fi/1msft52mx4qs6envwgp1m/updates.txt?rlkey=lzrl141ifv2mbixdr58szlqtu&dl=1").Contains("1.0.0"))
@@ -36,15 +37,13 @@ namespace presentacion
                         Process process = new Process();
                         process.StartInfo.FileName = "msiexec";
                         process.StartInfo.Arguments = String.Format("/i Inventario - Valent France-x64.msi");
-
                         this.Close();
                         process.Start();
                     } catch
                     {
-
                     }
                 }
-            }
+            }*/
         }
 
         private void frmConfiguracion_Load(object sender, EventArgs e)
