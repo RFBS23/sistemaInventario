@@ -4,7 +4,6 @@ database
 assets
 
 # excluimos los archivos con la extension de texto
-*.txt
 readme.txt
 
 #excluimos la licencia del software
