@@ -1,7 +1,6 @@
 # escluyendo la carpeta del instalador
 packages
 database
-assets
 
 # excluimos los archivos con la extension de texto
 *.txt
