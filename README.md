@@ -20,4 +20,4 @@ Desarrollo y Administracion de Datos
     <b>Aplicacion Desarrollada por:</b>
     Fabrizio Barrios Saavedra (RFBS23 - fabridev)
 </h3>
-<img src="./assets/foter.jpg" width="150" alt="avatar">
+<img src="./readme/foter.jpg" width="150" alt="avatar">
